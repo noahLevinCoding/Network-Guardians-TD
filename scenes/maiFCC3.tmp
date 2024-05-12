@@ -57,8 +57,8 @@ vertical_alignment = 1
 [node name="MapSelection" type="Node2D" parent="GameStateMachine"]
 visible = false
 script = ExtResource("3_ig0ym")
-map1ScenePath = "res://scenes/maps/map1.tscn"
-map2ScenePath = "res://scenes/maps/map2.tscn"
+map1ScenePath = null
+map2ScenePath = null
 
 [node name="ColorRect" type="ColorRect" parent="GameStateMachine/MapSelection"]
 offset_right = 1920.0
@@ -91,8 +91,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "PRESS 1 FOR MAP 1
-PRESS 2 FOR MAP 2"
+text = "PRESS SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -131,9 +130,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "PRESS 1 FOR EASY
-PRESS 2 FOR MEDIUM
-PRESS 3 FOR HARD"
+text = "PRESS SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
