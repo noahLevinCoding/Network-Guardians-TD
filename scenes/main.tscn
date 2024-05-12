@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://wpygtlrk7d1h"]
+
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/finiteStateMachine.gd" id="1_ot2yj"]
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateTitlescreen.gd" id="2_4dtru"]
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateMapSelection.gd" id="3_ig0ym"]
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateDifficultySelection.gd" id="4_aptbq"]
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateInitGame.gd" id="5_6kuxb"]
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStatePlaying.gd" id="6_6aq5l"]
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStatePause.gd" id="7_w21jj"]
+[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateEnd.gd" id="8_p2wdu"]
+
+[node name="Main" type="Node2D"]
+
+[node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("1_ot2yj")
+initialState = NodePath("GameStateTitlescreen")
+
+[node name="GameStateTitlescreen" type="Node" parent="GameStateMachine"]
+script = ExtResource("2_4dtru")
+
+[node name="GameStateMapSelection" type="Node" parent="GameStateMachine"]
+script = ExtResource("3_ig0ym")
+
+[node name="GameStateDifficultySelection" type="Node" parent="GameStateMachine"]
+script = ExtResource("4_aptbq")
+
+[node name="GameStateInitGame" type="Node" parent="GameStateMachine"]
+script = ExtResource("5_6kuxb")
+
+[node name="GameStatePlaying" type="Node" parent="GameStateMachine"]
+script = ExtResource("6_6aq5l")
+
+[node name="GameStatePause" type="Node" parent="GameStateMachine"]
+script = ExtResource("7_w21jj")
+
+[node name="GameStateEnd" type="Node" parent="GameStateMachine"]
+script = ExtResource("8_p2wdu")
