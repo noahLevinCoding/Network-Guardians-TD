@@ -5,6 +5,14 @@ func enter():
 	print("Enter GameState InitGame")
 	visible = true
 	
+	for oldMap in %Map.get_children():
+		%Map.remove_child(oldMap)
+		oldMap.queue_free()
+	
+	var mapScene = load(GameManager.mapScenePath)
+	var mapInstance = mapScene.instantiate()
+	%Map.add_child(mapInstance)
+	
 	print(GameManager.mapScenePath)
 	print(GameManager.difficulty)
 		

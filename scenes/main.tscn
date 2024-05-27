@@ -11,20 +11,25 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+[node name="Game" type="Node" parent="."]
+
+[node name="Map" type="Node" parent="Game"]
+unique_name_in_owner = true
+
+[node name="GameStateMachine" type="Node" parent="Game" node_paths=PackedStringArray("initialState")]
 script = ExtResource("1_ot2yj")
 initialState = NodePath("Titlescreen")
 
-[node name="Titlescreen" type="Node2D" parent="GameStateMachine"]
+[node name="Titlescreen" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("2_4dtru")
 
-[node name="ColorRect" type="ColorRect" parent="GameStateMachine/Titlescreen"]
+[node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/Titlescreen"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.52549, 0.988235, 0.737255, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameStateMachine/Titlescreen/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/GameStateMachine/Titlescreen/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,7 +43,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitlescreenLabel" type="Label" parent="GameStateMachine/Titlescreen/ColorRect/VBoxContainer"]
+[node name="TitlescreenLabel" type="Label" parent="Game/GameStateMachine/Titlescreen/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
@@ -46,7 +51,7 @@ text = "TITLESCREEN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="GameStateMachine/Titlescreen/ColorRect/VBoxContainer"]
+[node name="ContinueLabel" type="Label" parent="Game/GameStateMachine/Titlescreen/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -54,18 +59,18 @@ text = "PRESS SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MapSelection" type="Node2D" parent="GameStateMachine"]
+[node name="MapSelection" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("3_ig0ym")
 map1ScenePath = "res://scenes/maps/map1.tscn"
 map2ScenePath = "res://scenes/maps/map2.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="GameStateMachine/MapSelection"]
+[node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/MapSelection"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.694118, 0.917647, 1, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameStateMachine/MapSelection/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/GameStateMachine/MapSelection/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,7 +84,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MapSelectionLabel" type="Label" parent="GameStateMachine/MapSelection/ColorRect/VBoxContainer"]
+[node name="MapSelectionLabel" type="Label" parent="Game/GameStateMachine/MapSelection/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
@@ -87,7 +92,7 @@ text = "SELECT MAP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="GameStateMachine/MapSelection/ColorRect/VBoxContainer"]
+[node name="ContinueLabel" type="Label" parent="Game/GameStateMachine/MapSelection/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -96,16 +101,16 @@ PRESS 2 FOR MAP 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DifficultySelection" type="Node2D" parent="GameStateMachine"]
+[node name="DifficultySelection" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("4_aptbq")
 
-[node name="ColorRect" type="ColorRect" parent="GameStateMachine/DifficultySelection"]
+[node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/DifficultySelection"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.854902, 0.866667, 1, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameStateMachine/DifficultySelection/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/GameStateMachine/DifficultySelection/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -119,7 +124,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DifficultySelectionLabel" type="Label" parent="GameStateMachine/DifficultySelection/ColorRect/VBoxContainer"]
+[node name="DifficultySelectionLabel" type="Label" parent="Game/GameStateMachine/DifficultySelection/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
@@ -127,7 +132,7 @@ text = "SELECT DIFFICULTY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="GameStateMachine/DifficultySelection/ColorRect/VBoxContainer"]
+[node name="ContinueLabel" type="Label" parent="Game/GameStateMachine/DifficultySelection/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -137,16 +142,16 @@ PRESS 3 FOR HARD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InitGame" type="Node2D" parent="GameStateMachine"]
+[node name="InitGame" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("5_6kuxb")
 
-[node name="ColorRect" type="ColorRect" parent="GameStateMachine/InitGame"]
+[node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/InitGame"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.996078, 0.839216, 0.768627, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameStateMachine/InitGame/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/GameStateMachine/InitGame/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -160,7 +165,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InitGameLabel" type="Label" parent="GameStateMachine/InitGame/ColorRect/VBoxContainer"]
+[node name="InitGameLabel" type="Label" parent="Game/GameStateMachine/InitGame/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
@@ -168,7 +173,7 @@ text = "INIT GAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="GameStateMachine/InitGame/ColorRect/VBoxContainer"]
+[node name="ContinueLabel" type="Label" parent="Game/GameStateMachine/InitGame/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -176,16 +181,16 @@ text = "PRESS SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Playing" type="Node2D" parent="GameStateMachine"]
+[node name="Playing" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("6_6aq5l")
 
-[node name="ColorRect" type="ColorRect" parent="GameStateMachine/Playing"]
+[node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/Playing"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0.431373, 0.529412, 1)
+color = Color(0, 0.431373, 0.529412, 0.537255)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameStateMachine/Playing/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/GameStateMachine/Playing/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -199,7 +204,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayingLabel" type="Label" parent="GameStateMachine/Playing/ColorRect/VBoxContainer"]
+[node name="PlayingLabel" type="Label" parent="Game/GameStateMachine/Playing/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
@@ -207,7 +212,7 @@ text = "PLAYING"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="GameStateMachine/Playing/ColorRect/VBoxContainer"]
+[node name="ContinueLabel" type="Label" parent="Game/GameStateMachine/Playing/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -215,7 +220,7 @@ text = "PRESS SPACE TO CONTINUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseLabel" type="Label" parent="GameStateMachine/Playing/ColorRect/VBoxContainer"]
+[node name="PauseLabel" type="Label" parent="Game/GameStateMachine/Playing/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -223,16 +228,16 @@ text = "PRESS ESCAPE TO PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pause" type="Node2D" parent="GameStateMachine"]
+[node name="Pause" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("7_w21jj")
 
-[node name="ColorRect" type="ColorRect" parent="GameStateMachine/Pause"]
+[node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/Pause"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.827451, 0.898039, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameStateMachine/Pause/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/GameStateMachine/Pause/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -246,7 +251,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PauseLabel" type="Label" parent="GameStateMachine/Pause/ColorRect/VBoxContainer"]
+[node name="PauseLabel" type="Label" parent="Game/GameStateMachine/Pause/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
@@ -254,7 +259,7 @@ text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="GameStateMachine/Pause/ColorRect/VBoxContainer"]
+[node name="ContinueLabel" type="Label" parent="Game/GameStateMachine/Pause/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -262,7 +267,7 @@ text = "PRESS ESCAPE TO CONTINUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel2" type="Label" parent="GameStateMachine/Pause/ColorRect/VBoxContainer"]
+[node name="ContinueLabel2" type="Label" parent="Game/GameStateMachine/Pause/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -270,16 +275,16 @@ text = "PRESS SPACE TO TITLESCREEN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="End" type="Node2D" parent="GameStateMachine"]
+[node name="End" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("8_p2wdu")
 
-[node name="ColorRect" type="ColorRect" parent="GameStateMachine/End"]
+[node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/End"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.988235, 0.356863, 0.768627, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameStateMachine/End/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/GameStateMachine/End/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -293,7 +298,7 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndLabel" type="Label" parent="GameStateMachine/End/ColorRect/VBoxContainer"]
+[node name="EndLabel" type="Label" parent="Game/GameStateMachine/End/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
@@ -301,7 +306,7 @@ text = "END"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="GameStateMachine/End/ColorRect/VBoxContainer"]
+[node name="ContinueLabel" type="Label" parent="Game/GameStateMachine/End/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
