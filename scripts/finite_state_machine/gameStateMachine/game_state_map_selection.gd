@@ -1,8 +1,8 @@
 extends State
 class_name GameStateMapSelection
 
-@export_file("*.tscn") var map1ScenePath : String = ""
-@export_file("*.tscn") var map2ScenePath : String = ""
+@export_file("*.tscn") var map_1_scene_path : String = ""
+@export_file("*.tscn") var map_2_scene_path : String = ""
 
 func enter():
 	print("Enter GameState MapSelection")
@@ -10,12 +10,12 @@ func enter():
 		
 func update(_delta : float):
 	if Input.is_action_just_pressed("one"):
-		GameManager.mapScenePath = map1ScenePath
-		stateTransition.emit(self, "DifficultySelection")
+		GameManager.mapScenePath = map_1_scene_path
+		state_transition.emit(self, "DifficultySelection")
 		
 	elif Input.is_action_just_pressed("two"):
-		GameManager.mapScenePath = map2ScenePath
-		stateTransition.emit(self, "DifficultySelection")
+		GameManager.mapScenePath = map_2_scene_path
+		state_transition.emit(self, "DifficultySelection")
 	
 func physics_update(_delta : float):
 	pass

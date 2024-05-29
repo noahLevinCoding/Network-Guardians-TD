@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://wpygtlrk7d1h"]
 
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/finiteStateMachine.gd" id="1_ot2yj"]
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateTitlescreen.gd" id="2_4dtru"]
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateMapSelection.gd" id="3_ig0ym"]
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateDifficultySelection.gd" id="4_aptbq"]
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateInitGame.gd" id="5_6kuxb"]
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStatePlaying.gd" id="6_6aq5l"]
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStatePause.gd" id="7_w21jj"]
-[ext_resource type="Script" path="res://scripts/finiteStateMachine/gameStateMachine/gameStateEnd.gd" id="8_p2wdu"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/finiteStateMachine.gd" id="1_ot2yj"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/gameStateMachine/game_state_titlescreen.gd" id="2_4dtru"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/gameStateMachine/game_state_map_selection.gd" id="3_ig0ym"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/gameStateMachine/game_state_difficulty_selection.gd" id="4_aptbq"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/gameStateMachine/game_state_init_game.gd" id="5_6kuxb"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/gameStateMachine/game_state_playing.gd" id="6_6aq5l"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/gameStateMachine/game_state_pause.gd" id="7_w21jj"]
+[ext_resource type="Script" path="res://scripts/finite_state_machine/gameStateMachine/game_state_end.gd" id="8_p2wdu"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,9 +16,8 @@
 [node name="Map" type="Node" parent="Game"]
 unique_name_in_owner = true
 
-[node name="GameStateMachine" type="Node" parent="Game" node_paths=PackedStringArray("initialState")]
+[node name="GameStateMachine" type="Node" parent="Game"]
 script = ExtResource("1_ot2yj")
-initialState = NodePath("Titlescreen")
 
 [node name="Titlescreen" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
@@ -62,8 +61,6 @@ vertical_alignment = 1
 [node name="MapSelection" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("3_ig0ym")
-map1ScenePath = "res://scenes/maps/map1.tscn"
-map2ScenePath = "res://scenes/maps/map2.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/MapSelection"]
 offset_right = 1920.0
