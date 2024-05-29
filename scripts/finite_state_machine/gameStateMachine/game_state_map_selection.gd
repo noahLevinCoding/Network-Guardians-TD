@@ -10,11 +10,11 @@ func enter():
 		
 func update(_delta : float):
 	if Input.is_action_just_pressed("one"):
-		GameManager.mapScenePath = map_1_scene_path
+		GameManager.map_scene_path = map_1_scene_path
 		state_transition.emit(self, "DifficultySelection")
 		
 	elif Input.is_action_just_pressed("two"):
-		GameManager.mapScenePath = map_2_scene_path
+		GameManager.map_scene_path = map_2_scene_path
 		state_transition.emit(self, "DifficultySelection")
 	
 func physics_update(_delta : float):

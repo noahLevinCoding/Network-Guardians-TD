@@ -9,11 +9,11 @@ func enter():
 		%Map.remove_child(old_map)
 		old_map.queue_free()
 	
-	var map_scene = load(GameManager.map_scenePath)
+	var map_scene = load(GameManager.map_scene_path)
 	var map_instance = map_scene.instantiate()
 	%Map.add_child(map_instance)
 	
-	print(GameManager.map_scenePath)
+	print(GameManager.map_scene_path)
 	print(GameManager.difficulty)
 		
 func update(_delta : float):

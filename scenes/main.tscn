@@ -16,8 +16,9 @@
 [node name="Map" type="Node" parent="Game"]
 unique_name_in_owner = true
 
-[node name="GameStateMachine" type="Node" parent="Game"]
+[node name="GameStateMachine" type="Node" parent="Game" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_ot2yj")
+initial_state = NodePath("Titlescreen")
 
 [node name="Titlescreen" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
@@ -61,6 +62,8 @@ vertical_alignment = 1
 [node name="MapSelection" type="Node2D" parent="Game/GameStateMachine"]
 visible = false
 script = ExtResource("3_ig0ym")
+map_1_scene_path = "res://scenes/maps/map_1.tscn"
+map_2_scene_path = "res://scenes/maps/map_2.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/MapSelection"]
 offset_right = 1920.0
@@ -183,6 +186,7 @@ visible = false
 script = ExtResource("6_6aq5l")
 
 [node name="ColorRect" type="ColorRect" parent="Game/GameStateMachine/Playing"]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0.431373, 0.529412, 0.537255)

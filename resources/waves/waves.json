@@ -3,29 +3,29 @@
 	{
 	  "wave_groups": [
 		{			
-		  "enemy_type": "camo",
+		  "enemy_type": "dummy1",
 		  "enemy_count": 5,
 		  "time_between_enemies": 2.0,
 		  "time_after_wave_group" : 5.0
 		},
 		{
-		  "enemy_type": "Enemy2",
+		  "enemy_type": "dummy2",
 		  "enemy_count": 3,
 		  "time_between_enemies": 1.5,
-		  "time_after_wave_group" : 5.0
+		  "time_after_wave_group" : 0
 		}
 	  ]
 	},
 	{
 	  "wave_groups": [
 		{
-		  "enemy_type": "Enemy1",
+		  "enemy_type": "dummy3",
 		  "enemy_count": 8,
 		  "time_between_enemies": 1.0,
 		  "time_after_wave_group" : 5.0
 		},
 		{
-		  "enemy_type": "Enemy3",
+		  "enemy_type": "dummy4",
 		  "enemy_count": 4,
 		  "time_between_enemies": 2.0,
 		  "time_after_wave_group" : 5.0

@@ -18,6 +18,8 @@ var is_wave_active : bool = false
 @onready var betweem_enemies_timer = %BetweemEnemiesTimer
 @onready var between_wave_groups_timer = %BetweenWaveGroupsTimer
 
+var path = null
+
 func _ready():
 	parse_waves()
 	EventManager.start_next_wave.connect(_on_start_next_wave)
@@ -51,12 +53,16 @@ func spawn_enemy():
 	
 	if current_wave_group_enemy_index < current_wave_group.enemy_count:
 		print(current_wave_group.enemy_type) #Instantiate
+		var enemy_scene = load(current_wave_group.enemy_type)
+		var enemy_scene_instance = enemy_scene.instantiate()
+		path.add_child(enemy_scene_instance)
+		
 		betweem_enemies_timer.start(current_wave_group.time_between_enemies)
 	else:
 		between_wave_groups_timer.start(current_wave_group.time_after_wave_group)
 	
 func _on_wave_active_timer_timeout():
-	if 1 == 1:	#child count of path == 0
+	if path.get_child_count() == 0:
 		is_wave_active = false
 	else:
 		wave_active_timer.start()

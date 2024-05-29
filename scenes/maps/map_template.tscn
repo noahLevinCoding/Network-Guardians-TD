@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c03754nhru2ll"]
+[gd_scene load_steps=7 format=3 uid="uid://c03754nhru2ll"]
 
+[ext_resource type="Script" path="res://scripts/map/map.gd" id="1_3jshf"]
 [ext_resource type="Texture2D" uid="uid://d1jj0pk8dbaan" path="res://assets/sprites/TestMap.png" id="1_gxlps"]
-[ext_resource type="Script" path="res://scripts/wave_spawner/wave_spawner.gd" id="2_gl4gd"]
+[ext_resource type="PackedScene" uid="uid://bks2ih1fawf8t" path="res://scenes/wave_spawner/wave_spawner.tscn" id="2_0rogy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_801tq"]
 texture = ExtResource("1_gxlps")
@@ -13,18 +14,20 @@ texture = ExtResource("1_gxlps")
 [sub_resource type="TileSet" id="TileSet_cnplp"]
 sources/0 = SubResource("TileSetAtlasSource_801tq")
 
-[sub_resource type="Curve2D" id="Curve2D_pmhld"]
+[sub_resource type="Curve2D" id="Curve2D_3d5g1"]
 resource_local_to_scene = true
 
 [node name="MapTemplate" type="Node2D"]
+script = ExtResource("1_3jshf")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_cnplp")
 format = 2
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_pmhld")
+[node name="WaveSpawner" parent="." instance=ExtResource("2_0rogy")]
+unique_name_in_owner = true
 
-[node name="WaveSpawner" type="Node2D" parent="."]
-script = ExtResource("2_gl4gd")
+[node name="Path" type="Path2D" parent="."]
+unique_name_in_owner = true
+curve = SubResource("Curve2D_3d5g1")
