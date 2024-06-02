@@ -4,6 +4,7 @@ class_name GameStateTitlescreen
 func enter():
 	print("Enter GameState Titlescreen")
 	visible = true
+	EventManager.reset_game.emit()
 		
 func update(_delta : float):
 	if Input.is_action_just_pressed("ui_accept"):

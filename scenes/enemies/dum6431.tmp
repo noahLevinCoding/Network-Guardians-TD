@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/sprites/LED/PNG/led_red_on.png" id="2_gsap2"]
 
 [node name="Enemy" instance=ExtResource("1_kda00")]
-speed = 400.0
-damage = 2
 
 [node name="Sprite" parent="." index="0"]
 unique_name_in_owner = true

@@ -52,9 +52,9 @@ func spawn_enemy():
 	current_wave_group_enemy_index += 1
 	
 	if current_wave_group_enemy_index < current_wave_group.enemy_count:
-		print(current_wave_group.enemy_type) #Instantiate
 		var enemy_scene = load(current_wave_group.enemy_type)
 		var enemy_scene_instance = enemy_scene.instantiate()
+		
 		path.add_child(enemy_scene_instance)
 		
 		betweem_enemies_timer.start(current_wave_group.time_between_enemies)

@@ -1,21 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfm25d6cr0pxq"]
+[gd_scene load_steps=5 format=3 uid="uid://cj02xj7xm5don"]
 
-[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_ut60y"]
+[ext_resource type="PackedScene" uid="uid://720cd7ih73sw" path="res://scenes/enemies/enemy.tscn" id="1_hqao6"]
+[ext_resource type="Script" path="res://resources/enemies/child_enemy_resource.gd" id="2_d3g3v"]
+[ext_resource type="Texture2D" uid="uid://ul4ltq52faqv" path="res://assets/sprites/LED/PNG/led_blue_on.png" id="2_vxsww"]
 
-[node name="PathFollow2D" type="PathFollow2D"]
-loop = false
-script = ExtResource("1_ut60y")
+[sub_resource type="Resource" id="Resource_p4vhj"]
+script = ExtResource("2_d3g3v")
+child_enemy_path = "res://scenes/enemies/dummy1.tscn"
+child_enemy_count = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -16.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.615686, 0, 0.337255, 1)
+[node name="Enemy" instance=ExtResource("1_hqao6")]
+speed = 800.0
+damage = 3
+children = Array[ExtResource("2_d3g3v")]([SubResource("Resource_p4vhj")])
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_vxsww")
