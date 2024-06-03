@@ -1,18 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj02xj7xm5don"]
+[gd_scene load_steps=6 format=3 uid="uid://cj02xj7xm5don"]
 
 [ext_resource type="PackedScene" uid="uid://720cd7ih73sw" path="res://scenes/enemies/enemy.tscn" id="1_hqao6"]
 [ext_resource type="Script" path="res://resources/enemies/child_enemy_resource.gd" id="2_d3g3v"]
-[ext_resource type="Texture2D" uid="uid://ul4ltq52faqv" path="res://assets/sprites/LED/PNG/led_blue_on.png" id="2_vxsww"]
+[ext_resource type="Texture2D" uid="uid://d0xwewtcm07u1" path="res://assets/sprites/Enemy/enemy_trojan.png" id="3_0d2fe"]
 
 [sub_resource type="Resource" id="Resource_p4vhj"]
 script = ExtResource("2_d3g3v")
 child_enemy_path = "res://scenes/enemies/dummy1.tscn"
-child_enemy_count = 1
+child_enemy_count = 10
+
+[sub_resource type="Resource" id="Resource_oh23o"]
+script = ExtResource("2_d3g3v")
+child_enemy_path = "res://scenes/enemies/dummy1.tscn"
+child_enemy_count = 20
 
 [node name="Enemy" instance=ExtResource("1_hqao6")]
-speed = 800.0
 damage = 3
-children = Array[ExtResource("2_d3g3v")]([SubResource("Resource_p4vhj")])
+children = Array[ExtResource("2_d3g3v")]([SubResource("Resource_p4vhj"), SubResource("Resource_oh23o")])
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource("2_vxsww")
+texture = ExtResource("3_0d2fe")
