@@ -229,6 +229,7 @@ visible = false
 script = ExtResource("7_w21jj")
 
 [node name="ColorRect" type="ColorRect" parent="GameStateMachine/Pause"]
+z_index = 1000
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.827451, 0.898039, 0, 1)

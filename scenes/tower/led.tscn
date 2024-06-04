@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmofrt0yf8uhg"]
+
+[ext_resource type="PackedScene" uid="uid://tcpoxeyknk63" path="res://scenes/tower/tower.tscn" id="1_pbu1c"]
+[ext_resource type="Texture2D" uid="uid://5y31a72mh4jw" path="res://assets/sprites/LED/LEDs.png" id="2_awu06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shr40"]
+radius = 100.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvwgk"]
+atlas = ExtResource("2_awu06")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mom6l"]
+atlas = ExtResource("2_awu06")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6jom"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvwgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mom6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tower" instance=ExtResource("1_pbu1c")]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_shr40")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_a6jom")
+frame_progress = 0.955167

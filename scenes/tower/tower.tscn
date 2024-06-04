@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://tcpoxeyknk63"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower.gd" id="1_31f37"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54le0"]
+resource_local_to_scene = true
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_31f37")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_54le0")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
