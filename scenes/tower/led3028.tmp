@@ -40,8 +40,7 @@ shape = SubResource("CircleShape2D_shr40")
 [node name="AnimatedSprite2D" parent="." index="1"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_a6jom")
-animation = &"idle"
-autoplay = "idle"
+animation = &"shooting"
 
 [node name="ShootTimer" parent="." index="2"]
 wait_time = 0.1

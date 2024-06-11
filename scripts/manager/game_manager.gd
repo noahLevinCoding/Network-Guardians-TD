@@ -40,8 +40,8 @@ func reset_parameters():
 	
 func clear_old_objects():
 	#Map
-	game_node.remove_child(map_instance)
 	if map_instance != null:
+		game_node.remove_child(map_instance)
 		map_instance.queue_free()
 		map_instance = null
 	

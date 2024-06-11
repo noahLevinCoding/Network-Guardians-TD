@@ -9,12 +9,17 @@ resource_local_to_scene = true
 script = ExtResource("1_31f37")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 17
+collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_54le0")
 
+[node name="ShootTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

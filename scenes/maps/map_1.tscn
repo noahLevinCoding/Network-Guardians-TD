@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0uiagx7iv88f"]
+[gd_scene load_steps=4 format=3 uid="uid://b0uiagx7iv88f"]
 
 [ext_resource type="PackedScene" uid="uid://c03754nhru2ll" path="res://scenes/maps/map_template.tscn" id="1_gucnd"]
+[ext_resource type="PackedScene" uid="uid://dmofrt0yf8uhg" path="res://scenes/tower/led.tscn" id="2_oehpn"]
 
 [sub_resource type="Curve2D" id="Curve2D_c7pli"]
 resource_local_to_scene = true
@@ -16,3 +17,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 65536, 0, 196
 
 [node name="Path" parent="." index="2"]
 curve = SubResource("Curve2D_c7pli")
+
+[node name="Tower" parent="." index="3" instance=ExtResource("2_oehpn")]
+position = Vector2(624, 208)

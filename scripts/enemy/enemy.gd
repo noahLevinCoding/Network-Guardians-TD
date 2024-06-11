@@ -29,8 +29,7 @@ func _process(delta):
 	
 	###debug
 	if Input.is_action_just_pressed("ui_accept"):
-		instantiate_children()
-		queue_free()
+		die()
 	#####################		
 	
 
@@ -54,9 +53,13 @@ func instantiate_children():
 					children_counter += 1
 					
 
+func die():
+	instantiate_children()
+	queue_free()
+
 func reached_end():
 	EventManager.enemy_reached_goal.emit(self)
-	queue_free()
+	die()
 	
 func apply_effects(delta : float):
 	for effect in effects:
