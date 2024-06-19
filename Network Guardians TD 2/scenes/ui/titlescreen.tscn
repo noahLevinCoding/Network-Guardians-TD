@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5art7604qeby"]
+
+[ext_resource type="Script" path="res://scripts/ui/titlescreen.gd" id="1_fjor8"]
+[ext_resource type="Texture2D" uid="uid://csvur2sgeg1h3" path="res://assets/ui/titlescreen/titlescreen_background.png" id="2_jf6co"]
+
+[node name="Titlescreen" type="Node2D"]
+visible = false
+script = ExtResource("1_fjor8")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_jf6co")
+centered = false
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 830.0
+offset_top = 686.0
+offset_right = 1361.0
+offset_bottom = 829.0
+text = "
+"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 822.0
+offset_top = 899.0
+offset_right = 1324.0
+offset_bottom = 1048.0
+text = "
+"
+
+[connection signal="button_up" from="PlayButton" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="ExitButton" to="." method="_on_exit_button_up"]

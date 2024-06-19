@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://mkq35rnq6n3x"]
+
+[ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
+[ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
+[ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_map_selection.gd" id="3_n0vnd"]
+[ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_difficulty_selection.gd" id="4_tvdv3"]
+[ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_reset_game.gd" id="5_e7x0x"]
+[ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_init_game.gd" id="6_et0hr"]
+[ext_resource type="PackedScene" uid="uid://b5art7604qeby" path="res://scenes/ui/titlescreen.tscn" id="6_hq4hb"]
+[ext_resource type="PackedScene" uid="uid://dbl2malqgknyt" path="res://scenes/ui/map_selection.tscn" id="7_iltek"]
+[ext_resource type="PackedScene" uid="uid://ccpuwmsxa5l71" path="res://scenes/ui/difficulty_selection.tscn" id="8_obulf"]
+
+[node name="Main" type="Node2D"]
+
+[node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_4tggm")
+initial_state = NodePath("Titlescreen")
+
+[node name="Titlescreen" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("titlescreen_node")]
+script = ExtResource("2_crxfe")
+titlescreen_node = NodePath("../../Menu/Titlescreen")
+
+[node name="MapSelection" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("map_selection_node")]
+script = ExtResource("3_n0vnd")
+map_selection_node = NodePath("../../Menu/MapSelection")
+
+[node name="DifficultySelection" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("difficulty_selection_node")]
+script = ExtResource("4_tvdv3")
+difficulty_selection_node = NodePath("../../Menu/DifficultySelection")
+
+[node name="ResetGame" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("game_node")]
+script = ExtResource("5_e7x0x")
+game_node = NodePath("../../Game")
+
+[node name="InitGame" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("game_node")]
+script = ExtResource("6_et0hr")
+game_node = NodePath("../../Game")
+
+[node name="Game" type="Node" parent="."]
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="Titlescreen" parent="Menu" instance=ExtResource("6_hq4hb")]
+
+[node name="MapSelection" parent="Menu" instance=ExtResource("7_iltek")]
+
+[node name="DifficultySelection" parent="Menu" instance=ExtResource("8_obulf")]
