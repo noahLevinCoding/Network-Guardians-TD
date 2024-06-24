@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyjglrb3udyb2"]
+
+[ext_resource type="Script" path="res://scripts/ui/pause.gd" id="1_u6d3p"]
+
+[node name="Pause" type="Node2D"]
+script = ExtResource("1_u6d3p")
+
+[node name="ResumeButton" type="Button" parent="."]
+offset_left = 732.0
+offset_top = 283.0
+offset_right = 995.0
+offset_bottom = 374.0
+text = "Continue"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 772.0
+offset_top = 400.0
+offset_right = 973.0
+offset_bottom = 502.0
+text = "Restart"
+
+[node name="BackToTitlescreenButton" type="Button" parent="."]
+offset_left = 708.0
+offset_top = 544.0
+offset_right = 1026.0
+offset_bottom = 643.0
+text = "Back to titlescreen"
+
+[connection signal="button_up" from="ResumeButton" to="." method="_on_resume_button_up"]
+[connection signal="button_up" from="RestartButton" to="." method="_on_restart_button_up"]
+[connection signal="button_up" from="BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]

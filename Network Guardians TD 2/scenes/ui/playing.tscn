@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://btctdg43tdyxp"]
+
+[ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
+
+[node name="Playing" type="Node2D"]
+script = ExtResource("1_ot4ts")
+
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 1714.0
+offset_top = 10.0
+offset_right = 1914.0
+offset_bottom = 70.0
+text = "Pause"
+
+[node name="StartNextWaveButton" type="Button" parent="."]
+offset_left = 1713.0
+offset_top = 82.0
+offset_right = 1913.0
+offset_bottom = 142.0
+text = "Start next wave"
+
+[connection signal="button_up" from="PauseButton" to="." method="_on_pause_button_up"]
+[connection signal="button_up" from="StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
