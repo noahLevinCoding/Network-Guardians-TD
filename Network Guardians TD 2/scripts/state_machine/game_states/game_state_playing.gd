@@ -6,6 +6,10 @@ class_name GameStatePlaying
 func _ready():
 	playing_ui_node.pause.connect(_on_pause)
 	playing_ui_node.start_next_wave.connect(_on_start_next_wave)
+	
+func update(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		_on_pause()
 
 func enter():
 	print("Enter GameState Playing")

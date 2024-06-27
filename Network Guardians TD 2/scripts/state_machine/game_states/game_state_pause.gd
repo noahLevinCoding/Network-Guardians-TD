@@ -8,6 +8,10 @@ func _ready():
 	pause_node.restart.connect(_on_restart)
 	pause_node.resume.connect(_on_resume)
 
+func update(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		_on_resume()
+
 func enter():
 	print("Enter GameState Pause")
 	pause_node.visible = true
@@ -15,7 +19,7 @@ func enter():
 	
 	
 func exit():
-	print("Exit GameState Playing")
+	print("Exit GameState Pause")
 	pause_node.visible = false
 	
 func _on_back_to_titlescreen():
