@@ -2,6 +2,8 @@ class_name WaveSpawner
 extends Node2D
 
 @export var waves_resource : Waves
+@export var enemy_scene : PackedScene
+@export var path : Path2D 
 
 @onready var waves = waves_resource.waves
 
@@ -17,6 +19,7 @@ var is_wave_active : bool = false
 @onready var is_wave_active_timer = %IsWaveActiveTimer
 @onready var spawn_enemy_timer = %SpawnEnemyTimer
 @onready var spawn_wave_group_timer = %SpawnWaveGroupTimer
+
 
 func _ready():
 	SignalManager.start_next_wave.connect(_on_start_next_wave)
@@ -46,10 +49,11 @@ func spawn_enemy():
 	current_wave_group_enemy_index += 1
 	
 	if current_wave_group_enemy_index < current_wave_group.enemy_count:
-		#var enemy_scene = load(current_wave_group.enemy_type)
-		#var enemy_scene_instance = enemy_scene.instantiate()
-		#path.add_child(enemy_scene_instance)
-		print(current_wave_group.enemy_type)
+		
+		var enemy_scene_instance = enemy_scene.instantiate()
+		enemy_scene_instance.enemy_resource = current_wave_group.enemy_resource
+		path.add_child(enemy_scene_instance)
+		
 		
 		spawn_enemy_timer.start(current_wave_group.time_between_enemies)
 	else:
@@ -57,12 +61,11 @@ func spawn_enemy():
 	
 
 func _on_is_wave_active_timer_timeout():
-	#if path.get_child_count() == 0:
-	#	is_wave_active = false
-	#else:
-	#	is_wave_active_timer.start()
+	if path.get_child_count() == 0:
+		is_wave_active = false
+	else:
+		is_wave_active_timer.start()
 	
-	is_wave_active = false
 	#emit signal
 
 

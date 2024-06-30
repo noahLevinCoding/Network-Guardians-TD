@@ -1,19 +1,21 @@
-[gd_resource type="Resource" script_class="Waves" load_steps=10 format=3 uid="uid://dd2ihe5xtt07v"]
+[gd_resource type="Resource" script_class="Waves" load_steps=9 format=3 uid="uid://dd2ihe5xtt07v"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/waves.gd" id="1_3kq1d"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="2_45ndq"]
+[ext_resource type="Resource" uid="uid://dbvqjuvk48lfo" path="res://resources/enemies/virus_green.tres" id="3_f67g5"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_ynn07"]
+[ext_resource type="Resource" uid="uid://d1uom7dki8s3v" path="res://resources/enemies/virus_red.tres" id="5_neanb"]
 
 [sub_resource type="Resource" id="Resource_1hpgc"]
 script = ExtResource("3_ynn07")
-enemy_type = "Mogli"
+enemy_resource = ExtResource("3_f67g5")
 enemy_count = 3
 time_between_enemies = 1.5
 time_after_wave_group = 4.0
 
 [sub_resource type="Resource" id="Resource_dc1pb"]
 script = ExtResource("3_ynn07")
-enemy_type = "Filou"
+enemy_resource = ExtResource("5_neanb")
 enemy_count = 10
 time_between_enemies = 0.1
 time_after_wave_group = 1.0
@@ -22,24 +24,6 @@ time_after_wave_group = 1.0
 script = ExtResource("2_45ndq")
 wave_groups = Array[ExtResource("3_ynn07")]([SubResource("Resource_1hpgc"), SubResource("Resource_dc1pb")])
 
-[sub_resource type="Resource" id="Resource_1m778"]
-script = ExtResource("3_ynn07")
-enemy_type = "Leonie"
-enemy_count = 2
-time_between_enemies = 1.0
-time_after_wave_group = 0.0
-
-[sub_resource type="Resource" id="Resource_7j733"]
-script = ExtResource("3_ynn07")
-enemy_type = "Manu"
-enemy_count = 69
-time_between_enemies = 0.1
-time_after_wave_group = 0.0
-
-[sub_resource type="Resource" id="Resource_rm3h5"]
-script = ExtResource("2_45ndq")
-wave_groups = Array[ExtResource("3_ynn07")]([SubResource("Resource_1m778"), SubResource("Resource_7j733")])
-
 [resource]
 script = ExtResource("1_3kq1d")
-waves = Array[ExtResource("2_45ndq")]([SubResource("Resource_qodwy"), SubResource("Resource_rm3h5")])
+waves = Array[ExtResource("2_45ndq")]([SubResource("Resource_qodwy")])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://dbvqjuvk48lfo"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_resource.gd" id="1_i3amt"]
+[ext_resource type="Texture2D" uid="uid://fajphaj6na76" path="res://assets/enemy/enemy_virus_2.png" id="2_n4k3u"]
+
+[resource]
+script = ExtResource("1_i3amt")
+texture = ExtResource("2_n4k3u")
+default_speed = 10.0
