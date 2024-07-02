@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("1_i3amt")
 texture = ExtResource("2_n4k3u")
-default_speed = 10.0
+base_speed = 1000.0
+damage_to_player = 1

@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("1_86nch")
 texture = ExtResource("2_owr6x")
-default_speed = 20.0
+base_speed = 1000.0
+damage_to_player = 2

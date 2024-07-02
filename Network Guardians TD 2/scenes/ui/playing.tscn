@@ -19,5 +19,18 @@ offset_right = 1913.0
 offset_bottom = 142.0
 text = "Start next wave"
 
+[node name="HealthText" type="Label" parent="."]
+offset_right = 76.0
+offset_bottom = 36.0
+text = "Health:"
+
+[node name="HealthValue" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 63.0
+offset_top = 1.0
+offset_right = 89.0
+offset_bottom = 24.0
+text = "10"
+
 [connection signal="button_up" from="PauseButton" to="." method="_on_pause_button_up"]
 [connection signal="button_up" from="StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]

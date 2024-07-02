@@ -10,4 +10,8 @@ func _ready():
 
 
 func _process(delta):
-	progress += enemy_resource.default_speed * delta
+	progress += enemy_resource.base_speed * delta
+	
+	if progress_ratio >= 1.0:
+		GameManager.deal_damage_to_player(enemy_resource.damage_to_player)
+		self.queue_free()
