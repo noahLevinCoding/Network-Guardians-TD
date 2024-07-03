@@ -6,6 +6,7 @@ class_name GameStatePlaying
 func _ready():
 	playing_ui_node.pause.connect(_on_pause)
 	playing_ui_node.start_next_wave.connect(_on_start_next_wave)
+	SignalManager.defeat.connect(_on_defeat)
 	
 func update(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -28,3 +29,5 @@ func _on_pause():
 func _on_start_next_wave():
 	SignalManager.start_next_wave.emit()
 	
+func _on_defeat():
+	state_transition.emit(self, "Defeat")

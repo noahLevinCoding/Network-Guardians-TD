@@ -1,5 +1,7 @@
 extends Node
 
+@export var initial_player_health : int = 10
+
 var map_scene_path : String = ""
 var difficulty : int = 1
 var is_paused : bool = true :
@@ -8,20 +10,21 @@ var is_paused : bool = true :
 		Engine.time_scale = 0 if value else 1.0
 
 
-var player_health : int
+var player_health : int :
+	set(value):
+		player_health = value
+		SignalManager.player_health_changed.emit()
 
 func reset():
 	is_paused = true
-	player_health = 10
+	player_health = initial_player_health
 	
-	SignalManager.player_health_changed.emit()
 
 func deal_damage_to_player(damage : int):
 	player_health -= damage
-	SignalManager.player_health_changed.emit()
 	
 	if player_health <= 0:
-		game_over()
+		defeat()
 		
-func game_over():
-	pass
+func defeat():
+	SignalManager.defeat.emit()

@@ -4,7 +4,7 @@ extends Node2D
 signal pause
 signal start_next_wave
 
-@onready var health_value_label = %HealthValue
+@export var health_value_label : Label 
 
 
 func _ready():

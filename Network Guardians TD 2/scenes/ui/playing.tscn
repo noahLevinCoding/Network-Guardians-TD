@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 
-[node name="Playing" type="Node2D"]
+[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_value_label")]
 script = ExtResource("1_ot4ts")
+health_value_label = NodePath("HealthValue")
 
 [node name="PauseButton" type="Button" parent="."]
 offset_left = 1714.0
@@ -25,7 +26,6 @@ offset_bottom = 36.0
 text = "Health:"
 
 [node name="HealthValue" type="Label" parent="."]
-unique_name_in_owner = true
 offset_left = 63.0
 offset_top = 1.0
 offset_right = 89.0
