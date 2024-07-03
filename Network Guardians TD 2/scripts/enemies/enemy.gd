@@ -1,12 +1,14 @@
 class_name Enemy
 extends PathFollow2D
 
-@onready var sprite_2d = %Sprite2D
+@export var sprite_2d : Sprite2D
+@export var collision_shape : CollisionShape2D
 
 var enemy_resource : EnemyResource 
 		
 func _ready():
 	sprite_2d.texture = enemy_resource.texture
+	collision_shape.shape = enemy_resource.col_shape
 
 
 func _process(delta):

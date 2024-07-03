@@ -1,6 +1,6 @@
 extends Node
 
-@export var initial_player_health : int = 10
+const initial_player_health : int = 10
 
 var map_scene_path : String = ""
 var difficulty : int = 1

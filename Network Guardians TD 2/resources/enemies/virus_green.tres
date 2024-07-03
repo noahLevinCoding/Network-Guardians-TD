@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://dbvqjuvk48lfo"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=4 format=3 uid="uid://dbvqjuvk48lfo"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_resource.gd" id="1_i3amt"]
+[ext_resource type="Shape2D" uid="uid://bngslc823ahj1" path="res://resources/enemies/shapes/virus_green_shape.tres" id="1_ld5rt"]
 [ext_resource type="Texture2D" uid="uid://fajphaj6na76" path="res://assets/enemy/enemy_virus_2.png" id="2_n4k3u"]
 
 [resource]
 script = ExtResource("1_i3amt")
 texture = ExtResource("2_n4k3u")
-base_speed = 1000.0
+base_speed = 200.0
 damage_to_player = 1
+col_shape = ExtResource("1_ld5rt")

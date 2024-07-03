@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="TowerResource" load_steps=4 format=3 uid="uid://pj884osal58u"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="1_vdagi"]
+[ext_resource type="Resource" uid="uid://dryixy0ni86nw" path="res://resources/bullets/test_bullet.tres" id="1_wkvsa"]
+[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="2_k8pcq"]
+
+[resource]
+script = ExtResource("1_vdagi")
+attack_speed = 1.0
+attack_range = 100.0
+attack_damage = 0.0
+number_of_targets = 0
+bullet_resource = ExtResource("1_wkvsa")
+texture = ExtResource("2_k8pcq")
+target_prio = 0
+can_see_camo = false
+can_pop_lead = false

@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkgwoa2og1bau"]
+[gd_scene load_steps=2 format=3 uid="uid://dkgwoa2og1bau"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_fdsxu"]
-[ext_resource type="Texture2D" uid="uid://d0xwewtcm07u1" path="res://assets/enemy/enemy_trojan.png" id="2_x20tp"]
 
-[node name="Enemy" type="PathFollow2D"]
+[node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("sprite_2d", "collision_shape") groups=["Enemy"]]
 loop = false
 script = ExtResource("1_fdsxu")
+sprite_2d = NodePath("Sprite2D")
+collision_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_x20tp")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
