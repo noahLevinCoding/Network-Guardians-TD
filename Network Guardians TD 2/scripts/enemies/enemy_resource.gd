@@ -5,5 +5,9 @@ extends Resource
 @export var base_speed : float
 @export var damage_to_player : int
 @export var col_shape : Shape2D 
+@export var max_health : float
 @export var is_camo : bool 
 @export var is_lead: bool
+
+
+

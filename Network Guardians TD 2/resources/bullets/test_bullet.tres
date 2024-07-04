@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource("1_27bbr")
 texture = ExtResource("3_0olnu")
-speed = 100.0
+speed = 500.0
 col_shape = ExtResource("1_dghlm")

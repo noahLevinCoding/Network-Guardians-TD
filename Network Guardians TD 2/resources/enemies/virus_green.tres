@@ -10,3 +10,6 @@ texture = ExtResource("2_n4k3u")
 base_speed = 200.0
 damage_to_player = 1
 col_shape = ExtResource("1_ld5rt")
+max_health = 1.0
+is_camo = false
+is_lead = false

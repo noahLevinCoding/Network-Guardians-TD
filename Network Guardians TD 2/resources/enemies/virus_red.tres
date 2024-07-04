@@ -7,7 +7,9 @@
 [resource]
 script = ExtResource("1_86nch")
 texture = ExtResource("2_owr6x")
-base_speed = 200.0
+base_speed = 100.0
 damage_to_player = 2
 col_shape = ExtResource("1_uq07n")
-is_camo = true
+max_health = 2.0
+is_camo = false
+is_lead = false
