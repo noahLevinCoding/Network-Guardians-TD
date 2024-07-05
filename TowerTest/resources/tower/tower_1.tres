@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TowerResource" load_steps=4 format=3 uid="uid://chudsk81b64xs"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="1_agvl6"]
+[ext_resource type="Resource" uid="uid://idx0j8w1ybjr" path="res://resources/bullets/bullet_1.tres" id="1_bfwc7"]
+[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/LED/PNG/led_red_on.png" id="2_7yegp"]
+
+[resource]
+script = ExtResource("1_agvl6")
+tower_texture = ExtResource("2_7yegp")
+attack_speed = 2.0
+attack_range = 100.0
+attack_damage = 12.0
+can_pop_lead = false
+bullet_visual_resource = ExtResource("1_bfwc7")
