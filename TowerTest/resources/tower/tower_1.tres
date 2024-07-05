@@ -7,8 +7,11 @@
 [resource]
 script = ExtResource("1_agvl6")
 tower_texture = ExtResource("2_7yegp")
-attack_speed = 2.0
-attack_range = 100.0
-attack_damage = 12.0
+attack_speed = 3.0
+attack_range = 150.0
+attack_damage = 11.0
+pierce = 3
 can_pop_lead = false
+can_see_camo = true
+target_prio_type = 4
 bullet_visual_resource = ExtResource("1_bfwc7")

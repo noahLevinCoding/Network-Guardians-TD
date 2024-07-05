@@ -23,5 +23,6 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.owner == bullet_resource.target:
-		#area.owner.receive_damage(bullet_resource)
+		area.owner.take_damage(bullet_resource)
+		#apply effects
 		queue_free()

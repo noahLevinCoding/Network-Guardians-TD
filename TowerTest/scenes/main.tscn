@@ -26,5 +26,5 @@ enemy_resource_3 = ExtResource("5_igxf2")
 curve = SubResource("Curve2D_x24u5")
 
 [node name="Tower" parent="." instance=ExtResource("6_5kb8f")]
-position = Vector2(175, 271)
+position = Vector2(175, 219)
 tower_resource = ExtResource("7_bh6bk")
