@@ -1,17 +1,21 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=4 format=3 uid="uid://dblxi0uukw5c4"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://dblxi0uukw5c4"]
 
+[ext_resource type="Texture2D" uid="uid://fajphaj6na76" path="res://assets/enemy/virus/enemy_virus_2.png" id="1_0wci1"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="1_mu7r2"]
 [ext_resource type="Shape2D" uid="uid://dbcn5hrks0m6c" path="res://resources/enemy/shapes/virus_shape.tres" id="1_q7n3l"]
-[ext_resource type="Texture2D" uid="uid://c7piecue84sxe" path="res://assets/enemy/enemy_virus_1.png" id="3_1ils6"]
+[ext_resource type="Texture2D" uid="uid://di8f7uwch7tqn" path="res://assets/enemy/camo.png" id="2_twnll"]
+[ext_resource type="Texture2D" uid="uid://c85oaxgsg84mr" path="res://assets/enemy/virus/lead.png" id="4_r8aej"]
 
 [resource]
 script = ExtResource("1_mu7r2")
-texture = ExtResource("3_1ils6")
+enemy_type = 1
+base_texture = ExtResource("1_0wci1")
+camo_texture = ExtResource("2_twnll")
+lead_texture = ExtResource("4_r8aej")
 col_shape = ExtResource("1_q7n3l")
 base_speed = 150.0
-base_health = 1000.0
+base_health = 1.0
 is_lead = false
 is_camo = false
 is_immune_to_pierce = false
-children_quantity = 1
-enemy_type = 1
+children_quantity = 0

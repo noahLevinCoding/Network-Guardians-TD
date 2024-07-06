@@ -4,22 +4,23 @@ extends Node2D
 @export var sprite : Sprite2D
 @export var col_shape : CollisionShape2D
 @export var shoot_timer : Timer
-
-@export var tower_resource : TowerResource
-
 @export var bullet_scene : PackedScene
 
+@export var tower_resource : TowerResource	
 
 var enemies = []
 var current_enemy_target = null
 
-var is_idle = true
+var is_idle = true	#used for direct shooting if idle
 
 func _ready():
+	init_resource()
+	
+func init_resource():
 	sprite.texture = tower_resource.tower_texture
 	shoot_timer.wait_time = 1 / tower_resource.attack_speed 
 	col_shape.shape.radius = tower_resource.attack_range
-	
+
 func _on_area_2d_area_entered(area):
 	if area.owner is Enemy:
 		enemies.append(area.owner)
@@ -29,7 +30,9 @@ func _on_area_2d_area_entered(area):
 			shoot_timer.start()
 			shoot()
 		
-
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		upgrade(1)
 
 func _on_area_2d_area_exited(area):
 	if area.owner is Enemy:
@@ -134,3 +137,13 @@ func can_see_enemy(enemy : Enemy):
 
 func _on_shoot_timer_timeout():
 	shoot()
+	
+func upgrade(path : int):
+	if path == 1:
+		tower_resource = tower_resource.upgrade_path_1_tower_resource
+		init_resource()
+	elif path == 2:
+		tower_resource = tower_resource.upgrade_path_2_tower_resource
+		init_resource()
+		
+	

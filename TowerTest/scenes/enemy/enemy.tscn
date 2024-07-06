@@ -2,13 +2,23 @@
 
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_bmivv"]
 
-[node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("sprite", "col_shape")]
+[node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("base_sprite", "camo_sprite", "lead_sprite", "col_shape")]
 loop = false
 script = ExtResource("1_bmivv")
-sprite = NodePath("Sprite2D")
+base_sprite = NodePath("BaseSprite")
+camo_sprite = NodePath("CamoSprite")
+lead_sprite = NodePath("LeadSprite")
 col_shape = NodePath("Area2D/CollisionShape2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BaseSprite" type="Sprite2D" parent="."]
+
+[node name="CamoSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="LeadSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fajphaj6na76"
-path="res://.godot/imported/enemy_virus_2.png-62138b51f7e8d9962343a989054f5c3f.ctex"
+uid="uid://c2xdhfscydy2i"
+path="res://.godot/imported/lead_trojan.png-a3ad703dc0b52f255deda260fa715367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemy/enemy_virus_2.png"
-dest_files=["res://.godot/imported/enemy_virus_2.png-62138b51f7e8d9962343a989054f5c3f.ctex"]
+source_file="res://assets/enemy/trojan/lead_trojan.png"
+dest_files=["res://.godot/imported/lead_trojan.png-a3ad703dc0b52f255deda260fa715367.ctex"]
 
 [params]
 
