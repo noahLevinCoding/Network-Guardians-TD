@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 
-[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_value_label")]
+[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_value_label", "wave_counter_label", "start_next_wave_button")]
 script = ExtResource("1_ot4ts")
 health_value_label = NodePath("HealthValue")
+wave_counter_label = NodePath("WaveCounterValue")
+start_next_wave_button = NodePath("StartNextWaveButton")
 
 [node name="PauseButton" type="Button" parent="."]
 offset_left = 1714.0
@@ -32,5 +34,32 @@ offset_right = 89.0
 offset_bottom = 24.0
 text = "10"
 
+[node name="2xSpeedCheckButton" type="CheckButton" parent="."]
+offset_left = 1855.0
+offset_top = 153.0
+offset_right = 1899.0
+offset_bottom = 177.0
+
+[node name="2xSpeedLabel" type="Label" parent="."]
+offset_left = 1786.0
+offset_top = 153.0
+offset_right = 1856.0
+offset_bottom = 176.0
+text = "2x Speed"
+
+[node name="WaveCounterText" type="Label" parent="."]
+offset_top = 24.0
+offset_right = 47.0
+offset_bottom = 47.0
+text = "Wave:"
+
+[node name="WaveCounterValue" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 26.0
+offset_right = 98.0
+offset_bottom = 49.0
+text = "0"
+
 [connection signal="button_up" from="PauseButton" to="." method="_on_pause_button_up"]
 [connection signal="button_up" from="StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
+[connection signal="toggled" from="2xSpeedCheckButton" to="." method="_on_game_speed_toggle"]

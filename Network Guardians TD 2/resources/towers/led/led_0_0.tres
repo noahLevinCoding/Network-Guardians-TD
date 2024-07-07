@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="TowerResource" load_steps=6 format=3 uid="uid://bt0320upg0gbw"]
+
+[ext_resource type="Resource" uid="uid://clsv44jykficg" path="res://resources/bullets/led/led_red.tres" id="1_fibjt"]
+[ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="1_kpvoy"]
+[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="3_svmxv"]
+[ext_resource type="Resource" uid="uid://ir1mqhuxd1mt" path="res://resources/towers/led/led_1_0.tres" id="4_gf88m"]
+[ext_resource type="Resource" uid="uid://cg104ffjduou3" path="res://resources/towers/led/led_0_1.tres" id="5_u748b"]
+
+[resource]
+script = ExtResource("1_kpvoy")
+attack_speed = 1.0
+attack_range = 150.0
+attack_damage = 10.0
+pierce = 2
+bullet_speed = 1000.0
+can_pop_lead = false
+can_see_camo = false
+target_prio_type = 0
+tower_texture = ExtResource("3_svmxv")
+bullet_visual_resource = ExtResource("1_fibjt")
+upgrade_description = ""
+upgrade_path_1_tower_resource = ExtResource("4_gf88m")
+upgrade_path_2_tower_resource = ExtResource("5_u748b")

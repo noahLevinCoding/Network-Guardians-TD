@@ -1,17 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkgwoa2og1bau"]
+[gd_scene load_steps=3 format=3 uid="uid://dkgwoa2og1bau"]
 
-[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_fdsxu"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_fdsxu"]
+[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/virus_shape.tres" id="3_1ptnw"]
 
-[node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("sprite_2d", "collision_shape") groups=["Enemy"]]
+[node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("base_animated_sprite", "camo_sprite", "lead_sprite", "col_shape")]
 loop = false
 script = ExtResource("1_fdsxu")
-sprite_2d = NodePath("Sprite2D")
-collision_shape = NodePath("Area2D/CollisionShape2D")
+base_animated_sprite = NodePath("BaseAnimatedSprite")
+camo_sprite = NodePath("CamoSprite")
+lead_sprite = NodePath("LeadSprite")
+col_shape = NodePath("Area2D/CollisionShape2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-unique_name_in_owner = true
+[node name="BaseAnimatedSprite" type="AnimatedSprite2D" parent="."]
+animation = &"move"
+autoplay = "move"
+
+[node name="CamoSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="LeadSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = ExtResource("3_1ptnw")

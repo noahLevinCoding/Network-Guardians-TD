@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwa8yb7agcv8m"]
 
-[ext_resource type="Script" path="res://scripts/bullets/bullet.gd" id="1_6qadl"]
+[ext_resource type="Script" path="res://scripts/bullet/bullet.gd" id="1_6qadl"]
 
-[node name="Bullet" type="Node2D" node_paths=PackedStringArray("sprite_2d", "col_shape")]
+[node name="Bullet" type="Node2D" node_paths=PackedStringArray("sprite", "col_shape")]
 script = ExtResource("1_6qadl")
-sprite_2d = NodePath("Sprite2D")
+sprite = NodePath("Sprite2D")
 col_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

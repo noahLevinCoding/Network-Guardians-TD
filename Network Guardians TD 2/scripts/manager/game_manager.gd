@@ -4,10 +4,15 @@ const initial_player_health : int = 10
 
 var map_scene_path : String = ""
 var difficulty : int = 1
+var game_time_scale : float = 1.0 :
+	set(value):
+		game_time_scale = value
+		is_paused = is_paused
+		
 var is_paused : bool = true :
 	set(value):
 		is_paused = value
-		Engine.time_scale = 0 if value else 1.0
+		Engine.time_scale = 0 if value else game_time_scale
 
 
 var player_health : int :

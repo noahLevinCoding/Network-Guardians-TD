@@ -33,6 +33,7 @@ func start_next_wave():
 		current_wave_group_index = -1
 		if current_wave_index < waves.size():
 			is_wave_active = true
+			SignalManager.on_start_next_wave.emit(current_wave_index)
 			current_wave = waves[current_wave_index]
 			start_next_wave_group()
 			
@@ -63,6 +64,7 @@ func spawn_enemy():
 func _on_is_wave_active_timer_timeout():
 	if path.get_child_count() == 0:
 		is_wave_active = false
+		SignalManager.on_wave_finished.emit()
 	else:
 		is_wave_active_timer.start()
 	

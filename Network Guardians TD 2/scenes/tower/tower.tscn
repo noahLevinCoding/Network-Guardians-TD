@@ -5,12 +5,12 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tctaj"]
 
-[node name="Tower" type="Node2D" node_paths=PackedStringArray("shoot_timer", "sprite_2d", "col_shape")]
+[node name="Tower" type="Node2D" node_paths=PackedStringArray("sprite", "col_shape", "shoot_timer")]
 script = ExtResource("1_ixq1t")
-bullet_scene = ExtResource("2_cn2xk")
-shoot_timer = NodePath("ShootTimer")
-sprite_2d = NodePath("Sprite2D")
+sprite = NodePath("Sprite2D")
 col_shape = NodePath("Area2D/CollisionShape2D")
+shoot_timer = NodePath("ShootTimer")
+bullet_scene = ExtResource("2_cn2xk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
