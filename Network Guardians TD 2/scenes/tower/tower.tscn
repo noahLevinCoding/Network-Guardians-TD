@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwa8yb7agcv8m" path="res://scenes/bullets/bullet.tscn" id="2_cn2xk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tctaj"]
+resource_local_to_scene = true
 
 [node name="Tower" type="Node2D" node_paths=PackedStringArray("sprite", "col_shape", "shoot_timer")]
 script = ExtResource("1_ixq1t")

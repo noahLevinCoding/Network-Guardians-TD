@@ -7,7 +7,11 @@ extends Node2D
 
 @onready var waves = waves_resource.waves
 
-var current_wave_index : int = -1
+var current_wave_index : int : 
+	set(value):
+		current_wave_index = value
+		SignalManager.wave_index_changed.emit(current_wave_index)
+
 var current_wave_group_index : int = -1
 var current_wave_group_enemy_index : int = -1
 
@@ -23,17 +27,18 @@ var is_wave_active : bool = false
 
 func _ready():
 	SignalManager.start_next_wave.connect(_on_start_next_wave)
+	current_wave_index = -1
 
 func _on_start_next_wave():
 	start_next_wave()
 	
 func start_next_wave():
 	if is_wave_active == false:
-		current_wave_index += 1
-		current_wave_group_index = -1
-		if current_wave_index < waves.size():
+		if current_wave_index + 1 < waves.size():
+			current_wave_index += 1
+			current_wave_group_index = -1
 			is_wave_active = true
-			SignalManager.on_start_next_wave.emit(current_wave_index)
+			SignalManager.on_start_next_wave.emit()
 			current_wave = waves[current_wave_index]
 			start_next_wave_group()
 			

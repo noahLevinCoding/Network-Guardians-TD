@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemResource" load_steps=4 format=3 uid="uid://bney8f3i53xvi"]
+
+[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/LED/PNG/led_red_on.png" id="1_gxt8a"]
+[ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_sh7ps"]
+[ext_resource type="Resource" uid="uid://chudsk81b64xs" path="res://resources/tower/tower_1.tres" id="3_dgelr"]
+
+[resource]
+script = ExtResource("1_sh7ps")
+name = "LED"
+icon = ExtResource("1_gxt8a")
+price_easy = 50
+price_medium = 100
+price_hard = 150
+tower_resource = ExtResource("3_dgelr")

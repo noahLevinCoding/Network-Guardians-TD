@@ -253,7 +253,6 @@ tile_set = SubResource("TileSet_bvftg")
 format = 2
 
 [node name="Path" type="Path2D" parent="."]
-unique_name_in_owner = true
 curve = SubResource("Curve2D_7qbnu")
 
 [node name="WaveSpawner" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_obwoc")]

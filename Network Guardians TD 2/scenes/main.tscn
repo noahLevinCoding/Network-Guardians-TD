@@ -38,9 +38,10 @@ difficulty_selection_node = NodePath("../../Menu/DifficultySelection")
 script = ExtResource("5_e7x0x")
 game_node = NodePath("../../Game")
 
-[node name="InitGame" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("game_node")]
+[node name="InitGame" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("game_node", "playing_menu")]
 script = ExtResource("6_et0hr")
 game_node = NodePath("../../Game")
+playing_menu = NodePath("../../Menu/Playing")
 
 [node name="Playing" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("playing_ui_node")]
 script = ExtResource("8_ayigk")
