@@ -1,9 +1,11 @@
 extends Node
 
-const initial_player_health : int = 10
+enum DIFFICULTY {EASY, MEDIUM, HARD}
+
+const initial_health : int = 10
 
 var map_scene_path : String = ""
-var difficulty : int = 1
+var difficulty : DIFFICULTY = DIFFICULTY.MEDIUM
 var game_time_scale : float = 1.0 :
 	set(value):
 		game_time_scale = value
@@ -15,20 +17,20 @@ var is_paused : bool = true :
 		Engine.time_scale = 0 if value else game_time_scale
 
 
-var player_health : int :
+var health : int :
 	set(value):
-		player_health = value
-		SignalManager.player_health_changed.emit()
+		health = value
+		SignalManager.health_changed.emit()
 
 func reset():
 	is_paused = true
-	player_health = initial_player_health
+	health = initial_health
 	
 
 func deal_damage_to_player(damage : int):
-	player_health -= damage
+	health -= damage
 	
-	if player_health <= 0:
+	if health <= 0:
 		defeat()
 		
 func defeat():

@@ -16,7 +16,13 @@ func exit():
 	difficulty_selection_node.visible = false
 
 func _on_set_difficulty(difficulty : int):
-	GameManager.difficulty = difficulty
+	if difficulty == 0:
+		GameManager.difficulty = GameManager.DIFFICULTY.EASY
+	elif difficulty == 1:
+		GameManager.difficulty = GameManager.DIFFICULTY.MEDIUM
+	elif difficulty == 2:
+		GameManager.difficulty = GameManager.DIFFICULTY.HARD
+	
 	state_transition.emit(self, "ResetGame")
 	
 func _on_back():

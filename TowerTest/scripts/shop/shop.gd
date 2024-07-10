@@ -30,7 +30,7 @@ func _ready():
 		else:
 			item.price = item.price_hard
 	
-		item_list.add_item(str(item.price), item.icon)
+		item_list.add_item(str(item.price) + "$ \n " + str(item.power) + "W", item.icon)
 	
 	SignalManager.money_has_changed.connect(_on_money_has_changed)
 
