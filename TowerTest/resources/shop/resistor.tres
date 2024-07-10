@@ -12,3 +12,4 @@ price_easy = 200
 price_medium = 300
 price_hard = 400
 tower_resource = ExtResource("3_jsb2w")
+power = 10

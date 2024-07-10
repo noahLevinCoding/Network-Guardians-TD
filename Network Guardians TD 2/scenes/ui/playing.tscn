@@ -1,103 +1,166 @@
-[gd_scene load_steps=2 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=4 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
+[ext_resource type="Script" path="res://scripts/shop/shop.gd" id="2_q1nu2"]
+[ext_resource type="Resource" uid="uid://cebq13jmuhy6c" path="res://resources/shopItems/led.tres" id="3_4w7p2"]
 
-[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_value_label", "wave_index_label", "start_next_wave_button")]
+[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "max_power_label", "wave_index_value_label", "start_next_wave_button")]
 script = ExtResource("1_ot4ts")
-health_value_label = NodePath("Health/HealthValue")
-wave_index_label = NodePath("Wave/WaveCounterValue")
-start_next_wave_button = NodePath("Wave/StartNextWaveButton")
+health_label = NodePath("ScreenBox/RightSide/Stats/Health/HealthValue")
+money_label = NodePath("ScreenBox/RightSide/Stats/Money/MoneyValue")
+temperature_label = NodePath("ScreenBox/RightSide/Stats/Temperature/TemperatureValue")
+power_label = NodePath("ScreenBox/RightSide/Stats/Power/PowerValue")
+max_power_label = NodePath("ScreenBox/RightSide/Stats/Power/MaxPowerValue")
+wave_index_value_label = NodePath("ScreenBox/RightSide/Wave/WaveIndex/WaveIndexValue")
+start_next_wave_button = NodePath("ScreenBox/RightSide/Wave/StartNextWaveButton")
 
-[node name="Health" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ScreenBox" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="HealthText" type="Label" parent="Health"]
-offset_right = 76.0
-offset_bottom = 36.0
-text = "Health:"
+[node name="Pause" type="VBoxContainer" parent="ScreenBox"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
 
-[node name="HealthValue" type="Label" parent="Health"]
-offset_left = 63.0
-offset_top = 1.0
-offset_right = 89.0
-offset_bottom = 24.0
-text = "10"
-
-[node name="Wave" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="WaveCounterText" type="Label" parent="Wave"]
-offset_top = 24.0
-offset_right = 47.0
-offset_bottom = 47.0
-text = "Wave:"
-
-[node name="WaveCounterValue" type="Label" parent="Wave"]
-offset_left = 51.0
-offset_top = 26.0
-offset_right = 98.0
-offset_bottom = 49.0
-text = "0"
-
-[node name="StartNextWaveButton" type="Button" parent="Wave"]
-offset_left = 1713.0
-offset_top = 82.0
-offset_right = 1913.0
-offset_bottom = 142.0
-text = "Start next wave"
-
-[node name="Speed" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="2xSpeedLabel" type="Label" parent="Speed"]
-offset_left = 1786.0
-offset_top = 153.0
-offset_right = 1856.0
-offset_bottom = 176.0
-text = "2x Speed"
-
-[node name="2xSpeedCheckButton" type="CheckButton" parent="Speed"]
-offset_left = 1855.0
-offset_top = 153.0
-offset_right = 1899.0
-offset_bottom = 177.0
-
-[node name="Pause" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PauseButton" type="Button" parent="Pause"]
-offset_left = 1714.0
-offset_top = 10.0
-offset_right = 1914.0
-offset_bottom = 70.0
+[node name="PauseButton" type="Button" parent="ScreenBox/Pause"]
+layout_mode = 2
+size_flags_vertical = 3
 text = "Pause"
 
-[node name="AutostartLabel" type="Label" parent="."]
-offset_left = 1785.0
-offset_top = 184.0
-offset_right = 1859.0
-offset_bottom = 217.0
+[node name="RightSide" type="VBoxContainer" parent="ScreenBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Stats" type="VBoxContainer" parent="ScreenBox/RightSide"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+
+[node name="Health" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
+layout_mode = 2
+
+[node name="HealthText" type="Label" parent="ScreenBox/RightSide/Stats/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="HealthValue" type="Label" parent="ScreenBox/RightSide/Stats/Health"]
+layout_mode = 2
+text = "10"
+
+[node name="Money" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
+layout_mode = 2
+
+[node name="MoneyText" type="Label" parent="ScreenBox/RightSide/Stats/Money"]
+layout_mode = 2
+text = "Money: "
+
+[node name="MoneyValue" type="Label" parent="ScreenBox/RightSide/Stats/Money"]
+layout_mode = 2
+text = "0"
+
+[node name="MoneyUnit" type="Label" parent="ScreenBox/RightSide/Stats/Money"]
+layout_mode = 2
+text = "₿"
+
+[node name="Temperature" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
+layout_mode = 2
+
+[node name="TemperatureText" type="Label" parent="ScreenBox/RightSide/Stats/Temperature"]
+layout_mode = 2
+text = "Temperature: "
+
+[node name="TemperatureValue" type="Label" parent="ScreenBox/RightSide/Stats/Temperature"]
+layout_mode = 2
+text = "30"
+
+[node name="TemperatureUnit" type="Label" parent="ScreenBox/RightSide/Stats/Temperature"]
+layout_mode = 2
+text = "°C"
+
+[node name="Power" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
+layout_mode = 2
+
+[node name="PowerText" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
+layout_mode = 2
+text = "Power: "
+
+[node name="PowerValue" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
+layout_mode = 2
+text = "0"
+
+[node name="PowerValueSeparator" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
+layout_mode = 2
+text = "/"
+
+[node name="MaxPowerValue" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
+layout_mode = 2
+text = "0"
+
+[node name="PowerUnit" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
+layout_mode = 2
+text = "W"
+
+[node name="Shop" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("item_list")]
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("2_q1nu2")
+item_list = NodePath("ShopItemList")
+items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2")])
+
+[node name="ShopItemList" type="ItemList" parent="ScreenBox/RightSide/Shop"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Wave" type="VBoxContainer" parent="ScreenBox/RightSide"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+
+[node name="WaveIndex" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
+layout_mode = 2
+
+[node name="WaveIndexText" type="Label" parent="ScreenBox/RightSide/Wave/WaveIndex"]
+layout_mode = 2
+text = "Wave:"
+
+[node name="WaveIndexValue" type="Label" parent="ScreenBox/RightSide/Wave/WaveIndex"]
+layout_mode = 2
+text = "0"
+
+[node name="Autostart" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
+layout_mode = 2
+
+[node name="AutostartLabel" type="Label" parent="ScreenBox/RightSide/Wave/Autostart"]
+layout_mode = 2
 text = "Autostart"
 
-[node name="AutostartCheckButton" type="CheckButton" parent="."]
-offset_left = 1858.0
-offset_top = 184.0
-offset_right = 1902.0
-offset_bottom = 208.0
+[node name="AutostartCheckButton" type="CheckButton" parent="ScreenBox/RightSide/Wave/Autostart"]
+layout_mode = 2
 
-[connection signal="button_up" from="Wave/StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
-[connection signal="toggled" from="Speed/2xSpeedCheckButton" to="." method="_on_game_speed_toggle"]
-[connection signal="button_up" from="Pause/PauseButton" to="." method="_on_pause_button_up"]
-[connection signal="toggled" from="AutostartCheckButton" to="." method="_on_autostart_check_button_toggled"]
+[node name="Speed" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="ScreenBox/RightSide/Wave/Speed"]
+layout_mode = 2
+text = "2x Speed "
+
+[node name="SpeedCheckButton" type="CheckButton" parent="ScreenBox/RightSide/Wave/Speed"]
+layout_mode = 2
+
+[node name="StartNextWaveButton" type="Button" parent="ScreenBox/RightSide/Wave"]
+layout_mode = 2
+text = "Next Wave"
+
+[node name="Upgrades" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_up" from="ScreenBox/Pause/PauseButton" to="." method="_on_pause_button_up"]
+[connection signal="toggled" from="ScreenBox/RightSide/Wave/Autostart/AutostartCheckButton" to="." method="_on_autostart_check_button_toggled"]
+[connection signal="toggled" from="ScreenBox/RightSide/Wave/Speed/SpeedCheckButton" to="." method="_on_game_speed_toggle"]
+[connection signal="button_up" from="ScreenBox/RightSide/Wave/StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]

@@ -51,10 +51,9 @@ items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource
 layout_mode = 0
 offset_left = 868.0
 offset_top = 96.0
-offset_right = 975.0
+offset_right = 1050.0
 offset_bottom = 248.0
 max_columns = 2
 same_column_width = true
-icon_mode = 0
 
 [connection signal="item_selected" from="Shop/ItemList" to="Shop" method="_on_item_list_item_selected"]

@@ -12,3 +12,4 @@ price_easy = 50
 price_medium = 100
 price_hard = 150
 tower_resource = ExtResource("3_dgelr")
+power = 20

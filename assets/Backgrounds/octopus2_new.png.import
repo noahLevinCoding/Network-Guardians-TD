@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0xwewtcm07u1"
-path="res://.godot/imported/enemy_trojan.png-70142267760a002a2d7b2ea2cff11e19.ctex"
+uid="uid://c5kc8w564l0su"
+path="res://.godot/imported/octopus2_new.png-a0b77379cfe11e32579b86101c44122f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Enemy/Trojan/enemy_trojan.png"
-dest_files=["res://.godot/imported/enemy_trojan.png-70142267760a002a2d7b2ea2cff11e19.ctex"]
+source_file="res://assets/Backgrounds/octopus2_new.png"
+dest_files=["res://.godot/imported/octopus2_new.png-a0b77379cfe11e32579b86101c44122f.ctex"]
 
 [params]
 
