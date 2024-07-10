@@ -20,7 +20,7 @@ var is_paused : bool = true :
 var health : int :
 	set(value):
 		health = value
-		SignalManager.health_changed.emit()
+		SignalManager.health_changed.emit(health)
 
 func reset():
 	is_paused = true

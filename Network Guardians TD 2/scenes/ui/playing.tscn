@@ -1,26 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=12 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 [ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
 [ext_resource type="Script" path="res://scripts/shop/shop.gd" id="2_q1nu2"]
 [ext_resource type="Resource" uid="uid://cebq13jmuhy6c" path="res://resources/shopItems/led.tres" id="3_4w7p2"]
 [ext_resource type="FontFile" uid="uid://4kant1hnfw5s" path="res://assets/ui/fonts/lower-pixel.regular.otf" id="3_rto13"]
+[ext_resource type="Texture2D" uid="uid://de2vlybekiwjj" path="res://assets/ui/buttons/button_up.png" id="6_xqh4e"]
+[ext_resource type="Texture2D" uid="uid://bwbypd2wga0ba" path="res://assets/ui/buttons/button_pressed.png" id="7_rsj37"]
+[ext_resource type="Texture2D" uid="uid://c31mo4rfha854" path="res://assets/ui/buttons/dip_switch_left.png" id="8_cq58l"]
+[ext_resource type="Texture2D" uid="uid://btessqjyl3uob" path="res://assets/ui/buttons/dip_switch_right.png" id="9_upgkp"]
+[ext_resource type="Script" path="res://scripts/button/TextureCheckButton.gd" id="10_x8fto"]
 
 [sub_resource type="Theme" id="Theme_rt1a7"]
 default_font = ExtResource("3_rto13")
 default_font_size = 19
 
-[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "max_power_label", "wave_index_value_label", "start_next_wave_button")]
+[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "auto_start_label", "speed_label", "wave_status_label", "auto_start_check_button", "speed_check_button", "wave_index_value_label")]
 script = ExtResource("1_ot4ts")
 health_label = NodePath("ScreenBox/RightSide/Stats/Health/HealthValue")
 money_label = NodePath("ScreenBox/RightSide/Stats/Money/MoneyValue")
 temperature_label = NodePath("ScreenBox/RightSide/Stats/Temperature/TemperatureValue")
 power_label = NodePath("ScreenBox/RightSide/Stats/Power/PowerValue")
-max_power_label = NodePath("")
+auto_start_label = NodePath("ScreenBox/RightSide/Wave/Autostart/AutostartValue")
+speed_label = NodePath("ScreenBox/RightSide/Wave/Speed/SpeedValue")
+wave_status_label = NodePath("ScreenBox/RightSide/Wave/StartNextWave/Label")
+auto_start_check_button = NodePath("Buttons/AutoStartCheckButton")
+speed_check_button = NodePath("Buttons/GameSpeedCheckButton")
 wave_index_value_label = NodePath("ScreenBox/RightSide/Wave/WaveIndex/WaveIndexValue")
-start_next_wave_button = NodePath("ScreenBox/RightSide/Wave/StartNextWaveButton")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_hs5d4")
 centered = false
 
@@ -117,33 +125,29 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("2_q1nu2")
 item_list = NodePath("ShopItemList")
-items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2")])
+items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2")])
 
 [node name="TowerName" type="Label" parent="ScreenBox/RightSide/Shop"]
 layout_mode = 2
-text = "LED"
+text = "Shop"
 horizontal_alignment = 1
 
 [node name="ShopItemList" type="ItemList" parent="ScreenBox/RightSide/Shop"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/icon_margin = 50
+icon_scale = 2.0
+
+[node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide"]
+custom_minimum_size = Vector2(0, 68.75)
+layout_mode = 2
 
 [node name="Wave" type="VBoxContainer" parent="ScreenBox/RightSide"]
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 10
-
-[node name="WaveIndex" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
-layout_mode = 2
-
-[node name="WaveIndexText" type="Label" parent="ScreenBox/RightSide/Wave/WaveIndex"]
-layout_mode = 2
-text = "Wave:"
-
-[node name="WaveIndexValue" type="Label" parent="ScreenBox/RightSide/Wave/WaveIndex"]
-layout_mode = 2
-text = "0"
+size_flags_horizontal = 0
+size_flags_vertical = 3
 
 [node name="Autostart" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
 layout_mode = 2
@@ -152,30 +156,84 @@ layout_mode = 2
 layout_mode = 2
 text = "Autostart"
 
-[node name="AutostartCheckButton" type="CheckButton" parent="ScreenBox/RightSide/Wave/Autostart"]
+[node name="AutostartValue" type="Label" parent="ScreenBox/RightSide/Wave/Autostart"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+text = "Off"
+horizontal_alignment = 2
 
 [node name="Speed" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
+custom_minimum_size = Vector2(0, 31.94)
 layout_mode = 2
 
 [node name="SpeedLabel" type="Label" parent="ScreenBox/RightSide/Wave/Speed"]
 layout_mode = 2
-text = "2x Speed "
+text = "Speed "
 
-[node name="SpeedCheckButton" type="CheckButton" parent="ScreenBox/RightSide/Wave/Speed"]
+[node name="SpeedValue" type="Label" parent="ScreenBox/RightSide/Wave/Speed"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "1x"
+horizontal_alignment = 2
+
+[node name="WaveIndex" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
+custom_minimum_size = Vector2(184, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="WaveIndexText" type="Label" parent="ScreenBox/RightSide/Wave/WaveIndex"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Wave"
+
+[node name="WaveIndexValue" type="Label" parent="ScreenBox/RightSide/Wave/WaveIndex"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+
+[node name="StartNextWave" type="HBoxContainer" parent="ScreenBox/RightSide/Wave"]
 layout_mode = 2
 
-[node name="StartNextWaveButton" type="Button" parent="ScreenBox/RightSide/Wave"]
+[node name="Label" type="Label" parent="ScreenBox/RightSide/Wave/StartNextWave"]
 layout_mode = 2
-text = "Next Wave"
+text = "Start next wave"
 
-[node name="Upgrades" type="Control" parent="."]
+[node name="Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="AutoStartCheckButton" type="TextureButton" parent="Buttons"]
+offset_left = 1849.0
+offset_top = 915.0
+offset_right = 1913.0
+offset_bottom = 947.0
+texture_normal = ExtResource("8_cq58l")
+script = ExtResource("10_x8fto")
+texture_unchecked = ExtResource("8_cq58l")
+texture_checked = ExtResource("9_upgkp")
+
+[node name="GameSpeedCheckButton" type="TextureButton" parent="Buttons"]
+offset_left = 1849.0
+offset_top = 943.0
+offset_right = 1909.0
+offset_bottom = 975.0
+texture_normal = ExtResource("8_cq58l")
+script = ExtResource("10_x8fto")
+texture_unchecked = ExtResource("8_cq58l")
+texture_checked = ExtResource("9_upgkp")
+
+[node name="StartNextWaveButton" type="TextureButton" parent="Buttons"]
+custom_minimum_size = Vector2(50, 0)
+offset_left = 1846.0
+offset_top = 981.0
+offset_right = 1910.0
+offset_bottom = 1045.0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture_normal = ExtResource("6_xqh4e")
+texture_pressed = ExtResource("7_rsj37")
+
 [connection signal="button_up" from="ScreenBox/Pause/PauseButton" to="." method="_on_pause_button_up"]
-[connection signal="toggled" from="ScreenBox/RightSide/Wave/Autostart/AutostartCheckButton" to="." method="_on_autostart_check_button_toggled"]
-[connection signal="toggled" from="ScreenBox/RightSide/Wave/Speed/SpeedCheckButton" to="." method="_on_game_speed_toggle"]
-[connection signal="button_up" from="ScreenBox/RightSide/Wave/StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
+[connection signal="button_up" from="Buttons/StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
