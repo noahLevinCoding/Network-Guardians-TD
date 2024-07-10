@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=7 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
+[ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
 [ext_resource type="Script" path="res://scripts/shop/shop.gd" id="2_q1nu2"]
 [ext_resource type="Resource" uid="uid://cebq13jmuhy6c" path="res://resources/shopItems/led.tres" id="3_4w7p2"]
+[ext_resource type="FontFile" uid="uid://4kant1hnfw5s" path="res://assets/ui/fonts/lower-pixel.regular.otf" id="3_rto13"]
+
+[sub_resource type="Theme" id="Theme_rt1a7"]
+default_font = ExtResource("3_rto13")
+default_font_size = 19
 
 [node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "max_power_label", "wave_index_value_label", "start_next_wave_button")]
 script = ExtResource("1_ot4ts")
@@ -10,14 +16,19 @@ health_label = NodePath("ScreenBox/RightSide/Stats/Health/HealthValue")
 money_label = NodePath("ScreenBox/RightSide/Stats/Money/MoneyValue")
 temperature_label = NodePath("ScreenBox/RightSide/Stats/Temperature/TemperatureValue")
 power_label = NodePath("ScreenBox/RightSide/Stats/Power/PowerValue")
-max_power_label = NodePath("ScreenBox/RightSide/Stats/Power/MaxPowerValue")
+max_power_label = NodePath("")
 wave_index_value_label = NodePath("ScreenBox/RightSide/Wave/WaveIndex/WaveIndexValue")
 start_next_wave_button = NodePath("ScreenBox/RightSide/Wave/StartNextWaveButton")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hs5d4")
+centered = false
 
 [node name="ScreenBox" type="BoxContainer" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0
+theme = SubResource("Theme_rt1a7")
 
 [node name="Pause" type="VBoxContainer" parent="ScreenBox"]
 custom_minimum_size = Vector2(100, 50)
@@ -31,88 +42,92 @@ size_flags_vertical = 3
 text = "Pause"
 
 [node name="RightSide" type="VBoxContainer" parent="ScreenBox"]
+custom_minimum_size = Vector2(299, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="Stats" type="VBoxContainer" parent="ScreenBox/RightSide"]
+[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide"]
+custom_minimum_size = Vector2(50, 55)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 2
+
+[node name="Stats" type="VBoxContainer" parent="ScreenBox/RightSide"]
+custom_minimum_size = Vector2(247, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="Health" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
 layout_mode = 2
 
 [node name="HealthText" type="Label" parent="ScreenBox/RightSide/Stats/Health"]
 layout_mode = 2
-text = "Health:"
+text = "Health"
 
 [node name="HealthValue" type="Label" parent="ScreenBox/RightSide/Stats/Health"]
 layout_mode = 2
+size_flags_horizontal = 10
 text = "10"
 
 [node name="Money" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="MoneyText" type="Label" parent="ScreenBox/RightSide/Stats/Money"]
 layout_mode = 2
-text = "Money: "
+text = "Money"
 
 [node name="MoneyValue" type="Label" parent="ScreenBox/RightSide/Stats/Money"]
 layout_mode = 2
-text = "0"
-
-[node name="MoneyUnit" type="Label" parent="ScreenBox/RightSide/Stats/Money"]
-layout_mode = 2
-text = "₿"
+size_flags_horizontal = 10
+text = "69 $"
 
 [node name="Temperature" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
 layout_mode = 2
 
 [node name="TemperatureText" type="Label" parent="ScreenBox/RightSide/Stats/Temperature"]
 layout_mode = 2
-text = "Temperature: "
+text = "Temperature"
 
 [node name="TemperatureValue" type="Label" parent="ScreenBox/RightSide/Stats/Temperature"]
 layout_mode = 2
-text = "30"
-
-[node name="TemperatureUnit" type="Label" parent="ScreenBox/RightSide/Stats/Temperature"]
-layout_mode = 2
-text = "°C"
+size_flags_horizontal = 10
+text = "30 °C"
 
 [node name="Power" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="PowerText" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
 layout_mode = 2
-text = "Power: "
+text = "Power"
 
 [node name="PowerValue" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
 layout_mode = 2
-text = "0"
+size_flags_horizontal = 10
+text = "0 / 0 W"
 
-[node name="PowerValueSeparator" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
+[node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide"]
+custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
-text = "/"
-
-[node name="MaxPowerValue" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
-layout_mode = 2
-text = "0"
-
-[node name="PowerUnit" type="Label" parent="ScreenBox/RightSide/Stats/Power"]
-layout_mode = 2
-text = "W"
 
 [node name="Shop" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("item_list")]
+custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("2_q1nu2")
 item_list = NodePath("ShopItemList")
 items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2")])
 
+[node name="TowerName" type="Label" parent="ScreenBox/RightSide/Shop"]
+layout_mode = 2
+text = "LED"
+horizontal_alignment = 1
+
 [node name="ShopItemList" type="ItemList" parent="ScreenBox/RightSide/Shop"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Wave" type="VBoxContainer" parent="ScreenBox/RightSide"]
 layout_mode = 2
