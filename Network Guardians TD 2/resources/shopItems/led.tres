@@ -8,5 +8,7 @@
 script = ExtResource("1_2j6pm")
 name = "LED"
 icon = ExtResource("1_htk7a")
-price = 100
+price_easy = 100
+price_medium = 150
+price_hard = 200
 tower_resource = ExtResource("3_15u5e")

@@ -25,6 +25,7 @@ func exit():
 	
 func _on_pause():
 	state_transition.emit(self, "Pause")
+	Input.set_custom_mouse_cursor(null)
 	
 func _on_start_next_wave():
 	SignalManager.start_next_wave.emit()

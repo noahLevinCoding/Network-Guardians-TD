@@ -9,6 +9,8 @@ enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
 @export var attack_damage : float
 @export var pierce : int = 1
 @export var bullet_speed : float = 1000
+@export var power : int = 0
+@export var temperature_increase : float = 0
 
 @export_group("Visibility and vulnerability")
 @export var can_pop_lead : bool = false
