@@ -2,7 +2,8 @@ class_name Tower
 extends Node2D
 
 @export var sprite : Sprite2D
-@export var col_shape : CollisionShape2D
+@export var attack_col_shape : CollisionShape2D
+@export var place_col_shape : CollisionShape2D
 @export var shoot_timer : Timer
 @export var bullet_scene : PackedScene
 
@@ -19,7 +20,8 @@ func _ready():
 func init_resource():
 	sprite.texture = tower_resource.tower_texture
 	shoot_timer.wait_time = 1 / tower_resource.attack_speed 
-	col_shape.shape.radius = tower_resource.attack_range
+	attack_col_shape.shape.radius = tower_resource.attack_range
+	place_col_shape.shape = tower_resource.place_col_shape
 
 func _on_area_2d_area_entered(area):
 	if area.owner is Enemy:

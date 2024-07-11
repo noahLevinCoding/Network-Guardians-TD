@@ -1,5 +1,8 @@
 extends Node
 
+@onready var game_node : Node = get_node("../Main/Game")
+var tower_scene : PackedScene = preload("res://scenes/tower/tower.tscn")
+
 enum DIFFICULTY {EASY, MEDIUM, HARD}
 
 const initial_health_easy : int = 200
@@ -72,4 +75,9 @@ func buy_tower(item : ShopItemResource, position):
 		money -= item.price
 		power += item.tower_resource.power
 		temperature += item.tower_resource.temperature_increase
+		
+		var tower_instance = tower_scene.instantiate()
+		tower_instance.tower_resource = item.tower_resource
+		game_node.add_child(tower_instance)
+		tower_instance.position = position
 		

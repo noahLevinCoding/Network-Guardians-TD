@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkgwoa2og1bau"]
+[gd_scene load_steps=2 format=3 uid="uid://dkgwoa2og1bau"]
 
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_fdsxu"]
-[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/virus_shape.tres" id="3_1ptnw"]
 
 [node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("base_animated_sprite", "camo_sprite", "lead_sprite", "col_shape")]
 loop = false
@@ -27,4 +26,3 @@ z_index = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = ExtResource("3_1ptnw")

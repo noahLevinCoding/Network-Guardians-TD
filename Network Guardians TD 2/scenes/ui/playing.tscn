@@ -21,7 +21,7 @@ content_margin_left = 30.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ppgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l1cx"]
-size = Vector2(1528, 1040)
+size = Vector2(1548, 1040)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oc0y"]
 size = Vector2(352, 884)
@@ -132,7 +132,7 @@ text = "69 $"
 custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 
-[node name="Shop" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("item_list", "tower_name_label", "tower_power_label", "tower_temperature_label", "tower_range_polygon")]
+[node name="Shop" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("item_list", "tower_name_label", "tower_power_label", "tower_temperature_label", "tower_range_polygon", "tower_place_col", "tower_place_area")]
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -144,6 +144,8 @@ tower_name_label = NodePath("TowerName")
 tower_power_label = NodePath("HBoxContainer2/PowerValue")
 tower_temperature_label = NodePath("HBoxContainer/TemperatureValue")
 tower_range_polygon = NodePath("../../../TowerRangePolygon")
+tower_place_col = NodePath("../../../MarginToOtherTowerArea/CollisionShape2D")
+tower_place_area = NodePath("../../../MarginToOtherTowerArea")
 
 [node name="TowerName" type="Label" parent="ScreenBox/RightSide/Shop"]
 layout_mode = 2
@@ -314,6 +316,13 @@ shape = SubResource("RectangleShape2D_ciiay")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="TowerRangePolygon" type="Polygon2D" parent="."]
+
+[node name="MarginToOtherTowerArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginToOtherTowerArea"]
+debug_color = Color(0, 0.631373, 0.419608, 0.882353)
 
 [connection signal="button_up" from="ScreenBox/Pause/PauseButton" to="." method="_on_pause_button_up"]
 [connection signal="item_selected" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_item_list_item_selected"]

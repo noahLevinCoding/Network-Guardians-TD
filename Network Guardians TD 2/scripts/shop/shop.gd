@@ -16,6 +16,8 @@ var green_color : Color = Color(0.0, 1.0, 0.0, 1.0)
 var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 
 @export var tower_range_polygon : Polygon2D
+@export var tower_place_col : CollisionShape2D
+@export var tower_place_area : Area2D
 
 func _on_item_list_item_selected(index):
 	select(index)
@@ -23,6 +25,13 @@ func _on_item_list_item_selected(index):
 func _process(delta):
 	if selected_item != null:
 		tower_range_polygon.global_position = get_global_mouse_position()
+		tower_place_col.global_position = get_global_mouse_position()
+		
+		if tower_place_area.has_overlapping_areas():
+			tower_range_polygon.color = Color(1, 0, 0, 0.2)
+		else:
+			tower_range_polygon.color = Color(1, 1, 1, 0.2)
+		
 		
 func select(index : int):
 	selected_item = items[index]
@@ -45,6 +54,8 @@ func select(index : int):
 	tower_range_polygon.polygon = points
 	tower_range_polygon.visible = true
 	
+	tower_place_col.shape = selected_item.tower_resource.place_col_shape
+	
 	#TODO cursor shape
 
 func deselect():
@@ -59,6 +70,8 @@ func deselect():
 	tower_power_label.set_modulate(white_color)
 	
 	tower_range_polygon.visible = false
+
+	tower_place_col.shape = null
 	
 	#TODO cursor shape
 	
@@ -66,7 +79,6 @@ func _ready():
 	fill_item_list()
 	connect_signals()
 	
-	tower_range_polygon.color = Color(1, 1, 1, 0.2)
 	tower_range_polygon.visible = false
 	
 func connect_signals():
@@ -108,7 +120,7 @@ func buy_tower(position):
 	deselect()
 
 func _input(event):
-	if event.is_action_pressed("left_mouse_button") and selected_item != null and mouse_in_placable_area:
+	if event.is_action_pressed("left_mouse_button") and selected_item != null and mouse_in_placable_area and not tower_place_area.has_overlapping_areas():
 		buy_tower(event.position)
 	elif event.is_action_pressed("right_mouse_button"):
 		deselect()

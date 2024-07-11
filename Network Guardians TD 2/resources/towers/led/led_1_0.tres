@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="TowerResource" load_steps=4 format=3 uid="uid://ir1mqhuxd1mt"]
+[gd_resource type="Resource" script_class="TowerResource" load_steps=5 format=3 uid="uid://ir1mqhuxd1mt"]
 
 [ext_resource type="Resource" uid="uid://b33sdwfdjmgkq" path="res://resources/bullets/led/led_green.tres" id="1_0lil8"]
 [ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="1_tdhrv"]
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/place_shapes/led.tres" id="2_wqbd8"]
 [ext_resource type="Texture2D" uid="uid://qem4tr4hmyu7" path="res://assets/tower/led/PNG/led_green_on.png" id="3_pskcx"]
 
 [resource]
@@ -17,5 +18,6 @@ can_pop_lead = false
 can_see_camo = false
 target_prio_type = 0
 tower_texture = ExtResource("3_pskcx")
+place_col_shape = ExtResource("2_wqbd8")
 bullet_visual_resource = ExtResource("1_0lil8")
 upgrade_description = ""

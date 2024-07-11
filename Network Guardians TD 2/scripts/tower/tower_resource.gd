@@ -21,6 +21,7 @@ enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
 
 @export_group("Visuals")
 @export var tower_texture : Texture2D
+@export var place_col_shape : Shape2D
 @export var bullet_visual_resource : BulletVisualResource
 
 @export_group("Upgrades")
