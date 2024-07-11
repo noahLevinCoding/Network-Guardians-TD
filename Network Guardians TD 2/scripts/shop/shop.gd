@@ -27,7 +27,7 @@ func _process(delta):
 		tower_range_polygon.global_position = get_global_mouse_position()
 		tower_place_col.global_position = get_global_mouse_position()
 		
-		if tower_place_area.has_overlapping_areas():
+		if tower_place_area.has_overlapping_areas() or tower_place_area.has_overlapping_bodies():
 			tower_range_polygon.color = Color(1, 0, 0, 0.2)
 		else:
 			tower_range_polygon.color = Color(1, 1, 1, 0.2)
@@ -76,7 +76,6 @@ func deselect():
 	#TODO cursor shape
 	
 func _ready():
-	fill_item_list()
 	connect_signals()
 	
 	tower_range_polygon.visible = false
@@ -87,15 +86,23 @@ func connect_signals():
 	SignalManager.max_power_changed.connect(_on_shop_parameter_changed)
 	
 	SignalManager.pause_game.connect(_on_pause_game)
+	SignalManager.init_game.connect(_on_init_game)
 	
 func _on_pause_game():
 	deselect()
+
+func _on_init_game():
+	delete_item_list()
+	fill_item_list()
+
+func delete_item_list():
+	item_list.clear()
 
 func fill_item_list():
 	for item in items:
 		set_item_price(item)
 		#item_list.add_item(str(item.price) + "$ " + "0 W", item.icon)
-		item_list.add_item("150$", item.icon)
+		item_list.add_item(str(item.price) + "$", item.icon)
 		
 	for i in range(items.size()):
 		item_list.set_item_tooltip_enabled(i, false)
@@ -107,6 +114,7 @@ func set_item_price(item : ShopItemResource):
 		item.price = item.price_medium
 	else:
 		item.price = item.price_hard
+	
 	
 func _on_shop_parameter_changed(value):
 	update_shop_availability()
@@ -120,7 +128,7 @@ func buy_tower(position):
 	deselect()
 
 func _input(event):
-	if event.is_action_pressed("left_mouse_button") and selected_item != null and mouse_in_placable_area and not tower_place_area.has_overlapping_areas():
+	if event.is_action_pressed("left_mouse_button") and selected_item != null and mouse_in_placable_area and not tower_place_area.has_overlapping_areas() and not tower_place_area.has_overlapping_bodies():
 		buy_tower(event.position)
 	elif event.is_action_pressed("right_mouse_button"):
 		deselect()

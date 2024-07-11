@@ -15,7 +15,7 @@ const initial_money : int = 200
 const initial_tempearture : float = 23.4
 
 var map_scene_path : String = ""
-var difficulty : DIFFICULTY = DIFFICULTY.MEDIUM
+var difficulty : DIFFICULTY 
 var game_time_scale : float = 1.0 :
 	set(value):
 		game_time_scale = value

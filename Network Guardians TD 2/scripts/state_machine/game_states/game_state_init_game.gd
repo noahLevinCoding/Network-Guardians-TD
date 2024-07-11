@@ -8,7 +8,7 @@ func enter():
 	print("Enter GameState InitGame")
 	game_node.add_child(load(GameManager.map_scene_path).instantiate())
 	
-	playing_menu.reset()
+	SignalManager.init_game.emit()
 	
 	state_transition.emit(self, "Playing")
 	

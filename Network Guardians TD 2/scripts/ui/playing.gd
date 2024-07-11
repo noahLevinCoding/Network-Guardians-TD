@@ -52,10 +52,6 @@ func connect_signals():
 func _on_pause_button_up():
 	pause.emit()
 
-func reset():
-	pass
-	
-
 func _on_start_next_wave_button_up():
 	start_next_wave.emit()
 
