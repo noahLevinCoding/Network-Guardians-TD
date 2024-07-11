@@ -66,14 +66,13 @@ func _on_money_changed(money: int):
 	money_label.text = str(money)
 	
 func _on_temperature_changed(temperature: float):
-	temperature_label.text = str(temperature)
+	temperature_label.text = str(temperature) + " °C"
 	
 func _on_power_changed(power: int):
-	power_label.text = str(power)
+	power_label.text = str(power) + " / " + str(GameManager.max_power) + " W"
 	
 func _on_max_power_changed(max_power : int):
-	pass
-	#max_power_label.text = str(max_power)
+	power_label.text = str(GameManager.power) + " / " + str(max_power) + " W"
 
 func _on_start_next_wave():
 	wave_status_label.text = "Wave is active"

@@ -4,6 +4,7 @@ signal start_next_wave
 signal on_start_next_wave
 signal on_wave_finished
 signal defeat
+signal pause_game
 
 signal health_changed(health : int)
 signal money_changed(money : int)

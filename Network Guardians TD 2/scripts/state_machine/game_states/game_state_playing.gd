@@ -24,8 +24,8 @@ func exit():
 	GameManager.is_paused = true
 	
 func _on_pause():
+	SignalManager.pause_game.emit()
 	state_transition.emit(self, "Pause")
-	Input.set_custom_mouse_cursor(null)
 	
 func _on_start_next_wave():
 	SignalManager.start_next_wave.emit()
