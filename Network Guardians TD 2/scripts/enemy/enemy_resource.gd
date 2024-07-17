@@ -25,3 +25,6 @@ enum ENEMY_TYPES {NONE, VIRUS, MOAB}
 @export var children_resource : EnemyResource
 @export var children_quantity : int
 
+@export_group("Loot")
+@export var money_on_death : int = 1 
+

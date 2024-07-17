@@ -21,3 +21,4 @@ is_camo = false
 is_immune_to_pierce = false
 children_resource = ExtResource("3_8dt4x")
 children_quantity = 2
+money_on_death = 1

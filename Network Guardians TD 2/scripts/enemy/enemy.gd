@@ -14,12 +14,18 @@ var enemy_scene : PackedScene = load("res://scenes/enemy/enemy.tscn")
 var current_health : float
 var current_speed : float
 
+
+
 func _ready():
 	init_resource()
-
+	
 func _process(delta):
 	move(delta)
+	calc_current_speed()
 	check_if_end()
+	
+func calc_current_speed():
+	current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier
 	
 func move(delta : float):
 	progress += current_speed * delta * base_speed_multiplier
@@ -50,6 +56,7 @@ func take_damage(bullet_resource : BulletResource):
 	while bullet_resource.attack_damage > current_health and enemy_resource.children_quantity == 1 and bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
 		bullet_resource.attack_damage -= current_health
 		bullet_resource.pierce -= 1
+		drop_loot()
 		enemy_resource = enemy_resource.children_resource
 		init_resource()
 		
@@ -62,6 +69,7 @@ func spawn_children():
 	if enemy_resource.children_quantity == 0:
 		die()
 	elif enemy_resource.children_quantity == 1:
+		drop_loot()
 		enemy_resource = enemy_resource.children_resource
 		init_resource()
 	else:
@@ -75,7 +83,11 @@ func spawn_children():
 		die()
 	
 func die():
+	drop_loot()
 	queue_free()
+	
+func drop_loot():
+	GameManager.money += enemy_resource.money_on_death
 	
 func init_resource():
 	base_animated_sprite.sprite_frames = enemy_resource.base_sprite_frames
@@ -86,7 +98,6 @@ func init_resource():
 	col_shape.shape = enemy_resource.col_shape
 	
 	current_health = enemy_resource.base_health
-	current_speed = enemy_resource.base_speed
 	
 	#TODO: Adjust when adding effects
 	camo_sprite.visible = enemy_resource.is_camo

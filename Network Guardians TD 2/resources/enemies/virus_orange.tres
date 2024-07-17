@@ -19,3 +19,4 @@ is_lead = false
 is_camo = false
 is_immune_to_pierce = false
 children_quantity = 0
+money_on_death = 1

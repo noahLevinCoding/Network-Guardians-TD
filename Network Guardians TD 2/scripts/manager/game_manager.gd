@@ -10,7 +10,6 @@ const initial_health_medium : int = 150
 const initial_health_hard : int = 100
 const initial_max_power : int = 100
 const initial_power : int = 0
-
 const initial_money : int = 200
 const initial_tempearture : float = 23.4
 
@@ -44,6 +43,14 @@ var temperature : float :
 	set(value):
 		temperature = value
 		SignalManager.temperature_changed.emit(temperature)
+		
+		var temperature_diff = temperature - initial_tempearture
+	
+		if temperature_diff > 0:
+			temperature_speed_modifier = 1 + temperature_diff / 100
+		else:
+			temperature_speed_modifier = 1.0
+var temperature_speed_modifier : float = 1.0
 
 func reset():
 	is_paused = true

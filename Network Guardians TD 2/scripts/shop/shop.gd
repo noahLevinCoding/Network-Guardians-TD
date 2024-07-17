@@ -35,6 +35,7 @@ func _process(delta):
 		
 func select(index : int):
 	selected_item = items[index]
+	#TODO: change custom cursor to sprite
 	Input.set_custom_mouse_cursor(selected_item.icon, Input.CURSOR_ARROW, selected_item.icon.get_size() / 2)	
 	
 	tower_name_label.text = selected_item.name
