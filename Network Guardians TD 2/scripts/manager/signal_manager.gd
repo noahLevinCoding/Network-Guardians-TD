@@ -7,6 +7,9 @@ signal defeat
 signal pause_game
 signal init_game
 
+signal select_tower_on_board(tower_resource : TowerResource)
+signal deselect_tower_on_board
+
 signal health_changed(health : int)
 signal money_changed(money : int)
 signal temperature_changed(temperature : float)

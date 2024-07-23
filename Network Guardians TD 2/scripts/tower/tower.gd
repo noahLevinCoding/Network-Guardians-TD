@@ -14,8 +14,11 @@ var current_enemy_target = null
 
 var is_idle = true	#used for direct shooting if idle
 
+var is_selectable : bool = false
+
 func _ready():
 	init_resource()
+	
 	
 func init_resource():
 	sprite.texture = tower_resource.tower_texture
@@ -31,10 +34,7 @@ func _on_area_2d_area_entered(area):
 			is_idle = false
 			shoot_timer.start()
 			shoot()
-		
-func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		upgrade(1)
+	
 
 func _on_area_2d_area_exited(area):
 	if area.owner is Enemy:
@@ -148,3 +148,11 @@ func upgrade(path : int):
 		init_resource()
 		
 	
+
+
+func _on_place_area_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed('left_mouse_button'):
+		if is_selectable:
+			SignalManager.select_tower_on_board.emit(tower_resource)
+		else:
+			is_selectable = true

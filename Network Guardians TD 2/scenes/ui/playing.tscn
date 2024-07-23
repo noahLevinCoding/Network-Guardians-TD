@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=19 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 [ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
 [ext_resource type="Script" path="res://scripts/shop/shop.gd" id="2_q1nu2"]
 [ext_resource type="Resource" uid="uid://cebq13jmuhy6c" path="res://resources/shopItems/led.tres" id="3_4w7p2"]
 [ext_resource type="FontFile" uid="uid://4kant1hnfw5s" path="res://assets/ui/fonts/lower-pixel.regular.otf" id="3_rto13"]
+[ext_resource type="Script" path="res://scripts/shop/upgrade_shop.gd" id="6_ofld6"]
 [ext_resource type="Texture2D" uid="uid://de2vlybekiwjj" path="res://assets/ui/buttons/button_up.png" id="6_xqh4e"]
 [ext_resource type="Texture2D" uid="uid://bwbypd2wga0ba" path="res://assets/ui/buttons/button_pressed.png" id="7_rsj37"]
 [ext_resource type="Texture2D" uid="uid://c31mo4rfha854" path="res://assets/ui/buttons/dip_switch_left.png" id="8_cq58l"]
@@ -14,6 +15,9 @@
 [sub_resource type="Theme" id="Theme_rt1a7"]
 default_font = ExtResource("3_rto13")
 default_font_size = 19
+
+[sub_resource type="LabelSettings" id="LabelSettings_jxlxu"]
+font_size = 18
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4jw6s"]
 content_margin_left = 30.0
@@ -101,6 +105,7 @@ text = "Temperature"
 layout_mode = 2
 size_flags_horizontal = 10
 text = "30 °C"
+label_settings = SubResource("LabelSettings_jxlxu")
 
 [node name="Power" type="HBoxContainer" parent="ScreenBox/RightSide/Stats"]
 custom_minimum_size = Vector2(0, 25)
@@ -163,7 +168,7 @@ text = "Temp"
 [node name="TemperatureValue" type="Label" parent="ScreenBox/RightSide/Shop/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
-text = "+0 °C"
+text = "0 °C"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScreenBox/RightSide/Shop"]
 layout_mode = 2
@@ -194,6 +199,35 @@ same_column_width = true
 fixed_column_width = 70
 icon_mode = 0
 icon_scale = 2.4
+
+[node name="Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node")]
+visible = false
+custom_minimum_size = Vector2(246, 615)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("6_ofld6")
+shop_node = NodePath("../Shop")
+
+[node name="TowerName" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+layout_mode = 2
+text = "Upgrade"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Upgrade 1"
+
+[node name="Button2" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Upgrade 2"
+
+[node name="Button3" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Deselect"
 
 [node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide"]
 custom_minimum_size = Vector2(0, 68.75)
