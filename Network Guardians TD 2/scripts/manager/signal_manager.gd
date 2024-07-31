@@ -7,7 +7,7 @@ signal defeat
 signal pause_game
 signal init_game
 
-signal select_tower_on_board(tower_resource : TowerResource)
+signal select_tower_on_board(tower : Tower)
 signal deselect_tower_on_board
 
 signal health_changed(health : int)

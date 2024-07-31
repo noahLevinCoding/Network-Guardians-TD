@@ -137,11 +137,10 @@ func _input(event):
 
 func _on_deselect_item_area_mouse_entered():
 	deselect()
-
-
+	print("Test")
+	
 func _on_placable_area_mouse_entered():
 	mouse_in_placable_area = true
-
 
 func _on_placable_area_mouse_exited():
 	mouse_in_placable_area = false

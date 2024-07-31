@@ -63,7 +63,6 @@ func reset():
 		health = initial_health_hard	
 	
 	money = initial_money
-	
 	max_power = initial_max_power
 	power = initial_power
 	temperature = initial_tempearture
@@ -88,3 +87,39 @@ func buy_tower(item : ShopItemResource, position):
 		game_node.add_child(tower_instance)
 		tower_instance.position = position
 		
+func upgrade_tower(tower: Tower, path_id : int):
+
+	var upgrade_tower_resource : TowerResource = get_upgrade_tower_resource(tower, path_id)	
+	if upgrade_tower_resource == null:
+		return
+	
+	var upgrade_price = get_upgrade_price(upgrade_tower_resource)
+	var upgrade_power = get_upgrade_power(tower.tower_resource, upgrade_tower_resource)
+	var upgrade_temperature_increase = get_upgrade_temperature_increase(tower.tower_resource, upgrade_tower_resource)
+	
+	var has_enough_money : bool = upgrade_price <= money
+	var has_enough_power : bool = upgrade_power <= max_power - power
+	
+	if has_enough_money and has_enough_power:
+		money -= upgrade_price
+		power += upgrade_power
+		temperature += upgrade_temperature_increase
+		tower.upgrade(path_id)
+
+func get_upgrade_tower_resource(tower: Tower, path_id : int):
+	return tower.tower_resource.upgrade_path_1_tower_resource if path_id == 1 else tower.tower_resource.upgrade_path_2_tower_resource
+
+func get_upgrade_temperature_increase(tower_resource : TowerResource, upgrade_tower_resource : TowerResource):
+	return upgrade_tower_resource.temperature_increase - tower_resource.temperature_increase
+
+func get_upgrade_power(tower_resource : TowerResource, upgrade_tower_resource : TowerResource):
+	return upgrade_tower_resource.power - tower_resource.power
+
+func get_upgrade_price(tower_resource: TowerResource):
+	if difficulty == GameManager.DIFFICULTY.EASY:
+		return tower_resource.upgrade_price_easy
+	elif difficulty == GameManager.DIFFICULTY.MEDIUM:
+		return tower_resource.upgrade_price_medium
+	else:
+		return tower_resource.upgrade_price_hard
+

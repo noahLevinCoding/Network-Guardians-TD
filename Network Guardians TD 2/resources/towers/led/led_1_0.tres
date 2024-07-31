@@ -21,3 +21,6 @@ tower_texture = ExtResource("3_pskcx")
 place_col_shape = ExtResource("2_wqbd8")
 bullet_visual_resource = ExtResource("1_0lil8")
 upgrade_description = ""
+upgrade_price_easy = 100
+upgrade_price_medium = 200
+upgrade_price_hard = 300

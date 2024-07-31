@@ -153,6 +153,6 @@ func upgrade(path : int):
 func _on_place_area_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed('left_mouse_button'):
 		if is_selectable:
-			SignalManager.select_tower_on_board.emit(tower_resource)
+			SignalManager.select_tower_on_board.emit(self)
 		else:
 			is_selectable = true
