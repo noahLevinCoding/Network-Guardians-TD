@@ -18,6 +18,7 @@ var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 @export var tower_range_polygon : Polygon2D
 @export var tower_place_col : CollisionShape2D
 @export var tower_place_area : Area2D
+@export var tower_place_sprite : Sprite2D
 
 func _on_item_list_item_selected(index):
 	select(index)
@@ -26,8 +27,9 @@ func _process(delta):
 	if selected_item != null:
 		tower_range_polygon.global_position = get_global_mouse_position()
 		tower_place_col.global_position = get_global_mouse_position()
+		tower_place_sprite.global_position = get_global_mouse_position()
 		
-		if tower_place_area.has_overlapping_areas() or tower_place_area.has_overlapping_bodies():
+		if tower_place_area.has_overlapping_areas() or tower_place_area.has_overlapping_bodies() or not mouse_in_placable_area:
 			tower_range_polygon.color = Color(1, 0, 0, 0.2)
 		else:
 			tower_range_polygon.color = Color(1, 1, 1, 0.2)
@@ -36,7 +38,10 @@ func _process(delta):
 func select(index : int):
 	selected_item = items[index]
 	#TODO: change custom cursor to sprite
-	Input.set_custom_mouse_cursor(selected_item.icon, Input.CURSOR_ARROW, selected_item.icon.get_size() / 2)	
+	#Input.set_custom_mouse_cursor(selected_item.icon, Input.CURSOR_ARROW, selected_item.icon.get_size() / 2)	
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	tower_place_sprite.texture = selected_item.icon
+	tower_place_sprite.visible = true
 	
 	tower_name_label.text = selected_item.name
 	tower_power_label.text = str(selected_item.tower_resource.power) + " W"
@@ -63,6 +68,10 @@ func deselect():
 	selected_item = null
 	Input.set_custom_mouse_cursor(null)
 	item_list.deselect_all()
+	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	tower_place_sprite.texture = null
+	tower_place_sprite.visible = false
 	
 	tower_name_label.text = "Shop"
 	tower_power_label.text = "0 W"
@@ -102,7 +111,6 @@ func delete_item_list():
 func fill_item_list():
 	for item in items:
 		set_item_price(item)
-		#item_list.add_item(str(item.price) + "$ " + "0 W", item.icon)
 		item_list.add_item(str(item.price) + "$", item.icon)
 		
 	for i in range(items.size()):
@@ -137,7 +145,6 @@ func _input(event):
 
 func _on_deselect_item_area_mouse_entered():
 	deselect()
-	print("Test")
 	
 func _on_placable_area_mouse_entered():
 	mouse_in_placable_area = true

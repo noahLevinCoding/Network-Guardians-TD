@@ -1,7 +1,6 @@
 class_name Titlescreen
 extends Node2D
 
-
 signal play
 signal exit
 
