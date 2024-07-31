@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ws6g7erknixl"]
+
+[ext_resource type="Script" path="res://scripts/ui/titlescreen_video.gd" id="1_4rp43"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_h4noi"]
+file = "res://assets/ui/titlescreen/titlescreen.ogv"
+
+[node name="Video" type="Node2D"]
+script = ExtResource("1_4rp43")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_h4noi")
+autoplay = true
+loop = true
