@@ -4,6 +4,9 @@ extends Node2D
 signal set_map(map_scene_path : String)
 signal back
 
+func _ready():
+	visible = false
+
 func _on_map_1_button_up():
 	set_map.emit("res://scenes/maps/map_1.tscn")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://mkq35rnq6n3x"]
+[gd_scene load_steps=17 format=3 uid="uid://mkq35rnq6n3x"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_playing.gd" id="8_ayigk"]
 [ext_resource type="PackedScene" uid="uid://ccpuwmsxa5l71" path="res://scenes/ui/difficulty_selection.tscn" id="8_obulf"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_defeat.gd" id="9_d2ejd"]
+[ext_resource type="PackedScene" uid="uid://ws6g7erknixl" path="res://scenes/ui/infinite_video.tscn" id="10_gehr5"]
 [ext_resource type="PackedScene" uid="uid://btctdg43tdyxp" path="res://scenes/ui/playing.tscn" id="11_pecm4"]
 [ext_resource type="PackedScene" uid="uid://cyjglrb3udyb2" path="res://scenes/ui/pause.tscn" id="12_esqsx"]
 [ext_resource type="PackedScene" uid="uid://bc5c306uo8oa0" path="res://scenes/ui/defeat.tscn" id="15_411v1"]
@@ -22,9 +23,10 @@
 script = ExtResource("1_4tggm")
 initial_state = NodePath("Titlescreen")
 
-[node name="Titlescreen" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("titlescreen_node")]
+[node name="Titlescreen" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("titlescreen_node", "infinite_video")]
 script = ExtResource("2_crxfe")
 titlescreen_node = NodePath("../../Menu/Titlescreen")
+infinite_video = NodePath("../../Menu/InfiniteVideo")
 
 [node name="MapSelection" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("map_selection_node")]
 script = ExtResource("3_n0vnd")
@@ -34,9 +36,10 @@ map_selection_node = NodePath("../../Menu/MapSelection")
 script = ExtResource("4_tvdv3")
 difficulty_selection_node = NodePath("../../Menu/DifficultySelection")
 
-[node name="ResetGame" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("game_node")]
+[node name="ResetGame" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("game_node", "infinite_video")]
 script = ExtResource("5_e7x0x")
 game_node = NodePath("../../Game")
+infinite_video = NodePath("../../Menu/InfiniteVideo")
 
 [node name="InitGame" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("game_node", "playing_menu")]
 script = ExtResource("6_et0hr")
@@ -58,6 +61,9 @@ defeat_node = NodePath("../../Menu/Defeat")
 [node name="Game" type="Node" parent="."]
 
 [node name="Menu" type="Node" parent="."]
+
+[node name="InfiniteVideo" parent="Menu" instance=ExtResource("10_gehr5")]
+visible = false
 
 [node name="Titlescreen" parent="Menu" instance=ExtResource("6_hq4hb")]
 

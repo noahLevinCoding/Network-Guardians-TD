@@ -1,41 +1,166 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbl2malqgknyt"]
+[gd_scene load_steps=9 format=3 uid="uid://dbl2malqgknyt"]
 
 [ext_resource type="Script" path="res://scripts/ui/map_selection.gd" id="1_dy4tp"]
 [ext_resource type="Texture2D" uid="uid://ogfhy30htlcf" path="res://assets/ui/map_selection/map_selection_background.png" id="2_lfto3"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_xstd2"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="4_kwx0j"]
+[ext_resource type="Texture2D" uid="uid://dibgjp048i3l8" path="res://assets/ui/buttons/ts_button_off_middle.png" id="4_ub847"]
+[ext_resource type="Texture2D" uid="uid://c7868dk82f2wu" path="res://assets/ui/buttons/ts_button_on_middle.png" id="5_midtt"]
+
+[sub_resource type="Theme" id="Theme_ky1tb"]
+default_font = ExtResource("3_xstd2")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_y03b6"]
+default_font = ExtResource("4_kwx0j")
+default_font_size = 100
 
 [node name="MapSelection" type="Node2D"]
-visible = false
 script = ExtResource("1_dy4tp")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_lfto3")
 centered = false
 
-[node name="Map1Button" type="Button" parent="."]
-offset_left = 218.0
-offset_top = 508.0
-offset_right = 762.0
-offset_bottom = 968.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_ky1tb")
 
-[node name="Map2Button" type="Button" parent="."]
-offset_left = 850.0
-offset_top = 494.0
-offset_right = 1324.0
-offset_bottom = 953.0
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -258.0
+offset_top = 130.0
+offset_right = 258.0
+offset_bottom = 196.0
+grow_horizontal = 2
+theme = SubResource("Theme_y03b6")
+text = "Map Selection"
 
-[node name="Map3Button" type="Button" parent="."]
-offset_left = 1394.0
-offset_top = 464.0
-offset_right = 1876.0
-offset_bottom = 921.0
+[node name="Map1Button" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -140.0
+offset_right = 550.0
+offset_bottom = 260.0
+grow_vertical = 2
+texture_normal = ExtResource("4_ub847")
+texture_hover = ExtResource("5_midtt")
+stretch_mode = 0
 
-[node name="BackButton" type="Button" parent="."]
-offset_left = 21.0
-offset_top = 41.0
-offset_right = 240.0
-offset_bottom = 124.0
+[node name="Label" type="Label" parent="Control/Map1Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -33.0
+offset_right = 96.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Map 1"
 
-[connection signal="button_up" from="Map1Button" to="." method="_on_map_1_button_up"]
-[connection signal="button_up" from="Map2Button" to="." method="_on_map_2_button_up"]
-[connection signal="button_up" from="Map3Button" to="." method="_on_map_3_button_up"]
-[connection signal="button_up" from="BackButton" to="." method="_on_back_button_up"]
+[node name="Map2Button" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -140.0
+offset_right = 150.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_ub847")
+texture_hover = ExtResource("5_midtt")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/Map2Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -33.0
+offset_right = 109.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Map 2"
+
+[node name="Map3Button" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -140.0
+offset_right = -250.0
+offset_bottom = 260.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_ub847")
+texture_hover = ExtResource("5_midtt")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/Map3Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -33.0
+offset_right = 106.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Map 3"
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+offset_left = 20.0
+offset_top = 958.0
+offset_right = 362.0
+offset_bottom = 1118.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_ub847")
+texture_hover = ExtResource("5_midtt")
+
+[node name="Label" type="Label" parent="Control/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[connection signal="button_up" from="Control/Map1Button" to="." method="_on_map_1_button_up"]
+[connection signal="button_up" from="Control/Map2Button" to="." method="_on_map_2_button_up"]
+[connection signal="button_up" from="Control/Map3Button" to="." method="_on_map_3_button_up"]
+[connection signal="button_up" from="Control/BackButton" to="." method="_on_back_button_up"]

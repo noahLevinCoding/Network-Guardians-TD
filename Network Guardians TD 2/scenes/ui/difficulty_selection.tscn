@@ -8,6 +8,7 @@ visible = false
 script = ExtResource("1_s112u")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_bgkyt")
 centered = false
 
