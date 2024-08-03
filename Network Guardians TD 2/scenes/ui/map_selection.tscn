@@ -1,11 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbl2malqgknyt"]
+[gd_scene load_steps=14 format=3 uid="uid://dbl2malqgknyt"]
 
 [ext_resource type="Script" path="res://scripts/ui/map_selection.gd" id="1_dy4tp"]
-[ext_resource type="Texture2D" uid="uid://ogfhy30htlcf" path="res://assets/ui/map_selection/map_selection_background.png" id="2_lfto3"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_xstd2"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="4_kwx0j"]
-[ext_resource type="Texture2D" uid="uid://dibgjp048i3l8" path="res://assets/ui/buttons/ts_button_off_middle.png" id="4_ub847"]
-[ext_resource type="Texture2D" uid="uid://c7868dk82f2wu" path="res://assets/ui/buttons/ts_button_on_middle.png" id="5_midtt"]
+[ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 6.png" id="5_v20yy"]
+[ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 5.png" id="5_wnvc4"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 6.png" id="6_kpas6"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="7_1wbb8"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="8_8niip"]
+[ext_resource type="Texture2D" uid="uid://d0yvvo8ggm0d4" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 3.png" id="9_l4sa6"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 5.png" id="10_dfwy6"]
+[ext_resource type="Texture2D" uid="uid://dm1afjlptkexq" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 3.png" id="10_r05fy"]
 
 [sub_resource type="Theme" id="Theme_ky1tb"]
 default_font = ExtResource("3_xstd2")
@@ -17,11 +22,6 @@ default_font_size = 100
 
 [node name="MapSelection" type="Node2D"]
 script = ExtResource("1_dy4tp")
-
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_lfto3")
-centered = false
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -35,10 +35,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -258.0
-offset_top = 130.0
-offset_right = 258.0
-offset_bottom = 196.0
+offset_left = -369.5
+offset_top = 133.0
+offset_right = 369.5
+offset_bottom = 257.0
 grow_horizontal = 2
 theme = SubResource("Theme_y03b6")
 text = "Map Selection"
@@ -48,13 +48,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 150.0
+offset_left = 120.0
 offset_top = -140.0
-offset_right = 550.0
+offset_right = 613.0
 offset_bottom = 260.0
 grow_vertical = 2
-texture_normal = ExtResource("4_ub847")
-texture_hover = ExtResource("5_midtt")
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("5_v20yy")
+texture_hover = ExtResource("5_wnvc4")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Control/Map1Button"]
@@ -79,14 +80,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
+offset_left = -232.0
 offset_top = -140.0
-offset_right = 150.0
+offset_right = 232.0
 offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_ub847")
-texture_hover = ExtResource("5_midtt")
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("7_1wbb8")
+texture_hover = ExtResource("8_8niip")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Control/Map2Button"]
@@ -111,14 +113,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -650.0
+offset_left = -613.0
 offset_top = -140.0
-offset_right = -250.0
+offset_right = -120.0
 offset_bottom = 260.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("4_ub847")
-texture_hover = ExtResource("5_midtt")
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("9_l4sa6")
+texture_hover = ExtResource("10_r05fy")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Control/Map3Button"]
@@ -137,13 +140,19 @@ grow_vertical = 2
 text = "Map 3"
 
 [node name="BackButton" type="TextureButton" parent="Control"]
-offset_left = 20.0
-offset_top = 958.0
-offset_right = 362.0
-offset_bottom = 1118.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("4_ub847")
-texture_hover = ExtResource("5_midtt")
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -190.0
+offset_right = 373.0
+offset_bottom = 52.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("10_dfwy6")
+texture_hover = ExtResource("6_kpas6")
 
 [node name="Label" type="Label" parent="Control/BackButton"]
 layout_mode = 1

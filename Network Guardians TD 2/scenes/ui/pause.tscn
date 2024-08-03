@@ -1,39 +1,146 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyjglrb3udyb2"]
+[gd_scene load_steps=12 format=3 uid="uid://cyjglrb3udyb2"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause.gd" id="1_u6d3p"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_2ojuk"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_vocin"]
+[ext_resource type="Texture2D" uid="uid://2074rvqke8iq" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy.png" id="4_e65gv"]
+[ext_resource type="Texture2D" uid="uid://djixq45m4hjvw" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On.png" id="5_nlned"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="6_oe6vi"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="7_xrxr0"]
+[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 4.png" id="8_1dwcg"]
+[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 4.png" id="9_q15hw"]
+
+[sub_resource type="Theme" id="Theme_ptpy0"]
+default_font = ExtResource("2_2ojuk")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_2apop"]
+default_font = ExtResource("3_vocin")
+default_font_size = 100
 
 [node name="Pause" type="Node2D"]
 script = ExtResource("1_u6d3p")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 728.0
-offset_top = 120.0
-offset_right = 990.0
-offset_bottom = 228.0
-theme_override_font_sizes/font_size = 70
-text = "PAUSE"
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_ptpy0")
 
-[node name="ResumeButton" type="Button" parent="."]
-offset_left = 732.0
-offset_top = 283.0
-offset_right = 995.0
-offset_bottom = 374.0
-text = "Continue"
+[node name="Heading" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.0
+offset_top = 133.0
+offset_right = 158.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme = SubResource("Theme_2apop")
+text = "Pause"
 
-[node name="RestartButton" type="Button" parent="."]
-offset_left = 772.0
-offset_top = 400.0
-offset_right = 973.0
-offset_bottom = 502.0
+[node name="ResumeButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -190.0
+offset_right = 232.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("4_e65gv")
+texture_hover = ExtResource("5_nlned")
+
+[node name="Label" type="Label" parent="Control/ResumeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.5
+offset_top = -33.0
+offset_right = 138.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume
+"
+
+[node name="RestartButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -40.0
+offset_right = 232.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("6_oe6vi")
+texture_hover = ExtResource("7_xrxr0")
+
+[node name="Label" type="Label" parent="Control/RestartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -33.0
+offset_right = 150.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Restart"
 
-[node name="BackToTitlescreenButton" type="Button" parent="."]
-offset_left = 708.0
-offset_top = 544.0
-offset_right = 1026.0
-offset_bottom = 643.0
-text = "Back to titlescreen"
+[node name="BackToTitlescreenButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 110.0
+offset_right = 232.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("8_1dwcg")
+texture_hover = ExtResource("9_q15hw")
 
-[connection signal="button_up" from="ResumeButton" to="." method="_on_resume_button_up"]
-[connection signal="button_up" from="RestartButton" to="." method="_on_restart_button_up"]
-[connection signal="button_up" from="BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]
+[node name="Label" type="Label" parent="Control/BackToTitlescreenButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -33.0
+offset_right = 212.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Titlescreen"
+
+[connection signal="button_up" from="Control/ResumeButton" to="." method="_on_resume_button_up"]
+[connection signal="button_up" from="Control/RestartButton" to="." method="_on_restart_button_up"]
+[connection signal="button_up" from="Control/BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]

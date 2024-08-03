@@ -22,8 +22,8 @@ enum ENEMY_TYPES {NONE, VIRUS, MOAB}
 @export var is_immune_to_pierce : bool = false
 
 @export_group("Children")
-@export var children_resource : EnemyResource
-@export var children_quantity : int
+@export var child_resource : EnemyResource
+@export var child_quantity : int
 
 @export_group("Loot")
 @export var money_on_death : int = 1 

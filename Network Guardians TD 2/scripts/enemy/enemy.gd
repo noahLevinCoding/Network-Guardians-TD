@@ -37,12 +37,12 @@ func check_if_end():
 		
 		queue_free()
 		
-func calc_damage_to_player(enemy_resource : EnemyResource):
-	if enemy_resource.children_quantity == 0:
+func calc_damage_to_player(child_enemy_resource : EnemyResource):
+	if enemy_resource.child_quantity == 0:
 		return 1
 	else:
-		var quantity = enemy_resource.children_quantity
-		return  1 + quantity * calc_damage_to_player(enemy_resource.children_resource)
+		var quantity = enemy_resource.child_quantity
+		return  1 + quantity * calc_damage_to_player(child_enemy_resource.child_resource)
 		
 func take_damage(bullet_resource : BulletResource):
 	
@@ -53,11 +53,11 @@ func take_damage(bullet_resource : BulletResource):
 	#TODO damage multiplier
 	
 	#Apply pierce
-	while bullet_resource.attack_damage > current_health and enemy_resource.children_quantity == 1 and bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
+	while bullet_resource.attack_damage > current_health and enemy_resource.child_quantity == 1 and bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
 		bullet_resource.attack_damage -= current_health
 		bullet_resource.pierce -= 1
 		drop_loot()
-		enemy_resource = enemy_resource.children_resource
+		enemy_resource = enemy_resource.child_resource
 		init_resource()
 		
 	current_health -= bullet_resource.attack_damage
@@ -66,16 +66,16 @@ func take_damage(bullet_resource : BulletResource):
 		spawn_children()
 		
 func spawn_children():
-	if enemy_resource.children_quantity == 0:
+	if enemy_resource.child_quantity == 0:
 		die()
-	elif enemy_resource.children_quantity == 1:
+	elif enemy_resource.child_quantity == 1:
 		drop_loot()
-		enemy_resource = enemy_resource.children_resource
+		enemy_resource = enemy_resource.child_resource
 		init_resource()
 	else:
-		for i in range(enemy_resource.children_quantity):
+		for i in range(enemy_resource.child_quantity):
 			var enemy_instance := enemy_scene.instantiate() as Enemy
-			enemy_instance.enemy_resource  = enemy_resource.children_resource
+			enemy_instance.enemy_resource  = enemy_resource.child_resource
 			get_parent().add_child(enemy_instance)
 			enemy_instance.progress_ratio = progress_ratio
 			#TODO: set slow effect

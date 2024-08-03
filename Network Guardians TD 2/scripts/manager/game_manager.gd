@@ -22,7 +22,7 @@ var game_time_scale : float = 1.0 :
 var is_paused : bool = true :
 	set(value):
 		is_paused = value
-		Engine.time_scale = 0 if value else game_time_scale
+		Engine.time_scale = 0.0 if value else game_time_scale
 var health : int :
 	set(value):
 		health = value

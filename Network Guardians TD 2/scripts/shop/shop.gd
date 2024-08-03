@@ -23,7 +23,7 @@ var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 func _on_item_list_item_selected(index):
 	select(index)
 
-func _process(delta):
+func _process(_delta):
 	if selected_item != null:
 		tower_range_polygon.global_position = get_global_mouse_position()
 		tower_place_col.global_position = get_global_mouse_position()
@@ -97,6 +97,10 @@ func connect_signals():
 	
 	SignalManager.pause_game.connect(_on_pause_game)
 	SignalManager.init_game.connect(_on_init_game)
+	SignalManager.reset_game.connect(_on_reset_game)
+	
+func _on_reset_game():
+	deselect()
 	
 func _on_pause_game():
 	deselect()
@@ -125,15 +129,15 @@ func set_item_price(item : ShopItemResource):
 		item.price = item.price_hard
 	
 	
-func _on_shop_parameter_changed(value):
+func _on_shop_parameter_changed(_value):
 	update_shop_availability()
 
 func update_shop_availability():
-	for i in range(items.size()):
+	for i in range(item_list.get_item_count()):
 		item_list.set_item_disabled(i, GameManager.money < items[i].price)
 
-func buy_tower(position):
-	GameManager.buy_tower(selected_item, position)
+func buy_tower(mouse_position):
+	GameManager.buy_tower(selected_item, mouse_position)
 	deselect()
 
 func _input(event):

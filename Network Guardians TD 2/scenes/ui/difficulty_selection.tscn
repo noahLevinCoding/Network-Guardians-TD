@@ -1,42 +1,178 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccpuwmsxa5l71"]
+[gd_scene load_steps=14 format=3 uid="uid://ccpuwmsxa5l71"]
 
-[ext_resource type="Texture2D" uid="uid://dolousaarrdu0" path="res://assets/ui/difficulty_selection/difficulty_selection_background.png" id="1_bgkyt"]
 [ext_resource type="Script" path="res://scripts/ui/difficulty_selection.gd" id="1_s112u"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="2_rajxs"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_x82aa"]
+[ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 6.png" id="3_23rnl"]
+[ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 5.png" id="4_rc0cv"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 5.png" id="4_y6yka"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="5_m0xpu"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 6.png" id="5_q3ede"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="6_5trdq"]
+[ext_resource type="Texture2D" uid="uid://d0yvvo8ggm0d4" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 3.png" id="7_mi0r2"]
+[ext_resource type="Texture2D" uid="uid://dm1afjlptkexq" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 3.png" id="8_emp0x"]
+
+[sub_resource type="Theme" id="Theme_axbec"]
+default_font = ExtResource("2_x82aa")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_rgwgv"]
+default_font = ExtResource("2_rajxs")
+default_font_size = 100
 
 [node name="DifficultySelection" type="Node2D"]
-visible = false
 script = ExtResource("1_s112u")
 
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_bgkyt")
-centered = false
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_axbec")
 
-[node name="BackButton" type="Button" parent="."]
-offset_left = 9.0
-offset_top = 40.0
-offset_right = 240.0
-offset_bottom = 120.0
+[node name="Heading" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -508.0
+offset_top = 133.0
+offset_right = 508.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme = SubResource("Theme_rgwgv")
+text = "Difficulty selection"
 
-[node name="EasyButton" type="Button" parent="."]
-offset_left = 803.0
-offset_top = 462.0
-offset_right = 1163.0
-offset_bottom = 599.0
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1080.0
+offset_top = -190.0
+offset_right = -587.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("4_y6yka")
+texture_hover = ExtResource("5_q3ede")
 
-[node name="MediumButton" type="Button" parent="."]
-offset_left = 818.0
-offset_top = 642.0
-offset_right = 1301.0
-offset_bottom = 780.0
+[node name="Label" type="Label" parent="Control/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
 
-[node name="HardButton" type="Button" parent="."]
-offset_left = 844.0
-offset_top = 829.0
-offset_right = 1148.0
-offset_bottom = 959.0
+[node name="EasyButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = -60.0
+offset_right = 653.0
+offset_bottom = 182.0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("3_23rnl")
+texture_hover = ExtResource("4_rc0cv")
 
-[connection signal="button_up" from="BackButton" to="." method="_on_back_button_up"]
-[connection signal="button_up" from="EasyButton" to="." method="_on_easy_button_up"]
-[connection signal="button_up" from="MediumButton" to="." method="_on_medium_button_up"]
-[connection signal="button_up" from="HardButton" to="." method="_on_hard_button_up"]
+[node name="Label" type="Label" parent="Control/EasyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -44.0
+offset_right = 87.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Easy"
+
+[node name="MediumButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.5
+offset_top = -60.0
+offset_right = 241.5
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("5_m0xpu")
+texture_hover = ExtResource("6_5trdq")
+
+[node name="Label" type="Label" parent="Control/MediumButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -44.0
+offset_right = 134.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Medium"
+
+[node name="HardButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -653.0
+offset_top = -60.0
+offset_right = -160.0
+offset_bottom = 182.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("7_mi0r2")
+texture_hover = ExtResource("8_emp0x")
+
+[node name="Label" type="Label" parent="Control/HardButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -44.0
+offset_right = 90.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hard"
+
+[connection signal="button_up" from="Control/BackButton" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="Control/EasyButton" to="." method="_on_easy_button_up"]
+[connection signal="button_up" from="Control/MediumButton" to="." method="_on_medium_button_up"]
+[connection signal="button_up" from="Control/HardButton" to="." method="_on_hard_button_up"]

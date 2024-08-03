@@ -7,6 +7,10 @@ var selected_tower : Tower
 func _ready():
 	SignalManager.select_tower_on_board.connect(_on_select_tower)
 	SignalManager.deselect_tower_on_board.connect(_on_deselect_tower)
+	SignalManager.reset_game.connect(_on_reset_game)
+	
+func _on_reset_game():
+	_on_deselect_tower()	
 	
 func _on_select_tower(tower : Tower):
 	if tower == null:

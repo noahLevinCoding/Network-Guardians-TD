@@ -7,6 +7,10 @@ extends Node2D
 var bullet_resource : BulletResource 
 
 func _ready():
+	call_deferred("init")
+
+	
+func init():
 	sprite.texture = bullet_resource.bullet_visual_resource.texture
 	col_shape.shape = bullet_resource.bullet_visual_resource.col_shape
 	

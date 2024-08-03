@@ -1,32 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5art7604qeby"]
+[gd_scene load_steps=10 format=3 uid="uid://b5art7604qeby"]
 
 [ext_resource type="Script" path="res://scripts/ui/titlescreen.gd" id="1_fjor8"]
-[ext_resource type="Texture2D" uid="uid://cgq2xf03k6ojd" path="res://assets/ui/titlescreen/titlescreen_background.png" id="2_jf6co"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_bnrgv"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_tofr7"]
-[ext_resource type="Texture2D" uid="uid://n3dw3bj7blfy" path="res://assets/ui/buttons/ts_button_off_top.png" id="4_ysn2o"]
-[ext_resource type="Texture2D" uid="uid://bf0bi54c44734" path="res://assets/ui/buttons/ts_button_on_top.png" id="5_n6yvm"]
-[ext_resource type="Texture2D" uid="uid://y60x10jniwof" path="res://assets/ui/buttons/ts_button_off_bottom.png" id="6_dbgop"]
-[ext_resource type="Texture2D" uid="uid://dibgjp048i3l8" path="res://assets/ui/buttons/ts_button_off_middle.png" id="6_t1p4t"]
-[ext_resource type="Texture2D" uid="uid://dsq64wts34dmb" path="res://assets/ui/buttons/ts_button_on_bottom.png" id="7_a4asw"]
-[ext_resource type="Texture2D" uid="uid://c7868dk82f2wu" path="res://assets/ui/buttons/ts_button_on_middle.png" id="7_ekvnb"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="5_pbyxh"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="6_ngdxo"]
+[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 4.png" id="7_14pt4"]
+[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 4.png" id="8_70nlb"]
 
 [sub_resource type="Theme" id="Theme_0eu24"]
 default_font = ExtResource("3_bnrgv")
-default_font_size = 70
+default_font_size = 100
 
 [sub_resource type="Theme" id="Theme_ihodi"]
 default_font = ExtResource("3_tofr7")
-default_font_size = 125
+default_font_size = 140
 
 [node name="Titlescreen" type="Node2D"]
-visible = false
 script = ExtResource("1_fjor8")
-
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_jf6co")
-centered = false
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -35,7 +26,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 theme = SubResource("Theme_0eu24")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Heading" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -49,14 +40,22 @@ theme = SubResource("Theme_ihodi")
 text = "Network Guardians"
 
 [node name="PlayButton" type="TextureButton" parent="Control"]
-offset_left = 785.0
-offset_top = 500.0
-offset_right = 1127.0
-offset_bottom = 659.0
-scale = Vector2(0.992733, 1.04792)
-texture_normal = ExtResource("4_ysn2o")
-texture_hover = ExtResource("5_n6yvm")
-stretch_mode = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -40.0
+offset_right = 232.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("5_pbyxh")
+texture_hover = ExtResource("6_ngdxo")
 
 [node name="Label" type="Label" parent="Control/PlayButton"]
 layout_mode = 1
@@ -65,22 +64,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -35.0
-offset_right = 78.0
-offset_bottom = 35.0
+offset_left = -122.5
+offset_top = -47.0
+offset_right = 122.5
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
 
 [node name="OptionButton" type="TextureButton" parent="Control"]
-offset_left = 19.0
-offset_top = 847.0
-offset_right = 361.0
-offset_bottom = 1007.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("6_t1p4t")
-texture_hover = ExtResource("7_ekvnb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 140.0
+offset_right = 261.0
+offset_bottom = 382.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("7_14pt4")
+texture_hover = ExtResource("8_70nlb")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Control/OptionButton"]
@@ -100,13 +108,22 @@ text = "Options
 "
 
 [node name="ExitButton" type="TextureButton" parent="Control"]
-offset_left = 20.0
-offset_top = 958.0
-offset_right = 362.0
-offset_bottom = 1128.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("6_dbgop")
-texture_hover = ExtResource("7_a4asw")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 240.0
+offset_right = 261.0
+offset_bottom = 482.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(232, 121)
+texture_normal = ExtResource("7_14pt4")
+texture_hover = ExtResource("8_70nlb")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Control/ExitButton"]

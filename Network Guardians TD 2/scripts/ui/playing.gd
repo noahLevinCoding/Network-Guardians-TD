@@ -59,13 +59,13 @@ func _on_health_changed(player_health : int):
 	health_label.text = str(player_health)
 	
 func _on_money_changed(money: int):
-	money_label.text = str(money)
+	money_label.text = str(money) + " $"
 	
 func _on_temperature_changed(temperature: float):
 	temperature_label.text = str(temperature) + " °C"
 	
-	var color = Color(GameManager.temperature - GameManager.initial_tempearture, 0.0, 0.0, 1.0)
-	temperature_label.set_modulate(color)
+	#var color = Color(GameManager.temperature - GameManager.initial_tempearture, 0.0, 0.0, 1.0)
+	#temperature_label.set_modulate(color)
 	
 func _on_power_changed(power: int):
 	power_label.text = str(power) + " / " + str(GameManager.max_power) + " W"

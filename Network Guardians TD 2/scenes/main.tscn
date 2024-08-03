@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://mkq35rnq6n3x"]
+[gd_scene load_steps=18 format=3 uid="uid://mkq35rnq6n3x"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_playing.gd" id="8_ayigk"]
 [ext_resource type="PackedScene" uid="uid://ccpuwmsxa5l71" path="res://scenes/ui/difficulty_selection.tscn" id="8_obulf"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_defeat.gd" id="9_d2ejd"]
+[ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_options.gd" id="10_1tdil"]
 [ext_resource type="PackedScene" uid="uid://ws6g7erknixl" path="res://scenes/ui/infinite_video.tscn" id="10_gehr5"]
 [ext_resource type="PackedScene" uid="uid://btctdg43tdyxp" path="res://scenes/ui/playing.tscn" id="11_pecm4"]
 [ext_resource type="PackedScene" uid="uid://cyjglrb3udyb2" path="res://scenes/ui/pause.tscn" id="12_esqsx"]
@@ -19,14 +20,36 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="Game" type="Node" parent="."]
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="InfiniteVideo" parent="Menu" instance=ExtResource("10_gehr5")]
+visible = false
+
+[node name="Titlescreen" parent="Menu" instance=ExtResource("6_hq4hb")]
+
+[node name="MapSelection" parent="Menu" instance=ExtResource("7_iltek")]
+
+[node name="DifficultySelection" parent="Menu" instance=ExtResource("8_obulf")]
+
+[node name="Playing" parent="Menu" instance=ExtResource("11_pecm4")]
+visible = false
+
+[node name="Pause" parent="Menu" instance=ExtResource("12_esqsx")]
+visible = false
+
+[node name="Defeat" parent="Menu" instance=ExtResource("15_411v1")]
+
 [node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_4tggm")
 initial_state = NodePath("Titlescreen")
 
-[node name="Titlescreen" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("titlescreen_node", "infinite_video")]
+[node name="Titlescreen" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("titlescreen_node", "infinite_video", "game_node")]
 script = ExtResource("2_crxfe")
 titlescreen_node = NodePath("../../Menu/Titlescreen")
 infinite_video = NodePath("../../Menu/InfiniteVideo")
+game_node = NodePath("../../Game")
 
 [node name="MapSelection" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("map_selection_node")]
 script = ExtResource("3_n0vnd")
@@ -50,31 +73,14 @@ playing_menu = NodePath("../../Menu/Playing")
 script = ExtResource("8_ayigk")
 playing_ui_node = NodePath("../../Menu/Playing")
 
-[node name="Pause" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("pause_node")]
+[node name="Pause" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("pause_node", "infinite_video")]
 script = ExtResource("7_vrprp")
 pause_node = NodePath("../../Menu/Pause")
+infinite_video = NodePath("../../Menu/InfiniteVideo")
 
 [node name="Defeat" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("defeat_node")]
 script = ExtResource("9_d2ejd")
 defeat_node = NodePath("../../Menu/Defeat")
 
-[node name="Game" type="Node" parent="."]
-
-[node name="Menu" type="Node" parent="."]
-
-[node name="InfiniteVideo" parent="Menu" instance=ExtResource("10_gehr5")]
-visible = false
-
-[node name="Titlescreen" parent="Menu" instance=ExtResource("6_hq4hb")]
-
-[node name="MapSelection" parent="Menu" instance=ExtResource("7_iltek")]
-
-[node name="DifficultySelection" parent="Menu" instance=ExtResource("8_obulf")]
-
-[node name="Playing" parent="Menu" instance=ExtResource("11_pecm4")]
-visible = false
-
-[node name="Pause" parent="Menu" instance=ExtResource("12_esqsx")]
-visible = false
-
-[node name="Defeat" parent="Menu" instance=ExtResource("15_411v1")]
+[node name="Options" type="Node" parent="GameStateMachine"]
+script = ExtResource("10_1tdil")

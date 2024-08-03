@@ -1,10 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=23 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 [ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
 [ext_resource type="Script" path="res://scripts/shop/shop.gd" id="2_q1nu2"]
 [ext_resource type="Resource" uid="uid://cebq13jmuhy6c" path="res://resources/shopItems/led.tres" id="3_4w7p2"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="3_16v6g"]
 [ext_resource type="FontFile" uid="uid://4kant1hnfw5s" path="res://assets/ui/fonts/lower-pixel.regular.otf" id="3_rto13"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="4_fqqjj"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="5_vj66y"]
 [ext_resource type="Script" path="res://scripts/shop/upgrade_shop.gd" id="6_ofld6"]
 [ext_resource type="Texture2D" uid="uid://de2vlybekiwjj" path="res://assets/ui/buttons/button_up.png" id="6_xqh4e"]
 [ext_resource type="Texture2D" uid="uid://bwbypd2wga0ba" path="res://assets/ui/buttons/button_pressed.png" id="7_rsj37"]
@@ -23,6 +26,10 @@ font_size = 18
 content_margin_left = 30.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ppgg"]
+
+[sub_resource type="Theme" id="Theme_kupif"]
+default_font = ExtResource("5_vj66y")
+default_font_size = 70
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oc0y"]
 size = Vector2(352, 884)
@@ -56,19 +63,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 theme = SubResource("Theme_rt1a7")
 
-[node name="Pause" type="VBoxContainer" parent="ScreenBox"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-
-[node name="PauseButton" type="Button" parent="ScreenBox/Pause"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Pause"
-
 [node name="RightSide" type="VBoxContainer" parent="ScreenBox"]
-custom_minimum_size = Vector2(299, 0)
+custom_minimum_size = Vector2(298, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 
@@ -329,6 +325,33 @@ size_flags_vertical = 4
 texture_normal = ExtResource("6_xqh4e")
 texture_pressed = ExtResource("7_rsj37")
 
+[node name="PauseButton" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 503.0
+offset_bottom = 252.0
+scale = Vector2(0.3, 0.3)
+size_flags_vertical = 3
+texture_normal = ExtResource("3_16v6g")
+texture_hover = ExtResource("4_fqqjj")
+
+[node name="Label" type="Label" parent="Buttons/PauseButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -33.0
+offset_right = 109.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kupif")
+text = "Pause"
+
 [node name="DeselectItemArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeselectItemArea"]
@@ -361,12 +384,12 @@ debug_color = Color(0, 0.631373, 0.419608, 0.882353)
 
 [node name="PlacableTowerSprite" type="Sprite2D" parent="."]
 
-[connection signal="button_up" from="ScreenBox/Pause/PauseButton" to="." method="_on_pause_button_up"]
 [connection signal="item_selected" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_item_list_item_selected"]
 [connection signal="button_up" from="ScreenBox/RightSide/Upgrade/UpperUpgradeButton" to="ScreenBox/RightSide/Upgrade" method="_on_upper_upgrade_button_button_up"]
 [connection signal="button_up" from="ScreenBox/RightSide/Upgrade/LowerUpgradeButton" to="ScreenBox/RightSide/Upgrade" method="_on_lower_upgrade_button_up"]
 [connection signal="button_up" from="ScreenBox/RightSide/Upgrade/DeselectButton" to="ScreenBox/RightSide/Upgrade" method="_on_deselect_button_up"]
 [connection signal="button_up" from="Buttons/StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
+[connection signal="button_up" from="Buttons/PauseButton" to="." method="_on_pause_button_up"]
 [connection signal="mouse_entered" from="DeselectItemArea" to="ScreenBox/RightSide/Shop" method="_on_deselect_item_area_mouse_entered"]
 [connection signal="mouse_entered" from="DeselectItemArea2" to="ScreenBox/RightSide/Shop" method="_on_deselect_item_area_mouse_entered"]
 [connection signal="mouse_entered" from="PlacableArea" to="ScreenBox/RightSide/Shop" method="_on_placable_area_mouse_entered"]

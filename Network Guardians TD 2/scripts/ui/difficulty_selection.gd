@@ -4,7 +4,8 @@ extends Node2D
 signal set_difficulty(difficulty : int)
 signal back
 
-
+func _ready():
+	visible = false
 
 func _on_back_button_up():
 	back.emit()

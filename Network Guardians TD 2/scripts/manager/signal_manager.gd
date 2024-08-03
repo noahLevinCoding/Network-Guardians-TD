@@ -6,6 +6,7 @@ signal on_wave_finished
 signal defeat
 signal pause_game
 signal init_game
+signal reset_game
 
 signal select_tower_on_board(tower : Tower)
 signal deselect_tower_on_board

@@ -16,7 +16,7 @@ func enter():
 		child.queue_free()
 	
 	GameManager.reset()
-	
+	SignalManager.reset_game.emit()
 	state_transition.emit(self, "InitGame")
 	
 	

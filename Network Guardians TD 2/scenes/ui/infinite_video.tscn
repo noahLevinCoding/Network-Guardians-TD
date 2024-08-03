@@ -3,17 +3,16 @@
 [ext_resource type="Script" path="res://scripts/ui/titlescreen_video.gd" id="1_81jm7"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_h4noi"]
-file = "res://assets/ui/titlescreen/PNG/output.ogv"
+file = "res://assets/ui/titlescreen/PNG/background_video_30.ogv"
 
 [node name="InfiniteVideo" type="Node2D" node_paths=PackedStringArray("video_stream_player")]
 script = ExtResource("1_81jm7")
 video_stream_player = NodePath("VideoStreamPlayer")
-video_60fps = "res://assets/ui/titlescreen/PNG/output.ogv"
-video_30fps = "res://assets/ui/titlescreen/PNG/output_30.ogv"
+video_60fps = "res://assets/ui/titlescreen/PNG/background_video_60.ogv"
+video_30fps = "res://assets/ui/titlescreen/PNG/background_video_30.ogv"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 stream = SubResource("VideoStreamTheora_h4noi")
-autoplay = true
 loop = true

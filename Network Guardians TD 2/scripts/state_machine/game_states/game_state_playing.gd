@@ -8,7 +8,10 @@ func _ready():
 	playing_ui_node.start_next_wave.connect(_on_start_next_wave)
 	SignalManager.defeat.connect(_on_defeat)
 	
-func update(delta):
+func _on_reset():
+	playing_ui_node.deselect()
+	
+func update(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		_on_pause()
 

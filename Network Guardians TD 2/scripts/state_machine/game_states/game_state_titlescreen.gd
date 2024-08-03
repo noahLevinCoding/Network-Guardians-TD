@@ -3,6 +3,8 @@ class_name GameStateTitlescreen
 
 @export var titlescreen_node : Titlescreen = null
 @export var infinite_video : InfiniteVideo = null
+@export var game_node : Node = null
+
 	
 func _ready():
 	titlescreen_node.play.connect(_on_play)
@@ -12,8 +14,14 @@ func _ready():
 func enter():
 	print("Enter GameState Titlescreen")
 	infinite_video.visible = true
-	infinite_video.video_stream_player.play()
 	titlescreen_node.visible = true
+	
+	if not infinite_video.video_stream_player.is_playing():
+		infinite_video.video_stream_player.play()
+	
+	for child in game_node.get_children():
+		game_node.remove_child(child)
+		child.queue_free()
 	
 func exit():
 	print("Exit GameState Titlescreen")
