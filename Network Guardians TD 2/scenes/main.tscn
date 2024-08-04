@@ -28,10 +28,13 @@
 visible = false
 
 [node name="Titlescreen" parent="Menu" instance=ExtResource("6_hq4hb")]
+visible = false
 
 [node name="MapSelection" parent="Menu" instance=ExtResource("7_iltek")]
+visible = false
 
 [node name="DifficultySelection" parent="Menu" instance=ExtResource("8_obulf")]
+visible = false
 
 [node name="Playing" parent="Menu" instance=ExtResource("11_pecm4")]
 visible = false

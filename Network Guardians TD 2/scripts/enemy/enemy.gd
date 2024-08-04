@@ -56,10 +56,12 @@ func take_damage(bullet_resource : BulletResource):
 	while bullet_resource.attack_damage > current_health and enemy_resource.child_quantity == 1 and bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
 		bullet_resource.attack_damage -= current_health
 		bullet_resource.pierce -= 1
+		bullet_resource.source_tower.add_damage_dealt(current_health)
 		drop_loot()
 		enemy_resource = enemy_resource.child_resource
 		init_resource()
 		
+	bullet_resource.source_tower.add_damage_dealt(min(bullet_resource.attack_damage, current_health))
 	current_health -= bullet_resource.attack_damage
 	
 	if current_health <= 0: 

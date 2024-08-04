@@ -8,6 +8,7 @@ extends Node2D
 @export var bullet_scene : PackedScene
 
 @export var tower_resource : TowerResource	
+@export var select_shader_color : Color
 
 var enemies = []
 var current_enemy_target = null
@@ -15,6 +16,9 @@ var current_enemy_target = null
 var is_idle = true	#used for direct shooting if idle
 
 var is_selectable : bool = false
+var is_selected : bool = false
+
+var damage_dealt : float = 0.0
 
 func _ready():
 	init_resource()
@@ -61,6 +65,7 @@ func instantiate_bullet():
 	bullet_resource.speed = tower_resource.bullet_speed
 	bullet_resource.bullet_visual_resource = tower_resource.bullet_visual_resource
 	bullet_resource.pierce = tower_resource.pierce
+	bullet_resource.source_tower = self
 	bullet_instance.bullet_resource = bullet_resource	
 	
 	add_child(bullet_instance)
@@ -156,3 +161,19 @@ func _on_place_area_input_event(_viewport, _event, _shape_idx):
 			SignalManager.select_tower_on_board.emit(self)
 		else:
 			is_selectable = true
+			
+func enable_select_shader():
+	sprite.material.set_shader_parameter("line_color", select_shader_color)
+	is_selected = true
+
+	
+func disable_select_shader():
+	sprite.material.set_shader_parameter("line_color",Color(0,0,0,0))
+	is_selected = false
+
+	
+func add_damage_dealt(damage : float):
+	damage_dealt += damage
+	if is_selected:
+		SignalManager.selected_tower_damage_dealt_changed.emit()
+		

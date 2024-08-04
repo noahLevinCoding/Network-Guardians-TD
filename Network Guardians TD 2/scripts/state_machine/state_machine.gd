@@ -1,13 +1,9 @@
-@tool
 class_name StateMachine
 extends Node
 
 var states :Dictionary = {}
 var current_state: State = null
-@export var initial_state : State : 
-	set(value):
-		initial_state = value
-		update_configuration_warnings()
+@export var initial_state : State 
 
 func _ready():
 	#Append states
@@ -70,7 +66,3 @@ func _physics_process(delta):
 		current_state.physics_update(delta)
 		
 
-func _get_configuration_warnings():
-	if initial_state == null:
-		return PackedStringArray(["Initial state is not set!"])
-	return PackedStringArray()

@@ -134,6 +134,7 @@ custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 
 [node name="Shop" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("item_list", "tower_name_label", "tower_power_label", "tower_temperature_label", "tower_range_polygon", "tower_place_col", "tower_place_area", "tower_place_sprite")]
+visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -197,16 +198,62 @@ fixed_column_width = 70
 icon_mode = 0
 icon_scale = 2.4
 
-[node name="Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node")]
-visible = false
+[node name="Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "tower_name_label", "prio_option_button", "damage_dealt_label")]
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("6_ofld6")
 shop_node = NodePath("../Shop")
+tower_name_label = NodePath("TowerName")
+prio_option_button = NodePath("PrioritizationDropdown")
+damage_dealt_label = NodePath("DamageValue")
 
 [node name="TowerName" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+layout_mode = 2
+text = "LED"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Upgrade"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="PrioritizationLabel" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+layout_mode = 2
+text = "Prioritization"
+
+[node name="PrioritizationDropdown" type="OptionButton" parent="ScreenBox/RightSide/Upgrade"]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "First"
+popup/item_0/id = 0
+popup/item_1/text = "Last"
+popup/item_1/id = 1
+popup/item_2/text = "Camo"
+popup/item_2/id = 2
+popup/item_3/text = "Lead"
+popup/item_3/id = 3
+popup/item_4/text = "Healthiest"
+popup/item_4/id = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Upgrade"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="DamageLabel" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+layout_mode = 2
+text = "Damage dealt"
+
+[node name="DamageValue" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide/Upgrade"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+
+[node name="UpgradeHeading" type="Label" parent="ScreenBox/RightSide/Upgrade"]
 layout_mode = 2
 text = "Upgrade"
 horizontal_alignment = 1
@@ -225,6 +272,10 @@ text = "Upgrade 2"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "Deselect"
+
+[node name="SellButton" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+layout_mode = 2
+text = "Sell"
 
 [node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide"]
 custom_minimum_size = Vector2(0, 68.75)
@@ -385,6 +436,7 @@ debug_color = Color(0, 0.631373, 0.419608, 0.882353)
 [node name="PlacableTowerSprite" type="Sprite2D" parent="."]
 
 [connection signal="item_selected" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_item_list_item_selected"]
+[connection signal="item_selected" from="ScreenBox/RightSide/Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Upgrade" method="_on_prioritization_dropdown_item_selected"]
 [connection signal="button_up" from="ScreenBox/RightSide/Upgrade/UpperUpgradeButton" to="ScreenBox/RightSide/Upgrade" method="_on_upper_upgrade_button_button_up"]
 [connection signal="button_up" from="ScreenBox/RightSide/Upgrade/LowerUpgradeButton" to="ScreenBox/RightSide/Upgrade" method="_on_lower_upgrade_button_up"]
 [connection signal="button_up" from="ScreenBox/RightSide/Upgrade/DeselectButton" to="ScreenBox/RightSide/Upgrade" method="_on_deselect_button_up"]

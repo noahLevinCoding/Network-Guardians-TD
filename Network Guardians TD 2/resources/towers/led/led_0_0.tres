@@ -9,6 +9,7 @@
 
 [resource]
 script = ExtResource("1_kpvoy")
+name = "LED"
 attack_speed = 1.0
 attack_range = 150.0
 attack_damage = 10.0

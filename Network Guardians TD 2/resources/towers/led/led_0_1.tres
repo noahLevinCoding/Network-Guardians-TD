@@ -7,6 +7,7 @@
 
 [resource]
 script = ExtResource("2_ibnpj")
+name = "LED"
 attack_speed = 2.0
 attack_range = 200.0
 attack_damage = 1.0

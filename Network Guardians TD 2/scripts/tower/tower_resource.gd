@@ -3,6 +3,8 @@ extends Resource
 
 enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
 
+@export var name : String
+
 @export_group("Stats")
 @export var attack_speed : float
 @export var attack_range : float
