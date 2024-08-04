@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc2b7qd4rwuiu"
-path="res://.godot/imported/buttonsssss_On copy.png-743d994b8e7ea314a774f46427c75ebd.ctex"
+uid="uid://vrceor73ayvj"
+path="res://.godot/imported/buttonsssss_On copy 8.png-851343c9806fb94e8b8edee7f1aa9923.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png"
-dest_files=["res://.godot/imported/buttonsssss_On copy.png-743d994b8e7ea314a774f46427c75ebd.ctex"]
+source_file="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 8.png"
+dest_files=["res://.godot/imported/buttonsssss_On copy 8.png-851343c9806fb94e8b8edee7f1aa9923.ctex"]
 
 [params]
 

@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/ui/titlescreen.gd" id="1_fjor8"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_bnrgv"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_tofr7"]
-[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="5_pbyxh"]
-[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="6_ngdxo"]
-[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 4.png" id="7_14pt4"]
-[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 4.png" id="8_70nlb"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="5_pbyxh"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="6_ngdxo"]
+[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="7_14pt4"]
+[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 4.png" id="8_70nlb"]
 
 [sub_resource type="Theme" id="Theme_0eu24"]
 default_font = ExtResource("3_bnrgv")

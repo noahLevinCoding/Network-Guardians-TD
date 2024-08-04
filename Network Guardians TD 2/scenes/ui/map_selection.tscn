@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://scripts/ui/map_selection.gd" id="1_dy4tp"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_xstd2"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="4_kwx0j"]
-[ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 6.png" id="5_v20yy"]
-[ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 5.png" id="5_wnvc4"]
-[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 6.png" id="6_kpas6"]
-[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="7_1wbb8"]
-[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="8_8niip"]
-[ext_resource type="Texture2D" uid="uid://d0yvvo8ggm0d4" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 3.png" id="9_l4sa6"]
-[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 5.png" id="10_dfwy6"]
-[ext_resource type="Texture2D" uid="uid://dm1afjlptkexq" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 3.png" id="10_r05fy"]
+[ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 6.png" id="4_ocnxw"]
+[ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 5.png" id="5_wnvc4"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="6_ch0o5"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="6_kpas6"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="8_8niip"]
+[ext_resource type="Texture2D" uid="uid://d0yvvo8ggm0d4" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 3.png" id="8_ocm2y"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="10_5svsm"]
+[ext_resource type="Texture2D" uid="uid://dm1afjlptkexq" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 3.png" id="10_r05fy"]
 
 [sub_resource type="Theme" id="Theme_ky1tb"]
 default_font = ExtResource("3_xstd2")
@@ -54,7 +54,7 @@ offset_right = 613.0
 offset_bottom = 260.0
 grow_vertical = 2
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("5_v20yy")
+texture_normal = ExtResource("4_ocnxw")
 texture_hover = ExtResource("5_wnvc4")
 stretch_mode = 0
 
@@ -87,7 +87,7 @@ offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("7_1wbb8")
+texture_normal = ExtResource("6_ch0o5")
 texture_hover = ExtResource("8_8niip")
 stretch_mode = 0
 
@@ -120,7 +120,7 @@ offset_bottom = 260.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("9_l4sa6")
+texture_normal = ExtResource("8_ocm2y")
 texture_hover = ExtResource("10_r05fy")
 stretch_mode = 0
 
@@ -151,7 +151,7 @@ offset_bottom = 52.0
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("10_dfwy6")
+texture_normal = ExtResource("10_5svsm")
 texture_hover = ExtResource("6_kpas6")
 
 [node name="Label" type="Label" parent="Control/BackButton"]

@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scripts/ui/pause.gd" id="1_u6d3p"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_2ojuk"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_vocin"]
-[ext_resource type="Texture2D" uid="uid://2074rvqke8iq" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy.png" id="4_e65gv"]
-[ext_resource type="Texture2D" uid="uid://djixq45m4hjvw" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On.png" id="5_nlned"]
-[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/buttonsssss.png" id="6_oe6vi"]
-[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy.png" id="7_xrxr0"]
-[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/buttonsssss copy 4.png" id="8_1dwcg"]
-[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/buttonsssss_On copy 4.png" id="9_q15hw"]
+[ext_resource type="Texture2D" uid="uid://2074rvqke8iq" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy.png" id="4_j83xp"]
+[ext_resource type="Texture2D" uid="uid://djixq45m4hjvw" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On.png" id="5_nlned"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="6_4pctp"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="7_xrxr0"]
+[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="8_gscpt"]
+[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 4.png" id="9_q15hw"]
 
 [sub_resource type="Theme" id="Theme_ptpy0"]
 default_font = ExtResource("2_2ojuk")
@@ -56,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("4_e65gv")
+texture_normal = ExtResource("4_j83xp")
 texture_hover = ExtResource("5_nlned")
 
 [node name="Label" type="Label" parent="Control/ResumeButton"]
@@ -90,7 +90,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("6_oe6vi")
+texture_normal = ExtResource("6_4pctp")
 texture_hover = ExtResource("7_xrxr0")
 
 [node name="Label" type="Label" parent="Control/RestartButton"]
@@ -123,7 +123,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("8_1dwcg")
+texture_normal = ExtResource("8_gscpt")
 texture_hover = ExtResource("9_q15hw")
 
 [node name="Label" type="Label" parent="Control/BackToTitlescreenButton"]
