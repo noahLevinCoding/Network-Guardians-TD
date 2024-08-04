@@ -1,6 +1,8 @@
 class_name Tower
 extends Node2D
 
+enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
+
 @export var sprite : Sprite2D
 @export var attack_col_shape : CollisionShape2D
 @export var place_col_shape : CollisionShape2D
@@ -9,6 +11,9 @@ extends Node2D
 
 @export var tower_resource : TowerResource	
 @export var select_shader_color : Color
+
+var target_prio_type : TARGET_PRIO_TYPES = TARGET_PRIO_TYPES.FIRST
+var sell_value : int
 
 var enemies = []
 var current_enemy_target = null
@@ -73,16 +78,16 @@ func instantiate_bullet():
 func select_target():
 	current_enemy_target = null
 	
-	match tower_resource.target_prio_type:
-		tower_resource.TARGET_PRIO_TYPES.FIRST:
+	match target_prio_type:
+		TARGET_PRIO_TYPES.FIRST:
 			select_first_target()
-		tower_resource.TARGET_PRIO_TYPES.LAST:
+		TARGET_PRIO_TYPES.LAST:
 			select_last_target()
-		tower_resource.TARGET_PRIO_TYPES.CAMO:
+		TARGET_PRIO_TYPES.CAMO:
 			select_camo_target()
-		tower_resource.TARGET_PRIO_TYPES.LEAD:
+		TARGET_PRIO_TYPES.LEAD:
 			select_lead_target()
-		tower_resource.TARGET_PRIO_TYPES.HEALTHIEST:
+		TARGET_PRIO_TYPES.HEALTHIEST:
 			select_healthiest_target()
 	
 	if current_enemy_target == null:
@@ -144,13 +149,15 @@ func can_see_enemy(enemy : Enemy):
 func _on_shoot_timer_timeout():
 	shoot()
 	
-func upgrade(path : int):
+func upgrade(path : int, price : int):
 	if path == 1:
 		tower_resource = tower_resource.upgrade_path_1_tower_resource
 		init_resource()
 	elif path == 2:
 		tower_resource = tower_resource.upgrade_path_2_tower_resource
 		init_resource()
+		
+	sell_value += price / 2
 		
 	
 

@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5art7604qeby"]
+[gd_scene load_steps=12 format=3 uid="uid://b5art7604qeby"]
 
 [ext_resource type="Script" path="res://scripts/ui/titlescreen.gd" id="1_fjor8"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_bnrgv"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_tofr7"]
-[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="5_pbyxh"]
-[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="6_ngdxo"]
-[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="7_14pt4"]
-[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 4.png" id="8_70nlb"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="4_74d66"]
+[ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="5_4ntwk"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="6_wh867"]
+[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="7_5vqmc"]
+[ext_resource type="Texture2D" uid="uid://d22uypqdgy5p7" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_8.png" id="8_6wrwp"]
+[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 4.png" id="8_y6yv7"]
 
 [sub_resource type="Theme" id="Theme_0eu24"]
 default_font = ExtResource("3_bnrgv")
@@ -54,8 +56,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("5_pbyxh")
-texture_hover = ExtResource("6_ngdxo")
+keep_pressed_outside = true
+texture_normal = ExtResource("4_74d66")
+texture_pressed = ExtResource("5_4ntwk")
+texture_hover = ExtResource("6_wh867")
+stretch_mode = 3
 
 [node name="Label" type="Label" parent="Control/PlayButton"]
 layout_mode = 1
@@ -87,9 +92,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("7_14pt4")
-texture_hover = ExtResource("8_70nlb")
-stretch_mode = 0
+keep_pressed_outside = true
+texture_normal = ExtResource("7_5vqmc")
+texture_pressed = ExtResource("8_6wrwp")
+texture_hover = ExtResource("8_y6yv7")
+stretch_mode = 3
 
 [node name="Label" type="Label" parent="Control/OptionButton"]
 layout_mode = 1
@@ -122,9 +129,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("7_14pt4")
-texture_hover = ExtResource("8_70nlb")
-stretch_mode = 0
+keep_pressed_outside = true
+texture_normal = ExtResource("7_5vqmc")
+texture_pressed = ExtResource("8_6wrwp")
+texture_hover = ExtResource("8_y6yv7")
+stretch_mode = 3
 
 [node name="Label" type="Label" parent="Control/ExitButton"]
 layout_mode = 1

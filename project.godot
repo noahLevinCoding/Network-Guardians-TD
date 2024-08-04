@@ -34,6 +34,10 @@ folder_colors={
 "res://scripts/": "purple"
 }
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 pause={

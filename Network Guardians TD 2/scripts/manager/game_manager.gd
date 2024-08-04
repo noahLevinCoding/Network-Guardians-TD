@@ -75,6 +75,13 @@ func deal_damage_to_player(damage : int):
 		
 func defeat():
 	SignalManager.defeat.emit()
+	
+func sell_tower(tower : Tower):
+	money += tower.sell_value
+	temperature -= tower.tower_resource.temperature_increase
+	power -= tower.tower_resource.power
+	print(power)
+	tower.queue_free()
 
 func buy_tower(item : ShopItemResource, position):
 	if item.price <= money and power + item.tower_resource.power <= max_power:
@@ -83,6 +90,7 @@ func buy_tower(item : ShopItemResource, position):
 		temperature += item.tower_resource.temperature_increase
 		
 		var tower_instance = tower_scene.instantiate()
+		tower_instance.sell_value = item.price / 2
 		tower_instance.tower_resource = item.tower_resource
 		game_node.add_child(tower_instance)
 		tower_instance.position = position
@@ -104,7 +112,7 @@ func upgrade_tower(tower: Tower, path_id : int):
 		money -= upgrade_price
 		power += upgrade_power
 		temperature += upgrade_temperature_increase
-		tower.upgrade(path_id)
+		tower.upgrade(path_id, upgrade_price)
 
 func get_upgrade_tower_resource(tower: Tower, path_id : int):
 	return tower.tower_resource.upgrade_path_1_tower_resource if path_id == 1 else tower.tower_resource.upgrade_path_2_tower_resource

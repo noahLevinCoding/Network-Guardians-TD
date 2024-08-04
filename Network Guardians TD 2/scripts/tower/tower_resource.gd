@@ -1,7 +1,7 @@
 class_name TowerResource
 extends Resource
 
-enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
+
 
 @export var name : String
 
@@ -18,9 +18,6 @@ enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
 @export var can_pop_lead : bool = false
 @export var can_see_camo : bool = false
 
-@export_group("Target prioritization")
-@export var target_prio_type : TARGET_PRIO_TYPES 
-
 @export_group("Visuals")
 @export var tower_texture : Texture2D
 @export var place_col_shape : Shape2D
@@ -35,6 +32,8 @@ enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
 
 @export var upgrade_path_1_tower_resource : TowerResource
 @export var upgrade_path_2_tower_resource : TowerResource
+
+@export var sell_value : int = 0
 
 
 
