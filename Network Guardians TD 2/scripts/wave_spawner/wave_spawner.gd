@@ -61,9 +61,9 @@ func spawn_enemy():
 		path.add_child(enemy_scene_instance)
 		
 		
-		spawn_enemy_timer.start(current_wave_group.time_between_enemies)
+		spawn_enemy_timer.start(current_wave_group.time_between_enemies / GameManager.temperature_speed_modifier)
 	else:
-		spawn_wave_group_timer.start(current_wave_group.time_after_wave_group)
+		spawn_wave_group_timer.start(current_wave_group.time_after_wave_group / GameManager.temperature_speed_modifier)
 	
 
 func _on_is_wave_active_timer_timeout():
