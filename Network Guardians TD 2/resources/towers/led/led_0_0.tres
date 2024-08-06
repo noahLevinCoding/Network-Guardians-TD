@@ -9,20 +9,22 @@
 
 [resource]
 script = ExtResource("1_kpvoy")
-name = "LED"
+name = "LED_0_0"
 attack_speed = 1.0
 attack_range = 150.0
-attack_damage = 10.0
-pierce = 2
+attack_damage = 1.0
+pierce = 1
 bullet_speed = 1000.0
-power = 10
+power = 1
 temperature_increase = 1.0
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
 can_pop_lead = false
 can_see_camo = false
 tower_texture = ExtResource("3_svmxv")
 place_col_shape = ExtResource("2_37qvn")
 bullet_visual_resource = ExtResource("1_fibjt")
-upgrade_description = ""
+upgrade_path_1_description = "increase attack speed"
+upgrade_path_2_description = "increase tower range"
 upgrade_price_easy = 0
 upgrade_price_medium = 0
 upgrade_price_hard = 0

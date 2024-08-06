@@ -1,27 +1,33 @@
-[gd_resource type="Resource" script_class="TowerResource" load_steps=5 format=3 uid="uid://cg104ffjduou3"]
+[gd_resource type="Resource" script_class="TowerResource" load_steps=7 format=3 uid="uid://cg104ffjduou3"]
 
-[ext_resource type="Resource" uid="uid://b0d3enkpxthg0" path="res://resources/bullets/led/led_blue.tres" id="1_demki"]
+[ext_resource type="Resource" uid="uid://fcnk6aghtpg3" path="res://resources/bullets/led/led_yellow.tres" id="1_eplm2"]
 [ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="2_ibnpj"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/place_shapes/led.tres" id="2_txh6j"]
-[ext_resource type="Texture2D" uid="uid://ul4ltq52faqv" path="res://assets/tower/led/PNG/led_blue_on.png" id="3_iflpt"]
+[ext_resource type="Texture2D" uid="uid://dwgdjd12crogo" path="res://assets/tower/led/PNG/led_yellow_on.png" id="4_50inu"]
+[ext_resource type="Resource" uid="uid://1mqdd1h1ny7n" path="res://resources/towers/led/led_1_1.tres" id="5_6mofs"]
+[ext_resource type="Resource" uid="uid://o6v68mno8h7a" path="res://resources/towers/led/led_0_2.tres" id="6_yq7fv"]
 
 [resource]
 script = ExtResource("2_ibnpj")
-name = "LED"
-attack_speed = 2.0
+name = "LED_0_1"
+attack_speed = 1.0
 attack_range = 200.0
 attack_damage = 1.0
 pierce = 1
 bullet_speed = 1000.0
-power = 0
-temperature_increase = 1.5
+power = 2
+temperature_increase = 2.0
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
 can_pop_lead = false
 can_see_camo = false
-target_prio_type = 0
-tower_texture = ExtResource("3_iflpt")
+tower_texture = ExtResource("4_50inu")
 place_col_shape = ExtResource("2_txh6j")
-bullet_visual_resource = ExtResource("1_demki")
-upgrade_description = ""
-upgrade_price_easy = 10
-upgrade_price_medium = 15
-upgrade_price_hard = 20
+bullet_visual_resource = ExtResource("1_eplm2")
+upgrade_path_1_description = "increase attack speed"
+upgrade_path_2_description = "increase tower range"
+upgrade_price_easy = 50
+upgrade_price_medium = 60
+upgrade_price_hard = 70
+upgrade_path_1_tower_resource = ExtResource("5_6mofs")
+upgrade_path_2_tower_resource = ExtResource("6_yq7fv")
+sell_value = 0

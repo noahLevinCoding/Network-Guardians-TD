@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://yll6f0d6jyog"]
+
+[ext_resource type="SpriteFrames" uid="uid://bla2wmskfp4wp" path="res://resources/enemies/sprite_frames/virus_9_brown_sprite_frames.tres" id="1_b50lf"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="1_peja8"]
+[ext_resource type="Texture2D" uid="uid://du2c7aru3oxqx" path="res://assets/enemy/camo.png" id="2_ayanw"]
+[ext_resource type="Resource" uid="uid://b0vwwsh7tin4l" path="res://resources/enemies/virus_6_black.tres" id="3_7hvls"]
+[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/virus_shape.tres" id="4_mj7rr"]
+[ext_resource type="Texture2D" uid="uid://ba77jkdeyor8e" path="res://assets/enemy/lead.png" id="5_71ypo"]
+
+[resource]
+script = ExtResource("1_peja8")
+enemy_type = 1
+base_sprite_frames = ExtResource("1_b50lf")
+camo_texture = ExtResource("2_ayanw")
+lead_texture = ExtResource("5_71ypo")
+col_shape = ExtResource("4_mj7rr")
+base_speed = 1.0
+base_health = 1.0
+is_lead = true
+is_camo = false
+is_immune_to_pierce = false
+child_resource = ExtResource("3_7hvls")
+child_quantity = 2
+money_on_death = 1

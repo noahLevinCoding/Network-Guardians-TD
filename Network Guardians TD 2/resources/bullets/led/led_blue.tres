@@ -2,9 +2,9 @@
 
 [ext_resource type="Shape2D" uid="uid://dfmpidcu1x71c" path="res://resources/bullets/led/led_bullet_shape.tres" id="1_kj2rs"]
 [ext_resource type="Script" path="res://scripts/bullet/bullet_visual_resource.gd" id="2_wh4fl"]
-[ext_resource type="Texture2D" uid="uid://dc43djvjq1sds" path="res://assets/bullets/led/led_bullet_red.png" id="3_kgla6"]
+[ext_resource type="Texture2D" uid="uid://b085q34rad7fd" path="res://assets/bullets/led/led_bullet_blue.png" id="3_ixl4r"]
 
 [resource]
 script = ExtResource("2_wh4fl")
-texture = ExtResource("3_kgla6")
+texture = ExtResource("3_ixl4r")
 col_shape = ExtResource("1_kj2rs")

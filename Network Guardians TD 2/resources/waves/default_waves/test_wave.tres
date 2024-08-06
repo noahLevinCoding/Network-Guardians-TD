@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Wave" load_steps=11 format=3 uid="uid://chfamfqockiy7"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_iwgw4"]
-[ext_resource type="SpriteFrames" uid="uid://nvvly380t2jq" path="res://resources/enemies/sprite_frames/virus_green_sprite_frames.tres" id="2_ko5j1"]
+[ext_resource type="SpriteFrames" uid="uid://nvvly380t2jq" path="res://resources/enemies/sprite_frames/virus_3_green_sprite_frames.tres" id="2_4xjtj"]
 [ext_resource type="Texture2D" uid="uid://du2c7aru3oxqx" path="res://assets/enemy/camo.png" id="3_2ypev"]
-[ext_resource type="Resource" uid="uid://cuunjbmjo28do" path="res://resources/enemies/virus_orange.tres" id="4_1jy6d"]
+[ext_resource type="Resource" uid="uid://cuunjbmjo28do" path="res://resources/enemies/virus_1_orange.tres" id="4_80y0p"]
 [ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/virus_shape.tres" id="5_enlgx"]
 [ext_resource type="Texture2D" uid="uid://ba77jkdeyor8e" path="res://assets/enemy/lead.png" id="6_mlgnu"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="7_pdso1"]
@@ -12,7 +12,7 @@
 [sub_resource type="Resource" id="Resource_5nx3m"]
 script = ExtResource("7_pdso1")
 enemy_type = 1
-base_sprite_frames = ExtResource("2_ko5j1")
+base_sprite_frames = ExtResource("2_4xjtj")
 camo_texture = ExtResource("3_2ypev")
 lead_texture = ExtResource("6_mlgnu")
 col_shape = ExtResource("5_enlgx")
@@ -21,7 +21,7 @@ base_health = 1.0
 is_lead = false
 is_camo = false
 is_immune_to_pierce = false
-child_resource = ExtResource("4_1jy6d")
+child_resource = ExtResource("4_80y0p")
 child_quantity = 10
 money_on_death = 1
 

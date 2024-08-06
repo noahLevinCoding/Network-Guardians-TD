@@ -28,7 +28,8 @@ extends Resource
 
 @export_group("Upgrades")
 @export var upgrade_icon : Texture2D
-@export var upgrade_description : String
+@export var upgrade_path_1_description : String
+@export var upgrade_path_2_description : String
 @export var upgrade_price_easy : int = 0
 @export var upgrade_price_medium : int = 0
 @export var upgrade_price_hard : int = 0

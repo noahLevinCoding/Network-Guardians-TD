@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="TowerResource" load_steps=5 format=3 uid="uid://xp3x2vcsmr1i"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="1_6sd0c"]
+[ext_resource type="Resource" uid="uid://b0d3enkpxthg0" path="res://resources/bullets/led/led_blue.tres" id="1_i66fm"]
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/place_shapes/led.tres" id="2_ch87o"]
+[ext_resource type="Texture2D" uid="uid://ul4ltq52faqv" path="res://assets/tower/led/PNG/led_blue_on.png" id="4_omgn4"]
+
+[resource]
+script = ExtResource("1_6sd0c")
+name = ""
+attack_speed = 3.0
+attack_range = 150.0
+attack_damage = 1.0
+pierce = 1
+bullet_speed = 1000.0
+power = 3
+temperature_increase = 3.0
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
+can_pop_lead = false
+can_see_camo = false
+tower_texture = ExtResource("4_omgn4")
+place_col_shape = ExtResource("2_ch87o")
+bullet_visual_resource = ExtResource("1_i66fm")
+upgrade_path_1_description = "max upgrade"
+upgrade_path_2_description = "increase tower range"
+upgrade_price_easy = 120
+upgrade_price_medium = 150
+upgrade_price_hard = 175
+sell_value = 0
