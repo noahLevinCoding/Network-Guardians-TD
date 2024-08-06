@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgw17tb1maia8"]
+[gd_scene load_steps=9 format=3 uid="uid://bgw17tb1maia8"]
 
 [ext_resource type="Texture2D" uid="uid://1gycrcd60lqd" path="res://assets/maps/tilemaps/path.png" id="1_xj4l2"]
 [ext_resource type="PackedScene" uid="uid://0bfxcmsgoadu" path="res://scenes/wave_spawner/wave_spawner.tscn" id="2_obwoc"]
 [ext_resource type="PackedScene" uid="uid://dkgwoa2og1bau" path="res://scenes/enemy/enemy.tscn" id="3_lnslm"]
+[ext_resource type="PackedScene" uid="uid://b1hnua7wkf75d" path="res://scenes/power_supply/power_supply.tscn" id="4_qm20v"]
+[ext_resource type="PackedScene" uid="uid://dlsvtj232ypyh" path="res://scenes/cooler/cooler.tscn" id="5_5msek"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ohca"]
 texture = ExtResource("1_xj4l2")
@@ -722,3 +724,9 @@ curve = SubResource("Curve2D_7qbnu")
 [node name="WaveSpawner" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_obwoc")]
 enemy_scene = ExtResource("3_lnslm")
 path = NodePath("../Path")
+
+[node name="powerSupply" parent="." instance=ExtResource("4_qm20v")]
+position = Vector2(248, 394)
+
+[node name="Cooler" parent="." instance=ExtResource("5_5msek")]
+position = Vector2(660, 392)

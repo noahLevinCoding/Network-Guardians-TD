@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CoolerResource" load_steps=4 format=3 uid="uid://dt6imadyc6efd"]
+
+[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/virus_shape.tres" id="1_gooh3"]
+[ext_resource type="Script" path="res://scripts/cooler/cooler_resource.gd" id="1_vtvfr"]
+[ext_resource type="Texture2D" uid="uid://bhuth6qgs7h3k" path="res://assets/power_supply/psu (5).png" id="3_mis7i"]
+
+[resource]
+script = ExtResource("1_vtvfr")
+name = ""
+shop_icon = ExtResource("3_mis7i")
+texture = ExtResource("3_mis7i")
+col_shape = ExtResource("1_gooh3")
+temperature_decrease = 100.0
+upgrade_price_easy = 10
+upgrade_price_medium = 50
+upgrade_price_hard = 300

@@ -10,6 +10,8 @@ signal reset_game
 
 signal select_tower_on_board(tower : Tower)
 signal deselect_tower_on_board
+signal select_cooler
+signal select_power_supply
 
 signal health_changed(health : int)
 signal money_changed(money : int)

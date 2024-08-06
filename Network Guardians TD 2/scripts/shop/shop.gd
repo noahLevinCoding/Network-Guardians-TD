@@ -9,10 +9,11 @@ var mouse_in_placable_area : bool = false
 
 @export var tower_name_label : Label
 @export var tower_power_label : Label
+@export var tower_power_text_label : Label
 @export var tower_temperature_label : Label
 
-var red_color : Color = Color(0.8, 0.0, 0.0, 1.0)
-var green_color : Color = Color(0.0, 1.0, 0.0, 1.0)
+#var red_color : Color = Color(1.0, 0.55, 0.55,  1.0)
+var red_color : Color = Color(1.0, 0.46, 0.2, 1.0)
 var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 
 @export var tower_range_polygon : Polygon2D
@@ -48,6 +49,7 @@ func select(index : int):
 	tower_temperature_label.text = "+" + str(selected_item.tower_resource.temperature_increase) + " °C"
 	
 	tower_power_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
+	tower_power_text_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
 	
 	var radius = selected_item.tower_resource.attack_range
 	var segments = 64
@@ -78,6 +80,7 @@ func deselect():
 	tower_temperature_label.text = "0 °C"
 	
 	tower_power_label.set_modulate(white_color)
+	tower_power_text_label.set_modulate(white_color)
 	
 	tower_range_polygon.visible = false
 

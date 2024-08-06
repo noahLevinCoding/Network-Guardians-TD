@@ -1,6 +1,7 @@
 extends VBoxContainer
 
 @export var shop_node : Shop
+@export var cooler_power_supply_upgrade_node : Node
 @export var tower_name_label : Label
 @export var prio_option_button : OptionButton
 @export var damage_dealt_label : Label
@@ -28,6 +29,7 @@ func _on_select_tower(tower : Tower):
 	selected_tower = tower
 	visible = true
 	shop_node.visible = false
+	cooler_power_supply_upgrade_node.visible = false
 	selected_tower.enable_select_shader()
 	
 	tower_name_label.text = selected_tower.tower_resource.name
