@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bri40ya5jhrc6"]
+[gd_scene load_steps=6 format=3 uid="uid://bri40ya5jhrc6"]
 
 [ext_resource type="PackedScene" uid="uid://bgw17tb1maia8" path="res://scenes/maps/t_map.tscn" id="1_mvjme"]
 [ext_resource type="Texture2D" uid="uid://hwcons5q5ig5" path="res://assets/maps/backgrounds/octopus.png" id="2_4tpdf"]
+[ext_resource type="PackedScene" uid="uid://b38ayiabkeywh" path="res://scenes/tower/tower.tscn" id="3_dqfgc"]
+[ext_resource type="Resource" uid="uid://uw5ao5003crc" path="res://resources/towers/resistor/resistor_0_0.tres" id="4_paoi6"]
 
 [sub_resource type="Curve2D" id="Curve2D_w584v"]
 resource_local_to_scene = true
@@ -20,3 +22,7 @@ layer_0/tile_data = PackedInt32Array(1966080, 65536, 21, 1966081, 65536, 21, 196
 
 [node name="Path" parent="." index="2"]
 curve = SubResource("Curve2D_w584v")
+
+[node name="Tower" parent="." index="6" instance=ExtResource("3_dqfgc")]
+position = Vector2(131, 320)
+tower_resource = ExtResource("4_paoi6")

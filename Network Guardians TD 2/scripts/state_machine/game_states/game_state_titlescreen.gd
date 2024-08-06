@@ -15,9 +15,10 @@ func enter():
 	print("Enter GameState Titlescreen")
 	infinite_video.visible = true
 	titlescreen_node.visible = true
-	
-	if not infinite_video.video_stream_player.is_playing():
-		infinite_video.video_stream_player.play()
+		
+	infinite_video.video_stream_player.paused = false
+	infinite_video.audio_stream_player_titlescreen.play()
+	infinite_video.audio_stream_player_game.stop()
 	
 	for child in game_node.get_children():
 		game_node.remove_child(child)

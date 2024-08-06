@@ -9,7 +9,10 @@ func enter():
 	print("Enter GameState ResetGame")
 	
 	infinite_video.visible = false
-	infinite_video.video_stream_player.stop()
+	infinite_video.video_stream_player.paused = true
+	infinite_video.audio_stream_player_titlescreen.stop()
+	
+	infinite_video.audio_stream_player_game.play()
 	
 	for child in game_node.get_children():
 		game_node.remove_child(child)

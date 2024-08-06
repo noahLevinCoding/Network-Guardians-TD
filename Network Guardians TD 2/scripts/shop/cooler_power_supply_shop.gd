@@ -6,11 +6,13 @@ extends VBoxContainer
 @export var currently_temp : Label 
 @export var upgrade_temp : Label
 @export var price_temp : Label
+@export var price_temp_text : Label
 @export var upgrade_cooler_button : Button
 
 @export var currently_power : Label
 @export var upgrade_power : Label
 @export var price_power : Label
+@export var price_power_text : Label
 @export var upgrade_power_supply_button : Button
 
 var red_color : Color = Color(1.0, 0.46, 0.2, 1.0)
@@ -34,6 +36,8 @@ func _on_select():
 		var price = GameManager.get_upgrade_cooler_price(GameManager.cooler.cooler_resource.upgrade_cooler_resource)
 		price_temp.text = str(price) + " $"
 		upgrade_cooler_button.disabled = GameManager.money < price
+		price_temp.set_modulate(red_color if GameManager.money < price else white_color)
+		price_temp_text.set_modulate(red_color if GameManager.money < price else white_color)
 	else:
 		upgrade_temp.text = "MAX"
 		price_temp.text = "-"
@@ -47,6 +51,9 @@ func _on_select():
 		var price = GameManager.get_upgrade_power_supply_price(GameManager.power_supply.power_supply_resource.upgrade_power_supply_resource)
 		price_power.text = str(price) + " $"
 		upgrade_power_supply_button.disabled = GameManager.money < price
+		price_power.set_modulate(red_color if GameManager.money < price else white_color)
+		price_power_text.set_modulate(red_color if GameManager.money < price else white_color)
+		
 	else:
 		upgrade_power.text = "MAX"
 		price_power.text = "-"
@@ -55,6 +62,11 @@ func _on_select():
 func _on_deselect():
 	shop_node.visible = true
 	visible = false
+	
+	price_power.set_modulate(white_color)
+	price_power_text.set_modulate(white_color)
+	price_temp.set_modulate(white_color)
+	price_temp_text.set_modulate(white_color)
 
 func _on_reset_game():
 	_on_deselect()

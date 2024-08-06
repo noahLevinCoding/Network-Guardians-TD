@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Waves" load_steps=4 format=3 uid="uid://bwldl6f7ioj4h"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/waves.gd" id="1_8plfk"]
-[ext_resource type="Resource" uid="uid://6uovhydhldsa" path="res://resources/waves/default_waves/wave_1.tres" id="2_lsoxs"]
+[ext_resource type="Resource" uid="uid://chfamfqockiy7" path="res://resources/waves/default_waves/test_wave.tres" id="2_chx2p"]
 [ext_resource type="Resource" uid="uid://c53ot4lkoorex" path="res://resources/waves/default_waves/wave_2.tres" id="3_s67ox"]
 
 [resource]
 script = ExtResource("1_8plfk")
-waves = Array[Resource("res://scripts/wave_spawner/wave.gd")]([ExtResource("2_lsoxs"), ExtResource("3_s67ox")])
+waves = Array[Resource("res://scripts/wave_spawner/wave.gd")]([ExtResource("2_chx2p"), ExtResource("3_s67ox")])

@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ws6g7erknixl"]
+[gd_scene load_steps=6 format=3 uid="uid://ws6g7erknixl"]
 
 [ext_resource type="Script" path="res://scripts/ui/titlescreen_video.gd" id="1_81jm7"]
+[ext_resource type="AudioStream" uid="uid://syxfj20dw2ou" path="res://assets/music/orbit-d0d-main-version-29627-02-39.mp3" id="2_b8or8"]
+[ext_resource type="AudioStream" uid="uid://c0hm2vmka10nm" path="res://assets/music/stellar-escape-prigida-main-version-25318-03-02.mp3" id="2_i7tct"]
+[ext_resource type="Script" path="res://scripts/audio/audio_stream_player.gd" id="3_2vbr4"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_h4noi"]
 file = "res://assets/ui/titlescreen/PNG/background_video_30.ogv"
 
-[node name="InfiniteVideo" type="Node2D" node_paths=PackedStringArray("video_stream_player")]
+[node name="InfiniteVideo" type="Node2D" node_paths=PackedStringArray("video_stream_player", "audio_stream_player_titlescreen", "audio_stream_player_game")]
 script = ExtResource("1_81jm7")
 video_stream_player = NodePath("VideoStreamPlayer")
+audio_stream_player_titlescreen = NodePath("AudioStreamPlayerTitlescreen")
+audio_stream_player_game = NodePath("AudioStreamPlayerGame")
 video_60fps = "res://assets/ui/titlescreen/PNG/background_video_60.ogv"
 video_30fps = "res://assets/ui/titlescreen/PNG/background_video_30.ogv"
 
@@ -15,4 +20,19 @@ video_30fps = "res://assets/ui/titlescreen/PNG/background_video_30.ogv"
 offset_right = 40.0
 offset_bottom = 40.0
 stream = SubResource("VideoStreamTheora_h4noi")
+autoplay = true
 loop = true
+
+[node name="AudioStreamPlayerTitlescreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b8or8")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("3_2vbr4")
+
+[node name="AudioStreamPlayerGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i7tct")
+volume_db = 9.69
+script = ExtResource("3_2vbr4")
+
+[connection signal="finished" from="AudioStreamPlayerTitlescreen" to="AudioStreamPlayerTitlescreen" method="_on_finished"]
+[connection signal="finished" from="AudioStreamPlayerGame" to="AudioStreamPlayerGame" method="_on_finished"]

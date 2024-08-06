@@ -14,6 +14,9 @@ extends Resource
 @export var power : int = 0
 @export var temperature_increase : float = 0
 
+@export_group("Effects")
+@export var effects : Array[EffectResource]
+
 @export_group("Visibility and vulnerability")
 @export var can_pop_lead : bool = false
 @export var can_see_camo : bool = false

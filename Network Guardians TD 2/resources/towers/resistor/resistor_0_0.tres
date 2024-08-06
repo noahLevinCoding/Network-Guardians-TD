@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="TowerResource" load_steps=7 format=3 uid="uid://uw5ao5003crc"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="1_euttw"]
+[ext_resource type="Resource" uid="uid://b0d3enkpxthg0" path="res://resources/bullets/led/led_blue.tres" id="1_kg7bg"]
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/place_shapes/led.tres" id="2_g1bjq"]
+[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_k6fbr"]
+[ext_resource type="Texture2D" uid="uid://cajbpntasp8vk" path="res://assets/tower/resistor/resistor_1.png" id="4_nutr2"]
+
+[sub_resource type="Resource" id="Resource_q1bh1"]
+script = ExtResource("2_k6fbr")
+slow_multiplier = 0.0
+duration = 0.0
+
+[resource]
+script = ExtResource("1_euttw")
+name = "Resistor"
+attack_speed = 1.0
+attack_range = 300.0
+attack_damage = 0.0
+pierce = 1
+bullet_speed = 1000.0
+power = 1
+temperature_increase = 1.0
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_q1bh1"), null])
+can_pop_lead = false
+can_see_camo = false
+tower_texture = ExtResource("4_nutr2")
+place_col_shape = ExtResource("2_g1bjq")
+bullet_visual_resource = ExtResource("1_kg7bg")
+upgrade_description = ""
+upgrade_price_easy = 0
+upgrade_price_medium = 0
+upgrade_price_hard = 0
+sell_value = 0

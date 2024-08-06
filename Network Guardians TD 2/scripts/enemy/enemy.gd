@@ -9,10 +9,15 @@ extends PathFollow2D
 @export var enemy_resource : EnemyResource
 @export var base_speed_multiplier : float = 100
 
+@export var child_spawn_delay : float = 0.05
+
 var enemy_scene : PackedScene = load("res://scenes/enemy/enemy.tscn")
 
 var current_health : float
 var current_speed : float
+
+var effects : Array[Effect] = []
+var slow_multiplier : float = 1.0
 
 
 
@@ -20,12 +25,24 @@ func _ready():
 	init_resource()
 	
 func _process(delta):
-	move(delta)
+	reset_effect_parameters()
+	apply_effects(delta)
 	calc_current_speed()
+	move(delta)
 	check_if_end()
 	
+func reset_effect_parameters():
+		slow_multiplier = 1.0
+
+func apply_effects(delta):
+	for effect in effects:
+		effect.apply_effect(self)
+		effect.duration -= delta
+		if effect.duration <= 0:
+			effects.erase(effect)
+
 func calc_current_speed():
-	current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier
+	current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier * slow_multiplier
 	
 func move(delta : float):
 	progress += current_speed * delta * base_speed_multiplier
@@ -38,7 +55,7 @@ func check_if_end():
 		queue_free()
 		
 func calc_damage_to_player(child_enemy_resource : EnemyResource):
-	if enemy_resource.child_quantity == 0:
+	if child_enemy_resource.child_quantity == 0:
 		return 1
 	else:
 		var quantity = enemy_resource.child_quantity
@@ -75,12 +92,14 @@ func spawn_children():
 		enemy_resource = enemy_resource.child_resource
 		init_resource()
 	else:
-		for i in range(enemy_resource.child_quantity):
+		for enemy_child_index in range(enemy_resource.child_quantity):
 			var enemy_instance := enemy_scene.instantiate() as Enemy
 			enemy_instance.enemy_resource  = enemy_resource.child_resource
 			get_parent().add_child(enemy_instance)
 			enemy_instance.progress_ratio = progress_ratio
-			#TODO: set slow effect
+			enemy_instance.effects.append(SlowEffect.new((enemy_resource.child_quantity - enemy_child_index) * child_spawn_delay, 0))
+			#enemy_instance.z_index = enemy_resource.child_quantity - enemy_child_index
+			
 			
 		die()
 	

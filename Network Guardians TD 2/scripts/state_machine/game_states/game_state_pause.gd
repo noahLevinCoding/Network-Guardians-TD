@@ -17,7 +17,7 @@ func enter():
 	print("Enter GameState Pause")
 	pause_node.visible = true
 	GameManager.is_paused = true
-	infinite_video.video_stream_player.play()
+	infinite_video.video_stream_player.paused = false
 	infinite_video.visible = true
 	
 	
@@ -25,7 +25,7 @@ func exit():
 	print("Exit GameState Pause")
 	pause_node.visible = false
 	infinite_video.visible = false
-	infinite_video.video_stream_player.stop()
+	infinite_video.video_stream_player.paused = true
 	
 func _on_back_to_titlescreen():
 	state_transition.emit(self, "Titlescreen")

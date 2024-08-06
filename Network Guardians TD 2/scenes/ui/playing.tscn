@@ -299,7 +299,7 @@ text = "Deselect"
 layout_mode = 2
 text = "Sell"
 
-[node name="Cooler_PowerSupply" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "upgrade_power_supply_button")]
+[node name="Cooler_PowerSupply" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "price_temp_text", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "price_power_text", "upgrade_power_supply_button")]
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -310,10 +310,12 @@ upgrade_node = NodePath("../Upgrade")
 currently_temp = NodePath("Currently/Value")
 upgrade_temp = NodePath("Upgrade/Value")
 price_temp = NodePath("Price/Value")
+price_temp_text = NodePath("Price/Text")
 upgrade_cooler_button = NodePath("UpgradeBtn")
 currently_power = NodePath("Currently2/Value")
 upgrade_power = NodePath("Upgrade2/Value")
 price_power = NodePath("Price2/Value")
+price_power_text = NodePath("Price2/Text")
 upgrade_power_supply_button = NodePath("UpgradeBtn2")
 
 [node name="CollerHeading" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
