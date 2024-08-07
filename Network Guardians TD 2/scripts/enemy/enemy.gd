@@ -54,11 +54,16 @@ func check_if_end():
 		queue_free()
 		
 func calc_damage_to_player(child_enemy_resource : EnemyResource):
-	if child_enemy_resource.child_quantity == 0:
+	if child_enemy_resource.child_quantities.size() == 0:
 		return 1
 	else:
-		var quantity = child_enemy_resource.child_quantity
-		return  1 + quantity * calc_damage_to_player(child_enemy_resource.child_resource)
+		var damage_from_children = 0
+		
+		for child_index in child_enemy_resource.child_quantities.size():
+			var quantity = child_enemy_resource.child_quantities[child_index]
+			damage_from_children += quantity * calc_damage_to_player(child_enemy_resource.child_resources[child_index])
+		
+		return  1 + damage_from_children
 		
 func take_damage(bullet_resource : BulletResource):
 	
@@ -96,20 +101,28 @@ func take_damage(bullet_resource : BulletResource):
 		
 		
 func spawn_children():
-	if enemy_resource.child_quantity == 0:
+	if enemy_resource.child_quantities.size() == 0:
 		die()
-	elif enemy_resource.child_quantity == 1:
+	elif enemy_resource.child_quantities.size() == 1 and enemy_resource.child_quantities[0] == 1:
 		drop_loot()
-		enemy_resource = enemy_resource.child_resource
+		enemy_resource = enemy_resource.child_resources[0]
 		init_resource()
 	else:
-		for enemy_child_index in range(enemy_resource.child_quantity):
-			var enemy_instance := enemy_scene.instantiate() as Enemy
-			enemy_instance.enemy_resource  = enemy_resource.child_resource
-			get_parent().add_child(enemy_instance)
-			enemy_instance.progress_ratio = progress_ratio
-			child_spawn_slow_effect_resource.duration = (enemy_resource.child_quantity - enemy_child_index) * child_spawn_delay
-			enemy_instance.effects.append(Effect.new(child_spawn_slow_effect_resource))
+		var total_children_counter = 0
+		for children_quantity in enemy_resource.child_quantities:
+			total_children_counter += children_quantity
+			
+		var children_counter = 0
+		
+		for child_type_index in range(enemy_resource.child_resources.size()):
+			for enemy_child_index in range(enemy_resource.child_quantities[child_type_index]):
+				var enemy_instance := enemy_scene.instantiate() as Enemy
+				enemy_instance.enemy_resource  = enemy_resource.child_resources[child_type_index]
+				get_parent().add_child(enemy_instance)
+				enemy_instance.progress_ratio = progress_ratio
+				child_spawn_slow_effect_resource.duration = (total_children_counter - children_counter) * child_spawn_delay
+				enemy_instance.effects.append(Effect.new(child_spawn_slow_effect_resource))
+				children_counter += 1
 			
 			
 		die()

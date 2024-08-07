@@ -73,7 +73,6 @@ func shoot():
 	current_enemy_targets = []
 	
 	for i in range(tower_resource.number_of_targets):
-		print(i)
 		select_target()
 		if current_enemy_target != null:
 			instantiate_bullet()

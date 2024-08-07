@@ -26,8 +26,8 @@ enum ENEMY_TYPES {NONE, VIRUS, MOAB}
 @export var is_camo : bool = false
 
 @export_group("Children")
-@export var child_resource : EnemyResource
-@export var child_quantity : int
+@export var child_resources : Array[EnemyResource]
+@export var child_quantities : Array[int]
 
 @export_group("Loot")
 @export var money_on_death : int = 1 
