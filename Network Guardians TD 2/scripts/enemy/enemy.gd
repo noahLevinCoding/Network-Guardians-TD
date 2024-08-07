@@ -3,7 +3,7 @@ extends PathFollow2D
 
 @export var base_animated_sprite : AnimatedSprite2D
 @export var camo_sprite : Sprite2D
-@export var lead_sprite : Sprite2D
+
 @export var col_shape : CollisionShape2D
 
 @export var enemy_resource : EnemyResource
@@ -57,7 +57,7 @@ func calc_damage_to_player(child_enemy_resource : EnemyResource):
 	if child_enemy_resource.child_quantity == 0:
 		return 1
 	else:
-		var quantity = enemy_resource.child_quantity
+		var quantity = child_enemy_resource.child_quantity
 		return  1 + quantity * calc_damage_to_player(child_enemy_resource.child_resource)
 		
 func take_damage(bullet_resource : BulletResource):
@@ -66,7 +66,13 @@ func take_damage(bullet_resource : BulletResource):
 		effects.append(Effect.new(effect_resource))
 	
 	#Check lead
-	if enemy_resource.is_lead and not bullet_resource.can_pop_lead:
+	if enemy_resource.is_immune_to_light and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.LIGHT and not bullet_resource.ignoes_damage_type_immunity:
+		return
+		
+	if enemy_resource.is_immune_to_electricity and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.ELECTRICITY  and not bullet_resource.ignoes_damage_type_immunity:
+		return
+		
+	if enemy_resource.is_immune_to_magnetism and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.MAGNETISM and not bullet_resource.ignoes_damage_type_immunity:
 		return
 	
 	#TODO damage multiplier
@@ -120,11 +126,10 @@ func init_resource():
 	base_animated_sprite.play("move")
 	
 	camo_sprite.texture = enemy_resource.camo_texture
-	lead_sprite.texture = enemy_resource.lead_texture
 	col_shape.shape = enemy_resource.col_shape
 	
 	current_health = enemy_resource.base_health
 	
 	#TODO: Adjust when adding effects
 	camo_sprite.visible = enemy_resource.is_camo
-	lead_sprite.visible = enemy_resource.is_lead
+

@@ -10,12 +10,11 @@ duration = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gmisu"]
 
-[node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("base_animated_sprite", "camo_sprite", "lead_sprite", "col_shape")]
+[node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("base_animated_sprite", "camo_sprite", "col_shape")]
 loop = false
 script = ExtResource("1_fdsxu")
 base_animated_sprite = NodePath("BaseAnimatedSprite")
 camo_sprite = NodePath("CamoSprite")
-lead_sprite = NodePath("LeadSprite")
 col_shape = NodePath("Area2D/CollisionShape2D")
 child_spawn_slow_effect_resource = SubResource("Resource_rl7b3")
 
@@ -25,10 +24,6 @@ sprite_frames = SubResource("SpriteFrames_gmisu")
 [node name="CamoSprite" type="Sprite2D" parent="."]
 visible = false
 z_index = 1
-
-[node name="LeadSprite" type="Sprite2D" parent="."]
-visible = false
-z_index = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 0

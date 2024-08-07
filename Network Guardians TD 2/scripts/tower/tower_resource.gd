@@ -1,7 +1,7 @@
 class_name TowerResource
 extends Resource
 
-
+enum DAMAGE_TYPE {NONE, LIGHT, ELECTRICITY, MAGNETISM}
 
 @export var name : String
 
@@ -13,13 +13,14 @@ extends Resource
 @export var bullet_speed : float = 1000
 @export var power : int = 0
 @export var temperature_increase : float = 0
-@export var number_of_target : int = 1
+@export var number_of_targets : int = 1
+@export var damage_type : DAMAGE_TYPE 
 
 @export_group("Effects")
 @export var effects : Array[EffectResource]
 
 @export_group("Visibility and vulnerability")
-@export var can_pop_lead : bool = false
+@export var ignores_damage_type_immunity : bool = false
 @export var can_see_camo : bool = false
 
 @export_group("Visuals")

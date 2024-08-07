@@ -18,6 +18,7 @@ var sell_value : int
 
 var enemies = []
 var current_enemy_target = null
+var current_enemy_targets = []
 
 var is_idle = true	#used for direct shooting if idle
 
@@ -69,26 +70,33 @@ func _on_area_2d_area_exited(area):
 			current_enemy_target = null
 	
 func shoot():
-	select_target()
-	if current_enemy_target != null:
-		instantiate_bullet()
-		
-	else:
-		is_idle = true
-		shoot_timer.stop()
+	current_enemy_targets = []
+	
+	for i in range(tower_resource.number_of_targets):
+		print(i)
+		select_target()
+		if current_enemy_target != null:
+			instantiate_bullet()
+		else:
+			if current_enemy_targets == []:
+				is_idle = true
+				shoot_timer.stop()
+			
+			break
 	
 func instantiate_bullet():
 	var bullet_instance = bullet_scene.instantiate()
 	var bullet_resource = BulletResource.new()
 	
 	bullet_resource.target = current_enemy_target
-	bullet_resource.can_pop_lead = tower_resource.can_pop_lead
 	bullet_resource.attack_damage = tower_resource.attack_damage
 	bullet_resource.speed = tower_resource.bullet_speed
 	bullet_resource.bullet_visual_resource = tower_resource.bullet_visual_resource
 	bullet_resource.pierce = tower_resource.pierce
 	bullet_resource.source_tower = self
 	bullet_resource.effects = tower_resource.effects
+	bullet_resource.damage_type = tower_resource.damage_type
+	bullet_resource.ignoes_damage_type_immunity = tower_resource.ignores_damage_type_immunity
 	bullet_instance.bullet_resource = bullet_resource	
 	
 	add_child(bullet_instance)
@@ -110,13 +118,16 @@ func select_target():
 	
 	if current_enemy_target == null:
 		select_first_target()
+		
+	if current_enemy_target != null:
+		current_enemy_targets.append(current_enemy_target)
 	
 
 func select_first_target():
 	var current_enemy_target_progress_ratio = -1.0
 	
 	for enemy in enemies:
-		if can_see_enemy(enemy):
+		if can_see_enemy(enemy) and not current_enemy_targets.has(enemy):
 			if enemy.progress_ratio >= current_enemy_target_progress_ratio:
 				current_enemy_target = enemy
 				current_enemy_target_progress_ratio = enemy.progress_ratio
@@ -125,7 +136,7 @@ func select_last_target():
 	var current_enemy_target_progress_ratio = 2.0
 	
 	for enemy in enemies:
-		if can_see_enemy(enemy):
+		if can_see_enemy(enemy) and not current_enemy_targets.has(enemy):
 			if enemy.progress_ratio <= current_enemy_target_progress_ratio:
 				current_enemy_target = enemy
 				current_enemy_target_progress_ratio = enemy.progress_ratio
@@ -134,7 +145,7 @@ func select_camo_target():
 	var current_enemy_target_progress_ratio = -1.0
 	
 	for enemy in enemies:
-		if can_see_enemy(enemy) and enemy.enemy_resource.is_camo:
+		if can_see_enemy(enemy) and enemy.enemy_resource.is_camo and not current_enemy_targets.has(enemy):
 			if enemy.progress_ratio >= current_enemy_target_progress_ratio:
 				current_enemy_target = enemy
 				current_enemy_target_progress_ratio = enemy.progress_ratio
@@ -143,7 +154,7 @@ func select_lead_target():
 	var current_enemy_target_progress_ratio = -1.0
 	
 	for enemy in enemies:
-		if can_see_enemy(enemy) and enemy.enemy_resource.is_lead:
+		if can_see_enemy(enemy) and enemy.enemy_resource.is_lead and not current_enemy_targets.has(enemy):
 			if enemy.progress_ratio >= current_enemy_target_progress_ratio:
 				current_enemy_target = enemy
 				current_enemy_target_progress_ratio = enemy.progress_ratio
@@ -152,7 +163,7 @@ func select_healthiest_target():
 	var current_enemy_target_health := 0.0
 	
 	for enemy in enemies:
-		if can_see_enemy(enemy):
+		if can_see_enemy(enemy) and not current_enemy_targets.has(enemy):
 			if enemy.current_health >= current_enemy_target_health:
 				current_enemy_target = enemy
 				current_enemy_target_health = enemy.current_health
