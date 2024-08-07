@@ -13,6 +13,7 @@ extends Resource
 @export var bullet_speed : float = 1000
 @export var power : int = 0
 @export var temperature_increase : float = 0
+@export var number_of_target : int = 1
 
 @export_group("Effects")
 @export var effects : Array[EffectResource]

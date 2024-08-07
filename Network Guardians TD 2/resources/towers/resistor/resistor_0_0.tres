@@ -6,10 +6,10 @@
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_k6fbr"]
 [ext_resource type="Texture2D" uid="uid://cajbpntasp8vk" path="res://assets/tower/resistor/resistor_1.png" id="4_nutr2"]
 
-[sub_resource type="Resource" id="Resource_q1bh1"]
+[sub_resource type="Resource" id="Resource_vleuw"]
 script = ExtResource("2_k6fbr")
-slow_multiplier = 0.0
-duration = 0.0
+slow_multiplier = 0.1
+duration = 3.0
 
 [resource]
 script = ExtResource("1_euttw")
@@ -21,7 +21,7 @@ pierce = 1
 bullet_speed = 1000.0
 power = 1
 temperature_increase = 1.0
-effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_q1bh1"), null])
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_vleuw")])
 can_pop_lead = false
 can_see_camo = false
 tower_texture = ExtResource("4_nutr2")
@@ -29,7 +29,10 @@ place_col_shape = ExtResource("2_g1bjq")
 bullet_visual_resource = ExtResource("1_kg7bg")
 upgrade_path_1_description = ""
 upgrade_path_2_description = ""
-upgrade_price_easy = 0
-upgrade_price_medium = 0
-upgrade_price_hard = 0
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
 sell_value = 0

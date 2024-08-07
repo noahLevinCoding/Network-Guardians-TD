@@ -88,6 +88,7 @@ func instantiate_bullet():
 	bullet_resource.bullet_visual_resource = tower_resource.bullet_visual_resource
 	bullet_resource.pierce = tower_resource.pierce
 	bullet_resource.source_tower = self
+	bullet_resource.effects = tower_resource.effects
 	bullet_instance.bullet_resource = bullet_resource	
 	
 	add_child(bullet_instance)

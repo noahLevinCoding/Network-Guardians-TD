@@ -10,6 +10,7 @@ extends PathFollow2D
 @export var base_speed_multiplier : float = 100
 
 @export var child_spawn_delay : float = 0.05
+@export var child_spawn_slow_effect_resource : SlowEffectResource 
 
 var enemy_scene : PackedScene = load("res://scenes/enemy/enemy.tscn")
 
@@ -18,8 +19,6 @@ var current_speed : float
 
 var effects : Array[Effect] = []
 var slow_multiplier : float = 1.0
-
-
 
 func _ready():
 	init_resource()
@@ -36,10 +35,10 @@ func reset_effect_parameters():
 
 func apply_effects(delta):
 	for effect in effects:
-		effect.apply_effect(self)
-		effect.duration -= delta
-		if effect.duration <= 0:
-			effects.erase(effect)
+		effect.apply_effect(self, delta)
+			
+func end_of_effect(effect : Effect):
+	effects.erase(effect)
 
 func calc_current_speed():
 	current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier * slow_multiplier
@@ -63,6 +62,9 @@ func calc_damage_to_player(child_enemy_resource : EnemyResource):
 		
 func take_damage(bullet_resource : BulletResource):
 	
+	for effect_resource in bullet_resource.effects:
+		effects.append(Effect.new(effect_resource))
+	
 	#Check lead
 	if enemy_resource.is_lead and not bullet_resource.can_pop_lead:
 		return
@@ -81,8 +83,11 @@ func take_damage(bullet_resource : BulletResource):
 	bullet_resource.source_tower.add_damage_dealt(min(bullet_resource.attack_damage, current_health))
 	current_health -= bullet_resource.attack_damage
 	
+	
+	
 	if current_health <= 0: 
 		spawn_children()
+		
 		
 func spawn_children():
 	if enemy_resource.child_quantity == 0:
@@ -97,8 +102,8 @@ func spawn_children():
 			enemy_instance.enemy_resource  = enemy_resource.child_resource
 			get_parent().add_child(enemy_instance)
 			enemy_instance.progress_ratio = progress_ratio
-			enemy_instance.effects.append(SlowEffect.new((enemy_resource.child_quantity - enemy_child_index) * child_spawn_delay, 0))
-			#enemy_instance.z_index = enemy_resource.child_quantity - enemy_child_index
+			child_spawn_slow_effect_resource.duration = (enemy_resource.child_quantity - enemy_child_index) * child_spawn_delay
+			enemy_instance.effects.append(Effect.new(child_spawn_slow_effect_resource))
 			
 			
 		die()
