@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Waves" load_steps=12 format=3 uid="uid://bwldl6f7ioj4h"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/waves.gd" id="1_8plfk"]
-[ext_resource type="Resource" uid="uid://6uovhydhldsa" path="res://resources/waves/default_waves/wave_1.tres" id="2_7p0st"]
+[ext_resource type="Resource" uid="uid://chfamfqockiy7" path="res://resources/waves/default_waves/test_wave.tres" id="2_dwu2n"]
 [ext_resource type="Resource" uid="uid://c53ot4lkoorex" path="res://resources/waves/default_waves/wave_2.tres" id="3_s67ox"]
 [ext_resource type="Resource" uid="uid://br66w6v8kynpp" path="res://resources/waves/default_waves/wave_3.tres" id="4_f8m8k"]
 [ext_resource type="Resource" uid="uid://bx31fm6njij3h" path="res://resources/waves/default_waves/wave_4.tres" id="5_o2v21"]
@@ -14,4 +14,4 @@
 
 [resource]
 script = ExtResource("1_8plfk")
-waves = Array[Resource("res://scripts/wave_spawner/wave.gd")]([ExtResource("2_7p0st"), ExtResource("3_s67ox"), ExtResource("4_f8m8k"), ExtResource("5_o2v21"), ExtResource("6_rl2vy"), ExtResource("7_0a7vd"), ExtResource("8_6whnd"), ExtResource("9_4p170"), ExtResource("10_4umap"), ExtResource("11_jagve")])
+waves = Array[Resource("res://scripts/wave_spawner/wave.gd")]([ExtResource("2_dwu2n"), ExtResource("3_s67ox"), ExtResource("4_f8m8k"), ExtResource("5_o2v21"), ExtResource("6_rl2vy"), ExtResource("7_0a7vd"), ExtResource("8_6whnd"), ExtResource("9_4p170"), ExtResource("10_4umap"), ExtResource("11_jagve")])

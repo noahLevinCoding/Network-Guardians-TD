@@ -9,8 +9,7 @@ extends PathFollow2D
 @export var enemy_resource : EnemyResource
 @export var base_speed_multiplier : float = 100
 
-@export var child_spawn_delay : float = 0.05
-@export var child_spawn_slow_effect_resource : SlowEffectResource 
+@export var child_spawn_displacement : float = 10
 
 var enemy_scene : PackedScene = load("res://scenes/enemy/enemy.tscn")
 
@@ -107,11 +106,7 @@ func spawn_children():
 		drop_loot()
 		enemy_resource = enemy_resource.child_resources[0]
 		init_resource()
-	else:
-		var total_children_counter = 0
-		for children_quantity in enemy_resource.child_quantities:
-			total_children_counter += children_quantity
-			
+	else:	
 		var children_counter = 0
 		
 		for child_type_index in range(enemy_resource.child_resources.size()):
@@ -120,11 +115,8 @@ func spawn_children():
 				enemy_instance.enemy_resource  = enemy_resource.child_resources[child_type_index]
 				get_parent().add_child(enemy_instance)
 				enemy_instance.progress_ratio = progress_ratio
-				child_spawn_slow_effect_resource.duration = (total_children_counter - children_counter) * child_spawn_delay
-				enemy_instance.effects.append(Effect.new(child_spawn_slow_effect_resource))
+				enemy_instance.progress -= children_counter * child_spawn_displacement
 				children_counter += 1
-			
-			
 		die()
 	
 func die():

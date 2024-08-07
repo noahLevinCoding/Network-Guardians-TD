@@ -22,5 +22,5 @@ is_immune_to_pierce = false
 is_immunte_to_slow = false
 is_camo = false
 child_resources = Array[ExtResource("1_i3amt")]([ExtResource("3_8dt4x"), ExtResource("4_a5rrf")])
-child_quantities = Array[int]([2, 3])
+child_quantities = Array[int]([2, 10])
 money_on_death = 1
