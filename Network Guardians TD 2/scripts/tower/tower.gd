@@ -6,6 +6,7 @@ enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, LEAD, HEALTHIEST}
 @export var sprite : Sprite2D
 @export var attack_col_shape : CollisionShape2D
 @export var place_col_shape : CollisionShape2D
+@export var range_indicator : Polygon2D
 @export var shoot_timer : Timer
 @export var bullet_scene : PackedScene
 
@@ -21,11 +22,17 @@ var current_enemy_target = null
 var is_idle = true	#used for direct shooting if idle
 
 var is_selectable : bool = false
-var is_selected : bool = false
+var is_selected : bool = false :
+	set(value):
+		is_selected = value
+		range_indicator.visible = is_selected
+		sprite.material.set_shader_parameter("line_color", select_shader_color if is_selected else Color(0,0,0,0))
+		
 
 var damage_dealt : float = 0.0
 
 func _ready():
+	range_indicator.color = Color(1, 1, 1, 0.2)
 	init_resource()
 	
 	
@@ -34,6 +41,16 @@ func init_resource():
 	shoot_timer.wait_time = 1 / tower_resource.attack_speed 
 	attack_col_shape.shape.radius = tower_resource.attack_range
 	place_col_shape.shape = tower_resource.place_col_shape
+	
+	var radius = tower_resource.attack_range
+	var segments = 64
+	var points = []
+	
+	for i in range(segments):
+		var angle = 2 * PI * i / segments
+		points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
+		
+	range_indicator.polygon = points
 
 func _on_area_2d_area_entered(area):
 	if area.owner is Enemy:
@@ -169,16 +186,7 @@ func _on_place_area_input_event(_viewport, _event, _shape_idx):
 		else:
 			is_selectable = true
 			
-func enable_select_shader():
-	sprite.material.set_shader_parameter("line_color", select_shader_color)
-	is_selected = true
 
-	
-func disable_select_shader():
-	sprite.material.set_shader_parameter("line_color",Color(0,0,0,0))
-	is_selected = false
-
-	
 func add_damage_dealt(damage : float):
 	damage_dealt += damage
 	if is_selected:

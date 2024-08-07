@@ -27,12 +27,19 @@ extends Resource
 @export var bullet_visual_resource : BulletVisualResource
 
 @export_group("Upgrades")
-@export var upgrade_icon : Texture2D
+@export var upgrade_path_1_icon : Texture2D
+@export var upgrade_path_2_icon : Texture2D
+
 @export var upgrade_path_1_description : String
 @export var upgrade_path_2_description : String
-@export var upgrade_price_easy : int = 0
-@export var upgrade_price_medium : int = 0
-@export var upgrade_price_hard : int = 0
+
+@export var upgrade_path_1_price_easy : int = 0
+@export var upgrade_path_1_price_medium : int = 0
+@export var upgrade_path_1_price_hard : int = 0
+
+@export var upgrade_path_2_price_easy : int = 0
+@export var upgrade_path_2_price_medium : int = 0
+@export var upgrade_path_2_price_hard : int = 0
 
 @export var upgrade_path_1_tower_resource : TowerResource
 @export var upgrade_path_2_tower_resource : TowerResource

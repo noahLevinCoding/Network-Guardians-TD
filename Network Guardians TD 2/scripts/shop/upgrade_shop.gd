@@ -30,7 +30,7 @@ func _on_select_tower(tower : Tower):
 	visible = true
 	shop_node.visible = false
 	cooler_power_supply_upgrade_node.visible = false
-	selected_tower.enable_select_shader()
+	selected_tower.is_selected = true
 	
 	tower_name_label.text = selected_tower.tower_resource.name
 	prio_option_button.select(selected_tower.target_prio_type)
@@ -44,7 +44,7 @@ func _on_deselect_tower():
 	visible = false
 	shop_node.visible = true
 	if selected_tower != null:
-		selected_tower.disable_select_shader()
+		selected_tower.is_selected = false
 	selected_tower = null
 	
 	

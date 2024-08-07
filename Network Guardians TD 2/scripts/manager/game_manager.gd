@@ -120,7 +120,7 @@ func upgrade_tower(tower: Tower, path_id : int):
 	if upgrade_tower_resource == null:
 		return
 	
-	var upgrade_price = get_upgrade_tower_price(upgrade_tower_resource)
+	var upgrade_price = get_upgrade_tower_price(tower.tower_resource, path_id)
 	var upgrade_power = get_upgrade_tower_power(tower.tower_resource, upgrade_tower_resource)
 	var upgrade_temperature_increase = get_upgrade_tower_temperature_increase(tower.tower_resource, upgrade_tower_resource)
 	
@@ -142,13 +142,22 @@ func get_upgrade_tower_temperature_increase(tower_resource : TowerResource, upgr
 func get_upgrade_tower_power(tower_resource : TowerResource, upgrade_tower_resource : TowerResource):
 	return upgrade_tower_resource.power - tower_resource.power
 
-func get_upgrade_tower_price(tower_resource: TowerResource):
-	if difficulty == GameManager.DIFFICULTY.EASY:
-		return tower_resource.upgrade_price_easy
-	elif difficulty == GameManager.DIFFICULTY.MEDIUM:
-		return tower_resource.upgrade_price_medium
+func get_upgrade_tower_price(tower_resource: TowerResource, path_id : int):
+	
+	if path_id == 1:
+		if difficulty == GameManager.DIFFICULTY.EASY:
+			return tower_resource.upgrade_path_1_price_easy
+		elif difficulty == GameManager.DIFFICULTY.MEDIUM:
+			return tower_resource.upgrade_path_1_price_medium
+		else:
+			return tower_resource.upgrade_path_1_price_hard
 	else:
-		return tower_resource.upgrade_price_hard
+		if difficulty == GameManager.DIFFICULTY.EASY:
+			return tower_resource.upgrade_path_2_price_easy
+		elif difficulty == GameManager.DIFFICULTY.MEDIUM:
+			return tower_resource.upgrade_path_2_price_medium
+		else:
+			return tower_resource.upgrade_path_2_price_hard
 
 func upgrade_cooler():
 	var price = get_upgrade_cooler_price(cooler.cooler_resource.upgrade_cooler_resource)

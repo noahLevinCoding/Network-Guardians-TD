@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8g816dvqaad4"
-path="res://.godot/imported/virus_5_3.png-a976c50d5e016d60159ec4d9d8381e2f.ctex"
+path="res://.godot/imported/virus_5_3.png-19215f6eb04815a03886120b84aeb87a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemy/virus/virus_5/virus_5_3.png"
-dest_files=["res://.godot/imported/virus_5_3.png-a976c50d5e016d60159ec4d9d8381e2f.ctex"]
+source_file="res://assets/enemy/Virus/virus_5/virus_5_3.png"
+dest_files=["res://.godot/imported/virus_5_3.png-19215f6eb04815a03886120b84aeb87a.ctex"]
 
 [params]
 
