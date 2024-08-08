@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://cnu48pu8x8ipt"]
+
+[ext_resource type="SpriteFrames" uid="uid://be8xbfv1f1mmr" path="res://resources/enemies/sprite_frames/virus_8_white_sprite_frames.tres" id="1_22vmo"]
+[ext_resource type="Texture2D" uid="uid://du2c7aru3oxqx" path="res://assets/enemy/camo.png" id="2_7d2ia"]
+[ext_resource type="Resource" uid="uid://bc2r2f3klqexf" path="res://resources/enemies/normal/virus_5_pink.tres" id="3_21t8b"]
+[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/shapes/virus_shape.tres" id="4_p826r"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="5_r4p4h"]
+
+[resource]
+script = ExtResource("5_r4p4h")
+enemy_type = 1
+base_sprite_frames = ExtResource("1_22vmo")
+camo_texture = ExtResource("2_7d2ia")
+col_shape = ExtResource("4_p826r")
+base_speed = 2.0
+base_health = 1.0
+is_immune_to_light = false
+is_immune_to_electricity = false
+is_immune_to_magnetism = false
+is_immune_to_pierce = false
+is_immunte_to_slow = true
+is_camo = false
+is_fortified = false
+can_regrow = true
+child_resources = Array[ExtResource("5_r4p4h")]([ExtResource("3_21t8b")])
+child_quantities = Array[int]([2])
+money_on_death = 1

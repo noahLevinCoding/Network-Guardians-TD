@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://nkh6uwtfqn0d"]
+
+[ext_resource type="Texture2D" uid="uid://gf5pkbqkbmwp" path="res://assets/enemy/trojan/trojan_2/trojan_2_0.png" id="1_ylgia"]
+[ext_resource type="Texture2D" uid="uid://fofqedjqp3yf" path="res://assets/enemy/trojan/trojan_2/trojan_2_1.png" id="2_82gja"]
+[ext_resource type="Texture2D" uid="uid://b37osulmicpmw" path="res://assets/enemy/trojan/trojan_2/trojan_2_2.png" id="3_r7wuf"]
+[ext_resource type="Texture2D" uid="uid://bm4uq6b1bkt6x" path="res://assets/enemy/trojan/trojan_2/trojan_2_3.png" id="4_uako8"]
+[ext_resource type="Texture2D" uid="uid://oobqemn7ct38" path="res://assets/enemy/trojan/trojan_2/trojan_2_4.png" id="5_l6k87"]
+[ext_resource type="Texture2D" uid="uid://cghff1omyl8rt" path="res://assets/enemy/trojan/trojan_2/trojan_2_5.png" id="6_4q2jf"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ylgia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_82gja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r7wuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uako8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l6k87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4q2jf")
+}],
+"loop": true,
+"name": &"move",
+"speed": 8.0
+}]

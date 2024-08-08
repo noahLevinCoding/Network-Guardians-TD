@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_hd56g"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_imlsy"]
-[ext_resource type="Resource" uid="uid://cn63l5kp62ncv" path="res://resources/enemies/virus_3_green.tres" id="5_s4jst"]
+[ext_resource type="Resource" uid="uid://cn63l5kp62ncv" path="res://resources/enemies/normal/virus_3_green.tres" id="5_s4jst"]
 
 [sub_resource type="Resource" id="Resource_j8q3e"]
 script = ExtResource("3_imlsy")

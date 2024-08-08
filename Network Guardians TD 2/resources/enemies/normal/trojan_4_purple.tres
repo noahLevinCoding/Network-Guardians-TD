@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=8 format=3 uid="uid://brootk5uwhe0m"]
+
+[ext_resource type="SpriteFrames" uid="uid://bnucla2kkys17" path="res://resources/enemies/sprite_frames/trojan_4_purple_sprite_frames.tres" id="1_wy3ct"]
+[ext_resource type="Texture2D" uid="uid://dw06uq7mn1qmt" path="res://assets/enemy/Addon_textures/camo.png" id="2_li8r6"]
+[ext_resource type="Resource" uid="uid://boj6qwc0yr8wn" path="res://resources/enemies/normal/trojan_3_green.tres" id="3_4dfy5"]
+[ext_resource type="Resource" uid="uid://b55bsm0g5t8oo" path="res://resources/enemies/normal/bug_1_red.tres" id="4_clis5"]
+[ext_resource type="Shape2D" uid="uid://bsaj71tiikbbt" path="res://resources/enemies/shapes/trojan_shape.tres" id="4_ykmj8"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="5_xpgg5"]
+[ext_resource type="Texture2D" uid="uid://r05bfouhf7k1" path="res://assets/enemy/Addon_textures/fortified_trojan.png" id="6_1u8ih"]
+
+[resource]
+script = ExtResource("5_xpgg5")
+enemy_type = 2
+base_sprite_frames = ExtResource("1_wy3ct")
+camo_texture = ExtResource("2_li8r6")
+fortified_texture = ExtResource("6_1u8ih")
+col_shape = ExtResource("4_ykmj8")
+base_speed = 0.18
+base_health = 20000.0
+is_immune_to_light = false
+is_immune_to_electricity = false
+is_immune_to_magnetism = true
+is_immune_to_pierce = false
+is_immunte_to_slow = true
+is_camo = false
+is_fortified = false
+can_regrow = false
+child_resources = Array[ExtResource("5_xpgg5")]([ExtResource("3_4dfy5"), ExtResource("4_clis5")])
+child_quantities = Array[int]([2, 3])
+money_on_death = 1

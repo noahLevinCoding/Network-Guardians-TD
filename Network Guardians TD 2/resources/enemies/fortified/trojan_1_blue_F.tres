@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=5 format=3 uid="uid://mwujkc70qa7u"]
+
+[ext_resource type="SpriteFrames" uid="uid://c4umysy63s7j1" path="res://resources/enemies/sprite_frames/trojan_1_blue_sprite_frames.tres" id="1_4jxuj"]
+[ext_resource type="Resource" uid="uid://yll6f0d6jyog" path="res://resources/enemies/normal/virus_12_ceramic.tres" id="2_c5guf"]
+[ext_resource type="Shape2D" uid="uid://bsaj71tiikbbt" path="res://resources/enemies/shapes/trojan_shape.tres" id="3_5jwq5"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="4_t80y8"]
+
+[resource]
+script = ExtResource("4_t80y8")
+enemy_type = 2
+base_sprite_frames = ExtResource("1_4jxuj")
+col_shape = ExtResource("3_5jwq5")
+base_speed = 1.0
+base_health = 200.0
+is_immune_to_light = false
+is_immune_to_electricity = false
+is_immune_to_magnetism = false
+is_immune_to_pierce = false
+is_immunte_to_slow = false
+is_camo = false
+is_fortified = false
+can_regrow = false
+child_resources = Array[ExtResource("4_t80y8")]([ExtResource("2_c5guf")])
+child_quantities = Array[int]([4])
+money_on_death = 1

@@ -3,6 +3,7 @@ extends PathFollow2D
 
 @export var base_animated_sprite : AnimatedSprite2D
 @export var camo_sprite : Sprite2D
+@export var fortified_sprite : Sprite2D
 
 @export var col_shape : CollisionShape2D
 
@@ -153,10 +154,15 @@ func init_resource():
 	base_animated_sprite.play("move")
 	
 	camo_sprite.texture = enemy_resource.camo_texture
+	fortified_sprite.texture = enemy_resource.fortified_texture
 	col_shape.shape = enemy_resource.col_shape
 	
 	current_health = enemy_resource.base_health
+	# double hp if fortified
+	if enemy_resource.is_fortified:
+		current_health *= 2
 	
 	#TODO: Adjust when adding effects
 	camo_sprite.visible = enemy_resource.is_camo
+	fortified_sprite.visible = enemy_resource.is_fortified
 

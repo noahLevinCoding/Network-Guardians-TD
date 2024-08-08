@@ -9,6 +9,7 @@ enum ENEMY_TYPES {NONE, VIRUS, MOAB}
 @export_group("Visuals & Collision")
 @export var base_sprite_frames : SpriteFrames
 @export var camo_texture : Texture2D
+@export var fortified_texture : Texture2D
 @export var col_shape : Shape2D
 
 @export_group("Stats")
@@ -24,6 +25,8 @@ enum ENEMY_TYPES {NONE, VIRUS, MOAB}
 @export var is_immunte_to_slow : bool = false
 
 @export var is_camo : bool = false
+@export var is_fortified : bool = false
+@export var can_regrow : bool = false
 
 @export_group("Children")
 @export var child_resources : Array[EnemyResource]
