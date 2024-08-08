@@ -67,41 +67,58 @@ func calc_damage_to_player(child_enemy_resource : EnemyResource):
 		return  1 + damage_from_children
 		
 func take_damage(bullet_resource : BulletResource):
+	print("B")
+
 	
 	for effect_resource in bullet_resource.effects:
 		effects.append(Effect.new(effect_resource))
 	
-	#Check lead
-	if enemy_resource.is_immune_to_light and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.LIGHT and not bullet_resource.ignoes_damage_type_immunity:
-		return
-		
-	if enemy_resource.is_immune_to_electricity and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.ELECTRICITY  and not bullet_resource.ignoes_damage_type_immunity:
-		return
-		
-	if enemy_resource.is_immune_to_magnetism and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.MAGNETISM and not bullet_resource.ignoes_damage_type_immunity:
+	if is_immune(bullet_resource):
 		return
 	
 	#TODO damage multiplier
 	
 	#Apply pierce
-	#while bullet_resource.attack_damage > current_health and enemy_resource.child_quantity == 1 and bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
-		#bullet_resource.attack_damage -= current_health
-		#bullet_resource.pierce -= 1
-		#bullet_resource.source_tower.add_damage_dealt(current_health)
-		#drop_loot()
-		#enemy_resource = enemy_resource.child_resource
-		#init_resource()
+	while bullet_resource.attack_damage > current_health and enemy_resource.child_quantities.size() == 1 and enemy_resource.child_quantities[0] == 1 and  bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
+		bullet_resource.attack_damage -= current_health
+		bullet_resource.pierce -= 1
+		bullet_resource.source_tower.add_damage_dealt(current_health)
+		drop_loot()
+		enemy_resource = enemy_resource.child_resources[0]
+		init_resource()
 		
+		if is_immune(bullet_resource):
+			return
+	
 	bullet_resource.source_tower.add_damage_dealt(min(bullet_resource.attack_damage, current_health))
-	current_health -= bullet_resource.attack_damage
-	
-	
-	
-	if current_health <= 0: 
-		spawn_children()
 		
+	if current_health <= bullet_resource.attack_damage:
+		bullet_resource.attack_damage -= current_health
+		bullet_resource.pierce -= 1
+		current_health = 0
+		spawn_children(bullet_resource)
+	else:
+		current_health -= bullet_resource.attack_damage
+	
+
+func duplicate_bullet_resource(bullet_resource : BulletResource):
+	var new_bullet_resource = BulletResource.new()
+	
+	new_bullet_resource.attack_damage = bullet_resource.attack_damage
+	new_bullet_resource.pierce = bullet_resource.pierce
+	new_bullet_resource.source_tower = bullet_resource.source_tower
+	new_bullet_resource.effects = bullet_resource.effects
+	new_bullet_resource.damage_type = bullet_resource.damage_type
+	new_bullet_resource.ignores_damage_type_immunity = bullet_resource.ignores_damage_type_immunity
+	
+	return new_bullet_resource
+
 		
-func spawn_children():
+func is_immune(bullet_resource : BulletResource):
+	return enemy_resource.is_immune_to_light and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.LIGHT and not bullet_resource.ignoes_damage_type_immunity or enemy_resource.is_immune_to_electricity and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.ELECTRICITY  and not bullet_resource.ignoes_damage_type_immunity or enemy_resource.is_immune_to_magnetism and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.MAGNETISM and not bullet_resource.ignoes_damage_type_immunity
+
+	
+func spawn_children(bullet_resource : BulletResource):
 	if enemy_resource.child_quantities.size() == 0:
 		die()
 	elif enemy_resource.child_quantities.size() == 1 and enemy_resource.child_quantities[0] == 1:
@@ -118,6 +135,9 @@ func spawn_children():
 				get_parent().add_child(enemy_instance)
 				enemy_instance.progress_ratio = progress_ratio
 				enemy_instance.progress -= children_counter * child_spawn_displacement
+				if not enemy_resource.is_immune_to_pierce and bullet_resource.pierce >= 1:
+					print("A")
+					enemy_instance.take_damage(duplicate_bullet_resource(bullet_resource))
 				children_counter += 1
 		die()
 	

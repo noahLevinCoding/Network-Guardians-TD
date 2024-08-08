@@ -95,7 +95,7 @@ func instantiate_bullet():
 	bullet_resource.source_tower = self
 	bullet_resource.effects = tower_resource.effects
 	bullet_resource.damage_type = tower_resource.damage_type
-	bullet_resource.ignoes_damage_type_immunity = tower_resource.ignores_damage_type_immunity
+	bullet_resource.ignores_damage_type_immunity = tower_resource.ignores_damage_type_immunity
 	bullet_instance.bullet_resource = bullet_resource	
 	
 	add_child(bullet_instance)

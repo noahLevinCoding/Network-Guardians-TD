@@ -2,7 +2,7 @@ class_name BulletResource
 extends Resource
 
 var attack_damage : float
-var ignoes_damage_type_immunity : bool
+var ignores_damage_type_immunity : bool
 var texture : Texture2D
 var speed : float
 var target : Enemy
