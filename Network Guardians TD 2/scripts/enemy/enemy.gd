@@ -40,10 +40,12 @@ func end_of_effect(effect : Effect):
 	effects.erase(effect)
 
 func calc_current_speed():
-	current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier * slow_multiplier
+	current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier  * base_speed_multiplier
+	if not enemy_resource.is_immunte_to_slow:
+		current_speed *= slow_multiplier
 	
 func move(delta : float):
-	progress += current_speed * delta * base_speed_multiplier
+	progress += current_speed * delta
 	
 func check_if_end():
 	if progress_ratio >= 1:
@@ -82,13 +84,13 @@ func take_damage(bullet_resource : BulletResource):
 	#TODO damage multiplier
 	
 	#Apply pierce
-	while bullet_resource.attack_damage > current_health and enemy_resource.child_quantity == 1 and bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
-		bullet_resource.attack_damage -= current_health
-		bullet_resource.pierce -= 1
-		bullet_resource.source_tower.add_damage_dealt(current_health)
-		drop_loot()
-		enemy_resource = enemy_resource.child_resource
-		init_resource()
+	#while bullet_resource.attack_damage > current_health and enemy_resource.child_quantity == 1 and bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
+		#bullet_resource.attack_damage -= current_health
+		#bullet_resource.pierce -= 1
+		#bullet_resource.source_tower.add_damage_dealt(current_health)
+		#drop_loot()
+		#enemy_resource = enemy_resource.child_resource
+		#init_resource()
 		
 	bullet_resource.source_tower.add_damage_dealt(min(bullet_resource.attack_damage, current_health))
 	current_health -= bullet_resource.attack_damage

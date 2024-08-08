@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://bfih8ffsca7je"]
+
+[ext_resource type="SpriteFrames" uid="uid://dkdhj3q2ww3c3" path="res://resources/enemies/sprite_frames/virus_11_rainbow_sprite_frames.tres" id="1_k2vd2"]
+[ext_resource type="Texture2D" uid="uid://du2c7aru3oxqx" path="res://assets/enemy/camo.png" id="2_btpa0"]
+[ext_resource type="Resource" uid="uid://dllletlqjc145" path="res://resources/enemies/virus_10_zebra.tres" id="3_gqbj8"]
+[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/virus_shape.tres" id="5_64jrq"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="6_6wplr"]
+
+[resource]
+script = ExtResource("6_6wplr")
+enemy_type = 1
+base_sprite_frames = ExtResource("1_k2vd2")
+camo_texture = ExtResource("2_btpa0")
+col_shape = ExtResource("5_64jrq")
+base_speed = 2.2
+base_health = 1.0
+is_immune_to_light = false
+is_immune_to_electricity = false
+is_immune_to_magnetism = false
+is_immune_to_pierce = false
+is_immunte_to_slow = false
+is_camo = false
+child_resources = Array[ExtResource("6_6wplr")]([ExtResource("3_gqbj8")])
+child_quantities = Array[int]([2])
+money_on_death = 1

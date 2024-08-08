@@ -1,12 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkgwoa2og1bau"]
+[gd_scene load_steps=3 format=3 uid="uid://dkgwoa2og1bau"]
 
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_fdsxu"]
-[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_mfxqv"]
-
-[sub_resource type="Resource" id="Resource_rl7b3"]
-script = ExtResource("2_mfxqv")
-slow_multiplier = 0.0
-duration = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gmisu"]
 
@@ -16,7 +10,7 @@ script = ExtResource("1_fdsxu")
 base_animated_sprite = NodePath("BaseAnimatedSprite")
 camo_sprite = NodePath("CamoSprite")
 col_shape = NodePath("Area2D/CollisionShape2D")
-child_spawn_slow_effect_resource = SubResource("Resource_rl7b3")
+child_spawn_displacement = 20.0
 
 [node name="BaseAnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gmisu")

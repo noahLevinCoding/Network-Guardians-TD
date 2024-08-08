@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://dllletlqjc145"]
+
+[ext_resource type="SpriteFrames" uid="uid://drj5bd8obv8y7" path="res://resources/enemies/sprite_frames/virus_10_zebra_sprite_frames.tres" id="1_picuy"]
+[ext_resource type="Texture2D" uid="uid://du2c7aru3oxqx" path="res://assets/enemy/camo.png" id="2_nyg77"]
+[ext_resource type="Resource" uid="uid://b0vwwsh7tin4l" path="res://resources/enemies/virus_6_black.tres" id="3_hpnnm"]
+[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/virus_shape.tres" id="4_jdqh1"]
+[ext_resource type="Resource" uid="uid://cs5dxhxjv21et" path="res://resources/enemies/virus_8_white.tres" id="4_kpp8b"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="5_k2hgp"]
+
+[resource]
+script = ExtResource("5_k2hgp")
+enemy_type = 1
+base_sprite_frames = ExtResource("1_picuy")
+camo_texture = ExtResource("2_nyg77")
+col_shape = ExtResource("4_jdqh1")
+base_speed = 1.8
+base_health = 1.0
+is_immune_to_light = false
+is_immune_to_electricity = true
+is_immune_to_magnetism = false
+is_immune_to_pierce = false
+is_immunte_to_slow = true
+is_camo = false
+child_resources = Array[ExtResource("5_k2hgp")]([ExtResource("3_hpnnm"), ExtResource("4_kpp8b")])
+child_quantities = Array[int]([1, 1])
+money_on_death = 1
