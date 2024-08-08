@@ -116,7 +116,7 @@ func duplicate_bullet_resource(bullet_resource : BulletResource):
 
 		
 func is_immune(bullet_resource : BulletResource):
-	return enemy_resource.is_immune_to_light and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.LIGHT and not bullet_resource.ignoes_damage_type_immunity or enemy_resource.is_immune_to_electricity and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.ELECTRICITY  and not bullet_resource.ignoes_damage_type_immunity or enemy_resource.is_immune_to_magnetism and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.MAGNETISM and not bullet_resource.ignoes_damage_type_immunity
+	return enemy_resource.is_immune_to_light and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.LIGHT and not bullet_resource.ignores_damage_type_immunity or enemy_resource.is_immune_to_electricity and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.ELECTRICITY  and not bullet_resource.ignores_damage_type_immunity or enemy_resource.is_immune_to_magnetism and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.MAGNETISM and not bullet_resource.ignores_damage_type_immunity
 
 	
 func spawn_children(bullet_resource : BulletResource):
