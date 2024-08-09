@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctqbkcnchvep4"]
+
+[ext_resource type="Script" path="res://scripts/tower/resource_tower.gd" id="1_8balm"]
+[ext_resource type="Shader" path="res://shader/tower_selection_shader.gdshader" id="2_yxu37"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4pji"]
+shader = ExtResource("2_yxu37")
+shader_parameter/line_color = Color(1, 1, 1, 0)
+shader_parameter/line_thickness = 1.0
+
+[node name="ResourceTower" type="Node2D" node_paths=PackedStringArray("sprite", "place_col_shape", "drop_timer")]
+script = ExtResource("1_8balm")
+sprite = NodePath("Sprite2D")
+place_col_shape = NodePath("PlaceArea/CollisionShape2D")
+drop_timer = NodePath("DropTimer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_o4pji")
+scale = Vector2(1.5, 1.5)
+
+[node name="PlaceArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceArea"]
+
+[node name="DropTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="input_event" from="PlaceArea" to="." method="_on_place_area_input_event"]
+[connection signal="timeout" from="DropTimer" to="." method="_on_drop_timer_timeout"]

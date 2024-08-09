@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=26 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 [ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
@@ -6,8 +6,9 @@
 [ext_resource type="Resource" uid="uid://cebq13jmuhy6c" path="res://resources/shopItems/led.tres" id="3_4w7p2"]
 [ext_resource type="FontFile" uid="uid://4kant1hnfw5s" path="res://assets/ui/fonts/lower-pixel.regular.otf" id="3_rto13"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="5_vj66y"]
-[ext_resource type="Script" path="res://scripts/shop/upgrade_shop.gd" id="6_ofld6"]
+[ext_resource type="Script" path="res://scripts/shop/attack_upgrade_shop.gd" id="6_ofld6"]
 [ext_resource type="Texture2D" uid="uid://de2vlybekiwjj" path="res://assets/ui/buttons/button_up.png" id="6_xqh4e"]
+[ext_resource type="Script" path="res://scripts/shop/resource_upgrade_shop.gd" id="7_4b2yw"]
 [ext_resource type="Script" path="res://scripts/shop/cooler_power_supply_shop.gd" id="7_7ot5l"]
 [ext_resource type="Texture2D" uid="uid://bwbypd2wga0ba" path="res://assets/ui/buttons/button_pressed.png" id="7_rsj37"]
 [ext_resource type="Texture2D" uid="uid://c31mo4rfha854" path="res://assets/ui/buttons/dip_switch_left.png" id="8_cq58l"]
@@ -201,7 +202,7 @@ fixed_column_width = 70
 icon_mode = 0
 icon_scale = 2.4
 
-[node name="Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "tower_name_label", "prio_option_button", "damage_dealt_label", "sell_button", "selected_temperature_label", "selected_power_label")]
+[node name="Attack_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "resource_upgrade_node", "tower_name_label", "prio_option_button", "damage_dealt_label", "sell_button", "selected_temperature_label", "selected_power_label")]
 visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
@@ -209,7 +210,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("6_ofld6")
 shop_node = NodePath("../Shop")
-cooler_power_supply_upgrade_node = NodePath("../Cooler_PowerSupply")
+cooler_power_supply_upgrade_node = NodePath("../Cooler_PowerSupply_Upgrade")
+resource_upgrade_node = NodePath("../Resource_Upgrade")
 tower_name_label = NodePath("TowerName")
 prio_option_button = NodePath("PrioritizationDropdown")
 damage_dealt_label = NodePath("DamageValue")
@@ -217,34 +219,34 @@ sell_button = NodePath("SellButton")
 selected_temperature_label = NodePath("HBoxContainer/SelectedTemperatureLabel")
 selected_power_label = NodePath("HBoxContainer/SelectedPowerLabel")
 
-[node name="TowerName" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+[node name="TowerName" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 text = "LED"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScreenBox/RightSide/Upgrade"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
 
-[node name="SelectedTemperatureLabel" type="Label" parent="ScreenBox/RightSide/Upgrade/HBoxContainer"]
+[node name="SelectedTemperatureLabel" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer"]
 layout_mode = 2
 text = "+1.0 °C"
 
-[node name="SelectedPowerLabel" type="Label" parent="ScreenBox/RightSide/Upgrade/HBoxContainer"]
+[node name="SelectedPowerLabel" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "2 W"
 horizontal_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Upgrade"]
+[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="PrioritizationLabel" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+[node name="PrioritizationLabel" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
 text = "Prioritization"
 
-[node name="PrioritizationDropdown" type="OptionButton" parent="ScreenBox/RightSide/Upgrade"]
+[node name="PrioritizationDropdown" type="OptionButton" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
 item_count = 5
 popup/item_0/text = "First"
@@ -253,60 +255,140 @@ popup/item_1/text = "Last"
 popup/item_1/id = 1
 popup/item_2/text = "Camo"
 popup/item_2/id = 2
-popup/item_3/text = "Lead"
+popup/item_3/text = "Fortified"
 popup/item_3/id = 3
 popup/item_4/text = "Healthiest"
 popup/item_4/id = 4
 
-[node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Upgrade"]
+[node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 
-[node name="DamageLabel" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+[node name="DamageLabel" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
 text = "Damage dealt"
 
-[node name="DamageValue" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+[node name="DamageValue" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
 text = "0"
 horizontal_alignment = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide/Upgrade"]
+[node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 
-[node name="UpgradeHeading" type="Label" parent="ScreenBox/RightSide/Upgrade"]
+[node name="UpgradeHeading" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
 text = "Upgrade"
 horizontal_alignment = 1
 
-[node name="UpperUpgradeButton" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+[node name="UpperUpgradeButton" type="Button" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "Upgrade 1"
 
-[node name="LowerUpgradeButton" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+[node name="LowerUpgradeButton" type="Button" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "Upgrade 2"
 
-[node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+[node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "Deselect"
 
-[node name="SellButton" type="Button" parent="ScreenBox/RightSide/Upgrade"]
+[node name="SellButton" type="Button" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
 text = "Sell"
 
-[node name="Cooler_PowerSupply" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "price_temp_text", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "price_power_text", "upgrade_power_supply_button")]
+[node name="Resource_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "attack_upgrade_node", "tower_name_label", "money_generated_label", "sell_button", "selected_temperature_label", "selected_power_label")]
+custom_minimum_size = Vector2(246, 615)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("7_4b2yw")
+shop_node = NodePath("../Shop")
+cooler_power_supply_upgrade_node = NodePath("../Cooler_PowerSupply_Upgrade")
+attack_upgrade_node = NodePath("../Attack_Upgrade")
+tower_name_label = NodePath("TowerName")
+money_generated_label = NodePath("MoneyValue")
+sell_button = NodePath("SellButton")
+selected_temperature_label = NodePath("HBoxContainer/SelectedTemperatureLabel")
+selected_power_label = NodePath("HBoxContainer/SelectedPowerLabel")
+
+[node name="TowerName" type="Label" parent="ScreenBox/RightSide/Resource_Upgrade"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+text = "LED"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
+layout_mode = 2
+
+[node name="SelectedTemperatureLabel" type="Label" parent="ScreenBox/RightSide/Resource_Upgrade/HBoxContainer"]
+layout_mode = 2
+text = "+1.0 °C"
+
+[node name="SelectedPowerLabel" type="Label" parent="ScreenBox/RightSide/Resource_Upgrade/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "2 W"
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="ScreenBox/RightSide/Resource_Upgrade"]
+layout_mode = 2
+text = "Money generated"
+
+[node name="MoneyValue" type="Label" parent="ScreenBox/RightSide/Resource_Upgrade"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+
+[node name="UpgradeHeading" type="Label" parent="ScreenBox/RightSide/Resource_Upgrade"]
+layout_mode = 2
+text = "Upgrade"
+horizontal_alignment = 1
+
+[node name="UpperUpgradeButton" type="Button" parent="ScreenBox/RightSide/Resource_Upgrade"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Upgrade 1"
+
+[node name="LowerUpgradeButton" type="Button" parent="ScreenBox/RightSide/Resource_Upgrade"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Upgrade 2"
+
+[node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Resource_Upgrade"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Deselect"
+
+[node name="SellButton" type="Button" parent="ScreenBox/RightSide/Resource_Upgrade"]
+layout_mode = 2
+text = "Sell"
+
+[node name="Cooler_PowerSupply_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "price_temp_text", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "price_power_text", "upgrade_power_supply_button")]
+visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("7_7ot5l")
 shop_node = NodePath("../Shop")
-upgrade_node = NodePath("../Upgrade")
+upgrade_node = NodePath("../Attack_Upgrade")
 currently_temp = NodePath("Currently/Value")
 upgrade_temp = NodePath("Upgrade/Value")
 price_temp = NodePath("Price/Value")
@@ -318,123 +400,123 @@ price_power = NodePath("Price2/Value")
 price_power_text = NodePath("Price2/Text")
 upgrade_power_supply_button = NodePath("UpgradeBtn2")
 
-[node name="CollerHeading" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="CollerHeading" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 text = "Cooler"
 horizontal_alignment = 1
 
-[node name="Currently" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="Currently" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Currently"]
+[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently"]
 layout_mode = 2
 text = "Currently:"
 
-[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Currently"]
+[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "-10 °C"
 horizontal_alignment = 2
 
-[node name="Upgrade" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="Upgrade" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Upgrade"]
+[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Upgrade"]
 layout_mode = 2
 text = "Upgrade:"
 
-[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Upgrade"]
+[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Upgrade"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "- 20°C"
 horizontal_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="Price" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="Price" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Price"]
+[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Price"]
 layout_mode = 2
 text = "Price:"
 
-[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Price"]
+[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Price"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "100 $"
 horizontal_alignment = 2
 
-[node name="UpgradeBtn" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="UpgradeBtn" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "Upgrade"
 
-[node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="PowerSupplyHeading" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="PowerSupplyHeading" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 text = "Power Supply"
 horizontal_alignment = 1
 
-[node name="Currently2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="Currently2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Currently2"]
+[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently2"]
 layout_mode = 2
 text = "Currently:"
 
-[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Currently2"]
+[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently2"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "100 W"
 horizontal_alignment = 2
 
-[node name="Upgrade2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="Upgrade2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Upgrade2"]
+[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Upgrade2"]
 layout_mode = 2
 text = "Upgrade:"
 
-[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Upgrade2"]
+[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Upgrade2"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "200 W"
 horizontal_alignment = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="Price2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="Price2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Price2"]
+[node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Price2"]
 layout_mode = 2
 text = "Price:"
 
-[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply/Price2"]
+[node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Price2"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "200 $"
 horizontal_alignment = 2
 
-[node name="UpgradeBtn2" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="UpgradeBtn2" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "Upgrade"
 
-[node name="MarginContainer4" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="MarginContainer4" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply"]
+[node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Deselect"
@@ -602,14 +684,18 @@ debug_color = Color(0, 0.631373, 0.419608, 0.882353)
 scale = Vector2(1.5, 1.5)
 
 [connection signal="item_selected" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_item_list_item_selected"]
-[connection signal="item_selected" from="ScreenBox/RightSide/Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Upgrade" method="_on_prioritization_dropdown_item_selected"]
-[connection signal="button_up" from="ScreenBox/RightSide/Upgrade/UpperUpgradeButton" to="ScreenBox/RightSide/Upgrade" method="_on_upper_upgrade_button_button_up"]
-[connection signal="button_up" from="ScreenBox/RightSide/Upgrade/LowerUpgradeButton" to="ScreenBox/RightSide/Upgrade" method="_on_lower_upgrade_button_up"]
-[connection signal="button_up" from="ScreenBox/RightSide/Upgrade/DeselectButton" to="ScreenBox/RightSide/Upgrade" method="_on_deselect_button_up"]
-[connection signal="button_down" from="ScreenBox/RightSide/Upgrade/SellButton" to="ScreenBox/RightSide/Upgrade" method="_on_sell_button_down"]
-[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply/UpgradeBtn" to="ScreenBox/RightSide/Cooler_PowerSupply" method="_on_upgrade_cooler"]
-[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply/UpgradeBtn2" to="ScreenBox/RightSide/Cooler_PowerSupply" method="_on_upgrade_power_supply"]
-[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply/DeselectButton" to="ScreenBox/RightSide/Cooler_PowerSupply" method="_on_deselect"]
+[connection signal="item_selected" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_item_selected"]
+[connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/UpperUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_upper_upgrade_button_button_up"]
+[connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/LowerUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_lower_upgrade_button_up"]
+[connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/DeselectButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_deselect_button_up"]
+[connection signal="button_down" from="ScreenBox/RightSide/Attack_Upgrade/SellButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_sell_button_down"]
+[connection signal="button_up" from="ScreenBox/RightSide/Resource_Upgrade/UpperUpgradeButton" to="ScreenBox/RightSide/Resource_Upgrade" method="_on_upper_upgrade_button_button_up"]
+[connection signal="button_up" from="ScreenBox/RightSide/Resource_Upgrade/LowerUpgradeButton" to="ScreenBox/RightSide/Resource_Upgrade" method="_on_lower_upgrade_button_up"]
+[connection signal="button_up" from="ScreenBox/RightSide/Resource_Upgrade/DeselectButton" to="ScreenBox/RightSide/Resource_Upgrade" method="_on_deselect_button_up"]
+[connection signal="button_down" from="ScreenBox/RightSide/Resource_Upgrade/SellButton" to="ScreenBox/RightSide/Resource_Upgrade" method="_on_sell_button_down"]
+[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/UpgradeBtn" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_cooler"]
+[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/UpgradeBtn2" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_power_supply"]
+[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/DeselectButton" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_deselect"]
 [connection signal="button_up" from="Buttons/StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
 [connection signal="button_up" from="Buttons/PauseButton" to="." method="_on_pause_button_up"]
 [connection signal="mouse_entered" from="DeselectItemArea" to="ScreenBox/RightSide/Shop" method="_on_deselect_item_area_mouse_entered"]

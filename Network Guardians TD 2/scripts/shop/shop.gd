@@ -51,16 +51,18 @@ func select(index : int):
 	tower_power_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
 	tower_power_text_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
 	
-	var radius = selected_item.tower_resource.attack_range
-	var segments = 64
-	var points = []
+	if not selected_item.tower_resource is ResourceTowerResource:
 	
-	for i in range(segments):
-		var angle = 2 * PI * i / segments
-		points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
+		var radius = selected_item.tower_resource.attack_range
+		var segments = 64
+		var points = []
 		
-	tower_range_polygon.polygon = points
-	tower_range_polygon.visible = true
+		for i in range(segments):
+			var angle = 2 * PI * i / segments
+			points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
+			
+		tower_range_polygon.polygon = points
+		tower_range_polygon.visible = true
 	
 	tower_place_col.shape = selected_item.tower_resource.place_col_shape
 	

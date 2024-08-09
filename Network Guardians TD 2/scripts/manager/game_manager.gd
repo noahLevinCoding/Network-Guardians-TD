@@ -1,7 +1,8 @@
 extends Node
 
 @onready var game_node : Node = get_node("../Main/Game")
-var tower_scene : PackedScene = preload("res://scenes/tower/tower.tscn")
+var attack_tower_scene : PackedScene = preload("res://scenes/tower/attack_tower.tscn")
+var resource_tower_scene : PackedScene = preload("res://scenes/tower/resource_tower.tscn")
 
 enum DIFFICULTY {EASY, MEDIUM, HARD}
 
@@ -108,12 +109,22 @@ func buy_tower(item : ShopItemResource, position):
 		power += item.tower_resource.power
 		temperature += item.tower_resource.temperature_increase
 		
+		var tower_scene = get_tower_scene(item.tower_resource)
+		
 		var tower_instance = tower_scene.instantiate()
 		tower_instance.sell_value = item.price / 2
 		tower_instance.tower_resource = item.tower_resource
 		game_node.add_child(tower_instance)
 		tower_instance.position = position
+	
+func get_tower_scene(tower_resource : TowerResource):
+	if tower_resource is AttackTowerResource:
+		return attack_tower_scene
+	if tower_resource is ResourceTowerResource:
+		return resource_tower_scene
 		
+	return null
+	
 func upgrade_tower(tower: Tower, path_id : int):
 
 	var upgrade_tower_resource : TowerResource = get_upgrade_tower_resource(tower, path_id)	

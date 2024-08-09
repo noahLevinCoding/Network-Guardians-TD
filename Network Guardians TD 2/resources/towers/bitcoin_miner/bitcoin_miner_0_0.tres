@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=4 format=3 uid="uid://dkk2i8g2qgut3"]
+
+[ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="1_fdixq"]
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/place_shapes/led.tres" id="1_pdrsk"]
+[ext_resource type="Texture2D" uid="uid://bhsa8ixefceaf" path="res://assets/tower/led/PNG/led_pink_on.png" id="3_tjsuj"]
+
+[resource]
+script = ExtResource("1_fdixq")
+name = "MINER"
+drop_time = 2.0
+drop_amount = 10
+power = 1
+temperature_increase = 1.0
+tower_texture = ExtResource("3_tjsuj")
+place_col_shape = ExtResource("1_pdrsk")
+upgrade_path_1_description = ""
+upgrade_path_2_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
