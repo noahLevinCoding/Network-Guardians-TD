@@ -599,6 +599,7 @@ collision_mask = 16
 debug_color = Color(0, 0.631373, 0.419608, 0.882353)
 
 [node name="PlacableTowerSprite" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 
 [connection signal="item_selected" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_item_list_item_selected"]
 [connection signal="item_selected" from="ScreenBox/RightSide/Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Upgrade" method="_on_prioritization_dropdown_item_selected"]

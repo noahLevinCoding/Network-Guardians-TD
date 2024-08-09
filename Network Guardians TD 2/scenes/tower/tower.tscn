@@ -49,6 +49,7 @@ select_shader_color = Color(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ldl26")
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_e6wqw")
 
 [node name="AttackArea" type="Area2D" parent="."]

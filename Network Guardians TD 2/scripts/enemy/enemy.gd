@@ -4,6 +4,7 @@ extends PathFollow2D
 @export var base_animated_sprite : AnimatedSprite2D
 @export var camo_sprite : Sprite2D
 @export var fortified_sprite : Sprite2D
+@export var regrow_sprite : Sprite2D
 
 @export var col_shape : CollisionShape2D
 
@@ -19,6 +20,9 @@ var current_speed : float
 
 var effects : Array[Effect] = []
 var slow_multiplier : float = 1.0
+
+var regrow_parent_resources = []
+@export var regrow_timer : Timer
 
 func _ready():
 	init_resource()
@@ -68,9 +72,7 @@ func calc_damage_to_player(child_enemy_resource : EnemyResource):
 		return  1 + damage_from_children
 		
 func take_damage(bullet_resource : BulletResource):
-	print("B")
 
-	
 	for effect_resource in bullet_resource.effects:
 		effects.append(Effect.new(effect_resource))
 	
@@ -85,6 +87,7 @@ func take_damage(bullet_resource : BulletResource):
 		bullet_resource.pierce -= 1
 		bullet_resource.source_tower.add_damage_dealt(current_health)
 		drop_loot()
+		regrow_parent_resources.push_back(enemy_resource)
 		enemy_resource = enemy_resource.child_resources[0]
 		init_resource()
 		
@@ -100,6 +103,9 @@ func take_damage(bullet_resource : BulletResource):
 		spawn_children(bullet_resource)
 	else:
 		current_health -= bullet_resource.attack_damage
+		
+		if enemy_resource.can_regrow and regrow_parent_resources.size() > 0:
+			regrow_timer.start()
 	
 
 func duplicate_bullet_resource(bullet_resource : BulletResource):
@@ -131,20 +137,22 @@ func spawn_children(bullet_resource : BulletResource):
 		die()
 	elif enemy_resource.child_quantities.size() == 1 and enemy_resource.child_quantities[0] == 1:
 		drop_loot()
+		regrow_parent_resources.push_back(enemy_resource)
 		enemy_resource = enemy_resource.child_resources[0]
 		init_resource()
 	else:	
 		var children_counter = 0
+		regrow_parent_resources.push_back(enemy_resource)
 		
 		for child_type_index in range(enemy_resource.child_resources.size()):
 			for enemy_child_index in range(enemy_resource.child_quantities[child_type_index]):
 				var enemy_instance := enemy_scene.instantiate() as Enemy
 				enemy_instance.enemy_resource  = enemy_resource.child_resources[child_type_index]
+				enemy_instance.regrow_parent_resources = regrow_parent_resources.duplicate()
 				get_parent().add_child(enemy_instance)
 				enemy_instance.progress_ratio = progress_ratio
 				enemy_instance.progress -= children_counter * child_spawn_displacement
 				if not enemy_resource.is_immune_to_pierce and bullet_resource.pierce >= 1:
-					print("A")
 					enemy_instance.take_damage(duplicate_bullet_resource(bullet_resource))
 				children_counter += 1
 		die()
@@ -162,7 +170,7 @@ func init_resource():
 	
 	camo_sprite.texture = enemy_resource.camo_texture
 	fortified_sprite.texture = enemy_resource.fortified_texture
-	col_shape.shape = enemy_resource.col_shape
+	regrow_sprite.texture = enemy_resource.regrow_texture
 	
 	current_health = enemy_resource.base_health
 	# double hp if fortified
@@ -172,4 +180,20 @@ func init_resource():
 	#TODO: Adjust when adding effects
 	camo_sprite.visible = enemy_resource.is_camo
 	fortified_sprite.visible = enemy_resource.is_fortified
+	regrow_sprite.visible = enemy_resource.can_regrow
+	
+	regrow_timer.stop()
+	
+	if enemy_resource.can_regrow and regrow_parent_resources.size() > 0:
+		regrow_timer.start()
+	
+	call_deferred("deferred_init_resource")
 
+func deferred_init_resource():
+	col_shape.shape = enemy_resource.col_shape
+
+func _on_regrow_timer_timeout():
+	var parent_resource = regrow_parent_resources.pop_back()
+	if parent_resource != null:
+		enemy_resource = parent_resource
+		init_resource()
