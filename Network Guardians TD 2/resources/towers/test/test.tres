@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=4 format=3 uid="uid://dewpy0d2y6545"]
+
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="1_k7fpv"]
+[ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="1_ojsbu"]
+[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="3_avfdw"]
+
+[resource]
+script = ExtResource("1_ojsbu")
+name = "Support"
+support_range = 200.0
+power = 1
+temperature_increase = 1.0
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
+tower_texture = ExtResource("3_avfdw")
+place_col_shape = ExtResource("1_k7fpv")
+upgrade_path_1_description = ""
+upgrade_path_2_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0

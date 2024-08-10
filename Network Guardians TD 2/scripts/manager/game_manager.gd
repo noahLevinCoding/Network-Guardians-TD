@@ -3,6 +3,7 @@ extends Node
 @onready var game_node : Node = get_node("../Main/Game")
 var attack_tower_scene : PackedScene = preload("res://scenes/tower/attack_tower.tscn")
 var resource_tower_scene : PackedScene = preload("res://scenes/tower/resource_tower.tscn")
+var support_tower_scene : PackedScene = preload("res://scenes/tower/support_tower.tscn")
 
 enum DIFFICULTY {EASY, MEDIUM, HARD}
 
@@ -122,6 +123,8 @@ func get_tower_scene(tower_resource : TowerResource):
 		return attack_tower_scene
 	if tower_resource is ResourceTowerResource:
 		return resource_tower_scene
+	if tower_resource is SupportTowerResource:
+		return support_tower_scene
 		
 	return null
 	

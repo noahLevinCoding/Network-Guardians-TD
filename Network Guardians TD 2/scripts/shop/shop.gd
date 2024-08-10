@@ -53,7 +53,14 @@ func select(index : int):
 	
 	if not selected_item.tower_resource is ResourceTowerResource:
 	
-		var radius = selected_item.tower_resource.attack_range
+		var radius = 0
+	
+		if selected_item.tower_resource is AttackTowerResource:
+			radius = selected_item.tower_resource.attack_range
+			
+		if selected_item.tower_resource is SupportTowerResource:
+			radius = selected_item.tower_resource.support_range
+		
 		var segments = 64
 		var points = []
 		

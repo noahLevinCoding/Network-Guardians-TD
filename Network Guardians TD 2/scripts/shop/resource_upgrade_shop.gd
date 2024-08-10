@@ -3,6 +3,7 @@ extends VBoxContainer
 @export var shop_node : Shop
 @export var cooler_power_supply_upgrade_node : Node
 @export var attack_upgrade_node : Node
+@export var support_upgrade_node : Node
 @export var tower_name_label : Label
 @export var money_generated_label : Label
 @export var sell_button : Button
@@ -31,6 +32,7 @@ func _on_select_tower(tower : Tower):
 	shop_node.visible = false
 	cooler_power_supply_upgrade_node.visible = false
 	attack_upgrade_node.visible = false
+	support_upgrade_node.visible = false
 	selected_tower.is_selected = true
 	
 	tower_name_label.text = selected_tower.tower_resource.name

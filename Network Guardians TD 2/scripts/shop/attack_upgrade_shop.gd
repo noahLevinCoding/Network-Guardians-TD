@@ -3,6 +3,7 @@ extends VBoxContainer
 @export var shop_node : Shop
 @export var cooler_power_supply_upgrade_node : Node
 @export var resource_upgrade_node : Node
+@export var support_upgrade_node : Node
 
 @export var tower_name_label : Label
 @export var prio_option_button : OptionButton
@@ -34,6 +35,7 @@ func _on_select_tower(tower : Tower):
 	cooler_power_supply_upgrade_node.visible = false
 	resource_upgrade_node.visible = false
 	selected_tower.is_selected = true
+	support_upgrade_node.visible = false
 	
 	tower_name_label.text = selected_tower.tower_resource.name
 	prio_option_button.select(selected_tower.target_prio_type)
