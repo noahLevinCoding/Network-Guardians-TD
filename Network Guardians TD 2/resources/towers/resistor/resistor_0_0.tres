@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://c0x5x2rhuu8j3"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://c0x5x2rhuu8j3"]
 
 [ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_pyqmd"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_unhgh"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_k6fbr"]
 [ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="3_qtbls"]
 [ext_resource type="Texture2D" uid="uid://dyh1b1cp74qor" path="res://assets/tower/resistor/resistor_1/pixil-layer-0.png" id="5_jjxyy"]
+[ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="6_j1vvw"]
+[ext_resource type="Resource" uid="uid://b014yct28x5ct" path="res://resources/towers/resistor/resistor_1_0.tres" id="7_pvm7b"]
+[ext_resource type="Texture2D" uid="uid://cyqe4yco852jk" path="res://assets/ui/shop_icons/time_increase_shop_icon.png" id="8_6ufny"]
+[ext_resource type="Resource" uid="uid://b17a5cuoki6u4" path="res://resources/towers/resistor/resistor_0_1.tres" id="9_xlsbf"]
 
 [sub_resource type="Resource" id="Resource_416o8"]
 script = ExtResource("2_k6fbr")
@@ -13,7 +17,7 @@ duration = 3.0
 
 [resource]
 script = ExtResource("1_unhgh")
-name = ""
+name = "Resistor (0|0)"
 attack_speed = 0.5
 attack_range = 50.0
 attack_damage = 0.0
@@ -29,11 +33,15 @@ can_see_camo = false
 tower_texture = ExtResource("5_jjxyy")
 place_col_shape = ExtResource("3_qtbls")
 bullet_visual_resource = ExtResource("1_pyqmd")
-upgrade_path_1_description = ""
-upgrade_path_2_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_j1vvw")
+upgrade_path_2_icon = ExtResource("8_6ufny")
+upgrade_path_1_description = "increase attack damage"
+upgrade_path_2_description = "increase enemy slow duration"
+upgrade_path_1_price_easy = 80
+upgrade_path_1_price_medium = 100
+upgrade_path_1_price_hard = 120
+upgrade_path_2_price_easy = 90
+upgrade_path_2_price_medium = 110
+upgrade_path_2_price_hard = 130
+upgrade_path_1_tower_resource = ExtResource("7_pvm7b")
+upgrade_path_2_tower_resource = ExtResource("9_xlsbf")

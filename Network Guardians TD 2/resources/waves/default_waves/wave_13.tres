@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://0r6oaaoyw5a4"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_umd7s"]
+[ext_resource type="Resource" uid="uid://dinkspn3ffi13" path="res://resources/enemies/normal/virus_2_blue.tres" id="2_urmvk"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_a1kui"]
+[ext_resource type="Resource" uid="uid://cn63l5kp62ncv" path="res://resources/enemies/normal/virus_3_green.tres" id="4_1fcw2"]
+
+[sub_resource type="Resource" id="Resource_q0ekg"]
+script = ExtResource("3_a1kui")
+enemy_resource = ExtResource("2_urmvk")
+enemy_count = 50
+time_between_enemies = 0.9
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_r4kgk"]
+script = ExtResource("3_a1kui")
+enemy_resource = ExtResource("4_1fcw2")
+enemy_count = 23
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_umd7s")
+wave_groups = Array[ExtResource("3_a1kui")]([SubResource("Resource_q0ekg"), SubResource("Resource_r4kgk")])
