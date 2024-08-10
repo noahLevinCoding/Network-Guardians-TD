@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_2j6pm"]
 [ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="1_htk7a"]
-[ext_resource type="Resource" uid="uid://dkk2i8g2qgut3" path="res://resources/towers/bitcoin_miner/bitcoin_miner_0_0.tres" id="3_imooo"]
+[ext_resource type="Resource" uid="uid://dewpy0d2y6545" path="res://resources/towers/test/test.tres" id="3_bw8a8"]
 
 [resource]
 script = ExtResource("1_2j6pm")
@@ -11,4 +11,4 @@ icon = ExtResource("1_htk7a")
 price_easy = 100
 price_medium = 150
 price_hard = 200
-tower_resource = ExtResource("3_imooo")
+tower_resource = ExtResource("3_bw8a8")

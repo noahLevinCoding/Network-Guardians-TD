@@ -10,6 +10,7 @@ signal reset_game
 
 signal select_attack_tower_on_board(tower : Tower)
 signal select_resource_tower_on_board(tower : Tower)
+signal select_support_tower_on_board(tower : Tower)
 signal deselect_tower_on_board
 signal select_cooler
 signal select_power_supply

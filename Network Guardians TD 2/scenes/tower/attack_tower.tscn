@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwa8yb7agcv8m" path="res://scenes/bullets/bullet.tscn" id="2_2y4gm"]
 [ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="3_fmksu"]
 
-[sub_resource type="Shader" id="Shader_lh0kh"]
+[sub_resource type="Shader" id="Shader_rjqox"]
 code = "shader_type canvas_item;
 
 uniform vec4 line_color : source_color = vec4(1.0);
@@ -30,7 +30,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ldl26"]
 resource_local_to_scene = true
-shader = SubResource("Shader_lh0kh")
+shader = SubResource("Shader_rjqox")
 shader_parameter/line_color = Color(1, 1, 1, 0)
 shader_parameter/line_thickness = 1.0
 
