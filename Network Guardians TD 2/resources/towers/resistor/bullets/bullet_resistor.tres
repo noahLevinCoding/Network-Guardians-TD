@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BulletVisualResource" load_steps=4 format=3 uid="uid://rvblie6efnal"]
+
+[ext_resource type="Shape2D" uid="uid://doyj1w4btkix5" path="res://resources/towers/capacitor/bullets/capacitor_bullet_shape.tres" id="1_2ot30"]
+[ext_resource type="Script" path="res://scripts/bullet/bullet_visual_resource.gd" id="2_x83ui"]
+[ext_resource type="Texture2D" uid="uid://btin5u8yu3bkc" path="res://assets/bullets/resistor/resistor_bullet.png" id="3_p3cky"]
+
+[resource]
+script = ExtResource("2_x83ui")
+texture = ExtResource("3_p3cky")
+col_shape = ExtResource("1_2ot30")

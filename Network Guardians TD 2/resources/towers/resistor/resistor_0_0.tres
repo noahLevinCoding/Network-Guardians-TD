@@ -1,35 +1,34 @@
-[gd_resource type="Resource" script_class="TowerResource" load_steps=8 format=3 uid="uid://uw5ao5003crc"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://c0x5x2rhuu8j3"]
 
-[ext_resource type="Resource" uid="uid://dr4d4u5rwyl23" path="res://resources/bullets/capacitor/test.tres" id="1_dn3be"]
-[ext_resource type="Script" path="res://scripts/tower/tower_resource.gd" id="1_euttw"]
-[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/place_shapes/led.tres" id="2_g1bjq"]
+[ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_pyqmd"]
+[ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_unhgh"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_k6fbr"]
-[ext_resource type="Texture2D" uid="uid://cajbpntasp8vk" path="res://assets/tower/resistor/resistor_1.png" id="4_nutr2"]
-[ext_resource type="Resource" uid="uid://bb1e1gmgwwpbt" path="res://resources/towers/resistor/resistor_1_0.tres" id="6_rh33t"]
+[ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="3_qtbls"]
+[ext_resource type="Texture2D" uid="uid://dyh1b1cp74qor" path="res://assets/tower/resistor/resistor_1/pixil-layer-0.png" id="5_jjxyy"]
 
-[sub_resource type="Resource" id="Resource_vleuw"]
+[sub_resource type="Resource" id="Resource_416o8"]
 script = ExtResource("2_k6fbr")
-slow_multiplier = 0.6
-duration = 1.0
+slow_multiplier = 0.5
+duration = 3.0
 
 [resource]
-script = ExtResource("1_euttw")
-name = "Resistor"
+script = ExtResource("1_unhgh")
+name = ""
 attack_speed = 0.5
-attack_range = 500.0
+attack_range = 50.0
 attack_damage = 0.0
 pierce = 1
 bullet_speed = 1000.0
-power = 1
-temperature_increase = 1.0
+power = 2
+temperature_increase = 2.0
 number_of_targets = 10
-damage_type = 0
-effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_vleuw")])
+damage_type = 2
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_416o8")])
 ignores_damage_type_immunity = false
 can_see_camo = false
-tower_texture = ExtResource("4_nutr2")
-place_col_shape = ExtResource("2_g1bjq")
-bullet_visual_resource = ExtResource("1_dn3be")
+tower_texture = ExtResource("5_jjxyy")
+place_col_shape = ExtResource("3_qtbls")
+bullet_visual_resource = ExtResource("1_pyqmd")
 upgrade_path_1_description = ""
 upgrade_path_2_description = ""
 upgrade_path_1_price_easy = 0
@@ -38,5 +37,3 @@ upgrade_path_1_price_hard = 0
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0
-upgrade_path_1_tower_resource = ExtResource("6_rh33t")
-sell_value = 0

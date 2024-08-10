@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=6 format=3 uid="uid://cf3i3wn62rqct"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://cf3i3wn62rqct"]
 
-[ext_resource type="Resource" uid="uid://clsv44jykficg" path="res://resources/bullets/led/led_red.tres" id="1_41n5l"]
+[ext_resource type="Resource" uid="uid://clsv44jykficg" path="res://resources/towers/led/bullets/bullet_led_red.tres" id="1_hm8pi"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_vw1ky"]
-[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/place_shapes/led.tres" id="2_g8uqq"]
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_ecrt1"]
 [ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="4_svh36"]
+[ext_resource type="Texture2D" uid="uid://ha2pt2uejl2c" path="res://assets/ui/shop_icons/attack_speed_increase_1_icon.png" id="5_43xdr"]
 [ext_resource type="Resource" uid="uid://ctl1tnbn81371" path="res://resources/towers/led/led_0_1.tres" id="5_v314x"]
+[ext_resource type="Resource" uid="uid://cyx6vlka6w08r" path="res://resources/towers/led/led_1_0.tres" id="6_5w0t1"]
+[ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="7_1s10f"]
 
 [resource]
 script = ExtResource("1_vw1ky")
 name = "LED (0|0)"
 attack_speed = 1.0
-attack_range = 200.0
+attack_range = 150.0
 attack_damage = 1.0
 pierce = 1
 bullet_speed = 1000.0
@@ -22,14 +25,17 @@ effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = false
 tower_texture = ExtResource("4_svh36")
-place_col_shape = ExtResource("2_g8uqq")
-bullet_visual_resource = ExtResource("1_41n5l")
-upgrade_path_1_description = ""
-upgrade_path_2_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
-upgrade_path_2_price_easy = 10
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+place_col_shape = ExtResource("2_ecrt1")
+bullet_visual_resource = ExtResource("1_hm8pi")
+upgrade_path_1_icon = ExtResource("5_43xdr")
+upgrade_path_2_icon = ExtResource("7_1s10f")
+upgrade_path_1_description = "increases attack speed"
+upgrade_path_2_description = "increases attack range"
+upgrade_path_1_price_easy = 60
+upgrade_path_1_price_medium = 70
+upgrade_path_1_price_hard = 80
+upgrade_path_2_price_easy = 50
+upgrade_path_2_price_medium = 60
+upgrade_path_2_price_hard = 70
+upgrade_path_1_tower_resource = ExtResource("6_5w0t1")
 upgrade_path_2_tower_resource = ExtResource("5_v314x")
