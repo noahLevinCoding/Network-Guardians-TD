@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemResource" load_steps=4 format=3 uid="uid://dyoa4xueuju5r"]
+
+[ext_resource type="Texture2D" uid="uid://c17rh1wxl2q7b" path="res://assets/tower/led/PNG/led_white_on.png" id="1_ba3fe"]
+[ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_xtth8"]
+[ext_resource type="Resource" uid="uid://un0mvteo6eha" path="res://resources/towers/neopixel/neopixel_0_0.tres" id="3_h8cho"]
+
+[resource]
+script = ExtResource("1_xtth8")
+name = "Neopixel"
+icon = ExtResource("1_ba3fe")
+price_easy = 20
+price_medium = 40
+price_hard = 80
+tower_resource = ExtResource("3_h8cho")

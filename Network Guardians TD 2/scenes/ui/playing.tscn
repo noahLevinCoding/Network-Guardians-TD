@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=34 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 [ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
@@ -6,15 +6,22 @@
 [ext_resource type="Resource" uid="uid://cebq13jmuhy6c" path="res://resources/shopItems/led.tres" id="3_4w7p2"]
 [ext_resource type="FontFile" uid="uid://4kant1hnfw5s" path="res://assets/ui/fonts/lower-pixel.regular.otf" id="3_rto13"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="5_vj66y"]
+[ext_resource type="Resource" uid="uid://dyoa4xueuju5r" path="res://resources/shopItems/neopixel.tres" id="6_5ecvl"]
 [ext_resource type="Script" path="res://scripts/shop/attack_upgrade_shop.gd" id="6_ofld6"]
 [ext_resource type="Texture2D" uid="uid://de2vlybekiwjj" path="res://assets/ui/buttons/button_up.png" id="6_xqh4e"]
 [ext_resource type="Script" path="res://scripts/shop/resource_upgrade_shop.gd" id="7_4b2yw"]
 [ext_resource type="Script" path="res://scripts/shop/cooler_power_supply_shop.gd" id="7_7ot5l"]
 [ext_resource type="Texture2D" uid="uid://bwbypd2wga0ba" path="res://assets/ui/buttons/button_pressed.png" id="7_rsj37"]
+[ext_resource type="Resource" uid="uid://d4nomu64hxjtn" path="res://resources/shopItems/resistor.tres" id="7_w4ys3"]
 [ext_resource type="Script" path="res://scripts/shop/support_upgrade_shop.gd" id="8_2ppbb"]
-[ext_resource type="Texture2D" uid="uid://c31mo4rfha854" path="res://assets/ui/buttons/DIP_switch_left.png" id="8_cq58l"]
-[ext_resource type="Texture2D" uid="uid://btessqjyl3uob" path="res://assets/ui/buttons/DIP_switch_right.png" id="9_upgkp"]
+[ext_resource type="Texture2D" uid="uid://c31mo4rfha854" path="res://assets/ui/buttons/dip_switch_left.png" id="8_cq58l"]
+[ext_resource type="Resource" uid="uid://d2seal172t11t" path="res://resources/shopItems/transistor.tres" id="8_vv3sk"]
+[ext_resource type="Resource" uid="uid://da6sseejc84qk" path="res://resources/shopItems/capacitor.tres" id="9_rdbv3"]
+[ext_resource type="Texture2D" uid="uid://btessqjyl3uob" path="res://assets/ui/buttons/dip_switch_right.png" id="9_upgkp"]
+[ext_resource type="Resource" uid="uid://ca50fe2ti3yof" path="res://resources/shopItems/inductor.tres" id="10_k3byp"]
 [ext_resource type="Script" path="res://scripts/button/TextureCheckButton.gd" id="10_x8fto"]
+[ext_resource type="Resource" uid="uid://va8y23n35w6r" path="res://resources/shopItems/ram.tres" id="11_rsiae"]
+[ext_resource type="Resource" uid="uid://bw4kx2s1of274" path="res://resources/shopItems/gpu.tres" id="12_e4nnd"]
 [ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="12_g3qlr"]
 [ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="13_4vbf6"]
 [ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="13_by2xo"]
@@ -145,7 +152,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("2_q1nu2")
 item_list = NodePath("ShopItemList")
-items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2"), ExtResource("3_4w7p2")])
+items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2"), ExtResource("6_5ecvl"), ExtResource("7_w4ys3"), ExtResource("8_vv3sk"), ExtResource("9_rdbv3"), ExtResource("10_k3byp"), ExtResource("11_rsiae"), ExtResource("12_e4nnd")])
 tower_name_label = NodePath("TowerName")
 tower_power_label = NodePath("HBoxContainer2/PowerValue")
 tower_power_text_label = NodePath("HBoxContainer2/PowerText")

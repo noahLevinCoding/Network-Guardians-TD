@@ -30,6 +30,7 @@ func init_resources():
 	place_col_shape.shape = tower_resource.place_col_shape
 
 func _on_drop_timer_timeout():
+	
 	GameManager.money += tower_resource.drop_amount
 	money_generated += tower_resource.drop_amount
 	

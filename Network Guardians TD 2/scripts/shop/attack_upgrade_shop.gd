@@ -25,6 +25,8 @@ func _on_reset_game():
 	
 func _on_select_tower(tower : Tower):
 	_on_deselect_tower()
+	resource_upgrade_node._on_deselect_tower()
+	support_upgrade_node._on_deselect_tower()
 	
 	if tower == null:
 		return

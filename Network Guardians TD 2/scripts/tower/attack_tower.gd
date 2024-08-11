@@ -32,15 +32,12 @@ var damage_dealt : float = 0.0
 func _ready():
 	range_indicator.color = Color(1, 1, 1, 0.2)
 	init_resource()
+
+func init_attack_range():
 	
-	
-func init_resource():
-	sprite.texture = tower_resource.tower_texture
-	shoot_timer.wait_time = 1 / tower_resource.attack_speed 
-	attack_col_shape.shape.radius = tower_resource.attack_range
-	place_col_shape.shape = tower_resource.place_col_shape
-	
-	var radius = tower_resource.attack_range
+	var radius  = (tower_resource.attack_range * attack_range_multiplicative) + attack_range_additive
+	attack_col_shape.shape.radius = radius
+
 	var segments = 64
 	var points = []
 	
@@ -49,6 +46,17 @@ func init_resource():
 		points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
 		
 	range_indicator.polygon = points
+
+func init_attack_speed():
+	shoot_timer.wait_time = 1 / ((tower_resource.attack_speed  * attack_speed_multiplicative) + attack_speed_additive)
+	
+func init_resource():
+	sprite.texture = tower_resource.tower_texture
+	init_attack_speed()
+	init_attack_range()
+	place_col_shape.shape = tower_resource.place_col_shape
+	
+	
 
 func _on_area_2d_area_entered(area):
 	if area.owner is Enemy:
@@ -85,10 +93,10 @@ func instantiate_bullet():
 	var bullet_resource = BulletResource.new()
 	
 	bullet_resource.target = current_enemy_target
-	bullet_resource.attack_damage = tower_resource.attack_damage
+	bullet_resource.attack_damage = (tower_resource.attack_damage * attack_damage_multiplicative) + attack_damage_additive
 	bullet_resource.speed = tower_resource.bullet_speed
 	bullet_resource.bullet_visual_resource = tower_resource.bullet_visual_resource
-	bullet_resource.pierce = tower_resource.pierce
+	bullet_resource.pierce = (tower_resource.pierce * pierce_multiplicative) + pierce_additive
 	bullet_resource.source_tower = self
 	bullet_resource.effects = tower_resource.effects
 	bullet_resource.damage_type = tower_resource.damage_type
@@ -166,10 +174,10 @@ func select_healthiest_target():
 
 #Adjust when adding effects
 func can_see_enemy(enemy : Enemy):
-	if tower_resource.can_see_camo: #add effects
+	if tower_resource.can_see_camo or has_camo_vision_effect: 
 		return true
 	else:
-		return not enemy.enemy_resource.is_camo #add effects
+		return not enemy.enemy_resource.is_camo 
 
 func _on_shoot_timer_timeout():
 	shoot()

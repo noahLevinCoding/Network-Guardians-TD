@@ -39,17 +39,27 @@ func init_resource():
 	
 	
 func _on_support_area_entered(area):
-	if area.owner is Tower and area.owner != self:
+	if area.owner is Tower and area.owner != self and not area.owner is SupportTower:
 		towers.append(area.owner)
 		towers_buffed = towers.size()
 		
-		
+		for effect in tower_resource.effects:
+			area.owner.buffs.append(Effect.new(effect, self))
+			area.owner.reset_buff_parameters()
+			area.owner.apply_buff_parameters()
 	
 
 func _on_support_area_exited(area):
-	if area.owner is Tower:
+	if area.owner is Tower and not area.owner is SupportTower:
 		towers.erase(area.owner)
 		towers_buffed = towers.size()
+		
+		for effect in area.owner.buffs:
+			if effect.source == self:
+				area.owner.buffs.erase(effect)
+				area.owner.reset_buff_parameters()
+				area.owner.apply_buff_parameters()
+			
 		
 func _on_place_area_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_just_pressed('left_mouse_button'):

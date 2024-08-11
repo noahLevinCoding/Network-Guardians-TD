@@ -120,6 +120,7 @@ func _on_pause_game():
 func _on_init_game():
 	delete_item_list()
 	fill_item_list()
+	update_shop_availability()
 
 func delete_item_list():
 	item_list.clear()

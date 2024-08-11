@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemResource" load_steps=4 format=3 uid="uid://da6sseejc84qk"]
+
+[ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_nmd5s"]
+[ext_resource type="Texture2D" uid="uid://bhsa8ixefceaf" path="res://assets/tower/led/PNG/led_pink_on.png" id="1_oc8tb"]
+[ext_resource type="Resource" uid="uid://8r1a2sss0klx" path="res://resources/towers/capacitor/capacitor_0_0.tres" id="3_5pmvm"]
+
+[resource]
+script = ExtResource("1_nmd5s")
+name = "Capactior"
+icon = ExtResource("1_oc8tb")
+price_easy = 100
+price_medium = 150
+price_hard = 200
+tower_resource = ExtResource("3_5pmvm")

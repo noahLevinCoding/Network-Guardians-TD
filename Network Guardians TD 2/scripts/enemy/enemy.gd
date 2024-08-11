@@ -74,7 +74,7 @@ func calc_damage_to_player(child_enemy_resource : EnemyResource):
 func take_damage(bullet_resource : BulletResource):
 
 	for effect_resource in bullet_resource.effects:
-		effects.append(Effect.new(effect_resource))
+		effects.append(Effect.new(effect_resource, bullet_resource.source_tower))
 	
 	if is_immune(bullet_resource):
 		return

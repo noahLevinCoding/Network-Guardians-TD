@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemResource" load_steps=4 format=3 uid="uid://d4nomu64hxjtn"]
+
+[ext_resource type="Texture2D" uid="uid://dyh1b1cp74qor" path="res://assets/tower/resistor/resistor_1/pixil-layer-0.png" id="1_cux6d"]
+[ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_gx68k"]
+[ext_resource type="Resource" uid="uid://c0x5x2rhuu8j3" path="res://resources/towers/resistor/resistor_0_0.tres" id="3_xexyv"]
+
+[resource]
+script = ExtResource("1_gx68k")
+name = "Resistor"
+icon = ExtResource("1_cux6d")
+price_easy = 10
+price_medium = 20
+price_hard = 30
+tower_resource = ExtResource("3_xexyv")

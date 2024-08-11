@@ -101,7 +101,6 @@ func sell_tower(tower : Tower):
 	money += tower.sell_value
 	temperature -= tower.tower_resource.temperature_increase
 	power -= tower.tower_resource.power
-	print(power)
 	tower.queue_free()
 
 func buy_tower(item : ShopItemResource, position):

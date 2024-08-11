@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_2j6pm"]
 [ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="1_htk7a"]
-[ext_resource type="Resource" uid="uid://dewpy0d2y6545" path="res://resources/towers/test/test.tres" id="3_nnvar"]
+[ext_resource type="Resource" uid="uid://cf3i3wn62rqct" path="res://resources/towers/led/led_0_0.tres" id="3_ospbi"]
 
 [resource]
 script = ExtResource("1_2j6pm")
 name = "LED"
 icon = ExtResource("1_htk7a")
-price_easy = 100
+price_easy = 50
 price_medium = 150
 price_hard = 200
-tower_resource = ExtResource("3_nnvar")
+tower_resource = ExtResource("3_ospbi")
