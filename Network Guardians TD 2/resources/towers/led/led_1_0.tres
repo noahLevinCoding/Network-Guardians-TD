@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://cyx6vlka6w08r"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://cyx6vlka6w08r"]
 
 [ext_resource type="Resource" uid="uid://c34ujdjhsemtl" path="res://resources/towers/led/bullets/bullet_led_orange.tres" id="1_k8shw"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_3so6j"]
@@ -6,17 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://ciaeqn5qw224w" path="res://assets/tower/led/PNG/led_orange_on.png" id="4_f7dbe"]
 [ext_resource type="Texture2D" uid="uid://ha2pt2uejl2c" path="res://assets/ui/shop_icons/attack_speed_increase_1_icon.png" id="5_vds0u"]
 [ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="6_iw5k1"]
+[ext_resource type="Resource" uid="uid://cru4s6blb3kc7" path="res://resources/towers/led/led_1_1.tres" id="7_8dm3i"]
 
 [resource]
 script = ExtResource("3_c8u5p")
 name = "LED (1|0)"
-attack_speed = 1.0
+attack_speed = 1.5
 attack_range = 150.0
 attack_damage = 1.0
 pierce = 1
 bullet_speed = 1000.0
-power = 1
-temperature_increase = 1.0
+power = 2
+temperature_increase = 2.0
 number_of_targets = 1
 damage_type = 1
 effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
@@ -35,3 +36,4 @@ upgrade_path_1_price_hard = 175
 upgrade_path_2_price_easy = 50
 upgrade_path_2_price_medium = 60
 upgrade_path_2_price_hard = 70
+upgrade_path_2_tower_resource = ExtResource("7_8dm3i")

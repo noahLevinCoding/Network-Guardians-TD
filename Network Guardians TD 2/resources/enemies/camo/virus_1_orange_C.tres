@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://ku74qd4a012b"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=7 format=3 uid="uid://ku74qd4a012b"]
 
 [ext_resource type="SpriteFrames" uid="uid://dvdbr1bkv12bu" path="res://resources/enemies/sprite_frames/virus_1_orange_sprite_frames.tres" id="1_heq0a"]
 [ext_resource type="Texture2D" uid="uid://dw06uq7mn1qmt" path="res://assets/enemy/Addon_textures/camo.png" id="2_7b0q8"]
 [ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/shapes/virus_shape.tres" id="3_dq3l4"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="4_10dsw"]
 [ext_resource type="Texture2D" uid="uid://btjl3vwpdmawk" path="res://assets/enemy/Addon_textures/fortified_virus.png" id="4_taaai"]
+[ext_resource type="Texture2D" uid="uid://dpdme8fst20e4" path="res://assets/enemy/Addon_textures/regrow.png" id="5_1xyod"]
 
 [resource]
 script = ExtResource("4_10dsw")
@@ -12,6 +13,7 @@ enemy_type = 1
 base_sprite_frames = ExtResource("1_heq0a")
 camo_texture = ExtResource("2_7b0q8")
 fortified_texture = ExtResource("4_taaai")
+regrow_texture = ExtResource("5_1xyod")
 col_shape = ExtResource("3_dq3l4")
 base_speed = 1.0
 base_health = 1.0

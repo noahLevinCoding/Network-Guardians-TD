@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=8 format=3 uid="uid://brootk5uwhe0m"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://brootk5uwhe0m"]
 
 [ext_resource type="SpriteFrames" uid="uid://bnucla2kkys17" path="res://resources/enemies/sprite_frames/trojan_4_purple_sprite_frames.tres" id="1_wy3ct"]
 [ext_resource type="Texture2D" uid="uid://dw06uq7mn1qmt" path="res://assets/enemy/Addon_textures/camo.png" id="2_li8r6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shape2D" uid="uid://bsaj71tiikbbt" path="res://resources/enemies/shapes/trojan_shape.tres" id="4_ykmj8"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_resource.gd" id="5_xpgg5"]
 [ext_resource type="Texture2D" uid="uid://r05bfouhf7k1" path="res://assets/enemy/Addon_textures/fortified_trojan.png" id="6_1u8ih"]
+[ext_resource type="Texture2D" uid="uid://dpdme8fst20e4" path="res://assets/enemy/Addon_textures/regrow.png" id="7_nt0n1"]
 
 [resource]
 script = ExtResource("5_xpgg5")
@@ -14,6 +15,7 @@ enemy_type = 2
 base_sprite_frames = ExtResource("1_wy3ct")
 camo_texture = ExtResource("2_li8r6")
 fortified_texture = ExtResource("6_1u8ih")
+regrow_texture = ExtResource("7_nt0n1")
 col_shape = ExtResource("4_ykmj8")
 base_speed = 0.18
 base_health = 20000.0

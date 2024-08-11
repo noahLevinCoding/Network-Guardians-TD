@@ -8,24 +8,24 @@
 [sub_resource type="Resource" id="Resource_ptur6"]
 script = ExtResource("3_tkfdv")
 enemy_resource = ExtResource("2_cyvw3")
-enemy_count = 15
-time_between_enemies = 0.8
+enemy_count = 25
+time_between_enemies = 0.9
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_w62mj"]
 script = ExtResource("3_tkfdv")
 enemy_resource = ExtResource("4_r625v")
 enemy_count = 18
-time_between_enemies = 0.9
+time_between_enemies = 0.7
 time_after_wave_group = 0.0
 
-[sub_resource type="Resource" id="Resource_b41lc"]
+[sub_resource type="Resource" id="Resource_gah8b"]
 script = ExtResource("3_tkfdv")
 enemy_resource = ExtResource("2_cyvw3")
-enemy_count = 20
-time_between_enemies = 0.5
+enemy_count = 35
+time_between_enemies = 0.9
 time_after_wave_group = 0.0
 
 [resource]
 script = ExtResource("1_xehje")
-wave_groups = Array[ExtResource("3_tkfdv")]([SubResource("Resource_ptur6"), SubResource("Resource_w62mj"), SubResource("Resource_b41lc")])
+wave_groups = Array[ExtResource("3_tkfdv")]([SubResource("Resource_ptur6"), SubResource("Resource_w62mj"), SubResource("Resource_gah8b")])

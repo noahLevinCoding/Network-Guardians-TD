@@ -8,7 +8,7 @@
 script = ExtResource("3_ud70d")
 enemy_resource = ExtResource("2_jlrli")
 enemy_count = 35
-time_between_enemies = 0.8
+time_between_enemies = 0.9
 time_after_wave_group = 0.0
 
 [resource]

@@ -2,7 +2,7 @@
 
 [ext_resource type="SpriteFrames" uid="uid://c4dsph2guagsr" path="res://resources/enemies/sprite_frames/virus_9_light_sprite_frames.tres" id="1_v7m4l"]
 [ext_resource type="Texture2D" uid="uid://dw06uq7mn1qmt" path="res://assets/enemy/Addon_textures/camo.png" id="2_mmsiv"]
-[ext_resource type="Resource" uid="uid://dit1f81xgq1c8" path="res://resources/enemies/camo/virus_6_black_C.tres" id="3_i42j3"]
+[ext_resource type="Resource" uid="uid://mq3f665c6nni" path="res://resources/enemies/camo regrow/virus_6_black_C_R.tres" id="3_18ex8"]
 [ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/shapes/virus_shape.tres" id="4_w0bn4"]
 [ext_resource type="Texture2D" uid="uid://btjl3vwpdmawk" path="res://assets/enemy/Addon_textures/fortified_virus.png" id="5_qk058"]
 [ext_resource type="Texture2D" uid="uid://dpdme8fst20e4" path="res://assets/enemy/Addon_textures/regrow.png" id="6_b4npc"]
@@ -26,6 +26,6 @@ is_immunte_to_slow = false
 is_camo = true
 is_fortified = true
 can_regrow = false
-child_resources = Array[ExtResource("7_k637i")]([ExtResource("3_i42j3")])
+child_resources = Array[ExtResource("7_k637i")]([ExtResource("3_18ex8")])
 child_quantities = Array[int]([2])
 money_on_death = 1

@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://scripts/shop/cooler_power_supply_shop.gd" id="7_7ot5l"]
 [ext_resource type="Texture2D" uid="uid://bwbypd2wga0ba" path="res://assets/ui/buttons/button_pressed.png" id="7_rsj37"]
 [ext_resource type="Script" path="res://scripts/shop/support_upgrade_shop.gd" id="8_2ppbb"]
-[ext_resource type="Texture2D" uid="uid://c31mo4rfha854" path="res://assets/ui/buttons/dip_switch_left.png" id="8_cq58l"]
-[ext_resource type="Texture2D" uid="uid://btessqjyl3uob" path="res://assets/ui/buttons/dip_switch_right.png" id="9_upgkp"]
+[ext_resource type="Texture2D" uid="uid://c31mo4rfha854" path="res://assets/ui/buttons/DIP_switch_left.png" id="8_cq58l"]
+[ext_resource type="Texture2D" uid="uid://btessqjyl3uob" path="res://assets/ui/buttons/DIP_switch_right.png" id="9_upgkp"]
 [ext_resource type="Script" path="res://scripts/button/TextureCheckButton.gd" id="10_x8fto"]
 [ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="12_g3qlr"]
 [ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="13_4vbf6"]
@@ -203,7 +203,7 @@ fixed_column_width = 70
 icon_mode = 0
 icon_scale = 2.4
 
-[node name="Attack_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "resource_upgrade_node", "tower_name_label", "prio_option_button", "damage_dealt_label", "sell_button", "selected_temperature_label", "selected_power_label")]
+[node name="Attack_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "resource_upgrade_node", "support_upgrade_node", "tower_name_label", "prio_option_button", "damage_dealt_label", "sell_button", "selected_temperature_label", "selected_power_label")]
 visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
@@ -213,6 +213,7 @@ script = ExtResource("6_ofld6")
 shop_node = NodePath("../Shop")
 cooler_power_supply_upgrade_node = NodePath("../Cooler_PowerSupply_Upgrade")
 resource_upgrade_node = NodePath("../Resource_Upgrade")
+support_upgrade_node = NodePath("../Support_Upgrade")
 tower_name_label = NodePath("TowerName")
 prio_option_button = NodePath("PrioritizationDropdown")
 damage_dealt_label = NodePath("DamageValue")
