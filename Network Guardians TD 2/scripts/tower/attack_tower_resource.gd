@@ -9,6 +9,7 @@ extends TowerResource
 @export var attack_damage : float
 @export var pierce : int = 1
 @export var bullet_speed : float = 1000
+@export var bullet_effect : BulletEffectResource = null
 @export var power : int = 0
 @export var temperature_increase : float = 0
 @export var number_of_targets : int = 1

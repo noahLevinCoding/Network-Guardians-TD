@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=4 format=3 uid="uid://dad8mfd28888l"]
+
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="3_iedhg"]
+[ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="4_ndumk"]
+[ext_resource type="Texture2D" uid="uid://ciaeqn5qw224w" path="res://assets/tower/led/PNG/led_orange_on.png" id="5_cb3vp"]
+
+[resource]
+script = ExtResource("4_ndumk")
+name = "Ram (0|0)"
+support_range = 200.0
+power = 1
+temperature_increase = 1.0
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
+tower_texture = ExtResource("5_cb3vp")
+place_col_shape = ExtResource("3_iedhg")
+upgrade_path_1_description = ""
+upgrade_path_2_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0

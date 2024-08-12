@@ -99,6 +99,8 @@ func instantiate_bullet():
 	bullet_resource.pierce = (tower_resource.pierce * pierce_multiplicative) + pierce_additive
 	bullet_resource.source_tower = self
 	bullet_resource.effects = tower_resource.effects
+	if tower_resource.bullet_effect != null:
+		bullet_resource.bullet_effect = BulletEffect.new(tower_resource.bullet_effect)
 	bullet_resource.damage_type = tower_resource.damage_type
 	bullet_resource.ignores_damage_type_immunity = tower_resource.ignores_damage_type_immunity
 	bullet_instance.bullet_resource = bullet_resource	
@@ -182,9 +184,6 @@ func can_see_enemy(enemy : Enemy):
 func _on_shoot_timer_timeout():
 	shoot()
 	
-
-	
-
 
 func _on_place_area_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_just_pressed('left_mouse_button'):

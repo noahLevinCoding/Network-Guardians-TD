@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=8 format=3 uid="uid://bw5wocw2u578h"]
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=9 format=3 uid="uid://bw5wocw2u578h"]
 
 [ext_resource type="Script" path="res://scripts/effects/tower_effects/camo_vision_effect_resource.gd" id="1_8scfd"]
 [ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="1_71g5h"]
 [ext_resource type="Script" path="res://scripts/effects/tower_effects/stat_increase_effect_resource.gd" id="1_lsmp5"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_wl56n"]
 [ext_resource type="Texture2D" uid="uid://ciaeqn5qw224w" path="res://assets/tower/led/PNG/led_orange_on.png" id="4_00l1h"]
+[ext_resource type="Resource" uid="uid://dad8mfd28888l" path="res://resources/towers/ram/ram_0_1.tres" id="6_ebs8g"]
 
 [sub_resource type="Resource" id="Resource_upxss"]
 script = ExtResource("1_8scfd")
@@ -31,6 +32,7 @@ upgrade_path_2_description = ""
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
-upgrade_path_2_price_easy = 0
+upgrade_path_2_price_easy = 5
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("6_ebs8g")

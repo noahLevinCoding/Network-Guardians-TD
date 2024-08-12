@@ -25,6 +25,7 @@ default_font_size = 100
 script = ExtResource("1_u6d3p")
 
 [node name="Control" type="Control" parent="."]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0

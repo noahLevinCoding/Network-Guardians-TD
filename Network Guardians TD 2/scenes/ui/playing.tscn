@@ -52,6 +52,7 @@ size = Vector2(352, 196)
 size = Vector2(1548, 1040)
 
 [node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "auto_start_label", "speed_label", "wave_status_label", "auto_start_check_button", "speed_check_button", "wave_index_value_label")]
+z_index = 6
 script = ExtResource("1_ot4ts")
 health_label = NodePath("ScreenBox/RightSide/Stats/Health/HealthValue")
 money_label = NodePath("ScreenBox/RightSide/Stats/Money/MoneyValue")
