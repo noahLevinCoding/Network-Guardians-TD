@@ -1,15 +1,9 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://cg7cg5ogqtt0p"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=5 format=3 uid="uid://cg7cg5ogqtt0p"]
 
 [ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_ejot8"]
-[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_etfub"]
 [ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="3_md51d"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_1g57s"]
 [ext_resource type="Texture2D" uid="uid://t2yqxqo3lvls" path="res://assets/tower/resistor/resistor_2/pixil-layer-0.png" id="5_0q4pw"]
-
-[sub_resource type="Resource" id="Resource_416o8"]
-script = ExtResource("2_etfub")
-slow_multiplier = 0.5
-duration = 3.0
 
 [resource]
 script = ExtResource("4_1g57s")
@@ -23,7 +17,7 @@ power = 4
 temperature_increase = 4.0
 number_of_targets = 10
 damage_type = 2
-effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_416o8")])
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = false
 tower_texture = ExtResource("5_0q4pw")

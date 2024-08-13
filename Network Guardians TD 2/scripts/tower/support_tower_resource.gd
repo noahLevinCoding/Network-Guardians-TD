@@ -9,7 +9,7 @@ extends TowerResource
 @export var temperature_increase : float = 0
 
 @export_group("Effects")
-@export var effects : Array[EffectResource]
+@export var effects : Array[TowerEffectResource]
 
 
 @export_group("Visuals")

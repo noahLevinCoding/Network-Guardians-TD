@@ -6,7 +6,7 @@ var select_shader_color : Color = Color(1,1,1,1)
 
 var sell_value : int
 
-var buffs : Array[Effect]
+var buffs : Array[TowerEffect]
 
 var has_camo_vision_effect : bool = false
 

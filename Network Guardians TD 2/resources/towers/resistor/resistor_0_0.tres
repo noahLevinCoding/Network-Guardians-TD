@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_pyqmd"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_unhgh"]
-[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_k6fbr"]
+[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_k17nm"]
 [ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="3_qtbls"]
 [ext_resource type="Texture2D" uid="uid://dyh1b1cp74qor" path="res://assets/tower/resistor/resistor_1/pixil-layer-0.png" id="5_jjxyy"]
 [ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="6_j1vvw"]
@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://cyqe4yco852jk" path="res://assets/ui/shop_icons/time_increase_shop_icon.png" id="8_6ufny"]
 [ext_resource type="Resource" uid="uid://b17a5cuoki6u4" path="res://resources/towers/resistor/resistor_0_1.tres" id="9_xlsbf"]
 
-[sub_resource type="Resource" id="Resource_416o8"]
-script = ExtResource("2_k6fbr")
-slow_multiplier = 0.5
-duration = 3.0
+[sub_resource type="Resource" id="Resource_80q71"]
+script = ExtResource("2_k17nm")
+slow_multiplier = 0.0
+duration = 0.0
 
 [resource]
 script = ExtResource("1_unhgh")
@@ -27,7 +27,7 @@ power = 2
 temperature_increase = 2.0
 number_of_targets = 10
 damage_type = 2
-effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_416o8")])
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_80q71")])
 ignores_damage_type_immunity = false
 can_see_camo = false
 tower_texture = ExtResource("5_jjxyy")

@@ -18,7 +18,7 @@ var enemy_scene : PackedScene = load("res://scenes/enemy/enemy.tscn")
 var current_health : float
 var current_speed : float
 
-var effects : Array[Effect] = []
+var effects : Array[EnemyEffect] = []
 var slow_multiplier : float = 1.0
 
 var regrow_parent_resources = []
@@ -41,7 +41,7 @@ func apply_effects(delta):
 	for effect in effects:
 		effect.apply_effect(self, delta)
 			
-func end_of_effect(effect : Effect):
+func end_of_effect(effect : EnemyEffect):
 	effects.erase(effect)
 
 func calc_current_speed():
@@ -76,7 +76,7 @@ func take_damage(bullet_resource : BulletResource):
 	bullet_resource = duplicate_bullet_resource(bullet_resource)
 
 	for effect_resource in bullet_resource.effects:
-		effects.append(Effect.new(effect_resource, bullet_resource.source_tower))
+		effects.append(EnemyEffect.new(effect_resource))
 	
 	if is_immune(bullet_resource):
 		return

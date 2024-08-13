@@ -16,7 +16,7 @@ extends TowerResource
 @export var damage_type : DAMAGE_TYPE 
 
 @export_group("Effects")
-@export var effects : Array[EffectResource]
+@export var effects : Array[EnemyEffectResource]
 
 @export_group("Visibility and vulnerability")
 @export var ignores_damage_type_immunity : bool = false

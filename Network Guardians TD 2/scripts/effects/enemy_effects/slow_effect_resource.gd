@@ -1,7 +1,7 @@
 class_name SlowEffectResource
-extends EffectResource
+extends EnemyEffectResource
 
-var effect_type : Effect.EFFECT_TYPE = Effect.EFFECT_TYPE.SLOW
+var effect_type : EnemyEffect.EFFECT_TYPE = EnemyEffect.EFFECT_TYPE.SLOW
 
 @export var slow_multiplier : float
 @export var duration : float

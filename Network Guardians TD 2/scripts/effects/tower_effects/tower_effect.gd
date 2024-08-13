@@ -1,19 +1,17 @@
-class_name Effect
+class_name TowerEffect
 
-enum EFFECT_TYPE {SLOW, CAMO_VISION, STAT_INCREASE}
+enum EFFECT_TYPE {CAMO_VISION, STAT_INCREASE}
 
-var effect_resource : EffectResource
+var effect_resource : TowerEffectResource
 var source : Tower
 
-func _init(effect_resource : EffectResource, source : Tower):
+func _init(effect_resource : TowerEffectResource, source : Tower):
 	self.effect_resource = effect_resource.duplicate()
 	self.source = source
 	
 func apply_effect(object, delta):
 	match effect_resource.effect_type:
-		EFFECT_TYPE.SLOW:
-			apply_slow_effect(object, delta)
-			
+		
 		EFFECT_TYPE.CAMO_VISION:
 			apply_camo_vision_effect(object)
 	
@@ -21,12 +19,6 @@ func apply_effect(object, delta):
 			apply_stat_increase_effect(object)
 		
 		
-
-func apply_slow_effect(enemy, delta):
-	if enemy.slow_multiplier > effect_resource.slow_multiplier:
-		enemy.slow_multiplier = effect_resource.slow_multiplier
-		
-	decrease_duration(enemy, delta)
 
 func apply_camo_vision_effect(tower):
 	tower.has_camo_vision_effect = true
@@ -59,10 +51,3 @@ func apply_stat_increase_effect(tower):
 			if effect_resource.is_multiplicative:
 				tower.pierce_multiplicative = max(tower.pierce_multiplicative, effect_resource.factor) 
 
-
-func decrease_duration(object, delta):
-	effect_resource.duration -= delta
-	
-	if effect_resource.duration <= 0:
-		object.end_of_effect(self)
-		

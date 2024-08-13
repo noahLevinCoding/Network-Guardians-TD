@@ -44,7 +44,7 @@ func _on_support_area_entered(area):
 		towers_buffed = towers.size()
 		
 		for effect in tower_resource.effects:
-			area.owner.buffs.append(Effect.new(effect, self))
+			area.owner.buffs.append(TowerEffect.new(effect, self))
 			area.owner.reset_buff_parameters()
 			area.owner.apply_buff_parameters()
 	

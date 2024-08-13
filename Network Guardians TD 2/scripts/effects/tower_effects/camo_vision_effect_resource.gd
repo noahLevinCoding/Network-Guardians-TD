@@ -1,5 +1,5 @@
 class_name CamoVisionEffectResource
-extends EffectResource
+extends TowerEffectResource
 
-var effect_type : Effect.EFFECT_TYPE = Effect.EFFECT_TYPE.CAMO_VISION
+var effect_type : TowerEffect.EFFECT_TYPE = TowerEffect.EFFECT_TYPE.CAMO_VISION
 

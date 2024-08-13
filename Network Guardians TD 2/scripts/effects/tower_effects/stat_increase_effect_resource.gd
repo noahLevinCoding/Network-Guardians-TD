@@ -1,7 +1,7 @@
 class_name StatIncreaseEffectResource
-extends EffectResource
+extends TowerEffectResource
 
-var effect_type : Effect.EFFECT_TYPE = Effect.EFFECT_TYPE.STAT_INCREASE
+var effect_type : TowerEffect.EFFECT_TYPE = TowerEffect.EFFECT_TYPE.STAT_INCREASE
 
 enum STAT_TYPE {ATTACK_DAMAGE, ATTACK_SPEED, ATTACK_RANGE, PIERCE}
 
