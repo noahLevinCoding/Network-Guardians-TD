@@ -28,10 +28,29 @@ func init_explosion_effect(bullet : Bullet):
 
 func init_chaining_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
-	bullet_effect_resource.line = Line2D.new()
-	bullet_effect_resource.line.width = 4
-	bullet_effect_resource.line.default_color = Color(1,0,0,1)
-	bullet_effect_resource.line.z_index = 3
+	bullet_effect_resource.line_1 = Line2D.new()
+	bullet_effect_resource.line_1.width = 8
+	bullet_effect_resource.line_1.default_color = Color(57.0/256, 170.0/256, 225.0/256, 1)
+	bullet_effect_resource.line_1.z_index = 3
+	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_1)
+	
+	bullet_effect_resource.line_2 = Line2D.new()
+	bullet_effect_resource.line_2.width = 3
+	bullet_effect_resource.line_2.default_color = Color(1,1,1,1)
+	bullet_effect_resource.line_2.z_index = 4
+	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_2)
+	
+	bullet_effect_resource.line_3 = Line2D.new()
+	bullet_effect_resource.line_3.width = 8
+	bullet_effect_resource.line_3.default_color = Color(32.0/256, 74.0/256, 153.0/256, 1)
+	bullet_effect_resource.line_3.z_index = 3
+	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_3)
+	
+	bullet_effect_resource.line_4 = Line2D.new()
+	bullet_effect_resource.line_4.width = 3
+	bullet_effect_resource.line_4.default_color = Color(1,1,1,1)
+	bullet_effect_resource.line_4.z_index = 4
+	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_4)
 	
 
 func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
@@ -57,7 +76,7 @@ func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
 		if area_in_range.owner is Enemy:
 			area_in_range.owner.take_damage(duplicate_bullet_resource(bullet.bullet_resource))
 		
-	await enemy.get_tree().create_timer(0.1).timeout
+	await enemy.get_tree().create_timer(0.05).timeout
 	
 	polygon.queue_free()
 		
@@ -77,8 +96,22 @@ func duplicate_bullet_resource(bullet_resource : BulletResource):
 
 func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 	bullet_effect_resource.enemies_visited.append(enemy)
+	var offset = vec_randf_range(-30, 30)
+	bullet_effect_resource.line_1.add_point(enemy.global_position + offset)
+	bullet_effect_resource.line_2.add_point(enemy.global_position + offset)
+	
+	offset = vec_randf_range(-30, 30)
+	
+	bullet_effect_resource.line_3.add_point(enemy.global_position + offset)
+	bullet_effect_resource.line_4.add_point(enemy.global_position + offset)
 	
 	if bullet_effect_resource.enemies_visited.size() >= bullet_effect_resource.number_of_targets:
+		#await enemy.get_tree().create_timer(0.05).timeout
+		bullet_effect_resource.line_1.queue_free()
+		bullet_effect_resource.line_2.queue_free()
+		bullet_effect_resource.line_3.queue_free()
+		bullet_effect_resource.line_4.queue_free()
+		
 		return
 	
 	
@@ -96,13 +129,18 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 	
 	if closest_enemy != null:
 		
-		bullet.bullet_resource.target = closest_enemy
-		
-		#bullet_effect_resource.line.add_point(enemy.global_position)
-		#bullet_effect_resource.line.add_point(closest_enemy.global_position)
-		
+		bullet.bullet_resource.target = closest_enemy	
 		
 	else:
-		pass
-		#enemy.get_parent().add_child(bullet_effect_resource.line)
+		#await enemy.get_tree().create_timer(0.1).timeout
+		bullet_effect_resource.line_1.queue_free()
+		bullet_effect_resource.line_2.queue_free()
+		bullet_effect_resource.line_3.queue_free()
+		bullet_effect_resource.line_4.queue_free()
 
+func vec_randf_range(min: float, max: float) -> Vector2:
+	
+	var rand_x = randf() * (max - min) + min
+	var rand_y = randf() * (max - min) + min
+	
+	return Vector2(rand_x, rand_y)

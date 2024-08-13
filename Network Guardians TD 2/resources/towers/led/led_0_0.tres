@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://cf3i3wn62rqct"]
 
-[ext_resource type="Script" path="res://scripts/bullet/effects/chaining_bullet_effect_resource.gd" id="1_77wa1"]
+[ext_resource type="Script" path="res://scripts/bullet/effects/explosion_bullet_effect_resource.gd" id="1_4ch14"]
 [ext_resource type="Resource" uid="uid://clsv44jykficg" path="res://resources/towers/led/bullets/bullet_led_red.tres" id="1_hm8pi"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_vw1ky"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_ecrt1"]
@@ -10,10 +10,9 @@
 [ext_resource type="Resource" uid="uid://cyx6vlka6w08r" path="res://resources/towers/led/led_1_0.tres" id="6_5w0t1"]
 [ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="7_1s10f"]
 
-[sub_resource type="Resource" id="Resource_kaamj"]
-script = ExtResource("1_77wa1")
-radius = 80.0
-number_of_targets = 10
+[sub_resource type="Resource" id="Resource_ubciw"]
+script = ExtResource("1_4ch14")
+radius = 100.0
 
 [resource]
 script = ExtResource("1_vw1ky")
@@ -23,7 +22,7 @@ attack_range = 150.0
 attack_damage = 1.0
 pierce = 1
 bullet_speed = 1000.0
-bullet_effect = SubResource("Resource_kaamj")
+bullet_effect = SubResource("Resource_ubciw")
 power = 1
 temperature_increase = 1.0
 number_of_targets = null
