@@ -27,7 +27,7 @@ var regrow_parent_resources = []
 func _ready():
 	init_resource()
 	
-func _process(delta):
+func _physics_process(delta):
 	reset_effect_parameters()
 	apply_effects(delta)
 	calc_current_speed()
@@ -72,6 +72,8 @@ func calc_damage_to_player(child_enemy_resource : EnemyResource):
 		return  1 + damage_from_children
 		
 func take_damage(bullet_resource : BulletResource):
+
+	bullet_resource = duplicate_bullet_resource(bullet_resource)
 
 	for effect_resource in bullet_resource.effects:
 		effects.append(Effect.new(effect_resource, bullet_resource.source_tower))

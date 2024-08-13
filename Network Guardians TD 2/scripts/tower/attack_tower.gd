@@ -105,7 +105,7 @@ func instantiate_bullet():
 	bullet_resource.ignores_damage_type_immunity = tower_resource.ignores_damage_type_immunity
 	bullet_instance.bullet_resource = bullet_resource	
 	
-	add_child(bullet_instance)
+	call_deferred("add_child", bullet_instance)
 		
 func select_target():
 	current_enemy_target = null

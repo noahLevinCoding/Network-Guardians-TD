@@ -8,4 +8,4 @@ var effect_type : BulletEffect.EFFECT_TYPE = BulletEffect.EFFECT_TYPE.CHAINING
 
 var enemy
 var enemies_visited = []
-var area : Area2D
+var line : Line2D

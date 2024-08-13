@@ -1,22 +1,9 @@
-[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=9 format=3 uid="uid://bw5wocw2u578h"]
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=5 format=3 uid="uid://bw5wocw2u578h"]
 
-[ext_resource type="Script" path="res://scripts/effects/tower_effects/camo_vision_effect_resource.gd" id="1_8scfd"]
 [ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="1_71g5h"]
-[ext_resource type="Script" path="res://scripts/effects/tower_effects/stat_increase_effect_resource.gd" id="1_lsmp5"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_wl56n"]
 [ext_resource type="Texture2D" uid="uid://ciaeqn5qw224w" path="res://assets/tower/led/PNG/led_orange_on.png" id="4_00l1h"]
 [ext_resource type="Resource" uid="uid://dad8mfd28888l" path="res://resources/towers/ram/ram_0_1.tres" id="6_ebs8g"]
-
-[sub_resource type="Resource" id="Resource_upxss"]
-script = ExtResource("1_8scfd")
-
-[sub_resource type="Resource" id="Resource_nsg13"]
-script = ExtResource("1_lsmp5")
-stat_type = 3
-is_additive = true
-is_multiplicative = false
-summand = 1.0
-factor = 1.0
 
 [resource]
 script = ExtResource("1_71g5h")
@@ -24,7 +11,7 @@ name = "Ram (0|0)"
 support_range = 200.0
 power = 1
 temperature_increase = 1.0
-effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([SubResource("Resource_upxss"), SubResource("Resource_nsg13")])
+effects = Array[Resource("res://scripts/effects/effect_resource.gd")]([])
 tower_texture = ExtResource("4_00l1h")
 place_col_shape = ExtResource("2_wl56n")
 upgrade_path_1_description = ""

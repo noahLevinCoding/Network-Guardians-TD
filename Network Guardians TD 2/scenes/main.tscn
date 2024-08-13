@@ -49,6 +49,8 @@ z_index = 6
 [node name="Defeat" parent="Menu" instance=ExtResource("15_411v1")]
 z_index = 6
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Menu"]
+
 [node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_4tggm")
 initial_state = NodePath("Titlescreen")
