@@ -49,7 +49,7 @@ func end_of_effect(effect : EnemyEffect):
 	effects.erase(effect)
 
 func calc_current_speed():
-	if is_knockbacked:
+	if is_knockbacked and not enemy_resource.enemy_type == enemy_resource.ENEMY_TYPES.TROJAN:
 		current_speed = -knockback_speed * base_speed_multiplier
 	else:
 		current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier  * base_speed_multiplier
