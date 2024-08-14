@@ -25,7 +25,6 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceArea"]
 
 [node name="DropTimer" type="Timer" parent="."]
-autostart = true
 
 [connection signal="input_event" from="PlaceArea" to="." method="_on_place_area_input_event"]
 [connection signal="timeout" from="DropTimer" to="." method="_on_drop_timer_timeout"]

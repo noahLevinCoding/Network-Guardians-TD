@@ -20,6 +20,8 @@ var current_speed : float
 
 var effects : Array[EnemyEffect] = []
 var slow_multiplier : float = 1.0
+var is_knockbacked : bool = false
+var knockback_speed : float = 0.0
 
 var regrow_parent_resources = []
 @export var regrow_timer : Timer
@@ -36,6 +38,8 @@ func _physics_process(delta):
 	
 func reset_effect_parameters():
 		slow_multiplier = 1.0
+		is_knockbacked = false
+		knockback_speed = 0.0
 
 func apply_effects(delta):
 	for effect in effects:
@@ -45,9 +49,12 @@ func end_of_effect(effect : EnemyEffect):
 	effects.erase(effect)
 
 func calc_current_speed():
-	current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier  * base_speed_multiplier
-	if not enemy_resource.is_immunte_to_slow:
-		current_speed *= slow_multiplier
+	if is_knockbacked:
+		current_speed = -knockback_speed * base_speed_multiplier
+	else:
+		current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier  * base_speed_multiplier
+		if not enemy_resource.is_immunte_to_slow:
+			current_speed *= slow_multiplier
 	
 func move(delta : float):
 	progress += current_speed * delta

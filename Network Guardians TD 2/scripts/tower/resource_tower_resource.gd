@@ -4,6 +4,7 @@ extends TowerResource
 @export var name : String
 @export var drop_time : float
 @export var drop_amount : int
+@export var max_drop_amount : int
 @export var power : int = 0
 @export var temperature_increase : float = 0
 

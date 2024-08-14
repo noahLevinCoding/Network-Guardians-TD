@@ -7,8 +7,9 @@
 [resource]
 script = ExtResource("2_qc5dx")
 name = "GPU"
-drop_time = 4.0
+drop_time = 1.0
 drop_amount = 1
+max_drop_amount = 500
 power = 10
 temperature_increase = 1.0
 tower_texture = ExtResource("3_ji8iv")
