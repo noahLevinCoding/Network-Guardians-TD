@@ -44,7 +44,7 @@ func upgrade(path : int, price : int):
 		tower_resource = tower_resource.upgrade_path_2_tower_resource
 		init_resource()
 		
-	sell_value += price / 2
+	sell_value += int(price / 2.0)
 		
 func init_resource():
 	pass
@@ -63,7 +63,7 @@ func reset_buff_parameters():
 
 func apply_buff_parameters():
 	for buff in buffs:
-		buff.apply_effect(self, 0)
+		buff.apply_effect(self)
 
 
 func init_attack_speed():

@@ -5,8 +5,8 @@ enum EFFECT_TYPE {EXPLOSION, CHAINING}
 
 var bullet_effect_resource : BulletEffectResource
 
-func _init(bullet_effect_resource : BulletEffectResource):
-	self.bullet_effect_resource = bullet_effect_resource.duplicate()
+func _init(_bullet_effect_resource : BulletEffectResource):
+	self.bullet_effect_resource = _bullet_effect_resource.duplicate()
 	
 func apply_effect(bullet : Bullet, enemy : Enemy):
 	match bullet_effect_resource.effect_type:
@@ -138,9 +138,9 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 		bullet_effect_resource.line_3.queue_free()
 		bullet_effect_resource.line_4.queue_free()
 
-func vec_randf_range(min: float, max: float) -> Vector2:
+func vec_randf_range(min_val: float, max_val: float) -> Vector2:
 	
-	var rand_x = randf() * (max - min) + min
-	var rand_y = randf() * (max - min) + min
+	var rand_x = randf() * (max_val - min_val) + min_val
+	var rand_y = randf() * (max_val - min_val) + min_val
 	
 	return Vector2(rand_x, rand_y)

@@ -5,7 +5,7 @@ extends Resource
 @export var shop_icon : Texture2D
 @export var texture : Texture2D
 @export var col_shape : Shape2D
-@export var max_power : float 
+@export var max_power : int 
 @export var upgrade_power_supply_resource : PowerSupplyResource
 @export var upgrade_price_easy : int
 @export var upgrade_price_medium : int

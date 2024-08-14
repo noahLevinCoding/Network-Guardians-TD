@@ -112,7 +112,7 @@ func buy_tower(item : ShopItemResource, position):
 		var tower_scene = get_tower_scene(item.tower_resource)
 		
 		var tower_instance = tower_scene.instantiate()
-		tower_instance.sell_value = item.price / 2
+		tower_instance.sell_value = item.price / 2.0
 		tower_instance.tower_resource = item.tower_resource
 		game_node.add_child(tower_instance)
 		tower_instance.position = position

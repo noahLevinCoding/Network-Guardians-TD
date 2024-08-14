@@ -140,9 +140,9 @@ func is_immune(bullet_resource : BulletResource):
 	var is_immune_due_to_magnetism = enemy_resource.is_immune_to_magnetism and bullet_resource.damage_type == TowerResource.DAMAGE_TYPE.MAGNETISM
 	
 	var is_immune_due_to_damage_type = is_immune_due_to_light or is_immune_due_to_electricity or is_immune_due_to_magnetism
-	var is_immune = is_immune_due_to_damage_type and not bullet_resource.ignores_damage_type_immunity
+	var is_immune_final = is_immune_due_to_damage_type and not bullet_resource.ignores_damage_type_immunity
 	
-	return is_immune
+	return is_immune_final
 	
 func spawn_children(bullet_resource : BulletResource):
 	if enemy_resource.child_quantities.size() == 0:

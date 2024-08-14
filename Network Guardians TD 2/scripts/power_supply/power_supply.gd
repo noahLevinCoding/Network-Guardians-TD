@@ -19,6 +19,6 @@ func upgrade():
 		init_resource()
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func _on_area_2d_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_just_pressed('left_mouse_button'):
 		SignalManager.select_power_supply.emit()

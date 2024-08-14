@@ -5,18 +5,18 @@ enum EFFECT_TYPE {CAMO_VISION, STAT_INCREASE}
 var effect_resource : TowerEffectResource
 var source : Tower
 
-func _init(effect_resource : TowerEffectResource, source : Tower):
-	self.effect_resource = effect_resource.duplicate()
-	self.source = source
+func _init(_effect_resource : TowerEffectResource, _source : Tower):
+	self.effect_resource = _effect_resource.duplicate()
+	self.source = _source
 	
-func apply_effect(object, delta):
+func apply_effect(tower):
 	match effect_resource.effect_type:
 		
 		EFFECT_TYPE.CAMO_VISION:
-			apply_camo_vision_effect(object)
+			apply_camo_vision_effect(tower)
 	
 		EFFECT_TYPE.STAT_INCREASE:
-			apply_stat_increase_effect(object)
+			apply_stat_increase_effect(tower)
 		
 		
 

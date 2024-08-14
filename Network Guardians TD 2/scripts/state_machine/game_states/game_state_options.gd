@@ -7,7 +7,7 @@ var options_scene_instance = null
 
 func enter():
 	print("Enter GameStateOption")
-	var options_scene_instance = options_scene.instantiate()
+	options_scene_instance = options_scene.instantiate()
 	add_child(options_scene_instance)
 	
 func exit():

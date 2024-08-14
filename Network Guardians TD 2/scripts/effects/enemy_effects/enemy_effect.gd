@@ -4,8 +4,8 @@ enum EFFECT_TYPE {SLOW, KNOCKBACK}
 
 var effect_resource : EnemyEffectResource
 
-func _init(effect_resource : EnemyEffectResource):
-	self.effect_resource = effect_resource.duplicate()
+func _init(_effect_resource : EnemyEffectResource):
+	self.effect_resource = _effect_resource.duplicate()
 	
 func apply_effect(enemy, delta):
 	match effect_resource.effect_type:
