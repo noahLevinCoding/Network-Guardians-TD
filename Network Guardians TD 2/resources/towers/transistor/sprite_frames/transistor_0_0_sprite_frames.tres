@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bbc73uqcxdpkb"]
+
+[ext_resource type="Texture2D" uid="uid://5i2p2inky03o" path="res://assets/tower/led/PNG/led_red_off.png" id="1_icu37"]
+[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="2_agh5d"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_icu37")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_agh5d")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]

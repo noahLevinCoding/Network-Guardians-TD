@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://c6kw287mrda37"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://cse6abspl6ae2"]
 
 [ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_fjm26"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_n582c"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_q8l3l"]
-[ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_l5ge8"]
+[ext_resource type="Shape2D" path="res://resources/towers/neopixel/place_shape.tres" id="3_l5ge8"]
 [ext_resource type="SpriteFrames" uid="uid://8app4n5yswj" path="res://resources/towers/neopixel/sprite_frames/neopixel_0_1_sprite_frames.tres" id="5_hdemv"]
-[ext_resource type="Resource" uid="uid://b0f4upgopau5x" path="res://resources/towers/neopixel/neopixel_1_1.tres" id="6_s5764"]
-[ext_resource type="Resource" uid="uid://dxkls6drpv57y" path="res://resources/towers/neopixel/neopixel_0_2.tres" id="7_3h1nt"]
+[ext_resource type="Resource" uid="uid://c4clta5wq8bj6" path="res://resources/towers/neopixel/neopixel_1_1.tres" id="6_s5764"]
+[ext_resource type="Resource" uid="uid://cv66jpkastb5o" path="res://resources/towers/neopixel/neopixel_0_2.tres" id="7_3h1nt"]
 
 [sub_resource type="Resource" id="Resource_vknus"]
 script = ExtResource("1_n582c")

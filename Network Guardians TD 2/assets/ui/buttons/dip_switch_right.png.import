@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btessqjyl3uob"
-path="res://.godot/imported/dip_switch_right.png-7782947ae5ed213bc7203a83a6d53c45.ctex"
+path="res://.godot/imported/DIP_switch_right.png-3313fd53fc648a68fa751d52288cdeca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/buttons/dip_switch_right.png"
-dest_files=["res://.godot/imported/dip_switch_right.png-7782947ae5ed213bc7203a83a6d53c45.ctex"]
+source_file="res://assets/ui/buttons/DIP_switch_right.png"
+dest_files=["res://.godot/imported/DIP_switch_right.png-3313fd53fc648a68fa751d52288cdeca.ctex"]
 
 [params]
 

@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://dle1tijbkmkog"]
+
+[ext_resource type="Script" path="res://scripts/effects/bullet_effects/chaining_bullet_effect_resource.gd" id="1_cmklf"]
+[ext_resource type="Resource" uid="uid://bjfawnt72cieu" path="res://resources/towers/transistor/bullets/bullet_transistor.tres" id="2_tgihr"]
+[ext_resource type="Shape2D" uid="uid://be7o1xtl4ia17" path="res://resources/towers/transistor/transistor_place_shape.tres" id="3_rdfqi"]
+[ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_gcxj1"]
+[ext_resource type="SpriteFrames" uid="uid://dcncqmpk0q1a7" path="res://resources/towers/transistor/sprite_frames/transistor_1_1_sprite_frames.tres" id="5_qsmrb"]
+[ext_resource type="Resource" uid="uid://dxhtx7fl7ah81" path="res://resources/towers/transistor/transistor_2_1.tres" id="6_e8ftq"]
+[ext_resource type="Resource" uid="uid://dmbky418qk8sd" path="res://resources/towers/transistor/transistor_1_2.tres" id="7_pesxs"]
+
+[sub_resource type="Resource" id="Resource_6sx11"]
+script = ExtResource("1_cmklf")
+radius = 100.0
+number_of_targets = 10
+
+[resource]
+script = ExtResource("4_gcxj1")
+name = "Transistor  1 | 1"
+damage_type = 2
+attack_damage = 1.0
+attack_speed = 1.0
+attack_range = 150.0
+pierce = 1
+number_of_targets = 1
+power = 2
+temperature_increase = 2.0
+bullet_speed = 1000.0
+bullet_effect = SubResource("Resource_6sx11")
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
+ignores_damage_type_immunity = false
+can_see_camo = false
+extra_damage_to_trojan = false
+sprite_frames = ExtResource("5_qsmrb")
+place_col_shape = ExtResource("3_rdfqi")
+bullet_visual_resource = ExtResource("2_tgihr")
+upgrade_path_1_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_1_tower_resource = ExtResource("6_e8ftq")
+upgrade_path_2_description = ""
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("7_pesxs")

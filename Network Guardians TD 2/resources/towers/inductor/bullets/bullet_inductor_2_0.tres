@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BulletVisualResource" load_steps=4 format=3 uid="uid://dong3fbifwjjt"]
+
+[ext_resource type="Shape2D" uid="uid://dem3wytssh5qx" path="res://resources/towers/inductor/bullets/inductor_bullet_shape.tres" id="1_d85jn"]
+[ext_resource type="Script" path="res://scripts/bullet/bullet_visual_resource.gd" id="2_x44e6"]
+[ext_resource type="Texture2D" uid="uid://c5v7357l803a7" path="res://assets/bullets/inductor/pixil-layer-6.png" id="3_qgql3"]
+
+[resource]
+script = ExtResource("2_x44e6")
+texture = ExtResource("3_qgql3")
+col_shape = ExtResource("1_d85jn")

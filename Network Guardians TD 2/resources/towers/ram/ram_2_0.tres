@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=10 format=3 uid="uid://bq8xrmi42fiwv"]
+
+[ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="1_javsn"]
+[ext_resource type="Script" path="res://scripts/effects/tower_effects/stat_increase_effect_resource.gd" id="1_rvc6a"]
+[ext_resource type="Shape2D" uid="uid://jtnwv3w1dvd7" path="res://resources/towers/ram/ram_place_shape.tres" id="2_580xm"]
+[ext_resource type="Script" path="res://scripts/effects/tower_effects/camo_vision_effect_resource.gd" id="2_wm1i3"]
+[ext_resource type="Texture2D" uid="uid://hpwom8x8rea3" path="res://assets/tower/ram/ram_4/ram_4.png" id="5_t01ue"]
+[ext_resource type="Resource" uid="uid://dpyhqh3356fw3" path="res://resources/towers/ram/ram_2_1.tres" id="6_15t5e"]
+
+[sub_resource type="Resource" id="Resource_yy8ba"]
+script = ExtResource("1_rvc6a")
+stat_type = 2
+is_additive = false
+is_multiplicative = true
+summand = 0.0
+factor = 1.2
+
+[sub_resource type="Resource" id="Resource_gwlaf"]
+script = ExtResource("1_rvc6a")
+stat_type = 0
+is_additive = false
+is_multiplicative = true
+summand = 0.0
+factor = 1.2
+
+[sub_resource type="Resource" id="Resource_fw8f2"]
+script = ExtResource("2_wm1i3")
+
+[resource]
+script = ExtResource("1_javsn")
+name = "Ram  2 | 0"
+support_range = 200.0
+power = 2
+temperature_increase = 2.0
+effects = Array[Resource("res://scripts/effects/tower_effects/tower_effect_resource.gd")]([SubResource("Resource_yy8ba"), SubResource("Resource_gwlaf"), SubResource("Resource_fw8f2")])
+tower_texture = ExtResource("5_t01ue")
+place_col_shape = ExtResource("2_580xm")
+upgrade_path_1_description = "Max"
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_description = ""
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("6_15t5e")

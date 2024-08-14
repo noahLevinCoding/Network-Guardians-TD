@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=10 format=3 uid="uid://bq8ixqov4hmcf"]
+
+[ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="1_bmml3"]
+[ext_resource type="Script" path="res://scripts/effects/tower_effects/stat_increase_effect_resource.gd" id="1_wa3o5"]
+[ext_resource type="Shape2D" uid="uid://jtnwv3w1dvd7" path="res://resources/towers/ram/ram_place_shape.tres" id="2_vadf8"]
+[ext_resource type="Texture2D" uid="uid://chmbo2qkcgqnr" path="res://assets/tower/ram/ram_5/ram_5.png" id="4_ya0ym"]
+[ext_resource type="Resource" uid="uid://dpyhqh3356fw3" path="res://resources/towers/ram/ram_2_1.tres" id="5_nah08"]
+[ext_resource type="Resource" uid="uid://ca112x16irgc3" path="res://resources/towers/ram/ram_1_2.tres" id="6_75orf"]
+
+[sub_resource type="Resource" id="Resource_yy8ba"]
+script = ExtResource("1_wa3o5")
+stat_type = 2
+is_additive = false
+is_multiplicative = true
+summand = 0.0
+factor = 1.2
+
+[sub_resource type="Resource" id="Resource_gwlaf"]
+script = ExtResource("1_wa3o5")
+stat_type = 0
+is_additive = false
+is_multiplicative = true
+summand = 0.0
+factor = 1.2
+
+[sub_resource type="Resource" id="Resource_t3blw"]
+script = ExtResource("1_wa3o5")
+stat_type = 1
+is_additive = false
+is_multiplicative = true
+summand = 0.0
+factor = 1.2
+
+[resource]
+script = ExtResource("1_bmml3")
+name = "Ram  1 | 1"
+support_range = 200.0
+power = 2
+temperature_increase = 2.0
+effects = Array[Resource("res://scripts/effects/tower_effects/tower_effect_resource.gd")]([SubResource("Resource_yy8ba"), SubResource("Resource_gwlaf"), SubResource("Resource_t3blw")])
+tower_texture = ExtResource("4_ya0ym")
+place_col_shape = ExtResource("2_vadf8")
+upgrade_path_1_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_1_tower_resource = ExtResource("5_nah08")
+upgrade_path_2_description = ""
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("6_75orf")

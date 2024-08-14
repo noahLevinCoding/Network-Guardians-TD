@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dcncqmpk0q1a7"]
+
+[ext_resource type="Texture2D" uid="uid://banst237nbws8" path="res://assets/tower/transistor/transistor_4.png" id="1_g8q7d"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g8q7d")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g8q7d")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 2.0
+}]

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://cpe3155qme6p4"]
+
+[ext_resource type="Resource" uid="uid://b4i41qqncabrg" path="res://resources/towers/inductor/bullets/bullet_inductor_0_0.tres" id="1_7n0wl"]
+[ext_resource type="Script" path="res://scripts/effects/enemy_effects/knockback_effect_resource.gd" id="2_ooqpo"]
+[ext_resource type="Shape2D" uid="uid://b6j1dpiu2ijec" path="res://resources/towers/inductor/inductor_pace_shape.tres" id="3_ow0rx"]
+[ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_gf1u8"]
+[ext_resource type="SpriteFrames" uid="uid://veiohh6wg6t5" path="res://resources/towers/inductor/sprite frames/inductor_0_0_sprite_frames.tres" id="5_h8vuk"]
+
+[sub_resource type="Resource" id="Resource_bkjo6"]
+script = ExtResource("2_ooqpo")
+duration = 0.5
+speed = 4.0
+
+[resource]
+script = ExtResource("4_gf1u8")
+name = "Inductor  2 | 1"
+damage_type = 3
+attack_damage = 0.5
+attack_speed = 0.5
+attack_range = 200.0
+pierce = 1
+number_of_targets = 1
+power = 5
+temperature_increase = 1.0
+bullet_speed = 1000.0
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_bkjo6")])
+ignores_damage_type_immunity = false
+can_see_camo = false
+extra_damage_to_trojan = false
+sprite_frames = ExtResource("5_h8vuk")
+place_col_shape = ExtResource("3_ow0rx")
+bullet_visual_resource = ExtResource("1_7n0wl")
+upgrade_path_1_description = "Max"
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_description = "Max"
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
