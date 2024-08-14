@@ -3,7 +3,7 @@ extends Tower
 
 enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, FORTIFIED, HEALTHIEST}
 
-@export var sprite : Sprite2D
+@export var animated_sprite : AnimatedSprite2D
 @export var attack_col_shape : CollisionShape2D
 @export var place_col_shape : CollisionShape2D
 @export var range_indicator : Polygon2D
@@ -17,14 +17,16 @@ var enemies = []
 var current_enemy_target = null
 var current_enemy_targets = []
 
-var is_idle = true	#used for direct shooting if idle
+#used for direct shooting if idle
+var is_idle = true	
+
 
 var is_selectable : bool = false
 var is_selected : bool = false :
 	set(value):
 		is_selected = value
 		range_indicator.visible = is_selected
-		sprite.material.set_shader_parameter("line_color", select_shader_color if is_selected else Color(0,0,0,0))
+		animated_sprite.material.set_shader_parameter("line_color", select_shader_color if is_selected else Color(0,0,0,0))
 		
 
 var damage_dealt : float = 0.0
@@ -51,12 +53,17 @@ func init_attack_speed():
 	shoot_timer.wait_time = 1 / ((tower_resource.attack_speed  * attack_speed_multiplicative) + attack_speed_additive)
 	
 func init_resource():
-	sprite.texture = tower_resource.tower_texture
+	animated_sprite.sprite_frames = tower_resource.sprite_frames
+	animated_sprite.animation = "idle"
 	init_attack_speed()
 	init_attack_range()
 	place_col_shape.shape = tower_resource.place_col_shape
 	
 	
+func _physics_process(_delta):
+	if not animated_sprite.is_playing():
+		animated_sprite.play("idle")
+		
 
 func _on_area_2d_area_entered(area):
 	if area.owner is Enemy:
@@ -89,6 +96,8 @@ func shoot():
 			break
 	
 func instantiate_bullet():
+	animated_sprite.play("shoot")
+	
 	var bullet_instance = bullet_scene.instantiate()
 	var bullet_resource = BulletResource.new()
 	

@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://ctl1tnbn81371"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://ctl1tnbn81371"]
 
 [ext_resource type="Resource" uid="uid://fcnk6aghtpg3" path="res://resources/towers/led/bullets/bullet_led_yellow.tres" id="1_jj32p"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_3xflb"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_0vhwb"]
-[ext_resource type="Texture2D" uid="uid://dwgdjd12crogo" path="res://assets/tower/led/PNG/led_yellow_on.png" id="4_ved56"]
 [ext_resource type="Texture2D" uid="uid://dlmeu6536b7js" path="res://assets/ui/shop_icons/attack_speed_increase_2_icon.png" id="5_a8otj"]
 [ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="6_u1cwj"]
 [ext_resource type="Resource" uid="uid://cru4s6blb3kc7" path="res://resources/towers/led/led_1_1.tres" id="6_udv62"]
@@ -24,7 +23,6 @@ extra_damage_to_trojan = false
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = false
-tower_texture = ExtResource("4_ved56")
 place_col_shape = ExtResource("2_3xflb")
 bullet_visual_resource = ExtResource("1_jj32p")
 upgrade_path_1_icon = ExtResource("5_a8otj")

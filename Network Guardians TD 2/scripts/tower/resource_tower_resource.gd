@@ -9,7 +9,7 @@ extends TowerResource
 @export var temperature_increase : float = 0
 
 @export_group("Visuals")
-@export var tower_texture : Texture2D
+@export var sprite_frames : SpriteFrames
 @export var place_col_shape : Shape2D
 
 @export_group("Upgrades")

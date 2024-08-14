@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/tower/attack_tower.gd" id="1_d4itx"]
 [ext_resource type="PackedScene" uid="uid://bwa8yb7agcv8m" path="res://scenes/bullets/bullet.tscn" id="2_2y4gm"]
-[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="3_fmksu"]
 
 [sub_resource type="Shader" id="Shader_rjqox"]
 code = "shader_type canvas_item;
@@ -34,22 +33,37 @@ shader = SubResource("Shader_rjqox")
 shader_parameter/line_color = Color(1, 1, 1, 0)
 shader_parameter/line_thickness = 1.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5ux0"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"shoot",
+"speed": 2.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tctaj"]
 resource_local_to_scene = true
 
-[node name="AttackTower" type="Node2D" node_paths=PackedStringArray("sprite", "attack_col_shape", "place_col_shape", "range_indicator", "shoot_timer")]
+[node name="AttackTower" type="Node2D" node_paths=PackedStringArray("animated_sprite", "attack_col_shape", "place_col_shape", "range_indicator", "shoot_timer")]
 script = ExtResource("1_d4itx")
-sprite = NodePath("Sprite2D")
+animated_sprite = NodePath("AnimatedSprite")
 attack_col_shape = NodePath("AttackArea/CollisionShape2D")
 place_col_shape = NodePath("PlaceArea/CollisionShape2D")
 range_indicator = NodePath("RangeIndicator")
 shoot_timer = NodePath("ShootTimer")
 bullet_scene = ExtResource("2_2y4gm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_ldl26")
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_fmksu")
+sprite_frames = SubResource("SpriteFrames_c5ux0")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 0

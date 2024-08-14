@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctqbkcnchvep4"]
+[gd_scene load_steps=5 format=3 uid="uid://ctqbkcnchvep4"]
 
 [ext_resource type="Script" path="res://scripts/tower/resource_tower.gd" id="1_8balm"]
 [ext_resource type="Shader" path="res://shader/tower_selection_shader.gdshader" id="2_yxu37"]
@@ -8,15 +8,31 @@ shader = ExtResource("2_yxu37")
 shader_parameter/line_color = Color(1, 1, 1, 0)
 shader_parameter/line_thickness = 1.0
 
-[node name="ResourceTower" type="Node2D" node_paths=PackedStringArray("sprite", "place_col_shape", "drop_timer")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_074bn"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"mining",
+"speed": 5.0
+}]
+
+[node name="ResourceTower" type="Node2D" node_paths=PackedStringArray("animated_sprite", "place_col_shape", "drop_timer")]
 script = ExtResource("1_8balm")
-sprite = NodePath("Sprite2D")
+animated_sprite = NodePath("AnimatedSprite")
 place_col_shape = NodePath("PlaceArea/CollisionShape2D")
 drop_timer = NodePath("DropTimer")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_o4pji")
 scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_074bn")
+animation = &"mining"
+autoplay = "idle"
 
 [node name="PlaceArea" type="Area2D" parent="."]
 collision_layer = 16

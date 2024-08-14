@@ -24,7 +24,7 @@ extends TowerResource
 @export var can_see_camo : bool = false
 
 @export_group("Visuals")
-@export var tower_texture : Texture2D
+@export var sprite_frames : SpriteFrames
 @export var place_col_shape : Shape2D
 @export var bullet_visual_resource : BulletVisualResource
 

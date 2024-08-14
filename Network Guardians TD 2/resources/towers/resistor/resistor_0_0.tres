@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://c0x5x2rhuu8j3"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=10 format=3 uid="uid://c0x5x2rhuu8j3"]
 
 [ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_pyqmd"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_unhgh"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_k17nm"]
 [ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="3_qtbls"]
-[ext_resource type="Texture2D" uid="uid://dyh1b1cp74qor" path="res://assets/tower/resistor/resistor_1/pixil-layer-0.png" id="5_jjxyy"]
 [ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="6_j1vvw"]
 [ext_resource type="Resource" uid="uid://b014yct28x5ct" path="res://resources/towers/resistor/resistor_1_0.tres" id="7_pvm7b"]
 [ext_resource type="Texture2D" uid="uid://cyqe4yco852jk" path="res://assets/ui/shop_icons/time_increase_shop_icon.png" id="8_6ufny"]
@@ -31,7 +30,6 @@ extra_damage_to_trojan = false
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_80q71")])
 ignores_damage_type_immunity = false
 can_see_camo = false
-tower_texture = ExtResource("5_jjxyy")
 place_col_shape = ExtResource("3_qtbls")
 bullet_visual_resource = ExtResource("1_pyqmd")
 upgrade_path_1_icon = ExtResource("6_j1vvw")
