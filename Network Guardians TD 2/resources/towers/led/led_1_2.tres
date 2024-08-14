@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=6 format=3 uid="uid://c23qd3lcanqaf"]
+
+[ext_resource type="Resource" uid="uid://b33sdwfdjmgkq" path="res://resources/towers/led/bullets/bullet_led_green.tres" id="1_afcoq"]
+[ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_jt7tj"]
+[ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_xw83e"]
+[ext_resource type="Texture2D" uid="uid://ha2pt2uejl2c" path="res://assets/ui/shop_icons/attack_speed_increase_1_icon.png" id="4_feeh7"]
+[ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="5_3ekr5"]
+
+[resource]
+script = ExtResource("3_xw83e")
+name = "LED (1|1)"
+attack_speed = 1.5
+attack_range = 200.0
+attack_damage = 1.0
+pierce = 1
+bullet_speed = 1000.0
+power = 3
+temperature_increase = 3.0
+number_of_targets = 1
+damage_type = 1
+extra_damage_to_trojan = false
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
+ignores_damage_type_immunity = false
+can_see_camo = false
+place_col_shape = ExtResource("2_jt7tj")
+bullet_visual_resource = ExtResource("1_afcoq")
+upgrade_path_1_icon = ExtResource("4_feeh7")
+upgrade_path_2_icon = ExtResource("5_3ekr5")
+upgrade_path_1_description = "increases attack speed"
+upgrade_path_2_description = "increases attack range"
+upgrade_path_1_price_easy = 120
+upgrade_path_1_price_medium = 150
+upgrade_path_1_price_hard = 175
+upgrade_path_2_price_easy = 50
+upgrade_path_2_price_medium = 60
+upgrade_path_2_price_hard = 70
