@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_j2ta8"]
 script = ExtResource("8_3203w")
 enemy_resource = ExtResource("2_bqyxc")
-enemy_count = 1
+enemy_count = 30
 time_between_enemies = 0.5
 time_after_wave_group = 0.0
 

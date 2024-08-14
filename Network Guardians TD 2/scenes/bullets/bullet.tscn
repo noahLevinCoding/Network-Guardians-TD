@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/bullet/bullet.gd" id="1_6qadl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2m7u"]
+radius = 0.01
 
 [node name="Bullet" type="Node2D" node_paths=PackedStringArray("sprite", "col_shape", "effect_col_shape", "effect_area")]
 script = ExtResource("1_6qadl")
@@ -17,7 +18,7 @@ effect_area = NodePath("EffectArea")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
-position = Vector2(0, -3)
+position = Vector2(-0.5, -0.5)
 
 [node name="EffectArea" type="Area2D" parent="."]
 collision_layer = 0

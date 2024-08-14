@@ -1,9 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://8app4n5yswj"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://diurabyuqtip0"]
 
 [ext_resource type="Texture2D" uid="uid://bprudc00eev6u" path="res://assets/tower/led/PNG/led_yellow_off.png" id="1_mttsj"]
 [ext_resource type="Texture2D" uid="uid://dwgdjd12crogo" path="res://assets/tower/led/PNG/led_yellow_on.png" id="2_c1m7y"]
 
 [resource]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,

@@ -33,11 +33,11 @@ shader = SubResource("Shader_rjqox")
 shader_parameter/line_color = Color(1, 1, 1, 0)
 shader_parameter/line_thickness = 1.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_c5ux0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_86gc8"]
 animations = [{
 "frames": [],
 "loop": false,
-"name": &"idle",
+"name": &"idlee",
 "speed": 5.0
 }, {
 "frames": [],
@@ -61,9 +61,9 @@ bullet_scene = ExtResource("2_2y4gm")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_ldl26")
 scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_c5ux0")
-animation = &"idle"
-autoplay = "idle"
+sprite_frames = SubResource("SpriteFrames_86gc8")
+animation = &"shoot"
+autoplay = "idlee"
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 0

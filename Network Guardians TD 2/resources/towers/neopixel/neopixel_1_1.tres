@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://b0f4upgopau5x"]
+
+[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_ajyhw"]
+[ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_xua7d"]
+[ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_7q6c6"]
+[ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_vlmeg"]
+[ext_resource type="SpriteFrames" uid="uid://gin1h3ejwg6o" path="res://resources/towers/neopixel/sprite_frames/neopixel_1_1_sprite_frames.tres" id="5_irndi"]
+[ext_resource type="Resource" uid="uid://bexsxtpiyl6jk" path="res://resources/towers/neopixel/neopixel_2_1.tres" id="6_8gfxx"]
+[ext_resource type="Resource" uid="uid://1pub1okcni5x" path="res://resources/towers/neopixel/neopixel_1_2.tres" id="7_na3nr"]
+
+[sub_resource type="Resource" id="Resource_vknus"]
+script = ExtResource("1_ajyhw")
+slow_multiplier = 0.0
+duration = 0.0
+
+[resource]
+script = ExtResource("2_7q6c6")
+name = "Neopixel  1 | 1"
+damage_type = 1
+attack_damage = 1.0
+attack_speed = 0.2
+attack_range = 4000.0
+pierce = 1
+number_of_targets = 1
+power = 3
+temperature_increase = 3.0
+bullet_speed = 1000.0
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_vknus")])
+ignores_damage_type_immunity = false
+can_see_camo = false
+extra_damage_to_trojan = false
+sprite_frames = ExtResource("5_irndi")
+place_col_shape = ExtResource("3_vlmeg")
+bullet_visual_resource = ExtResource("1_xua7d")
+upgrade_path_1_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_1_tower_resource = ExtResource("6_8gfxx")
+upgrade_path_2_description = ""
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("7_na3nr")

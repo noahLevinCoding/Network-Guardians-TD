@@ -1,0 +1,24 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://8app4n5yswj"]
+
+[ext_resource type="Texture2D" uid="uid://croi06t8ch45y" path="res://assets/tower/neopixel/neopixel_3/neopixel_3_0.png" id="1_6q6gw"]
+[ext_resource type="Texture2D" uid="uid://it6hcv2yx71i" path="res://assets/tower/neopixel/neopixel_3/neopixel_3_1.png" id="2_em1p3"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6q6gw")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_em1p3")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 2.0
+}]

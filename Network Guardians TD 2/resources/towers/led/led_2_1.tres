@@ -1,36 +1,34 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=6 format=3 uid="uid://wpo75gyk1nwy"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=5 format=3 uid="uid://wpo75gyk1nwy"]
 
-[ext_resource type="Resource" uid="uid://b33sdwfdjmgkq" path="res://resources/towers/led/bullets/bullet_led_green.tres" id="1_6wg6e"]
+[ext_resource type="Resource" uid="uid://yghw64pp1i82" path="res://resources/towers/led/bullets/bullet_led_pink.tres" id="1_7q4bf"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_nlxxg"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_t234i"]
-[ext_resource type="Texture2D" uid="uid://ha2pt2uejl2c" path="res://assets/ui/shop_icons/attack_speed_increase_1_icon.png" id="4_ww1kp"]
-[ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="5_curp8"]
+[ext_resource type="SpriteFrames" uid="uid://d15gaxymadokc" path="res://resources/towers/led/sprite_frames/led_2_1_sprite_frames.tres" id="4_coytu"]
 
 [resource]
 script = ExtResource("3_t234i")
-name = "LED (1|1)"
-attack_speed = 1.5
-attack_range = 200.0
-attack_damage = 1.0
-pierce = 1
-bullet_speed = 1000.0
-power = 3
-temperature_increase = 3.0
-number_of_targets = 1
+name = "LED  2 | 1"
 damage_type = 1
-extra_damage_to_trojan = false
+attack_damage = 1.0
+attack_speed = 3.0
+attack_range = 200.0
+pierce = 1
+number_of_targets = 1
+power = 4
+temperature_increase = 4.0
+bullet_speed = 1000.0
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = false
+extra_damage_to_trojan = false
+sprite_frames = ExtResource("4_coytu")
 place_col_shape = ExtResource("2_nlxxg")
-bullet_visual_resource = ExtResource("1_6wg6e")
-upgrade_path_1_icon = ExtResource("4_ww1kp")
-upgrade_path_2_icon = ExtResource("5_curp8")
-upgrade_path_1_description = "increases attack speed"
-upgrade_path_2_description = "increases attack range"
-upgrade_path_1_price_easy = 120
-upgrade_path_1_price_medium = 150
-upgrade_path_1_price_hard = 175
-upgrade_path_2_price_easy = 50
-upgrade_path_2_price_medium = 60
-upgrade_path_2_price_hard = 70
+bullet_visual_resource = ExtResource("1_7q4bf")
+upgrade_path_1_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_description = ""
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
