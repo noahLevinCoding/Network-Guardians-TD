@@ -99,6 +99,7 @@ func instantiate_bullet():
 	bullet_resource.pierce = (tower_resource.pierce * pierce_multiplicative) + pierce_additive
 	bullet_resource.source_tower = self
 	bullet_resource.effects = tower_resource.effects
+	bullet_resource.extra_damage_to_trojan = tower_resource.extra_damage_to_trojan
 	if tower_resource.bullet_effect != null:
 		bullet_resource.bullet_effect = BulletEffect.new(tower_resource.bullet_effect)
 	bullet_resource.damage_type = tower_resource.damage_type

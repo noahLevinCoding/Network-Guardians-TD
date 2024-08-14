@@ -14,6 +14,7 @@ extends TowerResource
 @export var temperature_increase : float = 0
 @export var number_of_targets : int = 1
 @export var damage_type : DAMAGE_TYPE 
+@export var extra_damage_to_trojan : bool = false
 
 @export_group("Effects")
 @export var effects : Array[EnemyEffectResource]

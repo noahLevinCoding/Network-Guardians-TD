@@ -1,7 +1,7 @@
 class_name EnemyResource
 extends Resource
 
-enum ENEMY_TYPES {NONE, VIRUS, MOAB}
+enum ENEMY_TYPES {NONE, VIRUS, TROJAN}
 
 @export_group("Enemy type")
 @export var enemy_type : ENEMY_TYPES

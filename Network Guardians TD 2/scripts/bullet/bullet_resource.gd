@@ -12,4 +12,5 @@ var source_tower : Tower
 var effects : Array[EnemyEffectResource]
 var bullet_effect : BulletEffect
 var damage_type : TowerResource.DAMAGE_TYPE
+var extra_damage_to_trojan : bool 
 

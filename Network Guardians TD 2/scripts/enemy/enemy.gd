@@ -88,7 +88,9 @@ func take_damage(bullet_resource : BulletResource):
 	if is_immune(bullet_resource):
 		return
 	
-	#TODO damage multiplier
+	if enemy_resource.enemy_type == enemy_resource.ENEMY_TYPES.TROJAN and bullet_resource.extra_damage_to_trojan:
+		bullet_resource.attack_damage *= 2
+		print("test")
 	
 	#Apply pierce
 	while bullet_resource.attack_damage > current_health and enemy_resource.child_quantities.size() == 1 and enemy_resource.child_quantities[0] == 1 and  bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
@@ -126,6 +128,7 @@ func duplicate_bullet_resource(bullet_resource : BulletResource):
 	new_bullet_resource.effects = bullet_resource.effects
 	new_bullet_resource.damage_type = bullet_resource.damage_type
 	new_bullet_resource.ignores_damage_type_immunity = bullet_resource.ignores_damage_type_immunity
+	new_bullet_resource.extra_damage_to_trojan = bullet_resource.extra_damage_to_trojan
 	
 	return new_bullet_resource
 
