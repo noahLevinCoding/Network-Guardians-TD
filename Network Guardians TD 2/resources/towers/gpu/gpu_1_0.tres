@@ -2,7 +2,7 @@
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_1pk58"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_5qkwq"]
-[ext_resource type="SpriteFrames" uid="uid://bcset0essbq3w" path="res://resources/towers/gpu/sprite_frames/gpu_1_0_sprite_frames.tres" id="3_irsdo"]
+[ext_resource type="SpriteFrames" uid="uid://cndr5l2jrxme2" path="res://resources/towers/gpu/sprite_frames/gpu_1_0_sprite_frames.tres" id="3_irsdo"]
 [ext_resource type="Resource" uid="uid://cf467jjvhkwqb" path="res://resources/towers/gpu/gpu_2_0.tres" id="4_s6jch"]
 [ext_resource type="Resource" uid="uid://cchjiamljeely" path="res://resources/towers/gpu/gpu_1_1.tres" id="5_4j0do"]
 

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dksblmhbowpoh"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dldp1eehk77su"]
 
 [ext_resource type="Texture2D" uid="uid://btcf1q20wg3m2" path="res://assets/tower/gpu/gpu_1/gpu_1_0.png" id="1_hsm2s"]
 [ext_resource type="Texture2D" uid="uid://ct35vu606wv16" path="res://assets/tower/gpu/gpu_1/gpu_1_1.png" id="2_2hb44"]
@@ -12,7 +12,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

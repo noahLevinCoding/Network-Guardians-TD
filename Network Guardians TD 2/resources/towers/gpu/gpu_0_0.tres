@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=4 format=3 uid="uid://dkk2i8g2qgut3"]
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=6 format=3 uid="uid://dkk2i8g2qgut3"]
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_y8l2m"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_qc5dx"]
-[ext_resource type="SpriteFrames" uid="uid://dksblmhbowpoh" path="res://resources/towers/gpu/sprite_frames/gpu_0_0_sprite_frames.tres" id="3_ighu0"]
+[ext_resource type="SpriteFrames" uid="uid://dldp1eehk77su" path="res://resources/towers/gpu/sprite_frames/gpu_0_0_sprite_frames.tres" id="3_ighu0"]
+[ext_resource type="Resource" uid="uid://3maw8hnr3o3e" path="res://resources/towers/gpu/gpu_1_0.tres" id="4_g76al"]
+[ext_resource type="Resource" uid="uid://c3v1f8a7a4dfi" path="res://resources/towers/gpu/gpu_0_1.tres" id="5_jwpqy"]
 
 [resource]
 script = ExtResource("2_qc5dx")
@@ -18,7 +20,9 @@ upgrade_path_1_description = ""
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
+upgrade_path_1_tower_resource = ExtResource("4_g76al")
 upgrade_path_2_description = ""
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("5_jwpqy")

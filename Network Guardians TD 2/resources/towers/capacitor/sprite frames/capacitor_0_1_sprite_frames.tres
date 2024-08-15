@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bp8h0ekq1dcu4"]
+
+[ext_resource type="Texture2D" uid="uid://drxtrqyxfeetf" path="res://assets/tower/capacitor/capacitor_2.png" id="1_jbxm2"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jbxm2")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jbxm2")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]

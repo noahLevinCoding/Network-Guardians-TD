@@ -1,14 +1,70 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://calehlyj1konm"]
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://bgndnor2p3r5y"]
+
+[ext_resource type="Texture2D" uid="uid://l0p0c08scf3e" path="res://assets/tower/gpu/gpu_7/gpu_7_0.png" id="1_xsdl6"]
+[ext_resource type="Texture2D" uid="uid://jtb7kq4l4s7m" path="res://assets/tower/gpu/gpu_7/gpu_7_1.png" id="2_ry2hc"]
+[ext_resource type="Texture2D" uid="uid://dpxo1ra1yikdb" path="res://assets/tower/gpu/gpu_7/gpu_7_2.png" id="3_bptfu"]
+[ext_resource type="Texture2D" uid="uid://mro2xou31y5v" path="res://assets/tower/gpu/gpu_7/gpu_7_3.png" id="4_rqegn"]
+[ext_resource type="Texture2D" uid="uid://dnvaotqfea8hw" path="res://assets/tower/gpu/gpu_7/gpu_7_4.png" id="5_lcfvo"]
+[ext_resource type="Texture2D" uid="uid://cwvlijhpa3l3s" path="res://assets/tower/gpu/gpu_7/gpu_7_5.png" id="6_yiuqy"]
+[ext_resource type="Texture2D" uid="uid://blsrqf6ibkpec" path="res://assets/tower/gpu/gpu_7/gpu_7_6.png" id="7_m3q2c"]
+[ext_resource type="Texture2D" uid="uid://caiiyid4p3nx6" path="res://assets/tower/gpu/gpu_7/gpu_7_7.png" id="8_r7c26"]
+[ext_resource type="Texture2D" uid="uid://qiiy08g46pg8" path="res://assets/tower/gpu/gpu_7/gpu_7_8.png" id="9_02n17"]
+[ext_resource type="Texture2D" uid="uid://cia7osroa1lxl" path="res://assets/tower/gpu/gpu_7/gpu_7_9.png" id="10_nt7jh"]
+[ext_resource type="Texture2D" uid="uid://2lgah0pyh3eq" path="res://assets/tower/gpu/gpu_7/gpu_7_10.png" id="11_pdaaa"]
+[ext_resource type="Texture2D" uid="uid://bqsxbgtayfmw5" path="res://assets/tower/gpu/gpu_7/gpu_7_11.png" id="12_qbs73"]
+[ext_resource type="Texture2D" uid="uid://brhb8w2scotsx" path="res://assets/tower/gpu/gpu_7/gpu_7_12.png" id="13_hi6rn"]
 
 [resource]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xsdl6")
+}],
 "loop": false,
 "name": &"idle",
-"speed": 2.0
+"speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xsdl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ry2hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bptfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rqegn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lcfvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yiuqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m3q2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r7c26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_02n17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nt7jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pdaaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qbs73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hi6rn")
+}],
 "loop": true,
 "name": &"mining",
 "speed": 2.0

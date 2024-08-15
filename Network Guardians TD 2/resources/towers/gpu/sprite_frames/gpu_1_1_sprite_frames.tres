@@ -1,14 +1,34 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://bwhfu7vuxqt5q"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dpd5i3e2pxtre"]
+
+[ext_resource type="Texture2D" uid="uid://brx05t1u3ero1" path="res://assets/tower/gpu/gpu_5/gpu_5_0.png" id="1_2b8qw"]
+[ext_resource type="Texture2D" uid="uid://bmifcv276jb" path="res://assets/tower/gpu/gpu_5/gpu_5_1.png" id="2_vt4cl"]
+[ext_resource type="Texture2D" uid="uid://hg4cablscrtt" path="res://assets/tower/gpu/gpu_5/gpu_5_2.png" id="3_hh5bf"]
+[ext_resource type="Texture2D" uid="uid://c04xiectdfoft" path="res://assets/tower/gpu/gpu_5/gpu_5_3.png" id="4_pash8"]
 
 [resource]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2b8qw")
+}],
 "loop": false,
 "name": &"idle",
-"speed": 2.0
+"speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2b8qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vt4cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hh5bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pash8")
+}],
 "loop": true,
 "name": &"mining",
 "speed": 2.0

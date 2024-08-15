@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://cluahv310ym5k"]
+
+[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_xp6mm"]
+[ext_resource type="Resource" uid="uid://cule21j7l2bo5" path="res://resources/towers/capacitor/bullets/bullet_capacitor_2.tres" id="1_yf23a"]
+[ext_resource type="Shape2D" uid="uid://ecwtu2x7uf45" path="res://resources/towers/capacitor/capacitor_place_shape.tres" id="2_g10cx"]
+[ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_jhsji"]
+[ext_resource type="SpriteFrames" uid="uid://bp8h0ekq1dcu4" path="res://resources/towers/capacitor/sprite frames/capacitor_0_1_sprite_frames.tres" id="5_13kre"]
+[ext_resource type="Resource" uid="uid://f3lniwffu7bs" path="res://resources/towers/capacitor/capacitor_1_1.tres" id="6_07u5k"]
+[ext_resource type="Resource" uid="uid://bd5w462iklkuu" path="res://resources/towers/capacitor/capacitor_0_2.tres" id="7_a3fwa"]
+
+[sub_resource type="Resource" id="Resource_1t2mk"]
+script = ExtResource("1_xp6mm")
+slow_multiplier = 0.0
+duration = 0.0
+
+[resource]
+script = ExtResource("3_jhsji")
+name = "Capacitor  0 | 1"
+damage_type = 2
+attack_damage = 5.0
+attack_speed = 0.2
+attack_range = 200.0
+pierce = 2
+number_of_targets = 1
+power = 5
+temperature_increase = 2.0
+bullet_speed = 1000.0
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_1t2mk")])
+ignores_damage_type_immunity = false
+can_see_camo = false
+extra_damage_to_trojan = false
+sprite_frames = ExtResource("5_13kre")
+place_col_shape = ExtResource("2_g10cx")
+bullet_visual_resource = ExtResource("1_yf23a")
+upgrade_path_1_description = ""
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_1_tower_resource = ExtResource("6_07u5k")
+upgrade_path_2_description = ""
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("7_a3fwa")

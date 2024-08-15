@@ -1,14 +1,26 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://buvj6ijueoeb"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://clu8devytmdib"]
+
+[ext_resource type="Texture2D" uid="uid://dmxr6sovha0my" path="res://assets/tower/gpu/gpu_6/gpu_6_0.png" id="1_rd78q"]
+[ext_resource type="Texture2D" uid="uid://bpbciuqko5xg3" path="res://assets/tower/gpu/gpu_6/gpu_6_1.png" id="2_hfrx4"]
 
 [resource]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rd78q")
+}],
 "loop": false,
 "name": &"idle",
-"speed": 2.0
+"speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rd78q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hfrx4")
+}],
 "loop": true,
 "name": &"mining",
 "speed": 2.0

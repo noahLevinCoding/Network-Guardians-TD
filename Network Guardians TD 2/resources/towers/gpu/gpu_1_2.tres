@@ -2,7 +2,7 @@
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_y0rdh"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_3lwlw"]
-[ext_resource type="SpriteFrames" uid="uid://bvmmwoqcgjeuj" path="res://resources/towers/gpu/sprite_frames/gpu_1_2_sprite_frames.tres" id="3_lwfgk"]
+[ext_resource type="SpriteFrames" uid="uid://1ggd0g0faanm" path="res://resources/towers/gpu/sprite_frames/gpu_1_2_sprite_frames.tres" id="3_lwfgk"]
 
 [resource]
 script = ExtResource("2_3lwlw")
