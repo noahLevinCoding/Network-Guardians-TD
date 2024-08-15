@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=6 format=3 uid="uid://b014yct28x5ct"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://b014yct28x5ct"]
 
 [ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_oyqco"]
 [ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="3_4ndbd"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_23ewx"]
+[ext_resource type="SpriteFrames" uid="uid://bsh5qdhsq4lva" path="res://resources/towers/resistor/sprite frames/resistor_1_0_sprite_frames.tres" id="4_kfler"]
+[ext_resource type="Resource" uid="uid://ccr7joeej2he6" path="res://resources/towers/resistor/resistor_2_0.tres" id="5_ptcln"]
 [ext_resource type="Resource" uid="uid://cg7cg5ogqtt0p" path="res://resources/towers/resistor/resistor_1_1.tres" id="7_dlupg"]
 [ext_resource type="Texture2D" uid="uid://cyqe4yco852jk" path="res://assets/ui/shop_icons/time_increase_shop_icon.png" id="7_sgr3c"]
 
 [resource]
 script = ExtResource("4_23ewx")
-name = "Resistor (1|0)"
+name = "Resistor  1 | 0"
 damage_type = 2
 attack_damage = 2.0
 attack_speed = 0.5
@@ -22,12 +24,14 @@ effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resou
 ignores_damage_type_immunity = false
 can_see_camo = false
 extra_damage_to_trojan = false
+sprite_frames = ExtResource("4_kfler")
 place_col_shape = ExtResource("3_4ndbd")
 bullet_visual_resource = ExtResource("1_oyqco")
 upgrade_path_1_description = ""
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
+upgrade_path_1_tower_resource = ExtResource("5_ptcln")
 upgrade_path_2_icon = ExtResource("7_sgr3c")
 upgrade_path_2_description = ""
 upgrade_path_2_price_easy = 0

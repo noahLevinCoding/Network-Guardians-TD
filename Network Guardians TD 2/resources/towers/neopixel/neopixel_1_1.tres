@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_ajyhw"]
 [ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_xua7d"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_7q6c6"]
-[ext_resource type="Shape2D" path="res://resources/towers/neopixel/place_shape.tres" id="3_vlmeg"]
+[ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_vlmeg"]
 [ext_resource type="SpriteFrames" uid="uid://gin1h3ejwg6o" path="res://resources/towers/neopixel/sprite_frames/neopixel_1_1_sprite_frames.tres" id="5_irndi"]
 [ext_resource type="Resource" uid="uid://caj1pemh574yo" path="res://resources/towers/neopixel/neopixel_2_1.tres" id="6_8gfxx"]
 [ext_resource type="Resource" uid="uid://cy4btjx4dqoay" path="res://resources/towers/neopixel/neopixel_1_2.tres" id="7_na3nr"]

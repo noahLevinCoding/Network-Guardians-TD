@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://bqn2wk2pxhmxo"]
+
+[ext_resource type="Texture2D" uid="uid://b65dp2vp2cwu" path="res://assets/tower/resistor/resistor_7/pixil-layer-0.png" id="1_ib5jt"]
+[ext_resource type="Texture2D" uid="uid://dc5ewn5vovdy6" path="res://assets/tower/resistor/resistor_7/pixil-layer-1.png" id="2_usdmk"]
+[ext_resource type="Texture2D" uid="uid://cujila1dtl7kg" path="res://assets/tower/resistor/resistor_7/pixil-layer-2.png" id="3_xfkpf"]
+[ext_resource type="Texture2D" uid="uid://b4668n7fxmnef" path="res://assets/tower/resistor/resistor_7/pixil-layer-3.png" id="4_g4kus"]
+[ext_resource type="Texture2D" uid="uid://b6kqbqi414s1d" path="res://assets/tower/resistor/resistor_7/pixil-layer-4.png" id="5_srn25"]
+[ext_resource type="Texture2D" uid="uid://bjkrhf34p61ec" path="res://assets/tower/resistor/resistor_7/pixil-layer-5.png" id="6_opmya"]
+[ext_resource type="Texture2D" uid="uid://d1dypg2oisnx3" path="res://assets/tower/resistor/resistor_7/pixil-layer-6.png" id="7_t5tdi"]
+[ext_resource type="Texture2D" uid="uid://1w28hyw1auo7" path="res://assets/tower/resistor/resistor_7/pixil-layer-7.png" id="8_vcom7"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ib5jt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ib5jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_usdmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xfkpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g4kus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_srn25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_opmya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t5tdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vcom7")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 8.0
+}]

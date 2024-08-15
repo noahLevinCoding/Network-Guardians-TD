@@ -2,10 +2,10 @@
 
 [ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_o0oyg"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_x2jgc"]
-[ext_resource type="Shape2D" path="res://resources/towers/neopixel/place_shape.tres" id="2_brjiu"]
+[ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="2_brjiu"]
 [ext_resource type="SpriteFrames" uid="uid://cuy8r3f7dj1qu" path="res://resources/towers/neopixel/sprite_frames/neopixel_0_0_sprite_frames.tres" id="4_whiwl"]
-[ext_resource type="Resource" path="res://resources/towers/neopixel/neopixel_1_0.tres" id="5_yqvnp"]
-[ext_resource type="Resource" path="res://resources/towers/neopixel/neopixel_0_1.tres" id="6_scthi"]
+[ext_resource type="Resource" uid="uid://dwo05d8hj1ybi" path="res://resources/towers/neopixel/neopixel_1_0.tres" id="5_yqvnp"]
+[ext_resource type="Resource" uid="uid://cse6abspl6ae2" path="res://resources/towers/neopixel/neopixel_0_1.tres" id="6_scthi"]
 
 [resource]
 script = ExtResource("1_x2jgc")

@@ -14,6 +14,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_ncyme")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ncyme")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_pay4q")
@@ -36,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_81g0p")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
 "speed": 8.0
 }]
