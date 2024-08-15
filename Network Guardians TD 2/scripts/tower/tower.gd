@@ -47,6 +47,7 @@ func upgrade(path : int, price : int):
 	sell_value += int(price / 2.0)
 		
 func init_resource():
+	print("test")
 	pass
 
 func reset_buff_parameters():

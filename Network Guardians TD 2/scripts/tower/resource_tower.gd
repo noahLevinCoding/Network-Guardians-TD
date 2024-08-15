@@ -23,11 +23,11 @@ func _on_place_area_input_event(_viewport, _event, _shape_idx):
 			is_selectable = true
 
 func _ready():
-	init_resources()
+	init_resource()
 	SignalManager.on_start_next_wave.connect(on_start_next_wave)
 	SignalManager.on_wave_finished.connect(on_wave_finished)
 	
-func init_resources():
+func init_resource():
 	animated_sprite.sprite_frames = tower_resource.sprite_frames
 	drop_timer.wait_time = tower_resource.drop_time 
 	place_col_shape.shape = tower_resource.place_col_shape

@@ -8,6 +8,7 @@
 script = ExtResource("1_2j6pm")
 name = "LED"
 icon = ExtResource("1_htk7a")
+mouse_cursor_texture = ExtResource("1_htk7a")
 price_easy = 50
 price_medium = 150
 price_hard = 200
