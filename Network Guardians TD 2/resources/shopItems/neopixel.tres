@@ -8,6 +8,7 @@
 script = ExtResource("1_xtth8")
 name = "Neopixel"
 icon = ExtResource("1_x1ekg")
+mouse_cursor_texture = ExtResource("1_x1ekg")
 price_easy = 20
 price_medium = 40
 price_hard = 80

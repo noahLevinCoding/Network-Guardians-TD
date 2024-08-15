@@ -35,6 +35,9 @@ func _on_select():
 	shop_node.visible = false
 	visible = true
 	
+	GameManager.cooler.is_selected = true
+	GameManager.power_supply.is_selected = true
+	
 	currently_temp.text = "-" + str(GameManager.cooler.cooler_resource.temperature_decrease) + " °C"
 	
 	if GameManager.cooler.cooler_resource.upgrade_cooler_resource != null:
@@ -74,6 +77,10 @@ func _on_deselect():
 	price_power_text.set_modulate(white_color)
 	price_temp.set_modulate(white_color)
 	price_temp_text.set_modulate(white_color)
+	
+	if GameManager.cooler != null and GameManager.power_supply != null:
+		GameManager.cooler.is_selected = false
+		GameManager.power_supply.is_selected = false
 
 func _on_reset_game():
 	_on_deselect()
@@ -87,3 +94,9 @@ func _on_upgrade_cooler():
 func _on_upgrade_power_supply():
 	GameManager.upgrade_power_supply()
 	_on_select()
+
+func _input(event):
+	if event.is_action_pressed("right_mouse_button"):
+		_on_deselect()
+
+

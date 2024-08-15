@@ -4,6 +4,7 @@
 [ext_resource type="Shader" path="res://shader/tower_selection_shader.gdshader" id="2_yxu37"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o4pji"]
+resource_local_to_scene = true
 shader = ExtResource("2_yxu37")
 shader_parameter/line_color = Color(1, 1, 1, 0)
 shader_parameter/line_thickness = 1.0
@@ -18,7 +19,7 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"mining",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="ResourceTower" type="Node2D" node_paths=PackedStringArray("animated_sprite", "place_col_shape", "drop_timer")]

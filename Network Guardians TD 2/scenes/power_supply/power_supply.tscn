@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1hnua7wkf75d"]
+[gd_scene load_steps=5 format=3 uid="uid://b1hnua7wkf75d"]
 
 [ext_resource type="Script" path="res://scripts/power_supply/power_supply.gd" id="1_60nvo"]
 [ext_resource type="Resource" uid="uid://dgv6v43mnri2v" path="res://resources/power_supply/power_supply_1.tres" id="2_j6wec"]
+[ext_resource type="Shader" path="res://shader/tower_selection_shader.gdshader" id="3_xq7ag"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwtdc"]
+resource_local_to_scene = true
+shader = ExtResource("3_xq7ag")
+shader_parameter/line_color = Color(1, 1, 1, 0)
+shader_parameter/line_thickness = 1.0
 
 [node name="powerSupply" type="Node2D" node_paths=PackedStringArray("sprite", "col_shape")]
 script = ExtResource("1_60nvo")
@@ -10,6 +17,7 @@ sprite = NodePath("Sprite2D")
 col_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gwtdc")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

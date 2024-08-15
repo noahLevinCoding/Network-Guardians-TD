@@ -8,6 +8,7 @@
 script = ExtResource("1_gytaq")
 name = "Transistor"
 icon = ExtResource("1_i1mj7")
+mouse_cursor_texture = ExtResource("1_i1mj7")
 price_easy = 100
 price_medium = 150
 price_hard = 200

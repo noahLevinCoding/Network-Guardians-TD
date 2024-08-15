@@ -8,6 +8,7 @@
 script = ExtResource("1_nmd5s")
 name = "Capactior"
 icon = ExtResource("1_4tt6r")
+mouse_cursor_texture = ExtResource("1_4tt6r")
 price_easy = 100
 price_medium = 150
 price_hard = 200

@@ -146,14 +146,13 @@ custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 
 [node name="Shop" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("item_list", "tower_name_label", "tower_power_label", "tower_power_text_label", "tower_temperature_label", "tower_range_polygon", "tower_place_col", "tower_place_area", "tower_place_sprite")]
-visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("2_q1nu2")
 item_list = NodePath("ShopItemList")
-items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2"), ExtResource("6_5ecvl"), ExtResource("7_w4ys3"), ExtResource("8_vv3sk"), ExtResource("9_rdbv3"), ExtResource("10_k3byp"), ExtResource("11_rsiae"), ExtResource("12_e4nnd")])
+items = Array[Resource("res://scripts/shop/shop_item_resource.gd")]([ExtResource("3_4w7p2"), ExtResource("6_5ecvl"), ExtResource("8_vv3sk"), ExtResource("7_w4ys3"), ExtResource("9_rdbv3"), ExtResource("11_rsiae"), ExtResource("10_k3byp"), ExtResource("12_e4nnd")])
 tower_name_label = NodePath("TowerName")
 tower_power_label = NodePath("HBoxContainer2/PowerValue")
 tower_power_text_label = NodePath("HBoxContainer2/PowerText")
@@ -305,10 +304,14 @@ text = "Upgrade 2"
 [node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Attack_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
 text = "Deselect"
 
 [node name="SellButton" type="Button" parent="ScreenBox/RightSide/Attack_Upgrade"]
 layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
 text = "Sell"
 
 [node name="Resource_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "attack_upgrade_node", "support_upgrade_node", "tower_name_label", "money_generated_label", "sell_button", "selected_temperature_label", "selected_power_label")]
@@ -386,13 +389,18 @@ text = "Upgrade 2"
 [node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Resource_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
 text = "Deselect"
 
 [node name="SellButton" type="Button" parent="ScreenBox/RightSide/Resource_Upgrade"]
 layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
 text = "Sell"
 
 [node name="Support_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "resource_upgrade_node", "cooler_power_supply_upgrade_node", "attack_upgrade_node", "tower_name_label", "towers_buffed_label", "sell_button", "selected_temperature_label", "selected_power_label")]
+visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -466,6 +474,8 @@ text = "Upgrade 2"
 [node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Support_Upgrade"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
 text = "Deselect"
 
 [node name="SellButton" type="Button" parent="ScreenBox/RightSide/Support_Upgrade"]
@@ -500,16 +510,21 @@ layout_mode = 2
 text = "Cooler"
 horizontal_alignment = 1
 
+[node name="MarginContainer5" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
 [node name="Currently" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
 [node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently"]
 layout_mode = 2
-text = "Currently:"
+size_flags_horizontal = 2
+text = "Current:"
 
 [node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently"]
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 8
 text = "-10 °C"
 horizontal_alignment = 2
 
@@ -544,12 +559,13 @@ text = "100 $"
 horizontal_alignment = 2
 
 [node name="UpgradeBtn" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Upgrade"
+focus_mode = 0
+text = "Buy Upgrade"
 
 [node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
-custom_minimum_size = Vector2(0, 28)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 
 [node name="PowerSupplyHeading" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
@@ -558,12 +574,16 @@ layout_mode = 2
 text = "Power Supply"
 horizontal_alignment = 1
 
+[node name="MarginContainer6" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
 [node name="Currently2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
 
 [node name="Text" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently2"]
 layout_mode = 2
-text = "Currently:"
+text = "Current:"
 
 [node name="Value" type="Label" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/Currently2"]
 layout_mode = 2
@@ -602,18 +622,21 @@ text = "200 $"
 horizontal_alignment = 2
 
 [node name="UpgradeBtn2" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-text = "Upgrade"
+focus_mode = 0
+text = "Buy Upgrade"
 
 [node name="MarginContainer4" type="MarginContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 
 [node name="DeselectButton" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "Deselect"
+focus_mode = 0
+mouse_filter = 1
+text = "Back to shop"
 
 [node name="MarginContainer3" type="MarginContainer" parent="ScreenBox/RightSide"]
 custom_minimum_size = Vector2(0, 68.75)

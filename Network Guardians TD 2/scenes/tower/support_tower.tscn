@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://3bhcc2uoplpr"]
+[gd_scene load_steps=5 format=3 uid="uid://3bhcc2uoplpr"]
 
 [ext_resource type="Script" path="res://scripts/tower/support_tower.gd" id="1_72uyl"]
-[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="2_33p16"]
 
 [sub_resource type="Shader" id="Shader_lh0kh"]
+resource_local_to_scene = true
 code = "shader_type canvas_item;
 
 uniform vec4 line_color : source_color = vec4(1.0);
@@ -46,7 +46,6 @@ range_indicator = NodePath("RangeIndicator")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_vk0g0")
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_33p16")
 
 [node name="SupportArea" type="Area2D" parent="."]
 collision_layer = 0

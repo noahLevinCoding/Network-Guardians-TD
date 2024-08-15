@@ -41,7 +41,7 @@ func select(index : int):
 	#TODO: change custom cursor to sprite
 	#Input.set_custom_mouse_cursor(selected_item.icon, Input.CURSOR_ARROW, selected_item.icon.get_size() / 2)	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	tower_place_sprite.texture = selected_item.icon
+	tower_place_sprite.texture = selected_item.mouse_cursor_texture
 	tower_place_sprite.visible = true
 	
 	tower_name_label.text = selected_item.name
