@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=13 format=3 uid="uid://bixymtycbfpeg"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_q3v47"]
+[ext_resource type="Resource" uid="uid://cs5dxhxjv21et" path="res://resources/enemies/normal/virus_8_white.tres" id="2_246bd"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_qq47u"]
+[ext_resource type="Resource" uid="uid://bc2r2f3klqexf" path="res://resources/enemies/normal/virus_5_pink.tres" id="4_b4clw"]
+[ext_resource type="Resource" uid="uid://cfqs16n3wml2s" path="res://resources/enemies/normal/virus_9_light.tres" id="5_rwq1d"]
+[ext_resource type="Resource" uid="uid://dllletlqjc145" path="res://resources/enemies/normal/virus_10_zebra.tres" id="6_tq7rw"]
+[ext_resource type="Resource" uid="uid://yll6f0d6jyog" path="res://resources/enemies/normal/virus_12_ceramic.tres" id="7_51igm"]
+
+[sub_resource type="Resource" id="Resource_sstof"]
+script = ExtResource("3_qq47u")
+enemy_resource = ExtResource("2_246bd")
+enemy_count = 17
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_ikusu"]
+script = ExtResource("3_qq47u")
+enemy_resource = ExtResource("4_b4clw")
+enemy_count = 42
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_vaavx"]
+script = ExtResource("3_qq47u")
+enemy_resource = ExtResource("5_rwq1d")
+enemy_count = 14
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_t81q2"]
+script = ExtResource("3_qq47u")
+enemy_resource = ExtResource("6_tq7rw")
+enemy_count = 10
+time_between_enemies = 1.0
+time_after_wave_group = 2.0
+
+[sub_resource type="Resource" id="Resource_nxeln"]
+script = ExtResource("3_qq47u")
+enemy_resource = ExtResource("7_51igm")
+enemy_count = 2
+time_between_enemies = 2.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_q3v47")
+wave_groups = Array[ExtResource("3_qq47u")]([SubResource("Resource_sstof"), SubResource("Resource_ikusu"), SubResource("Resource_vaavx"), SubResource("Resource_t81q2"), SubResource("Resource_nxeln")])
