@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ShopItemResource" load_steps=4 format=3 uid="uid://ca50fe2ti3yof"]
 
-[ext_resource type="Texture2D" uid="uid://ul4ltq52faqv" path="res://assets/tower/led/PNG/led_blue_on.png" id="1_t3kes"]
+[ext_resource type="Texture2D" uid="uid://fxn5arqo2hla" path="res://assets/tower/inductor/inductor_shop.png" id="1_u8lyk"]
 [ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_x3kfe"]
 [ext_resource type="Resource" uid="uid://dtgqw1wiy73o0" path="res://resources/towers/inductor/inductor_0_0.tres" id="3_3b6he"]
 
 [resource]
 script = ExtResource("1_x3kfe")
 name = "Inductor"
-icon = ExtResource("1_t3kes")
+icon = ExtResource("1_u8lyk")
 price_easy = 50
 price_medium = 100
 price_hard = 150

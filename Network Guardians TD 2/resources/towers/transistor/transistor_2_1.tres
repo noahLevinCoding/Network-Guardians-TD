@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bjfawnt72cieu" path="res://resources/towers/transistor/bullets/bullet_transistor.tres" id="2_p7nxn"]
 [ext_resource type="Shape2D" uid="uid://be7o1xtl4ia17" path="res://resources/towers/transistor/transistor_place_shape.tres" id="3_1er68"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_528y2"]
-[ext_resource type="SpriteFrames" uid="uid://c3mjm8dneurcj" path="res://resources/towers/transistor/sprite_frames/transistor_2_1_sprite_frames.tres" id="5_14m6m"]
+[ext_resource type="SpriteFrames" uid="uid://blq6n5sq6rj2x" path="res://resources/towers/transistor/sprite_frames/transistor_2_1_sprite_frames.tres" id="5_14m6m"]
 
 [sub_resource type="Resource" id="Resource_6sx11"]
 script = ExtResource("1_j7lae")

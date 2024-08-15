@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=4 format=3 uid="uid://8r1a2sss0klx"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://8r1a2sss0klx"]
 
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_467by"]
+[ext_resource type="Resource" uid="uid://bd0suyf4uyvnn" path="res://resources/towers/capacitor/bullets/bullet_capacitor_0.tres" id="1_kuhg8"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_yoa5n"]
+[ext_resource type="Shape2D" uid="uid://ecwtu2x7uf45" path="res://resources/towers/capacitor/capacitor_place_shape.tres" id="3_ca1fa"]
+[ext_resource type="SpriteFrames" uid="uid://b276i3mstpjeb" path="res://resources/towers/capacitor/sprite frames/capacitor_0_0_sprite_frames.tres" id="5_t2qbg"]
 
 [sub_resource type="Resource" id="Resource_1t2mk"]
 script = ExtResource("1_467by")
@@ -10,7 +13,7 @@ duration = 0.0
 
 [resource]
 script = ExtResource("1_yoa5n")
-name = "Capacitor (0|0)"
+name = "Capacitor  0 | 0"
 damage_type = 2
 attack_damage = 5.0
 attack_speed = 0.2
@@ -24,6 +27,9 @@ effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resou
 ignores_damage_type_immunity = false
 can_see_camo = false
 extra_damage_to_trojan = false
+sprite_frames = ExtResource("5_t2qbg")
+place_col_shape = ExtResource("3_ca1fa")
+bullet_visual_resource = ExtResource("1_kuhg8")
 upgrade_path_1_description = ""
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0

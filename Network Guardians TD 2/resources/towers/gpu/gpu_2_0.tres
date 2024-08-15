@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=5 format=3 uid="uid://cf467jjvhkwqb"]
+
+[ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_opnkf"]
+[ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_88qka"]
+[ext_resource type="SpriteFrames" uid="uid://coraqnbgkt26v" path="res://resources/towers/gpu/sprite_frames/gpu_2_0_sprite_frames.tres" id="3_0wqb8"]
+[ext_resource type="Resource" uid="uid://dnalfkkvqx5s5" path="res://resources/towers/gpu/gpu_2_1.tres" id="4_ujfu2"]
+
+[resource]
+script = ExtResource("2_88qka")
+name = "GPU  2 | 0"
+drop_time = 2.0
+drop_amount = 1
+max_drop_amount = 100
+power = 5
+temperature_increase = 5.0
+sprite_frames = ExtResource("3_0wqb8")
+place_col_shape = ExtResource("1_opnkf")
+upgrade_path_1_description = "Max"
+upgrade_path_1_price_easy = 0
+upgrade_path_1_price_medium = 0
+upgrade_path_1_price_hard = 0
+upgrade_path_2_description = ""
+upgrade_path_2_price_easy = 0
+upgrade_path_2_price_medium = 0
+upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("4_ujfu2")

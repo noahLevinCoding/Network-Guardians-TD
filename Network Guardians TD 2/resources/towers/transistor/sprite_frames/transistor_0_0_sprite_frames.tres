@@ -1,23 +1,22 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bbc73uqcxdpkb"]
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://b30yta6pfplng"]
 
-[ext_resource type="Texture2D" uid="uid://5i2p2inky03o" path="res://assets/tower/led/PNG/led_red_off.png" id="1_icu37"]
-[ext_resource type="Texture2D" uid="uid://8knu2iipok7l" path="res://assets/tower/led/PNG/led_red_on.png" id="2_agh5d"]
+[ext_resource type="Texture2D" uid="uid://dubdvcera4ry4" path="res://assets/tower/transistor/transistor_1.png" id="1_pbwf1"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_icu37")
+"texture": ExtResource("1_pbwf1")
 }],
 "loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_agh5d")
+"texture": ExtResource("1_pbwf1")
 }],
 "loop": false,
 "name": &"shoot",
-"speed": 5.0
+"speed": 2.0
 }]

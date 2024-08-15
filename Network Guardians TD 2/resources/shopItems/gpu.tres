@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ShopItemResource" load_steps=4 format=3 uid="uid://bw4kx2s1of274"]
 
 [ext_resource type="Script" path="res://scripts/shop/shop_item_resource.gd" id="1_7y3yo"]
-[ext_resource type="Texture2D" uid="uid://ct35vu606wv16" path="res://assets/tower/gpu/gpu_1/gpu_1_1.png" id="1_bdeo1"]
+[ext_resource type="Texture2D" uid="uid://ws8anb1wp3t3" path="res://assets/tower/gpu/gpu_shop.png" id="1_ddtae"]
 [ext_resource type="Resource" uid="uid://dkk2i8g2qgut3" path="res://resources/towers/gpu/gpu_0_0.tres" id="3_gjqna"]
 
 [resource]
 script = ExtResource("1_7y3yo")
 name = "GPU"
-icon = ExtResource("1_bdeo1")
+icon = ExtResource("1_ddtae")
 price_easy = 200
 price_medium = 300
 price_hard = 400

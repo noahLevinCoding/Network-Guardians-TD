@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bjfawnt72cieu" path="res://resources/towers/transistor/bullets/bullet_transistor.tres" id="1_l22k6"]
 [ext_resource type="Shape2D" uid="uid://be7o1xtl4ia17" path="res://resources/towers/transistor/transistor_place_shape.tres" id="3_lttjr"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_rsx84"]
-[ext_resource type="SpriteFrames" uid="uid://bjw5i8es5hmis" path="res://resources/towers/transistor/sprite_frames/transistor_1_0_sprite_frames.tres" id="5_lmmgd"]
+[ext_resource type="SpriteFrames" uid="uid://l01rgsjmcbav" path="res://resources/towers/transistor/sprite_frames/transistor_1_0_sprite_frames.tres" id="5_lmmgd"]
 [ext_resource type="Resource" uid="uid://dbfjforjjtoee" path="res://resources/towers/transistor/transistor_2_0.tres" id="6_xnb2q"]
 [ext_resource type="Resource" uid="uid://dle1tijbkmkog" path="res://resources/towers/transistor/transistor_1_1.tres" id="7_1im6u"]
 

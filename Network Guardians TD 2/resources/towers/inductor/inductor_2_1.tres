@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/knockback_effect_resource.gd" id="2_ooqpo"]
 [ext_resource type="Shape2D" uid="uid://b6j1dpiu2ijec" path="res://resources/towers/inductor/inductor_pace_shape.tres" id="3_ow0rx"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_gf1u8"]
-[ext_resource type="SpriteFrames" uid="uid://veiohh6wg6t5" path="res://resources/towers/inductor/sprite frames/inductor_0_0_sprite_frames.tres" id="5_h8vuk"]
+[ext_resource type="SpriteFrames" uid="uid://bop3k7q40v8ij" path="res://resources/towers/inductor/sprite frames/inductor_2_1_sprite_frames.tres" id="5_fxg4j"]
 
 [sub_resource type="Resource" id="Resource_bkjo6"]
 script = ExtResource("2_ooqpo")
@@ -27,7 +27,7 @@ effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resou
 ignores_damage_type_immunity = false
 can_see_camo = false
 extra_damage_to_trojan = false
-sprite_frames = ExtResource("5_h8vuk")
+sprite_frames = ExtResource("5_fxg4j")
 place_col_shape = ExtResource("3_ow0rx")
 bullet_visual_resource = ExtResource("1_7n0wl")
 upgrade_path_1_description = "Max"

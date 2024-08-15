@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=4 format=3 uid="uid://c3v1f8a7a4dfi"]
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=6 format=3 uid="uid://c3v1f8a7a4dfi"]
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_dphl1"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_625ox"]
-[ext_resource type="SpriteFrames" uid="uid://dksblmhbowpoh" path="res://resources/towers/gpu/sprite_frames/gpu_0_0_sprite_frames.tres" id="3_thrpe"]
+[ext_resource type="SpriteFrames" uid="uid://bdawtl76s7x0e" path="res://resources/towers/gpu/sprite_frames/gpu_0_1_sprite_frames.tres" id="3_twuks"]
+[ext_resource type="Resource" uid="uid://cchjiamljeely" path="res://resources/towers/gpu/gpu_1_1.tres" id="4_b8c3c"]
+[ext_resource type="Resource" uid="uid://dgywhfof6vumd" path="res://resources/towers/gpu/gpu_0_2.tres" id="5_aktoh"]
 
 [resource]
 script = ExtResource("2_625ox")
@@ -12,13 +14,15 @@ drop_amount = 2
 max_drop_amount = 100
 power = 5
 temperature_increase = 5.0
-sprite_frames = ExtResource("3_thrpe")
+sprite_frames = ExtResource("3_twuks")
 place_col_shape = ExtResource("1_dphl1")
 upgrade_path_1_description = ""
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
+upgrade_path_1_tower_resource = ExtResource("4_b8c3c")
 upgrade_path_2_description = ""
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0
+upgrade_path_2_tower_resource = ExtResource("5_aktoh")

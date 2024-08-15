@@ -1,12 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://rvym6hbjpx7w"]
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://custy2u1kvqjv"]
 
-[ext_resource type="Texture2D" uid="uid://fcenoo1bo0vy" path="res://assets/tower/transistor/transistor_7.png" id="1_s6pqf"]
+[ext_resource type="Texture2D" uid="uid://bx5thnctkdpwd" path="res://assets/tower/transistor/transistor_8.png" id="1_f8hg3"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_s6pqf")
+"texture": ExtResource("1_f8hg3")
 }],
 "loop": false,
 "name": &"idle",
@@ -14,7 +14,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_s6pqf")
+"texture": ExtResource("1_f8hg3")
 }],
 "loop": false,
 "name": &"shoot",

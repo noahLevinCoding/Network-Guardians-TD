@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="1_fylnw"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/knockback_effect_resource.gd" id="2_6djjb"]
 [ext_resource type="Shape2D" uid="uid://b6j1dpiu2ijec" path="res://resources/towers/inductor/inductor_pace_shape.tres" id="3_606qu"]
-[ext_resource type="SpriteFrames" uid="uid://veiohh6wg6t5" path="res://resources/towers/inductor/sprite frames/inductor_0_0_sprite_frames.tres" id="5_dy35m"]
+[ext_resource type="SpriteFrames" uid="uid://by31vpyxefqgt" path="res://resources/towers/inductor/sprite frames/inductor_0_0_sprite_frames.tres" id="5_dy35m"]
 [ext_resource type="Resource" uid="uid://cokfdxxsn7o4b" path="res://resources/towers/inductor/inductor_1_0.tres" id="6_cwte4"]
 [ext_resource type="Resource" uid="uid://qgsvwhe7shhq" path="res://resources/towers/inductor/inductor_0_1.tres" id="7_wfj43"]
 

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://2wt77av6pa6v"]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://b0ri7mi44dapj"]
 
 [ext_resource type="Texture2D" uid="uid://by6rqhr1suer4" path="res://assets/tower/inductor/inductor_3/inductor_3_0.png" id="1_udaqr"]
 [ext_resource type="Texture2D" uid="uid://c2nxberk1pt3r" path="res://assets/tower/inductor/inductor_3/inductor_3_1.png" id="2_dg2fr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://w1c6xudrx3d0" path="res://assets/tower/inductor/inductor_3/inductor_3_7.png" id="8_f8u88"]
 
 [resource]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,

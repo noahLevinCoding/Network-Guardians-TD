@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/knockback_effect_resource.gd" id="2_olcgh"]
 [ext_resource type="Shape2D" uid="uid://b6j1dpiu2ijec" path="res://resources/towers/inductor/inductor_pace_shape.tres" id="3_6ij1a"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_xxb7d"]
-[ext_resource type="SpriteFrames" uid="uid://nuef7ubpaxg5" path="res://resources/towers/inductor/sprite frames/inductor_1_2_sprite_frames.tres" id="5_tgecv"]
+[ext_resource type="SpriteFrames" uid="uid://b6hnnwsgfui7" path="res://resources/towers/inductor/sprite frames/inductor_1_2_sprite_frames.tres" id="5_tgecv"]
 
 [sub_resource type="Resource" id="Resource_bkjo6"]
 script = ExtResource("2_olcgh")

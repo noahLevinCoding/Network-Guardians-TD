@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b276i3mstpjeb"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]
