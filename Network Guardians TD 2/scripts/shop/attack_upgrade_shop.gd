@@ -8,6 +8,12 @@ extends VBoxContainer
 @export var tower_name_label : Label
 @export var prio_option_button : OptionButton
 @export var damage_dealt_label : Label
+@export var upgrade_1_price : Label
+@export var upgrade_2_price : Label
+@export var upgrade_1_icon : TextureRect
+@export var upgrade_2_icon : TextureRect
+@export var upgrade_1 : HBoxContainer
+@export var upgrade_2 : HBoxContainer
 @export var sell_button : Button
 @export var selected_temperature_label : Label
 @export var selected_power_label : Label
@@ -46,6 +52,30 @@ func _on_select_tower(tower : Tower):
 	sell_button.text = "Sell: " + str(selected_tower.sell_value)
 	selected_power_label.text = str(selected_tower.tower_resource.power) + " W"
 	selected_temperature_label.text = "+ " + str(selected_tower.tower_resource.temperature_increase) + " °C"
+	
+	if selected_tower.tower_resource.upgrade_path_1_tower_resource != null:
+		upgrade_1_price.text = str(GameManager.get_upgrade_tower_price(selected_tower.tower_resource, 1)) + " $"
+		upgrade_1_icon.texture = tower.tower_resource.upgrade_path_1_icon
+		
+		var description = tower.tower_resource.upgrade_path_1_description
+		var temp_increase = tower.tower_resource.upgrade_path_1_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
+		var power_increase = tower.tower_resource.upgrade_path_1_tower_resource.power - tower.tower_resource.power
+		 
+		upgrade_1.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
+	else:
+		upgrade_1_price.text = "-"
+		
+	if selected_tower.tower_resource.upgrade_path_2_tower_resource != null:
+		upgrade_2_price.text = str(GameManager.get_upgrade_tower_price(selected_tower.tower_resource, 2)) + " $"
+		upgrade_2_icon.texture = tower.tower_resource.upgrade_path_2_icon
+		var description = tower.tower_resource.upgrade_path_1_description
+		
+		var temp_increase = tower.tower_resource.upgrade_path_2_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
+		var power_increase = tower.tower_resource.upgrade_path_2_tower_resource.power - tower.tower_resource.power
+		 
+		upgrade_2.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
+	else:
+		upgrade_2_price.text = "-"
 	
 
 func _on_deselect_tower():
