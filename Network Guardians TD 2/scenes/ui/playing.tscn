@@ -472,7 +472,7 @@ text = "Deselect"
 layout_mode = 2
 text = "Sell"
 
-[node name="Cooler_PowerSupply_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "price_temp_text", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "price_power_text", "upgrade_power_supply_button")]
+[node name="Cooler_PowerSupply_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "attack_upgrade_node", "support_upgrade_node", "resource_upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "price_temp_text", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "price_power_text", "upgrade_power_supply_button")]
 visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
@@ -480,7 +480,9 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("7_7ot5l")
 shop_node = NodePath("../Shop")
-upgrade_node = NodePath("../Attack_Upgrade")
+attack_upgrade_node = NodePath("../Attack_Upgrade")
+support_upgrade_node = NodePath("../Support_Upgrade")
+resource_upgrade_node = NodePath("../Resource_Upgrade")
 currently_temp = NodePath("Currently/Value")
 upgrade_temp = NodePath("Upgrade/Value")
 price_temp = NodePath("Price/Value")

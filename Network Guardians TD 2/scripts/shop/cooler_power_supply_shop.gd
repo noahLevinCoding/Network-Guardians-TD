@@ -1,7 +1,9 @@
 extends VBoxContainer
 
 @export var shop_node : Node
-@export var upgrade_node : Node
+@export var attack_upgrade_node : Node
+@export var support_upgrade_node : Node
+@export var resource_upgrade_node : Node
 
 @export var currently_temp : Label 
 @export var upgrade_temp : Label
@@ -24,8 +26,13 @@ func _ready():
 	SignalManager.reset_game.connect(_on_reset_game)
 	
 func _on_select():
+	attack_upgrade_node.visible = false
+	attack_upgrade_node._on_deselect_tower()
+	support_upgrade_node.visible = false
+	support_upgrade_node._on_deselect_tower()
+	resource_upgrade_node.visible = false
+	resource_upgrade_node._on_deselect_tower()
 	shop_node.visible = false
-	upgrade_node.visible = false
 	visible = true
 	
 	currently_temp.text = "-" + str(GameManager.cooler.cooler_resource.temperature_decrease) + " °C"
