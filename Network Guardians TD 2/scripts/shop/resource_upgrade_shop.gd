@@ -6,6 +6,14 @@ extends VBoxContainer
 @export var support_upgrade_node : Node
 @export var tower_name_label : Label
 @export var money_generated_label : Label
+@export var upgrade_1_price : Label
+@export var upgrade_2_price : Label
+@export var upgrade_1_icon : TextureRect
+@export var upgrade_2_icon : TextureRect
+@export var upgrade_1_button : Button
+@export var upgrade_2_button : Button
+@export var upgrade_1 : HBoxContainer
+@export var upgrade_2 : HBoxContainer
 @export var sell_button : Button
 @export var selected_temperature_label : Label
 @export var selected_power_label : Label
@@ -44,6 +52,50 @@ func _on_select_tower(tower : Tower):
 	selected_power_label.text = str(selected_tower.tower_resource.power) + " W"
 	selected_temperature_label.text = "+ " + str(selected_tower.tower_resource.temperature_increase) + " °C"
 	
+	if selected_tower.tower_resource.upgrade_path_1_tower_resource != null:
+		var price = GameManager.get_upgrade_tower_price(selected_tower.tower_resource, 1)
+		
+		upgrade_1_price.text = str(price) + " $"
+		upgrade_1_icon.texture = tower.tower_resource.upgrade_path_1_icon
+		
+		var description = tower.tower_resource.upgrade_path_1_description
+		var temp_increase = tower.tower_resource.upgrade_path_1_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
+		var power_increase = tower.tower_resource.upgrade_path_1_tower_resource.power - tower.tower_resource.power
+		 
+		upgrade_1.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
+	
+		var has_enough_money = price <= GameManager.money 
+		var has_enough_power = power_increase + GameManager.power <= GameManager.max_power
+		
+		upgrade_1_button.disabled = not (has_enough_money and has_enough_power)
+	else:
+		upgrade_1_price.text = "MAX"
+		upgrade_1.tooltip_text = "Path maxed"
+		upgrade_1_button.disabled = true
+		
+		
+	if selected_tower.tower_resource.upgrade_path_2_tower_resource != null:
+		var price = GameManager.get_upgrade_tower_price(selected_tower.tower_resource, 2)
+		
+		upgrade_2_price.text = str(price) + " $"
+		
+		
+		upgrade_2_icon.texture = tower.tower_resource.upgrade_path_2_icon
+		var description = tower.tower_resource.upgrade_path_1_description
+		
+		var temp_increase = tower.tower_resource.upgrade_path_2_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
+		var power_increase = tower.tower_resource.upgrade_path_2_tower_resource.power - tower.tower_resource.power
+		 
+		upgrade_2.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
+	
+		var has_enough_money = price <= GameManager.money 
+		var has_enough_power = power_increase + GameManager.power <= GameManager.max_power
+		
+		upgrade_2_button.disabled = not (has_enough_money and has_enough_power)
+	else:
+		upgrade_2_price.text = "MAX"
+		upgrade_2.tooltip_text = "Path maxed"
+		upgrade_2_button.disabled = true
 
 func _on_deselect_tower():
 	visible = false
@@ -77,4 +129,5 @@ func _on_sell_button_down():
 func _input(event):
 	if event.is_action_pressed("right_mouse_button"):
 		_on_deselect_tower()
+
 

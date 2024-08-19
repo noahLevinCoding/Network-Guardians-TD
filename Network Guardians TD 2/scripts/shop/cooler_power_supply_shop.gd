@@ -48,6 +48,8 @@ func _on_select():
 		upgrade_cooler_button.disabled = GameManager.money < price
 		price_temp.set_modulate(red_color if GameManager.money < price else white_color)
 		price_temp_text.set_modulate(red_color if GameManager.money < price else white_color)
+		
+		upgrade_cooler_button.disabled = price > GameManager.money
 	else:
 		upgrade_temp.text = "MAX"
 		price_temp.text = "-"
