@@ -24,4 +24,5 @@ signal selected_tower_damage_dealt_changed
 signal selected_tower_money_generated_changed
 
 signal wave_index_changed(wave_index : int)
+signal load_wave_index(wave_index : int)
 

@@ -31,6 +31,7 @@ func _on_back_to_titlescreen():
 	state_transition.emit(self, "Titlescreen")
 	
 func _on_restart():
+	GameManager.delete_save_file()
 	state_transition.emit(self, "ResetGame")
 	
 func _on_resume():

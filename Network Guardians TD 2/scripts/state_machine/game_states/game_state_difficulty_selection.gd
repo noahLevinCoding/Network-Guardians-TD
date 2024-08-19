@@ -23,7 +23,7 @@ func _on_set_difficulty(difficulty : int):
 	elif difficulty == 2:
 		GameManager.difficulty = GameManager.DIFFICULTY.HARD
 	
-	state_transition.emit(self, "ResetGame")
+	state_transition.emit(self, "LoadGame")
 	
 func _on_back():
 	state_transition.emit(self, "MapSelection")

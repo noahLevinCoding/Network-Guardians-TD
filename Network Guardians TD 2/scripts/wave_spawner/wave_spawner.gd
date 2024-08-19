@@ -26,8 +26,12 @@ var is_wave_active : bool = false
 
 
 func _ready():
+	SignalManager.load_wave_index.connect(_on_load_wave_index)
 	SignalManager.start_next_wave.connect(_on_start_next_wave)
 	current_wave_index = -1
+
+func _on_load_wave_index(wave_index : int):
+	current_wave_index = wave_index + 1 
 
 func _on_start_next_wave():
 	start_next_wave()

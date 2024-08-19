@@ -2,6 +2,7 @@ class_name PowerSupply
 extends Node2D
 
 @export var power_supply_resource : PowerSupplyResource
+			
 @export var sprite : Sprite2D
 @export var col_shape : CollisionShape2D
 
@@ -23,7 +24,6 @@ func upgrade():
 	if power_supply_resource.upgrade_power_supply_resource != null:
 		power_supply_resource = power_supply_resource.upgrade_power_supply_resource
 		init_resource()
-
 
 func _on_area_2d_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_just_pressed('left_mouse_button'):

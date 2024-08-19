@@ -1,0 +1,154 @@
+[gd_scene load_steps=15 format=3 uid="uid://dc5xhn4bjnunk"]
+
+[ext_resource type="Script" path="res://scripts/ui/load_game.gd" id="1_816vi"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_g6kby"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_ehr5s"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="4_b8eix"]
+[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="4_vpa2f"]
+[ext_resource type="Texture2D" uid="uid://d22uypqdgy5p7" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_8.png" id="5_ch0ac"]
+[ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="5_xtys0"]
+[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 4.png" id="6_2xyy0"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="6_abetw"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="7_xkjqi"]
+[ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="8_wkolu"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="9_pkxqh"]
+
+[sub_resource type="Theme" id="Theme_w2a4o"]
+default_font = ExtResource("2_g6kby")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_efmcj"]
+default_font = ExtResource("3_ehr5s")
+default_font_size = 100
+
+[node name="LoadGame" type="Node2D"]
+script = ExtResource("1_816vi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_w2a4o")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -274.0
+offset_top = 133.0
+offset_right = 274.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme = SubResource("Theme_efmcj")
+text = "LOAD GAME"
+
+[node name="NewGameButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.5
+offset_top = -121.0
+offset_right = 246.5
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("4_b8eix")
+texture_pressed = ExtResource("5_xtys0")
+texture_hover = ExtResource("6_abetw")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Control/NewGameButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -35.0
+offset_right = 68.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Game"
+
+[node name="LoadGameButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.5
+offset_top = 90.0
+offset_right = 246.5
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("4_vpa2f")
+texture_pressed = ExtResource("5_ch0ac")
+texture_hover = ExtResource("6_2xyy0")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Control/LoadGameButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -35.0
+offset_right = 129.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load Game"
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -190.0
+offset_right = 373.0
+offset_bottom = 52.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("7_xkjqi")
+texture_pressed = ExtResource("8_wkolu")
+texture_hover = ExtResource("9_pkxqh")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Control/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[connection signal="button_down" from="Control/NewGameButton" to="." method="_on_new_game_button_down"]
+[connection signal="button_down" from="Control/LoadGameButton" to="." method="_on_load_game_button_down"]
+[connection signal="button_down" from="Control/BackButton" to="." method="_on_back_button_down"]

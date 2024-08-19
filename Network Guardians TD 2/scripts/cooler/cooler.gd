@@ -2,6 +2,7 @@ class_name Cooler
 extends Node2D
 
 @export var cooler_resource : CoolerResource
+			
 @export var sprite : Sprite2D
 @export var col_shape : CollisionShape2D
 var is_selected : bool = false :

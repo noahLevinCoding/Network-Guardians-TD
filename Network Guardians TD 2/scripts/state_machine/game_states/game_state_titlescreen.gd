@@ -21,8 +21,8 @@ func enter():
 	infinite_video.audio_stream_player_game.stop()
 	
 	for child in game_node.get_children():
-		game_node.remove_child(child)
-		child.queue_free()
+		for node in child.get_children():
+			node.queue_free()
 	
 func exit():
 	print("Exit GameState Titlescreen")

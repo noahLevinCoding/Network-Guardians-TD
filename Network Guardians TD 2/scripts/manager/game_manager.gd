@@ -1,9 +1,12 @@
 extends Node
 
-@onready var game_node : Node = get_node("../Main/Game")
+@onready var tower_node : Node = get_node("../Main/Game/Tower")
+
 var attack_tower_scene : PackedScene = preload("res://scenes/tower/attack_tower.tscn")
 var resource_tower_scene : PackedScene = preload("res://scenes/tower/resource_tower.tscn")
 var support_tower_scene : PackedScene = preload("res://scenes/tower/support_tower.tscn")
+
+var save_folder_path : String = "res://saves/"
 
 enum DIFFICULTY {EASY, MEDIUM, HARD}
 
@@ -12,9 +15,10 @@ const initial_health_medium : int = 150
 const initial_health_hard : int = 100
 const initial_max_power : int = 0
 const initial_power : int = 0
-const initial_money : int = 100
+const initial_money : int = 10000
 const initial_tempearture : float = 50.0
 
+var map_id : int = 0
 var map_scene_path : String = ""
 var difficulty : DIFFICULTY 
 var game_time_scale : float = 1.0 :
@@ -55,6 +59,8 @@ var temperature_clamped : float :
 		SignalManager.temperature_changed.emit(temperature_clamped)	
 var temperature_speed_modifier : float = 1.0
 
+var wave_index : int = 0
+
 var cooler : Cooler :
 	set(value):
 		cooler = value
@@ -87,7 +93,16 @@ func reset():
 	cooler = null
 	power_supply = null
 	
+func _ready():
+	SignalManager.wave_index_changed.connect(increase_wave_index)
+	SignalManager.on_wave_finished.connect(_on_wave_finished)
 	
+func increase_wave_index(_wave_index : int):
+	self.wave_index = _wave_index
+
+func _on_wave_finished():
+	save_game()
+
 func deal_damage_to_player(damage : int):
 	health -= damage
 	
@@ -114,7 +129,7 @@ func buy_tower(item : ShopItemResource, position):
 		var tower_instance = tower_scene.instantiate()
 		tower_instance.sell_value = item.price / 2.0
 		tower_instance.tower_resource = item.tower_resource
-		game_node.add_child(tower_instance)
+		tower_node.add_child(tower_instance)
 		tower_instance.position = position
 	
 func get_tower_scene(tower_resource : TowerResource):
@@ -204,3 +219,83 @@ func get_upgrade_power_supply_price(power_supply_resource: PowerSupplyResource):
 		return power_supply_resource.upgrade_price_medium
 	else:
 		return power_supply_resource.upgrade_price_hard
+
+func save_game():
+	
+	var game_progress_resource = GameProgressResource.new()
+	game_progress_resource.map_scene_path = map_scene_path
+	game_progress_resource.difficulty = difficulty
+	
+	#Save stats
+	game_progress_resource.money = money
+	game_progress_resource.health = health
+	game_progress_resource.power = power
+	game_progress_resource.max_power = max_power
+	game_progress_resource.temperature = temperature
+	
+	game_progress_resource.wave_index = wave_index - 1
+
+
+	game_progress_resource.cooler_resource_path = cooler.cooler_resource.resource_path
+	game_progress_resource.power_supply_resource_path = power_supply.power_supply_resource.resource_path
+
+	#Save tower
+	for tower in tower_node.get_children():
+		game_progress_resource.tower_resource_paths.append(tower.tower_resource.resource_path)
+		game_progress_resource.tower_positions.append(tower.position)
+		game_progress_resource.tower_sell_values.append(tower.sell_value)
+		
+		if tower is AttackTower:
+			game_progress_resource.tower_damage_dealt.append(tower.damage_dealt)
+			game_progress_resource.tower_money_generated.append(0)
+		elif tower is ResourceTower:
+			game_progress_resource.tower_damage_dealt.append(0)
+			game_progress_resource.tower_money_generated.append(tower.money_generated)
+		else:
+			game_progress_resource.tower_damage_dealt.append(0)
+			game_progress_resource.tower_money_generated.append(0)
+		
+	ResourceSaver.save(game_progress_resource, save_folder_path + str(map_id) + "_" + str(difficulty) + ".tres")
+
+func load_game():
+	
+	if not ResourceLoader.exists(save_folder_path + str(map_id) + "_" + str(difficulty) + ".tres"):
+		return
+		
+	var game_progress_resource = ResourceLoader.load(save_folder_path + str(map_id) + "_" + str(difficulty) + ".tres")
+	
+	cooler.cooler_resource = ResourceLoader.load(game_progress_resource.cooler_resource_path)
+	cooler.init_resource()
+	power_supply.power_supply_resource = ResourceLoader.load(game_progress_resource.power_supply_resource_path)
+	power_supply.init_resource()
+	
+	#Load tower
+	for tower_index in game_progress_resource.tower_resource_paths.size():
+		var tower_resource = ResourceLoader.load(game_progress_resource.tower_resource_paths[tower_index])
+	
+		var tower_scene = get_tower_scene(tower_resource)
+		var tower_instance = tower_scene.instantiate()
+		tower_instance.tower_resource = tower_resource
+		tower_node.add_child(tower_instance)
+		tower_instance.position = game_progress_resource.tower_positions[tower_index]
+		tower_instance.sell_value = game_progress_resource.tower_sell_values[tower_index]
+		
+		if tower_instance is AttackTower:
+			tower_instance.damage_dealt = game_progress_resource.tower_damage_dealt[tower_index]
+		elif tower_instance is ResourceTower:
+			tower_instance.money_generated = game_progress_resource.tower_money_generated[tower_index]
+	
+	#Load stats
+	money = game_progress_resource.money 
+	health = game_progress_resource.health 
+	power = game_progress_resource.power 
+	max_power = game_progress_resource.max_power 
+	temperature = game_progress_resource.temperature 
+	
+	SignalManager.load_wave_index.emit(game_progress_resource.wave_index)
+
+func delete_save_file():
+	DirAccess.remove_absolute(save_folder_path + str(map_id) + "_" + str(difficulty) + ".tres")
+
+func has_save_files():
+	return ResourceLoader.exists(save_folder_path + str(map_id) + "_" + str(difficulty) + ".tres")
