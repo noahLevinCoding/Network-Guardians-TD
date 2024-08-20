@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PowerSupplyResource" load_steps=3 format=3 uid="uid://bu1qrx87ym5x7"]
+
+[ext_resource type="Script" path="res://scripts/power_supply/power_supply_resource.gd" id="1_0n1x5"]
+[ext_resource type="Texture2D" uid="uid://dyil7gl5vewxx" path="res://assets/power_supply/psu_4.png" id="2_pmgem"]
+
+[resource]
+script = ExtResource("1_0n1x5")
+name = ""
+shop_icon = ExtResource("2_pmgem")
+texture = ExtResource("2_pmgem")
+max_power = 0
+upgrade_price_easy = 0
+upgrade_price_medium = 0
+upgrade_price_hard = 0

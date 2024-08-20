@@ -18,6 +18,7 @@ col_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_gwtdc")
+scale = Vector2(2, 2)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

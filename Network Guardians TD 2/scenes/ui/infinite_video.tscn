@@ -26,13 +26,11 @@ loop = true
 
 [node name="AudioStreamPlayerTitlescreen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b8or8")
-volume_db = -80.0
 autoplay = true
 script = ExtResource("3_2vbr4")
 
 [node name="AudioStreamPlayerGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_i7tct")
-volume_db = -80.0
 script = ExtResource("3_2vbr4")
 
 [connection signal="finished" from="AudioStreamPlayerTitlescreen" to="AudioStreamPlayerTitlescreen" method="_on_finished"]

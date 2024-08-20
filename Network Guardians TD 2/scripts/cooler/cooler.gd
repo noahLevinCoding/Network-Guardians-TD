@@ -3,12 +3,12 @@ extends Node2D
 
 @export var cooler_resource : CoolerResource
 			
-@export var sprite : Sprite2D
+@export var animated_sprite : AnimatedSprite2D
 @export var col_shape : CollisionShape2D
 var is_selected : bool = false :
 	set(value):
 		is_selected = value
-		sprite.material.set_shader_parameter("line_color", Color(1,1,1,1) if is_selected else Color(0,0,0,0))
+		animated_sprite.material.set_shader_parameter("line_color", Color(1,1,1,1) if is_selected else Color(0,0,0,0))
 		
 
 func _ready():
@@ -16,7 +16,8 @@ func _ready():
 	GameManager.cooler = self
 		
 func init_resource():
-	sprite.texture = cooler_resource.texture
+	animated_sprite.sprite_frames = cooler_resource.sprite_frames
+	animated_sprite.play("default")
 	col_shape.shape = cooler_resource.col_shape
 
 func upgrade():

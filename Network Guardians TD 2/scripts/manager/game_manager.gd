@@ -10,7 +10,7 @@ var save_folder_path : String = "res://saves/"
 
 enum DIFFICULTY {EASY, MEDIUM, HARD}
 
-const initial_health_easy : int = 200
+const initial_health_easy : int = 1
 const initial_health_medium : int = 150
 const initial_health_hard : int = 100
 const initial_max_power : int = 0

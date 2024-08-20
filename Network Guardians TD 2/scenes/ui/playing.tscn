@@ -991,6 +991,7 @@ offset_right = 1910.0
 offset_bottom = 1045.0
 size_flags_horizontal = 10
 size_flags_vertical = 4
+mouse_filter = 1
 texture_normal = ExtResource("6_xqh4e")
 texture_pressed = ExtResource("7_rsj37")
 
