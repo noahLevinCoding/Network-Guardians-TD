@@ -15,6 +15,10 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=60
 
+[audio]
+
+buses/default_bus_layout="res://audio_bus/default_bus_layout.tres"
+
 [autoload]
 
 GameManager="*res://scripts/manager/game_manager.gd"
@@ -31,11 +35,13 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://assets/": "red",
-"res://build/": "pink",
-"res://resources/": "purple",
+"res://audio_bus/": "orange",
+"res://build/": "yellow",
+"res://exports/": "green",
+"res://resources/": "teal",
 "res://saves/": "blue",
-"res://scenes/": "yellow",
-"res://scripts/": "green",
+"res://scenes/": "purple",
+"res://scripts/": "pink",
 "res://shader/": "gray"
 }
 

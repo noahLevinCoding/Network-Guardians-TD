@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=37 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 [ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="13_4vbf6"]
 [ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="13_by2xo"]
 [ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="14_l43vr"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_ingame_sound.gd" id="23_670b6"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="26_emgh4"]
 
 [sub_resource type="Theme" id="Theme_rt1a7"]
 default_font = ExtResource("3_rto13")
@@ -994,6 +996,7 @@ size_flags_vertical = 4
 mouse_filter = 1
 texture_normal = ExtResource("6_xqh4e")
 texture_pressed = ExtResource("7_rsj37")
+script = ExtResource("23_670b6")
 
 [node name="PauseButton" type="TextureButton" parent="Buttons"]
 layout_mode = 0
@@ -1008,6 +1011,7 @@ texture_normal = ExtResource("12_g3qlr")
 texture_pressed = ExtResource("13_4vbf6")
 texture_hover = ExtResource("13_by2xo")
 stretch_mode = 3
+script = ExtResource("26_emgh4")
 
 [node name="Label" type="Label" parent="Buttons/PauseButton"]
 layout_mode = 1

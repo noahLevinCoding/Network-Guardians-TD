@@ -8,6 +8,8 @@ extends Tower
 var money_generated : int = 0
 var money_generated_this_wave : int = 0
 
+var wave_is_active : bool = false
+
 var is_selectable : bool = false
 var is_selected : bool = false :
 	set(value):
@@ -23,19 +25,29 @@ func _on_place_area_input_event(_viewport, _event, _shape_idx):
 			is_selectable = true
 
 func _ready():
+	SignalManager.response_wave_is_active.connect(_on_response_wave_is_active)
+	SignalManager.request_wave_is_active.emit()
 	init_resource()
 	SignalManager.on_start_next_wave.connect(on_start_next_wave)
 	SignalManager.on_wave_finished.connect(on_wave_finished)
+	
+func _on_response_wave_is_active(_wave_is_active):
+	wave_is_active = _wave_is_active
 	
 func init_resource():
 	animated_sprite.sprite_frames = tower_resource.sprite_frames
 	drop_timer.wait_time = tower_resource.drop_time 
 	place_col_shape.shape = tower_resource.place_col_shape
+	
+	if wave_is_active:
+		animated_sprite.play("mining")
+		drop_timer.start()
 
 func on_start_next_wave():
 	money_generated_this_wave = 0
 	drop_timer.start()
 	animated_sprite.play("mining")
+	wave_is_active = true
 	
 func on_wave_finished():
 	drop_timer.stop()
@@ -43,6 +55,7 @@ func on_wave_finished():
 	GameManager.money += remaining_drop
 	money_generated += remaining_drop
 	animated_sprite.play("idle")
+	wave_is_active = false
 
 func _on_drop_timer_timeout():
 	

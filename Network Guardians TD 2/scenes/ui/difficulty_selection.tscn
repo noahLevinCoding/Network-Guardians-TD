@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccpuwmsxa5l71"]
+[gd_scene load_steps=19 format=3 uid="uid://ccpuwmsxa5l71"]
 
 [ext_resource type="Script" path="res://scripts/ui/difficulty_selection.gd" id="1_s112u"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="2_rajxs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="5_kx8mx"]
 [ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 6.png" id="6_3vkvc"]
 [ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 5.png" id="7_1t4rb"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="7_mwa5a"]
 [ext_resource type="Texture2D" uid="uid://c7ujwxf5n13cc" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_4.png" id="8_03sp5"]
 [ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="8_plife"]
 [ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="9_yc6lx"]
@@ -67,6 +68,7 @@ texture_normal = ExtResource("4_cf2ll")
 texture_pressed = ExtResource("5_kx8mx")
 texture_hover = ExtResource("5_2djrb")
 stretch_mode = 3
+script = ExtResource("7_mwa5a")
 
 [node name="Label" type="Label" parent="Control/BackButton"]
 layout_mode = 1
@@ -100,6 +102,7 @@ texture_normal = ExtResource("6_3vkvc")
 texture_pressed = ExtResource("8_03sp5")
 texture_hover = ExtResource("7_1t4rb")
 stretch_mode = 3
+script = ExtResource("7_mwa5a")
 
 [node name="Label" type="Label" parent="Control/EasyButton"]
 layout_mode = 1
@@ -136,6 +139,7 @@ texture_normal = ExtResource("8_plife")
 texture_pressed = ExtResource("11_6o7xv")
 texture_hover = ExtResource("9_yc6lx")
 stretch_mode = 3
+script = ExtResource("7_mwa5a")
 
 [node name="Label" type="Label" parent="Control/MediumButton"]
 layout_mode = 1
@@ -172,6 +176,7 @@ texture_normal = ExtResource("10_qcj4y")
 texture_pressed = ExtResource("14_j07a1")
 texture_hover = ExtResource("11_rahm0")
 stretch_mode = 3
+script = ExtResource("7_mwa5a")
 
 [node name="Label" type="Label" parent="Control/HardButton"]
 layout_mode = 1

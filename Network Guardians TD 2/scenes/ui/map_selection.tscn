@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbl2malqgknyt"]
+[gd_scene load_steps=19 format=3 uid="uid://dbl2malqgknyt"]
 
 [ext_resource type="Script" path="res://scripts/ui/map_selection.gd" id="1_dy4tp"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_xstd2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 5.png" id="5_4j31n"]
 [ext_resource type="Texture2D" uid="uid://c7ujwxf5n13cc" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_4.png" id="5_judbg"]
 [ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="6_ch0o5"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="7_g0gsu"]
 [ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="7_i2khu"]
 [ext_resource type="Texture2D" uid="uid://d0yvvo8ggm0d4" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 3.png" id="8_ocm2y"]
 [ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="8_r3emf"]
@@ -64,6 +65,7 @@ texture_normal = ExtResource("4_ocnxw")
 texture_pressed = ExtResource("5_judbg")
 texture_hover = ExtResource("5_4j31n")
 stretch_mode = 3
+script = ExtResource("7_g0gsu")
 
 [node name="Label" type="Label" parent="Control/Map1Button"]
 layout_mode = 1
@@ -103,6 +105,7 @@ texture_normal = ExtResource("6_ch0o5")
 texture_pressed = ExtResource("8_r3emf")
 texture_hover = ExtResource("7_i2khu")
 stretch_mode = 3
+script = ExtResource("7_g0gsu")
 
 [node name="Label" type="Label" parent="Control/Map2Button"]
 layout_mode = 1
@@ -142,6 +145,7 @@ texture_normal = ExtResource("8_ocm2y")
 texture_pressed = ExtResource("11_nwjy4")
 texture_hover = ExtResource("9_hktef")
 stretch_mode = 3
+script = ExtResource("7_g0gsu")
 
 [node name="Label" type="Label" parent="Control/Map3Button"]
 layout_mode = 1
@@ -178,6 +182,7 @@ texture_normal = ExtResource("10_5svsm")
 texture_pressed = ExtResource("14_aoare")
 texture_hover = ExtResource("11_blqfp")
 stretch_mode = 3
+script = ExtResource("7_g0gsu")
 
 [node name="Label" type="Label" parent="Control/BackButton"]
 layout_mode = 1

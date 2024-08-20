@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyjglrb3udyb2"]
+[gd_scene load_steps=16 format=3 uid="uid://cyjglrb3udyb2"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause.gd" id="1_u6d3p"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_2ojuk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://djixq45m4hjvw" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On.png" id="5_b3mxb"]
 [ext_resource type="Texture2D" uid="uid://b8667gkp8ehn" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_2.png" id="5_dv568"]
 [ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="6_4pctp"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="7_g7kyc"]
 [ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="7_q5dvk"]
 [ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="8_fifqh"]
 [ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="8_gscpt"]
@@ -65,6 +66,7 @@ texture_normal = ExtResource("4_j83xp")
 texture_pressed = ExtResource("5_dv568")
 texture_hover = ExtResource("5_b3mxb")
 stretch_mode = 3
+script = ExtResource("7_g7kyc")
 
 [node name="Label" type="Label" parent="Control/ResumeButton"]
 layout_mode = 1
@@ -102,6 +104,7 @@ texture_normal = ExtResource("6_4pctp")
 texture_pressed = ExtResource("8_fifqh")
 texture_hover = ExtResource("7_q5dvk")
 stretch_mode = 3
+script = ExtResource("7_g7kyc")
 
 [node name="Label" type="Label" parent="Control/RestartButton"]
 layout_mode = 1
@@ -138,6 +141,7 @@ texture_normal = ExtResource("8_gscpt")
 texture_pressed = ExtResource("11_jbmmr")
 texture_hover = ExtResource("9_fc0ji")
 stretch_mode = 3
+script = ExtResource("7_g7kyc")
 
 [node name="Label" type="Label" parent="Control/BackToTitlescreenButton"]
 layout_mode = 1
