@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dbl2malqgknyt" path="res://scenes/ui/map_selection.tscn" id="7_iltek"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_pause.gd" id="7_vrprp"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_playing.gd" id="8_ayigk"]
-[ext_resource type="PackedScene" path="res://scenes/ui/load_game.tscn" id="8_i0byf"]
+[ext_resource type="PackedScene" uid="uid://dc5xhn4bjnunk" path="res://scenes/ui/load_game.tscn" id="8_i0byf"]
 [ext_resource type="PackedScene" uid="uid://ccpuwmsxa5l71" path="res://scenes/ui/difficulty_selection.tscn" id="8_obulf"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_defeat.gd" id="9_d2ejd"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_options.gd" id="10_1tdil"]
