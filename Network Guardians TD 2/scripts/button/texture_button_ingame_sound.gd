@@ -6,5 +6,5 @@ func _ready():
 
 
 func _on_button_up():
-	SignalManager.on_button_ingame_click.emit()
+	SignalManager.on_button_wave_start_click.emit()
 

@@ -33,7 +33,7 @@ script = ExtResource("3_2vbr4")
 
 [node name="AudioStreamPlayerGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_i7tct")
-volume_db = -20.385
+volume_db = -30.0
 bus = &"Music"
 script = ExtResource("3_2vbr4")
 

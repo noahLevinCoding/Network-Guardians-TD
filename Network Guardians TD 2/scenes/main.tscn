@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://mkq35rnq6n3x"]
+[gd_scene load_steps=28 format=3 uid="uid://mkq35rnq6n3x"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
@@ -19,12 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://cyjglrb3udyb2" path="res://scenes/ui/pause.tscn" id="12_esqsx"]
 [ext_resource type="PackedScene" uid="uid://bc5c306uo8oa0" path="res://scenes/ui/defeat.tscn" id="15_411v1"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_load_game.gd" id="19_unuoa"]
-[ext_resource type="AudioStream" uid="uid://djp6bbk1077lp" path="res://assets/sfx/game-start-6104.mp3" id="20_w0ipy"]
+[ext_resource type="AudioStream" uid="uid://ctokoo01u1bas" path="res://assets/sfx/button_sfx/button_28.mp3" id="20_vlb76"]
 [ext_resource type="Script" path="res://scripts/audio/audio_stream_player_buttons.gd" id="21_luu3q"]
-[ext_resource type="AudioStream" uid="uid://d3dlgwc58o512" path="res://assets/sfx/game-over-arcade-6435.mp3" id="21_yaeax"]
-[ext_resource type="Script" path="res://scripts/audio/audio_stream_player_buttons_ingame.gd" id="23_1vso3"]
-[ext_resource type="AudioStream" uid="uid://cq67a624vyco1" path="res://assets/sfx/retro-game-shot-152052.mp3" id="23_hp4ik"]
+[ext_resource type="AudioStream" uid="uid://dy3lhb3ii4fd2" path="res://assets/sfx/button_sfx/button_19.mp3" id="22_41jje"]
+[ext_resource type="AudioStream" uid="uid://pa765rcpv4f5" path="res://assets/sfx/button_sfx/button_30.mp3" id="22_fs4c3"]
+[ext_resource type="AudioStream" uid="uid://db27lhmk6yoi2" path="res://assets/sfx/button_sfx/button_15.mp3" id="23_w8vsj"]
 [ext_resource type="Script" path="res://scripts/audio/audio_stream_player_enemy_death.gd" id="25_3gwqs"]
+[ext_resource type="AudioStream" uid="uid://cy8ihyfdkpnm" path="res://assets/sfx/button_sfx/button_11.mp3" id="25_wguff"]
 [ext_resource type="AudioStream" uid="uid://b5rpsw35sf5ni" path="res://assets/sfx/negative_beeps-6008.mp3" id="26_3n2dr"]
 
 [node name="Main" type="Node2D"]
@@ -117,15 +118,14 @@ script = ExtResource("10_1tdil")
 [node name="Audio" type="Node" parent="."]
 
 [node name="AudioStreamPlayerUI" type="AudioStreamPlayer" parent="Audio"]
+volume_db = -15.0
 bus = &"UI"
 script = ExtResource("21_luu3q")
-click_sound = ExtResource("21_yaeax")
-hover_sound = ExtResource("20_w0ipy")
-
-[node name="AudioStreamPlayerUiIngame" type="AudioStreamPlayer" parent="Audio"]
-bus = &"UI"
-script = ExtResource("23_1vso3")
-click_sound = ExtResource("23_hp4ik")
+click_sound = ExtResource("22_fs4c3")
+click_dip_sound = ExtResource("20_vlb76")
+click_wave_button_sound = ExtResource("22_41jje")
+hover_sound = ExtResource("23_w8vsj")
+select_shop_sound = ExtResource("25_wguff")
 
 [node name="AudioStreamPlayerEnemyDeath" type="AudioStreamPlayer" parent="Audio"]
 bus = &"SFX"

@@ -37,6 +37,8 @@ func _process(_delta):
 		
 		
 func select(index : int):
+	SignalManager.on_select_shop.emit()
+	
 	selected_item = items[index]
 	#TODO: change custom cursor to sprite
 	#Input.set_custom_mouse_cursor(selected_item.icon, Input.CURSOR_ARROW, selected_item.icon.get_size() / 2)	

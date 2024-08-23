@@ -28,8 +28,10 @@ signal load_wave_index(wave_index : int)
 
 signal on_button_hover
 signal on_button_click
-signal on_button_ingame_click
+signal on_button_dip_click
+signal on_button_wave_start_click
 signal on_enemy_death
+signal on_select_shop
 
 signal request_wave_is_active
 signal response_wave_is_active(wave_is_active : bool)
