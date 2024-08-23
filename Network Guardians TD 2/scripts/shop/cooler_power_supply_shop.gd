@@ -35,6 +35,8 @@ func _on_select():
 	shop_node.visible = false
 	visible = true
 	
+	SignalManager.on_select_shop.emit()
+	
 	GameManager.cooler.is_selected = true
 	GameManager.power_supply.is_selected = true
 	
@@ -74,6 +76,8 @@ func _on_select():
 func _on_deselect():
 	shop_node.visible = true
 	visible = false
+	
+	SignalManager.on_deselect_shop.emit()
 	
 	price_power.set_modulate(white_color)
 	price_power_text.set_modulate(white_color)

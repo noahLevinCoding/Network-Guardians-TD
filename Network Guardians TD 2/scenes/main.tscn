@@ -25,8 +25,8 @@
 [ext_resource type="AudioStream" uid="uid://pa765rcpv4f5" path="res://assets/sfx/button_sfx/button_30.mp3" id="22_fs4c3"]
 [ext_resource type="AudioStream" uid="uid://db27lhmk6yoi2" path="res://assets/sfx/button_sfx/button_15.mp3" id="23_w8vsj"]
 [ext_resource type="Script" path="res://scripts/audio/audio_stream_player_enemy_death.gd" id="25_3gwqs"]
-[ext_resource type="AudioStream" uid="uid://cy8ihyfdkpnm" path="res://assets/sfx/button_sfx/button_11.mp3" id="25_wguff"]
-[ext_resource type="AudioStream" uid="uid://b5rpsw35sf5ni" path="res://assets/sfx/negative_beeps-6008.mp3" id="26_3n2dr"]
+[ext_resource type="AudioStream" uid="uid://dwetla32ffxe5" path="res://assets/sfx/button_sfx/button_11_1.mp3" id="25_n5ikq"]
+[ext_resource type="AudioStream" uid="uid://mi8t1pfjkir6" path="res://assets/sfx/button_sfx/button_11_2.mp3" id="25_sqr65"]
 
 [node name="Main" type="Node2D"]
 
@@ -125,9 +125,11 @@ click_sound = ExtResource("22_fs4c3")
 click_dip_sound = ExtResource("20_vlb76")
 click_wave_button_sound = ExtResource("22_41jje")
 hover_sound = ExtResource("23_w8vsj")
-select_shop_sound = ExtResource("25_wguff")
+select_shop_sound = ExtResource("25_n5ikq")
+deselect_shop_sound = ExtResource("25_sqr65")
+open_prio_type_sound = ExtResource("25_n5ikq")
+select_prio_type_sound = ExtResource("25_sqr65")
 
 [node name="AudioStreamPlayerEnemyDeath" type="AudioStreamPlayer" parent="Audio"]
 bus = &"SFX"
 script = ExtResource("25_3gwqs")
-death_sound = ExtResource("26_3n2dr")

@@ -38,6 +38,8 @@ func _on_select_tower(tower : Tower):
 	if tower == null:
 		return
 	
+	SignalManager.on_select_shop.emit()
+	
 	selected_tower = tower
 	visible = true
 	shop_node.visible = false
@@ -102,6 +104,7 @@ func _on_deselect_tower():
 	shop_node.visible = true
 	if selected_tower != null:
 		selected_tower.is_selected = false
+		SignalManager.on_deselect_shop.emit()
 	selected_tower = null
 	
 	

@@ -78,6 +78,9 @@ func select(index : int):
 	#TODO cursor shape
 
 func deselect():
+	if selected_item != null:
+		SignalManager.on_deselect_shop.emit()
+	
 	selected_item = null
 	Input.set_custom_mouse_cursor(null)
 	item_list.deselect_all()

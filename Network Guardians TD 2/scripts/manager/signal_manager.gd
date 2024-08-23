@@ -26,12 +26,16 @@ signal selected_tower_money_generated_changed
 signal wave_index_changed(wave_index : int)
 signal load_wave_index(wave_index : int)
 
+#Audio
 signal on_button_hover
 signal on_button_click
 signal on_button_dip_click
 signal on_button_wave_start_click
 signal on_enemy_death
 signal on_select_shop
+signal on_deselect_shop
+signal on_select_prio_type
+signal on_open_prio_type
 
 signal request_wave_is_active
 signal response_wave_is_active(wave_is_active : bool)

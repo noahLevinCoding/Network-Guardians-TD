@@ -39,6 +39,8 @@ func _on_select_tower(tower : Tower):
 	
 	if tower == null:
 		return
+		
+	SignalManager.on_select_shop.emit()
 	
 	selected_tower = tower
 	visible = true
@@ -106,6 +108,7 @@ func _on_deselect_tower():
 	shop_node.visible = true
 	if selected_tower != null:
 		selected_tower.is_selected = false
+		SignalManager.on_deselect_shop.emit()
 	selected_tower = null
 	
 	
@@ -127,6 +130,7 @@ func _on_lower_upgrade_button_up():
 
 
 func _on_prioritization_dropdown_item_selected(index):
+	SignalManager.on_select_prio_type.emit()
 	selected_tower.target_prio_type = index
 
 
@@ -139,3 +143,7 @@ func _input(event):
 		_on_deselect_tower()
 
 
+
+
+func _on_prioritization_dropdown_button_down():
+	SignalManager.on_open_prio_type.emit()

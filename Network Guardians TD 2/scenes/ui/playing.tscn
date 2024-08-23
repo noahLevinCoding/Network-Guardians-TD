@@ -1063,6 +1063,7 @@ debug_color = Color(0, 0.631373, 0.419608, 0.882353)
 scale = Vector2(1.5, 1.5)
 
 [connection signal="item_selected" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_item_list_item_selected"]
+[connection signal="button_down" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_button_down"]
 [connection signal="item_selected" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_item_selected"]
 [connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer3/VBoxContainer/UpperUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_upper_upgrade_button_button_up"]
 [connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer5/VBoxContainer/LowerUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_lower_upgrade_button_up"]
