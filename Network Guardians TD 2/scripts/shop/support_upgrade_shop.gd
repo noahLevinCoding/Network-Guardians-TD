@@ -125,8 +125,9 @@ func _on_lower_upgrade_button_up():
 
 
 func _on_sell_button_down():
-	GameManager.sell_tower(selected_tower)
+	var selected_tower_copy = selected_tower
 	_on_deselect_tower()
+	GameManager.sell_tower(selected_tower_copy)
 
 func _input(event):
 	if event.is_action_pressed("right_mouse_button"):

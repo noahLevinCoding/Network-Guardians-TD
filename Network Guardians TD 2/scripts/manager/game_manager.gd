@@ -113,6 +113,7 @@ func defeat():
 	SignalManager.defeat.emit()
 	
 func sell_tower(tower : Tower):
+	SignalManager.on_tower_sell.emit()
 	money += tower.sell_value
 	temperature -= tower.tower_resource.temperature_increase
 	power -= tower.tower_resource.power
@@ -120,6 +121,9 @@ func sell_tower(tower : Tower):
 
 func buy_tower(item : ShopItemResource, position):
 	if item.price <= money and power + item.tower_resource.power <= max_power:
+		
+		SignalManager.on_upgrade_button_click.emit()
+		
 		money -= item.price
 		power += item.tower_resource.power
 		temperature += item.tower_resource.temperature_increase

@@ -155,8 +155,9 @@ func update_shop_availability():
 		item_list.set_item_disabled(i, GameManager.money < items[i].price)
 
 func buy_tower(mouse_position):
-	GameManager.buy_tower(selected_item, mouse_position)
+	var selected_item_copy = selected_item
 	deselect()
+	GameManager.buy_tower(selected_item_copy, mouse_position)
 
 func _input(event):
 	if event.is_action_pressed("left_mouse_button") and selected_item != null and mouse_in_placable_area and not tower_place_area.has_overlapping_areas() and not tower_place_area.has_overlapping_bodies():
