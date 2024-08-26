@@ -9,6 +9,7 @@ class_name GameStateTitlescreen
 func _ready():
 	titlescreen_node.play.connect(_on_play)
 	titlescreen_node.exit.connect(_on_exit)
+	titlescreen_node.options.connect(_on_options)
 	
 
 func enter():
@@ -35,3 +36,6 @@ func _on_play():
 	
 func _on_exit():
 	get_tree().quit()
+
+func _on_options():
+	state_transition.emit(self, "Options")

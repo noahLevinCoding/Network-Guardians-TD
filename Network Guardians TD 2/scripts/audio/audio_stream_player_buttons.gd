@@ -8,8 +8,7 @@ extends AudioStreamPlayer
 @export var deselect_shop_sound : AudioStream
 @export var open_prio_type_sound : AudioStream
 @export var select_prio_type_sound : AudioStream
-@export var upgrade_click_sound : AudioStream
-@export var tower_sell_sound : AudioStream
+@export var volume_slider_sound : AudioStream
 
 func _ready():
 	SignalManager.on_button_click.connect(_on_button_click)
@@ -20,9 +19,15 @@ func _ready():
 	SignalManager.on_deselect_shop.connect(_on_deselect_shop)
 	SignalManager.on_open_prio_type.connect(_on_open_prio_type)
 	SignalManager.on_select_prio_type.connect(_on_select_prio_type)
-	SignalManager.on_upgrade_button_click.connect(_on_upgrade_button_click)
-	SignalManager.on_tower_sell.connect(_on_tower_sell)
+
+	SignalManager.on_volume_slider_changed.connect(_on_volume_slider_changed)
 	
+
+func _on_volume_slider_changed():
+	reset_db()
+	stream = volume_slider_sound
+	volume_db = -25
+	play()
 	
 func _on_button_click():
 	reset_db()
@@ -69,15 +74,7 @@ func _on_open_prio_type():
 	volume_db = -5
 	play()
 
-func _on_upgrade_button_click():
-	reset_db()
-	stream = upgrade_click_sound
-	play()
-	
-func _on_tower_sell():
-	reset_db()
-	stream = tower_sell_sound
-	play()
+
 
 func reset_db():
 	volume_db = -15

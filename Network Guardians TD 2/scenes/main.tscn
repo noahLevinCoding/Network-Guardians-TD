@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://mkq35rnq6n3x"]
+[gd_scene load_steps=33 format=3 uid="uid://mkq35rnq6n3x"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cyjglrb3udyb2" path="res://scenes/ui/pause.tscn" id="12_esqsx"]
 [ext_resource type="PackedScene" uid="uid://bc5c306uo8oa0" path="res://scenes/ui/defeat.tscn" id="15_411v1"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_load_game.gd" id="19_unuoa"]
+[ext_resource type="PackedScene" uid="uid://b2svdjyat016" path="res://scenes/ui/options.tscn" id="20_cmujq"]
 [ext_resource type="AudioStream" uid="uid://ctokoo01u1bas" path="res://assets/sfx/button_sfx/button_28.mp3" id="20_vlb76"]
 [ext_resource type="Script" path="res://scripts/audio/audio_stream_player_buttons.gd" id="21_luu3q"]
 [ext_resource type="AudioStream" uid="uid://dy3lhb3ii4fd2" path="res://assets/sfx/button_sfx/button_19.mp3" id="22_41jje"]
@@ -30,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://mi8t1pfjkir6" path="res://assets/sfx/button_sfx/button_11_2.mp3" id="25_sqr65"]
 [ext_resource type="AudioStream" uid="uid://cdmesoh325gco" path="res://assets/sfx/button_sfx/money_1.mp3" id="27_4sval"]
 [ext_resource type="AudioStream" uid="uid://b10ceyyhkllb3" path="res://assets/sfx/button_sfx/money_2.mp3" id="28_afyax"]
+[ext_resource type="AudioStream" uid="uid://cpexqrw427xny" path="res://assets/sfx/button_sfx/button_26.mp3" id="30_txvme"]
 
 [node name="Main" type="Node2D"]
 
@@ -69,6 +71,9 @@ z_index = 6
 
 [node name="Defeat" parent="Menu" instance=ExtResource("15_411v1")]
 z_index = 6
+
+[node name="Options" parent="Menu" instance=ExtResource("20_cmujq")]
+visible = false
 
 [node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_4tggm")
@@ -115,8 +120,10 @@ infinite_video = NodePath("../../Menu/InfiniteVideo")
 script = ExtResource("9_d2ejd")
 defeat_node = NodePath("../../Menu/Defeat")
 
-[node name="Options" type="Node" parent="GameStateMachine"]
+[node name="Options" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("options_node", "infinite_video")]
 script = ExtResource("10_1tdil")
+options_node = NodePath("../../Menu/Options")
+infinite_video = NodePath("../../Menu/InfiniteVideo")
 
 [node name="Audio" type="Node" parent="."]
 
@@ -132,11 +139,12 @@ select_shop_sound = ExtResource("25_n5ikq")
 deselect_shop_sound = ExtResource("25_sqr65")
 open_prio_type_sound = ExtResource("25_n5ikq")
 select_prio_type_sound = ExtResource("25_sqr65")
-upgrade_click_sound = ExtResource("27_4sval")
-tower_sell_sound = ExtResource("28_afyax")
+volume_slider_sound = ExtResource("30_txvme")
 
-[node name="AudioStreamPlayerEnemyDeath" type="AudioStreamPlayer" parent="Audio"]
+[node name="AudioStreamPlayerSFX" type="AudioStreamPlayer" parent="Audio"]
 volume_db = -30.0
 bus = &"SFX"
 script = ExtResource("25_3gwqs")
 death_sound = ExtResource("24_y0470")
+upgrade_click_sound = ExtResource("27_4sval")
+tower_sell_sound = ExtResource("28_afyax")

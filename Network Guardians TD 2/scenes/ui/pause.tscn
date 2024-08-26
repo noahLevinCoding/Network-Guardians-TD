@@ -121,7 +121,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
 
-[node name="BackToTitlescreenButton" type="TextureButton" parent="Control"]
+[node name="Options" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,7 +131,44 @@ anchor_bottom = 0.5
 offset_left = -232.0
 offset_top = 110.0
 offset_right = 232.0
-offset_bottom = 352.0
+offset_bottom = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("6_4pctp")
+texture_pressed = ExtResource("8_fifqh")
+texture_hover = ExtResource("7_q5dvk")
+stretch_mode = 3
+script = ExtResource("7_g7kyc")
+
+[node name="Label" type="Label" parent="Control/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -33.0
+offset_right = 150.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="BackToTitlescreenButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 260.0
+offset_right = 232.0
+offset_bottom = 502.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
@@ -160,4 +197,5 @@ text = "Titlescreen"
 
 [connection signal="button_up" from="Control/ResumeButton" to="." method="_on_resume_button_up"]
 [connection signal="button_up" from="Control/RestartButton" to="." method="_on_restart_button_up"]
+[connection signal="button_up" from="Control/Options" to="." method="_on_options_up"]
 [connection signal="button_up" from="Control/BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]

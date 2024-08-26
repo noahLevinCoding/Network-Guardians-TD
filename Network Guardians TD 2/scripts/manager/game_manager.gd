@@ -6,7 +6,7 @@ var attack_tower_scene : PackedScene = preload("res://scenes/tower/attack_tower.
 var resource_tower_scene : PackedScene = preload("res://scenes/tower/resource_tower.tscn")
 var support_tower_scene : PackedScene = preload("res://scenes/tower/support_tower.tscn")
 
-var save_folder_path : String = "res://saves/"
+var save_folder_path : String = "res://saves/games"
 
 enum DIFFICULTY {EASY, MEDIUM, HARD}
 

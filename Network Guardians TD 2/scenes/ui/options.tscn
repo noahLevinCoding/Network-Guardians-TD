@@ -1,11 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2svdjyat016"]
+[gd_scene load_steps=15 format=3 uid="uid://b2svdjyat016"]
 
+[ext_resource type="Script" path="res://scripts/ui/options.gd" id="1_ee6lg"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="1_qcb4s"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="2_u11ny"]
-[ext_resource type="Texture2D" uid="uid://2074rvqke8iq" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy.png" id="3_70baj"]
-[ext_resource type="Texture2D" uid="uid://djixq45m4hjvw" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On.png" id="4_jyvbi"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="4_h8oey"]
+[ext_resource type="Texture2D" uid="uid://d22uypqdgy5p7" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_8.png" id="4_wnp3t"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="5_nr6rm"]
 [ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="5_qx1p3"]
+[ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="6_5y1ar"]
 [ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 4.png" id="6_7c5tx"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="7_6utrp"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="8_0juhr"]
 
 [sub_resource type="Theme" id="Theme_21672"]
 default_font = ExtResource("1_qcb4s")
@@ -15,7 +20,16 @@ default_font_size = 70
 default_font = ExtResource("2_u11ny")
 default_font_size = 100
 
-[node name="Options" type="Node2D"]
+[sub_resource type="Theme" id="Theme_le8oo"]
+default_font_size = 30
+
+[node name="Options" type="Node2D" node_paths=PackedStringArray("master_slider", "music_slider", "ui_slider", "sfx_slider")]
+z_index = 6
+script = ExtResource("1_ee6lg")
+master_slider = NodePath("Control/VBoxContainer/GridContainer/MasterSlider")
+music_slider = NodePath("Control/VBoxContainer/GridContainer/MusicSlider")
+ui_slider = NodePath("Control/VBoxContainer/GridContainer/UISlider")
+sfx_slider = NodePath("Control/VBoxContainer/GridContainer/SFXSlider")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -37,6 +51,93 @@ grow_horizontal = 2
 theme = SubResource("Theme_tcmq7")
 text = "Options"
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -114.0
+offset_right = 325.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_h8oey")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="MasterLabel" type="Label" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_le8oo")
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="MusicLabel" type="Label" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_le8oo")
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="SFXLabel" type="Label" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_le8oo")
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="UILabel" type="Label" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_le8oo")
+text = "UI"
+
+[node name="UISlider" type="HSlider" parent="Control/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.5
+
 [node name="CreditButton" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -44,16 +145,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = -121.0
-offset_right = 232.0
-offset_bottom = 121.0
+offset_left = -412.0
+offset_top = 160.0
+offset_right = 52.0
+offset_bottom = 402.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(232, 121)
-texture_normal = ExtResource("3_70baj")
-texture_hover = ExtResource("4_jyvbi")
+texture_normal = ExtResource("5_qx1p3")
+texture_pressed = ExtResource("4_wnp3t")
+texture_hover = ExtResource("6_7c5tx")
+stretch_mode = 3
+script = ExtResource("8_0juhr")
 
 [node name="Label" type="Label" parent="Control/CreditButton"]
 layout_mode = 1
@@ -62,31 +166,69 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.0
+offset_left = -67.5
 offset_top = -33.0
-offset_right = 135.0
+offset_right = 67.5
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "CREDITS"
+text = "CREDITS
+"
 
-[node name="BackButton" type="TextureButton" parent="Control"]
+[node name="WikiButton" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = 60.0
-offset_right = 232.0
-offset_bottom = 302.0
+offset_left = -52.0
+offset_top = 160.0
+offset_right = 412.0
+offset_bottom = 402.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(232, 121)
 texture_normal = ExtResource("5_qx1p3")
+texture_pressed = ExtResource("4_wnp3t")
 texture_hover = ExtResource("6_7c5tx")
+stretch_mode = 3
+script = ExtResource("8_0juhr")
+
+[node name="Label" type="Label" parent="Control/WikiButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -33.0
+offset_right = 67.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wiki"
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -190.0
+offset_right = 373.0
+offset_bottom = 52.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("5_nr6rm")
+texture_pressed = ExtResource("6_5y1ar")
+texture_hover = ExtResource("7_6utrp")
+stretch_mode = 3
+script = ExtResource("8_0juhr")
 
 [node name="Label" type="Label" parent="Control/BackButton"]
 layout_mode = 1
@@ -102,3 +244,11 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Back"
+
+[connection signal="value_changed" from="Control/VBoxContainer/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/GridContainer/UISlider" to="." method="_on_ui_slider_value_changed"]
+[connection signal="button_up" from="Control/CreditButton" to="." method="_on_credit_button_up"]
+[connection signal="button_up" from="Control/WikiButton" to="." method="_on_wiki_button_up"]
+[connection signal="button_up" from="Control/BackButton" to="." method="_on_back_button_up"]

@@ -38,6 +38,7 @@ signal on_select_prio_type
 signal on_open_prio_type
 signal on_upgrade_button_click
 signal on_tower_sell
+signal on_volume_slider_changed
 
 signal request_wave_is_active
 signal response_wave_is_active(wave_is_active : bool)

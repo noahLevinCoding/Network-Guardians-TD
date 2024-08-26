@@ -155,4 +155,5 @@ grow_vertical = 2
 text = "Exit"
 
 [connection signal="button_up" from="Control/PlayButton" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="Control/OptionButton" to="." method="_on_option_button_up"]
 [connection signal="button_up" from="Control/ExitButton" to="." method="_on_exit_button_up"]

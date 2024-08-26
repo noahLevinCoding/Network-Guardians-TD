@@ -11,7 +11,7 @@ func enter():
 	print("Enter GameState Defeat")
 	defeat_node.visible = true
 	GameManager.is_paused = true
-	
+	GameManager.delete_save_file()
 	
 func _on_back_to_titlescreen():
 	state_transition.emit(self, "Titlescreen")
