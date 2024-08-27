@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://03eo4is5i7be"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://03eo4is5i7be"]
 
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_ht4ip"]
 [ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_kpi1r"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_d0niq"]
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_lf7v1"]
 [ext_resource type="SpriteFrames" uid="uid://x57b78q2r2gk" path="res://resources/towers/neopixel/sprite_frames/neopixel_2_0_sprite_frames.tres" id="5_ejocn"]
+[ext_resource type="Texture2D" uid="uid://so74okkyusp2" path="res://assets/ui/shop_icons/pierce_increase_icon.png" id="6_3bvso"]
 [ext_resource type="Resource" uid="uid://caj1pemh574yo" path="res://resources/towers/neopixel/neopixel_2_1.tres" id="6_t3o4f"]
 
 [sub_resource type="Resource" id="Resource_vknus"]
@@ -16,27 +17,28 @@ duration = 0.0
 script = ExtResource("2_d0niq")
 name = "Neopixel  2 | 0"
 damage_type = 1
-attack_damage = 1.0
-attack_speed = 0.2
+attack_damage = 2.0
+attack_speed = 2.75
 attack_range = 4000.0
 pierce = 1
 number_of_targets = 1
 power = 3
 temperature_increase = 3.0
-bullet_speed = 1000.0
+bullet_speed = 10000.0
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_vknus")])
-ignores_damage_type_immunity = false
+ignores_damage_type_immunity = true
 can_see_camo = false
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_ejocn")
 place_col_shape = ExtResource("3_lf7v1")
 bullet_visual_resource = ExtResource("1_kpi1r")
-upgrade_path_1_description = ""
+upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("6_3bvso")
+upgrade_path_2_description = "Increases pierce and attack damage"
+upgrade_path_2_price_easy = 295
+upgrade_path_2_price_medium = 350
+upgrade_path_2_price_hard = 390
 upgrade_path_2_tower_resource = ExtResource("6_t3o4f")

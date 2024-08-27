@@ -4,7 +4,7 @@
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_3so6j"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_c8u5p"]
 [ext_resource type="SpriteFrames" uid="uid://bg4qnl4w61hf5" path="res://resources/towers/led/sprite_frames/led_1_0_sprite_frames.tres" id="4_sdqn1"]
-[ext_resource type="Texture2D" uid="uid://ha2pt2uejl2c" path="res://assets/ui/shop_icons/attack_speed_increase_1_icon.png" id="5_vds0u"]
+[ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="5_t5unt"]
 [ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="6_iw5k1"]
 [ext_resource type="Resource" uid="uid://bn1ogh130plyi" path="res://resources/towers/led/led_2_0.tres" id="6_nxmjs"]
 [ext_resource type="Resource" uid="uid://cru4s6blb3kc7" path="res://resources/towers/led/led_1_1.tres" id="7_8dm3i"]
@@ -14,8 +14,8 @@ script = ExtResource("3_c8u5p")
 name = "LED  1 | 0"
 damage_type = 1
 attack_damage = 1.0
-attack_speed = 2.0
-attack_range = 150.0
+attack_speed = 1.2
+attack_range = 160.0
 pierce = 1
 number_of_targets = 1
 power = 2
@@ -28,15 +28,15 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("4_sdqn1")
 place_col_shape = ExtResource("2_3so6j")
 bullet_visual_resource = ExtResource("1_k8shw")
-upgrade_path_1_icon = ExtResource("5_vds0u")
-upgrade_path_1_description = "Increases attack speed"
-upgrade_path_1_price_easy = 120
-upgrade_path_1_price_medium = 150
-upgrade_path_1_price_hard = 175
+upgrade_path_1_icon = ExtResource("5_t5unt")
+upgrade_path_1_description = "Increases attack speed, pierce and number of targets"
+upgrade_path_1_price_easy = 340
+upgrade_path_1_price_medium = 400
+upgrade_path_1_price_hard = 430
 upgrade_path_1_tower_resource = ExtResource("6_nxmjs")
 upgrade_path_2_icon = ExtResource("6_iw5k1")
 upgrade_path_2_description = "Increases attack range"
-upgrade_path_2_price_easy = 50
-upgrade_path_2_price_medium = 60
-upgrade_path_2_price_hard = 70
+upgrade_path_2_price_easy = 75
+upgrade_path_2_price_medium = 90
+upgrade_path_2_price_hard = 95
 upgrade_path_2_tower_resource = ExtResource("7_8dm3i")
