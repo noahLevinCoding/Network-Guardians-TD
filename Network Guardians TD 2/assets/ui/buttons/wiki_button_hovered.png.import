@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpkpifopbdqsa"
-path="res://.godot/imported/neopixel_off.png-9c3bfcbdd5d546a97a2896d55918cfb8.ctex"
+uid="uid://bkytmqh4vxuy5"
+path="res://.godot/imported/wiki_button_hovered.png-7e9537b4b2bf6f718ff0fd2a9db49f95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/buttons/neopixel_off.png"
-dest_files=["res://.godot/imported/neopixel_off.png-9c3bfcbdd5d546a97a2896d55918cfb8.ctex"]
+source_file="res://assets/ui/buttons/wiki_button_hovered.png"
+dest_files=["res://.godot/imported/wiki_button_hovered.png-7e9537b4b2bf6f718ff0fd2a9db49f95.ctex"]
 
 [params]
 
