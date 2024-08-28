@@ -1,29 +1,33 @@
-[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=6 format=3 uid="uid://cchjiamljeely"]
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=8 format=3 uid="uid://cchjiamljeely"]
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_ouktg"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_mprlx"]
 [ext_resource type="SpriteFrames" uid="uid://dpd5i3e2pxtre" path="res://resources/towers/gpu/sprite_frames/gpu_1_1_sprite_frames.tres" id="3_eaw3b"]
 [ext_resource type="Resource" uid="uid://dnalfkkvqx5s5" path="res://resources/towers/gpu/gpu_2_1.tres" id="4_bwbal"]
+[ext_resource type="Texture2D" uid="uid://du04ta88pi65y" path="res://assets/ui/shop_icons/money_2_shop_icon.png" id="4_yifmn"]
 [ext_resource type="Resource" uid="uid://dvg50766k4wcm" path="res://resources/towers/gpu/gpu_1_2.tres" id="5_6eiw2"]
+[ext_resource type="Texture2D" uid="uid://b2fuq6l5fuxj5" path="res://assets/ui/shop_icons/money_1_shop_icon.png" id="6_27yhm"]
 
 [resource]
 script = ExtResource("2_mprlx")
 name = "GPU  1 | 1"
-drop_time = 2.0
-drop_amount = 1
-max_drop_amount = 100
-power = 5
+drop_time = 0.2
+drop_amount = 30
+max_drop_amount = 240
+power = 9
 temperature_increase = 5.0
 sprite_frames = ExtResource("3_eaw3b")
 place_col_shape = ExtResource("1_ouktg")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("4_yifmn")
+upgrade_path_1_description = "Increases the max drop amount per round"
+upgrade_path_1_price_easy = 2550
+upgrade_path_1_price_medium = 3000
+upgrade_path_1_price_hard = 3240
 upgrade_path_1_tower_resource = ExtResource("4_bwbal")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("6_27yhm")
+upgrade_path_2_description = "Increases the value of each money drop"
+upgrade_path_2_price_easy = 952
+upgrade_path_2_price_medium = 1120
+upgrade_path_2_price_hard = 1198
 upgrade_path_2_tower_resource = ExtResource("5_6eiw2")
 wiki_index = 7

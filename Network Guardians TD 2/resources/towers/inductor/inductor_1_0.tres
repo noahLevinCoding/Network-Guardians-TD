@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://cokfdxxsn7o4b"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://cokfdxxsn7o4b"]
 
 [ext_resource type="Resource" uid="uid://c3fo0ef77md5l" path="res://resources/towers/inductor/bullets/bullet_inductor_1_0.tres" id="1_r4f7b"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/knockback_effect_resource.gd" id="2_6rq62"]
 [ext_resource type="Shape2D" uid="uid://b6j1dpiu2ijec" path="res://resources/towers/inductor/inductor_pace_shape.tres" id="3_hri3p"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_l5241"]
 [ext_resource type="SpriteFrames" uid="uid://dipq535pun2vi" path="res://resources/towers/inductor/sprite frames/inductor_1_0_sprite_frames.tres" id="5_i5xx7"]
+[ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="6_0f5u2"]
 [ext_resource type="Resource" uid="uid://dqu43nmqew5gn" path="res://resources/towers/inductor/inductor_2_0.tres" id="6_a81xc"]
 [ext_resource type="Resource" uid="uid://cqlbj336o124j" path="res://resources/towers/inductor/inductor_1_1.tres" id="7_d4185"]
+[ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="8_vo6m4"]
 
 [sub_resource type="Resource" id="Resource_bkjo6"]
 script = ExtResource("2_6rq62")
@@ -17,13 +19,13 @@ speed = 4.0
 script = ExtResource("4_l5241")
 name = "Inductor  1 | 0"
 damage_type = 3
-attack_damage = 0.5
-attack_speed = 0.5
+attack_damage = 1.0
+attack_speed = 2.24
 attack_range = 200.0
-pierce = 1
-number_of_targets = 1
-power = 5
-temperature_increase = 1.0
+pierce = 2
+number_of_targets = 2
+power = 4
+temperature_increase = 4.0
 bullet_speed = 1000.0
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_bkjo6")])
 ignores_damage_type_immunity = false
@@ -32,14 +34,16 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_i5xx7")
 place_col_shape = ExtResource("3_hri3p")
 bullet_visual_resource = ExtResource("1_r4f7b")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_0f5u2")
+upgrade_path_1_description = "Increases attack damage, range and pierce"
+upgrade_path_1_price_easy = 1020
+upgrade_path_1_price_medium = 1200
+upgrade_path_1_price_hard = 1295
 upgrade_path_1_tower_resource = ExtResource("6_a81xc")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("8_vo6m4")
+upgrade_path_2_description = "Enemies are pushed back further"
+upgrade_path_2_price_easy = 210
+upgrade_path_2_price_medium = 250
+upgrade_path_2_price_hard = 270
 upgrade_path_2_tower_resource = ExtResource("7_d4185")
 wiki_index = 6

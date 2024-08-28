@@ -1,40 +1,43 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://dmbky418qk8sd"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://dmbky418qk8sd"]
 
 [ext_resource type="Script" path="res://scripts/effects/bullet_effects/chaining_bullet_effect_resource.gd" id="1_aco0j"]
 [ext_resource type="Resource" uid="uid://bjfawnt72cieu" path="res://resources/towers/transistor/bullets/bullet_transistor.tres" id="2_g1rg2"]
 [ext_resource type="Shape2D" uid="uid://be7o1xtl4ia17" path="res://resources/towers/transistor/transistor_place_shape.tres" id="3_ybqj6"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_mgi8n"]
 [ext_resource type="SpriteFrames" uid="uid://custy2u1kvqjv" path="res://resources/towers/transistor/sprite_frames/transistor_1_2_sprite_frames.tres" id="5_dayva"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="6_br5v6"]
 
 [sub_resource type="Resource" id="Resource_6sx11"]
 script = ExtResource("1_aco0j")
-radius = 100.0
-number_of_targets = 10
+radius = 150.0
+number_of_targets = 8
 
 [resource]
 script = ExtResource("4_mgi8n")
 name = "Transistor  1 | 2"
 damage_type = 2
-attack_damage = 1.0
-attack_speed = 1.0
-attack_range = 150.0
-pierce = 1
+attack_damage = 3.0
+attack_speed = 0.9
+attack_range = 190.0
+pierce = 2
 number_of_targets = 1
-power = 3
-temperature_increase = 3.0
+power = 12
+temperature_increase = 12.0
 bullet_speed = 1000.0
 bullet_effect = SubResource("Resource_6sx11")
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
-ignores_damage_type_immunity = false
+ignores_damage_type_immunity = true
 can_see_camo = false
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_dayva")
 place_col_shape = ExtResource("3_ybqj6")
 bullet_visual_resource = ExtResource("2_g1rg2")
+upgrade_path_1_icon = ExtResource("6_br5v6")
 upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
+upgrade_path_2_icon = ExtResource("6_br5v6")
 upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0

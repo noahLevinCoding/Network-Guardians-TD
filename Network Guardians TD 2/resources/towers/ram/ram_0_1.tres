@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=9 format=3 uid="uid://dwp0je8wtrp7j"]
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=11 format=3 uid="uid://dwp0je8wtrp7j"]
 
 [ext_resource type="Script" path="res://scripts/effects/tower_effects/stat_increase_effect_resource.gd" id="1_xqehf"]
 [ext_resource type="Shape2D" uid="uid://jtnwv3w1dvd7" path="res://resources/towers/ram/ram_place_shape.tres" id="2_1dc42"]
 [ext_resource type="Texture2D" uid="uid://dng5bko7oko1u" path="res://assets/tower/ram/ram_3/ram_3.png" id="4_7c3qu"]
 [ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="4_ndumk"]
 [ext_resource type="Resource" uid="uid://bq8ixqov4hmcf" path="res://resources/towers/ram/ram_1_1.tres" id="5_lymtv"]
+[ext_resource type="Texture2D" uid="uid://dlmeu6536b7js" path="res://assets/ui/shop_icons/attack_speed_increase_2_icon.png" id="5_sn3nl"]
 [ext_resource type="Resource" uid="uid://c08we8csht0p7" path="res://resources/towers/ram/ram_0_2.tres" id="6_s7pvr"]
+[ext_resource type="Texture2D" uid="uid://c4jwpsib5juwb" path="res://assets/ui/shop_icons/camo_reveal_icon.png" id="7_yoxrw"]
 
 [sub_resource type="Resource" id="Resource_yy8ba"]
 script = ExtResource("1_xqehf")
@@ -17,29 +19,31 @@ factor = 1.2
 
 [sub_resource type="Resource" id="Resource_655dm"]
 script = ExtResource("1_xqehf")
-stat_type = 1
-is_additive = false
-is_multiplicative = true
-summand = 0.0
-factor = 1.2
+stat_type = 3
+is_additive = true
+is_multiplicative = false
+summand = 1.0
+factor = 1.0
 
 [resource]
 script = ExtResource("4_ndumk")
 name = "Ram  0 | 1"
 support_range = 200.0
-power = 2
-temperature_increase = 2.0
+power = 7
+temperature_increase = 3.0
 effects = Array[Resource("res://scripts/effects/tower_effects/tower_effect_resource.gd")]([SubResource("Resource_yy8ba"), SubResource("Resource_655dm")])
 tower_texture = ExtResource("4_7c3qu")
 place_col_shape = ExtResource("2_1dc42")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("5_sn3nl")
+upgrade_path_1_description = "Increases attack speed for all towers in range"
+upgrade_path_1_price_easy = 340
+upgrade_path_1_price_medium = 400
+upgrade_path_1_price_hard = 430
 upgrade_path_1_tower_resource = ExtResource("5_lymtv")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("7_yoxrw")
+upgrade_path_2_description = "Gives camo vision to all towers in range"
+upgrade_path_2_price_easy = 1700
+upgrade_path_2_price_medium = 2000
+upgrade_path_2_price_hard = 2160
 upgrade_path_2_tower_resource = ExtResource("6_s7pvr")
 wiki_index = 5

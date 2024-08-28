@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="1_gdhft"]
 [ext_resource type="Script" path="res://scripts/effects/tower_effects/stat_increase_effect_resource.gd" id="1_ywkk3"]
 [ext_resource type="Shape2D" uid="uid://jtnwv3w1dvd7" path="res://resources/towers/ram/ram_place_shape.tres" id="2_16jg0"]
-[ext_resource type="Script" path="res://scripts/effects/tower_effects/camo_vision_effect_resource.gd" id="2_kjuwr"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="5_8yid1"]
 [ext_resource type="Texture2D" uid="uid://dep0l2o17m6ge" path="res://assets/tower/ram/ram_7/ram_7.png" id="5_882hd"]
 
 [sub_resource type="Resource" id="Resource_yy8ba"]
@@ -16,7 +16,7 @@ factor = 1.2
 
 [sub_resource type="Resource" id="Resource_gwlaf"]
 script = ExtResource("1_ywkk3")
-stat_type = 0
+stat_type = 1
 is_additive = false
 is_multiplicative = true
 summand = 0.0
@@ -24,28 +24,35 @@ factor = 1.2
 
 [sub_resource type="Resource" id="Resource_t3blw"]
 script = ExtResource("1_ywkk3")
-stat_type = 1
+stat_type = 0
 is_additive = false
 is_multiplicative = true
 summand = 0.0
-factor = 1.2
+factor = 1.5
 
-[sub_resource type="Resource" id="Resource_qqxfl"]
-script = ExtResource("2_kjuwr")
+[sub_resource type="Resource" id="Resource_buaqw"]
+script = ExtResource("1_ywkk3")
+stat_type = 3
+is_additive = true
+is_multiplicative = false
+summand = 1.0
+factor = 1.0
 
 [resource]
 script = ExtResource("1_gdhft")
 name = "Ram  2 | 1"
 support_range = 200.0
-power = 2
-temperature_increase = 2.0
-effects = Array[Resource("res://scripts/effects/tower_effects/tower_effect_resource.gd")]([SubResource("Resource_yy8ba"), SubResource("Resource_gwlaf"), SubResource("Resource_t3blw"), SubResource("Resource_qqxfl")])
+power = 10
+temperature_increase = 5.0
+effects = Array[Resource("res://scripts/effects/tower_effects/tower_effect_resource.gd")]([SubResource("Resource_yy8ba"), SubResource("Resource_gwlaf"), SubResource("Resource_t3blw"), SubResource("Resource_buaqw")])
 tower_texture = ExtResource("5_882hd")
 place_col_shape = ExtResource("2_16jg0")
+upgrade_path_1_icon = ExtResource("5_8yid1")
 upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
+upgrade_path_2_icon = ExtResource("5_8yid1")
 upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0

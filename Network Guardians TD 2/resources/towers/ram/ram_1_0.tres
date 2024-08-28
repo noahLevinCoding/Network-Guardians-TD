@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=9 format=3 uid="uid://bkib3elhkcvp2"]
+[gd_resource type="Resource" script_class="SupportTowerResource" load_steps=11 format=3 uid="uid://bkib3elhkcvp2"]
 
 [ext_resource type="Script" path="res://scripts/effects/tower_effects/stat_increase_effect_resource.gd" id="1_8g5wf"]
 [ext_resource type="Script" path="res://scripts/tower/support_tower_resource.gd" id="1_j74e1"]
 [ext_resource type="Shape2D" uid="uid://jtnwv3w1dvd7" path="res://resources/towers/ram/ram_place_shape.tres" id="2_xofh4"]
 [ext_resource type="Texture2D" uid="uid://dquxvbbuqs3tw" path="res://assets/tower/ram/ram_2/ram_2.png" id="4_deqr7"]
+[ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="5_0y272"]
 [ext_resource type="Resource" uid="uid://bq8xrmi42fiwv" path="res://resources/towers/ram/ram_2_0.tres" id="5_w4yp6"]
 [ext_resource type="Resource" uid="uid://bq8ixqov4hmcf" path="res://resources/towers/ram/ram_1_1.tres" id="6_8tp1h"]
+[ext_resource type="Texture2D" uid="uid://so74okkyusp2" path="res://assets/ui/shop_icons/pierce_increase_icon.png" id="7_ukdsu"]
 
 [sub_resource type="Resource" id="Resource_yy8ba"]
 script = ExtResource("1_8g5wf")
@@ -17,7 +19,7 @@ factor = 1.2
 
 [sub_resource type="Resource" id="Resource_gwlaf"]
 script = ExtResource("1_8g5wf")
-stat_type = 0
+stat_type = 1
 is_additive = false
 is_multiplicative = true
 summand = 0.0
@@ -27,19 +29,21 @@ factor = 1.2
 script = ExtResource("1_j74e1")
 name = "Ram  1 | 0"
 support_range = 200.0
-power = 2
-temperature_increase = 2.0
+power = 7
+temperature_increase = 3.0
 effects = Array[Resource("res://scripts/effects/tower_effects/tower_effect_resource.gd")]([SubResource("Resource_yy8ba"), SubResource("Resource_gwlaf")])
 tower_texture = ExtResource("4_deqr7")
 place_col_shape = ExtResource("2_xofh4")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("5_0y272")
+upgrade_path_1_description = "Increases attack damage to all towers in range"
+upgrade_path_1_price_easy = 1275
+upgrade_path_1_price_medium = 1500
+upgrade_path_1_price_hard = 1620
 upgrade_path_1_tower_resource = ExtResource("5_w4yp6")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("7_ukdsu")
+upgrade_path_2_description = "Increases pierce for all towers in range"
+upgrade_path_2_price_easy = 425
+upgrade_path_2_price_medium = 500
+upgrade_path_2_price_hard = 540
 upgrade_path_2_tower_resource = ExtResource("6_8tp1h")
 wiki_index = 5

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://dhjgoa2s6ws4t"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=10 format=3 uid="uid://dhjgoa2s6ws4t"]
 
 [ext_resource type="Resource" uid="uid://c4x5l53kp4uot" path="res://resources/towers/inductor/bullets/bullet_inductor_0_2.tres" id="1_d85l8"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/knockback_effect_resource.gd" id="2_rcvoe"]
@@ -6,36 +6,40 @@
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_6xo3q"]
 [ext_resource type="SpriteFrames" uid="uid://b8q22ygydeojg" path="res://resources/towers/inductor/sprite frames/inductor_0_2_sprite_frames.tres" id="5_i3xa2"]
 [ext_resource type="Resource" uid="uid://ck1bh7sx5u3y3" path="res://resources/towers/inductor/inductor_1_2.tres" id="6_hvvpv"]
+[ext_resource type="Texture2D" uid="uid://dlmeu6536b7js" path="res://assets/ui/shop_icons/attack_speed_increase_2_icon.png" id="6_vabfu"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="8_mxqjq"]
 
 [sub_resource type="Resource" id="Resource_bkjo6"]
 script = ExtResource("2_rcvoe")
-duration = 0.5
+duration = 2.0
 speed = 4.0
 
 [resource]
 script = ExtResource("4_6xo3q")
 name = "Inductor  0 | 2"
 damage_type = 3
-attack_damage = 0.5
-attack_speed = 0.5
-attack_range = 200.0
-pierce = 1
+attack_damage = 1.0
+attack_speed = 1.6
+attack_range = 250.0
+pierce = 2
 number_of_targets = 1
 power = 5
-temperature_increase = 1.0
+temperature_increase = 5.0
 bullet_speed = 1000.0
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_bkjo6")])
 ignores_damage_type_immunity = false
-can_see_camo = false
+can_see_camo = true
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_i3xa2")
 place_col_shape = ExtResource("3_6my0v")
 bullet_visual_resource = ExtResource("1_d85l8")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_vabfu")
+upgrade_path_1_description = "Increases attack speed and targets"
+upgrade_path_1_price_easy = 590
+upgrade_path_1_price_medium = 700
+upgrade_path_1_price_hard = 760
 upgrade_path_1_tower_resource = ExtResource("6_hvvpv")
+upgrade_path_2_icon = ExtResource("8_mxqjq")
 upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0

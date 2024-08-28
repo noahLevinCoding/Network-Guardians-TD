@@ -1,29 +1,33 @@
-[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=6 format=3 uid="uid://dkk2i8g2qgut3"]
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=8 format=3 uid="uid://dkk2i8g2qgut3"]
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_y8l2m"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_qc5dx"]
 [ext_resource type="SpriteFrames" uid="uid://dldp1eehk77su" path="res://resources/towers/gpu/sprite_frames/gpu_0_0_sprite_frames.tres" id="3_ighu0"]
 [ext_resource type="Resource" uid="uid://3maw8hnr3o3e" path="res://resources/towers/gpu/gpu_1_0.tres" id="4_g76al"]
+[ext_resource type="Texture2D" uid="uid://du04ta88pi65y" path="res://assets/ui/shop_icons/money_2_shop_icon.png" id="4_oqa1i"]
 [ext_resource type="Resource" uid="uid://c3v1f8a7a4dfi" path="res://resources/towers/gpu/gpu_0_1.tres" id="5_jwpqy"]
+[ext_resource type="Texture2D" uid="uid://b2fuq6l5fuxj5" path="res://assets/ui/shop_icons/money_1_shop_icon.png" id="6_i1kxb"]
 
 [resource]
 script = ExtResource("2_qc5dx")
 name = "GPU  0 | 0"
-drop_time = 2.0
-drop_amount = 1
-max_drop_amount = 100
+drop_time = 0.2
+drop_amount = 20
+max_drop_amount = 80
 power = 5
-temperature_increase = 5.0
+temperature_increase = 2.0
 sprite_frames = ExtResource("3_ighu0")
 place_col_shape = ExtResource("1_y8l2m")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("4_oqa1i")
+upgrade_path_1_description = "Increases the max drop amount per round"
+upgrade_path_1_price_easy = 935
+upgrade_path_1_price_medium = 110
+upgrade_path_1_price_hard = 1190
 upgrade_path_1_tower_resource = ExtResource("4_g76al")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("6_i1kxb")
+upgrade_path_2_description = "Increases the value of each money drop"
+upgrade_path_2_price_easy = 680
+upgrade_path_2_price_medium = 800
+upgrade_path_2_price_hard = 865
 upgrade_path_2_tower_resource = ExtResource("5_jwpqy")
 wiki_index = 7

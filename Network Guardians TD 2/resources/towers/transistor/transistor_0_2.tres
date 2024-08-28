@@ -1,43 +1,47 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://hslso5yxui3j"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=10 format=3 uid="uid://hslso5yxui3j"]
 
 [ext_resource type="Script" path="res://scripts/effects/bullet_effects/chaining_bullet_effect_resource.gd" id="1_uxufl"]
 [ext_resource type="Resource" uid="uid://bjfawnt72cieu" path="res://resources/towers/transistor/bullets/bullet_transistor.tres" id="2_yxp3o"]
 [ext_resource type="Shape2D" uid="uid://be7o1xtl4ia17" path="res://resources/towers/transistor/transistor_place_shape.tres" id="3_qahyw"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_osevn"]
 [ext_resource type="SpriteFrames" uid="uid://bgyggsmfiso6b" path="res://resources/towers/transistor/sprite_frames/transistor_0_2_sprite_frames.tres" id="5_tme3l"]
+[ext_resource type="Texture2D" uid="uid://so74okkyusp2" path="res://assets/ui/shop_icons/pierce_increase_icon.png" id="6_8geef"]
 [ext_resource type="Resource" uid="uid://dmbky418qk8sd" path="res://resources/towers/transistor/transistor_1_2.tres" id="6_pnqhm"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="8_xappf"]
 
 [sub_resource type="Resource" id="Resource_6sx11"]
 script = ExtResource("1_uxufl")
 radius = 100.0
-number_of_targets = 10
+number_of_targets = 8
 
 [resource]
 script = ExtResource("4_osevn")
-name = "Transistor  1 | 2"
+name = "Transistor  0 | 2"
 damage_type = 2
 attack_damage = 1.0
-attack_speed = 1.0
-attack_range = 150.0
+attack_speed = 0.9
+attack_range = 190.0
 pierce = 1
 number_of_targets = 1
-power = 3
-temperature_increase = 3.0
+power = 9
+temperature_increase = 9.0
 bullet_speed = 1000.0
 bullet_effect = SubResource("Resource_6sx11")
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
-ignores_damage_type_immunity = false
+ignores_damage_type_immunity = true
 can_see_camo = false
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_tme3l")
 place_col_shape = ExtResource("3_qahyw")
 bullet_visual_resource = ExtResource("2_yxp3o")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_8geef")
+upgrade_path_1_description = "Increases attack damage, pierce and effect radius"
+upgrade_path_1_price_easy = 720
+upgrade_path_1_price_medium = 1050
+upgrade_path_1_price_hard = 850
 upgrade_path_1_tower_resource = ExtResource("6_pnqhm")
-upgrade_path_2_description = "Max upgrade"
+upgrade_path_2_icon = ExtResource("8_xappf")
+upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0

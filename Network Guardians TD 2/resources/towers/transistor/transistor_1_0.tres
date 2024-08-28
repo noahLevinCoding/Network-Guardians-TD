@@ -1,29 +1,31 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://cbxfh1w04xoor"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://cbxfh1w04xoor"]
 
 [ext_resource type="Script" path="res://scripts/effects/bullet_effects/chaining_bullet_effect_resource.gd" id="1_cv5y6"]
 [ext_resource type="Resource" uid="uid://bjfawnt72cieu" path="res://resources/towers/transistor/bullets/bullet_transistor.tres" id="1_l22k6"]
 [ext_resource type="Shape2D" uid="uid://be7o1xtl4ia17" path="res://resources/towers/transistor/transistor_place_shape.tres" id="3_lttjr"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_rsx84"]
 [ext_resource type="SpriteFrames" uid="uid://l01rgsjmcbav" path="res://resources/towers/transistor/sprite_frames/transistor_1_0_sprite_frames.tres" id="5_lmmgd"]
+[ext_resource type="Texture2D" uid="uid://cbns7ynga6uvm" path="res://assets/ui/shop_icons/attack_speed_increase_3_icon.png" id="6_nwscp"]
 [ext_resource type="Resource" uid="uid://dbfjforjjtoee" path="res://resources/towers/transistor/transistor_2_0.tres" id="6_xnb2q"]
 [ext_resource type="Resource" uid="uid://dle1tijbkmkog" path="res://resources/towers/transistor/transistor_1_1.tres" id="7_1im6u"]
+[ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="8_mrnbk"]
 
 [sub_resource type="Resource" id="Resource_vv7pl"]
 script = ExtResource("1_cv5y6")
-radius = 100.0
-number_of_targets = 10
+radius = 150.0
+number_of_targets = 2
 
 [resource]
 script = ExtResource("4_rsx84")
 name = "Transistor  1 | 0"
 damage_type = 2
-attack_damage = 1.0
-attack_speed = 1.0
-attack_range = 150.0
-pierce = 1
+attack_damage = 3.0
+attack_speed = 0.9
+attack_range = 140.0
+pierce = 2
 number_of_targets = 1
-power = 2
-temperature_increase = 2.0
+power = 6
+temperature_increase = 6.0
 bullet_speed = 1000.0
 bullet_effect = SubResource("Resource_vv7pl")
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
@@ -33,14 +35,16 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_lmmgd")
 place_col_shape = ExtResource("3_lttjr")
 bullet_visual_resource = ExtResource("1_l22k6")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_nwscp")
+upgrade_path_1_description = "Increases attack speed, pierce and effect radius"
+upgrade_path_1_price_easy = 1445
+upgrade_path_1_price_medium = 1700
+upgrade_path_1_price_hard = 1835
 upgrade_path_1_tower_resource = ExtResource("6_xnb2q")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("8_mrnbk")
+upgrade_path_2_description = "Increases effect targets and tower range"
+upgrade_path_2_price_easy = 510
+upgrade_path_2_price_medium = 600
+upgrade_path_2_price_hard = 650
 upgrade_path_2_tower_resource = ExtResource("7_1im6u")
 wiki_index = 2

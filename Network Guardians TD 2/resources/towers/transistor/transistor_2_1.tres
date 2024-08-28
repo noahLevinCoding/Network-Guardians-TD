@@ -1,27 +1,28 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://dxhtx7fl7ah81"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://dxhtx7fl7ah81"]
 
 [ext_resource type="Script" path="res://scripts/effects/bullet_effects/chaining_bullet_effect_resource.gd" id="1_j7lae"]
 [ext_resource type="Resource" uid="uid://bjfawnt72cieu" path="res://resources/towers/transistor/bullets/bullet_transistor.tres" id="2_p7nxn"]
 [ext_resource type="Shape2D" uid="uid://be7o1xtl4ia17" path="res://resources/towers/transistor/transistor_place_shape.tres" id="3_1er68"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_528y2"]
 [ext_resource type="SpriteFrames" uid="uid://blq6n5sq6rj2x" path="res://resources/towers/transistor/sprite_frames/transistor_2_1_sprite_frames.tres" id="5_14m6m"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="6_l72ef"]
 
 [sub_resource type="Resource" id="Resource_6sx11"]
 script = ExtResource("1_j7lae")
-radius = 100.0
-number_of_targets = 10
+radius = 250.0
+number_of_targets = 4
 
 [resource]
 script = ExtResource("4_528y2")
-name = "Transistor  1 | 1"
+name = "Transistor  2 | 1"
 damage_type = 2
-attack_damage = 1.0
-attack_speed = 1.0
-attack_range = 150.0
-pierce = 1
+attack_damage = 3.0
+attack_speed = 1.35
+attack_range = 190.0
+pierce = 3
 number_of_targets = 1
-power = 3
-temperature_increase = 3.0
+power = 9
+temperature_increase = 9.0
 bullet_speed = 1000.0
 bullet_effect = SubResource("Resource_6sx11")
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
@@ -31,11 +32,13 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_14m6m")
 place_col_shape = ExtResource("3_1er68")
 bullet_visual_resource = ExtResource("2_p7nxn")
-upgrade_path_1_description = ""
+upgrade_path_1_icon = ExtResource("6_l72ef")
+upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
-upgrade_path_2_description = ""
+upgrade_path_2_icon = ExtResource("6_l72ef")
+upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0

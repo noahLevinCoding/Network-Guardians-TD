@@ -1,29 +1,33 @@
-[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=6 format=3 uid="uid://c3v1f8a7a4dfi"]
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=8 format=3 uid="uid://c3v1f8a7a4dfi"]
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_dphl1"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_625ox"]
 [ext_resource type="SpriteFrames" uid="uid://3j5q7kpxnfye" path="res://resources/towers/gpu/sprite_frames/gpu_0_1_sprite_frames.tres" id="3_twuks"]
 [ext_resource type="Resource" uid="uid://cchjiamljeely" path="res://resources/towers/gpu/gpu_1_1.tres" id="4_b8c3c"]
+[ext_resource type="Texture2D" uid="uid://du04ta88pi65y" path="res://assets/ui/shop_icons/money_2_shop_icon.png" id="4_ss4gp"]
 [ext_resource type="Resource" uid="uid://dgywhfof6vumd" path="res://resources/towers/gpu/gpu_0_2.tres" id="5_aktoh"]
+[ext_resource type="Texture2D" uid="uid://b2fuq6l5fuxj5" path="res://assets/ui/shop_icons/money_1_shop_icon.png" id="6_31xeh"]
 
 [resource]
 script = ExtResource("2_625ox")
 name = "GPU  0 | 1"
-drop_time = 1.0
-drop_amount = 2
-max_drop_amount = 100
-power = 5
-temperature_increase = 5.0
+drop_time = 0.2
+drop_amount = 30
+max_drop_amount = 120
+power = 6
+temperature_increase = 3.0
 sprite_frames = ExtResource("3_twuks")
 place_col_shape = ExtResource("1_dphl1")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("4_ss4gp")
+upgrade_path_1_description = "Increases the max drop amount per round"
+upgrade_path_1_price_easy = 935
+upgrade_path_1_price_medium = 110
+upgrade_path_1_price_hard = 1190
 upgrade_path_1_tower_resource = ExtResource("4_b8c3c")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("6_31xeh")
+upgrade_path_2_description = "Increases the value of each money drop"
+upgrade_path_2_price_easy = 952
+upgrade_path_2_price_medium = 1120
+upgrade_path_2_price_hard = 1198
 upgrade_path_2_tower_resource = ExtResource("5_aktoh")
 wiki_index = 7

@@ -1,23 +1,26 @@
-[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=4 format=3 uid="uid://dvg50766k4wcm"]
+[gd_resource type="Resource" script_class="ResourceTowerResource" load_steps=5 format=3 uid="uid://dvg50766k4wcm"]
 
 [ext_resource type="Shape2D" uid="uid://duspocgehgnrf" path="res://resources/towers/gpu/gpu_place_shape.tres" id="1_y0rdh"]
 [ext_resource type="Script" path="res://scripts/tower/resource_tower_resource.gd" id="2_3lwlw"]
 [ext_resource type="SpriteFrames" uid="uid://1ggd0g0faanm" path="res://resources/towers/gpu/sprite_frames/gpu_1_2_sprite_frames.tres" id="3_lwfgk"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="4_tub5a"]
 
 [resource]
 script = ExtResource("2_3lwlw")
 name = "GPU  1 | 2"
-drop_time = 2.0
-drop_amount = 1
-max_drop_amount = 100
-power = 5
-temperature_increase = 5.0
+drop_time = 0.2
+drop_amount = 45
+max_drop_amount = 360
+power = 9
+temperature_increase = 6.0
 sprite_frames = ExtResource("3_lwfgk")
 place_col_shape = ExtResource("1_y0rdh")
+upgrade_path_1_icon = ExtResource("4_tub5a")
 upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
+upgrade_path_2_icon = ExtResource("4_tub5a")
 upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
