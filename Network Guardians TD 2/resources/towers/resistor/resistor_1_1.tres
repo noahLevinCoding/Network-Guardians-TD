@@ -1,38 +1,48 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://cg7cg5ogqtt0p"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://cg7cg5ogqtt0p"]
 
 [ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_ejot8"]
+[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_bfp5d"]
 [ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="3_md51d"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="4_1g57s"]
 [ext_resource type="SpriteFrames" uid="uid://c3b68ou5jhw0g" path="res://resources/towers/resistor/sprite frames/resistor_1_1_sprite_frames.tres" id="4_8oppw"]
 [ext_resource type="Resource" uid="uid://lxragsf1ajnp" path="res://resources/towers/resistor/resistor_2_1.tres" id="5_qgib0"]
+[ext_resource type="Texture2D" uid="uid://cyqe4yco852jk" path="res://assets/ui/shop_icons/time_increase_shop_icon.png" id="6_dkcls"]
 [ext_resource type="Resource" uid="uid://dgt4l8rjk1suf" path="res://resources/towers/resistor/resistor_1_2.tres" id="6_yeqah"]
+[ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="8_j387k"]
+
+[sub_resource type="Resource" id="Resource_hhpy4"]
+script = ExtResource("2_bfp5d")
+slow_multiplier = 0.2
+duration = 2.0
 
 [resource]
 script = ExtResource("4_1g57s")
 name = "Resistor  1 | 1"
 damage_type = 2
-attack_damage = 2.0
-attack_speed = 0.5
-attack_range = 50.0
-pierce = 1
-number_of_targets = 10
-power = 4
-temperature_increase = 4.0
+attack_damage = 1.0
+attack_speed = 0.63
+attack_range = 110.0
+pierce = 40
+number_of_targets = 42
+power = 5
+temperature_increase = 5.0
 bullet_speed = 1000.0
-effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_hhpy4")])
 ignores_damage_type_immunity = false
 can_see_camo = false
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("4_8oppw")
 place_col_shape = ExtResource("3_md51d")
 bullet_visual_resource = ExtResource("1_ejot8")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_dkcls")
+upgrade_path_1_description = "Increases attack speed and slow effect duration"
+upgrade_path_1_price_easy = 1275
+upgrade_path_1_price_medium = 1500
+upgrade_path_1_price_hard = 1620
 upgrade_path_1_tower_resource = ExtResource("5_qgib0")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("8_j387k")
+upgrade_path_2_description = "Increases attack damage and slow effect"
+upgrade_path_2_price_easy = 1910
+upgrade_path_2_price_medium = 2250
+upgrade_path_2_price_hard = 2430
 upgrade_path_2_tower_resource = ExtResource("6_yeqah")

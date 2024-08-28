@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://bn1ogh130plyi"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://bn1ogh130plyi"]
 
 [ext_resource type="Resource" uid="uid://b0d3enkpxthg0" path="res://resources/towers/led/bullets/bullet_led_blue.tres" id="1_0i3xr"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_jbwc3"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_i8neo"]
 [ext_resource type="SpriteFrames" uid="uid://sb1abbpx3h0b" path="res://resources/towers/led/sprite_frames/led_2_0_sprite_frames.tres" id="4_2cag8"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="5_7o0sp"]
 [ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="5_wcdjy"]
 [ext_resource type="Resource" uid="uid://wpo75gyk1nwy" path="res://resources/towers/led/led_2_1.tres" id="6_ycv32"]
 
@@ -26,6 +27,7 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("4_2cag8")
 place_col_shape = ExtResource("2_jbwc3")
 bullet_visual_resource = ExtResource("1_0i3xr")
+upgrade_path_1_icon = ExtResource("5_7o0sp")
 upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0

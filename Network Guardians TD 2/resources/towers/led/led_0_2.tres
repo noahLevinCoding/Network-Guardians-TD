@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://dggjqqc8atapg"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://dggjqqc8atapg"]
 
 [ext_resource type="Resource" uid="uid://ck3508cimmib6" path="res://resources/towers/led/bullets/bullet_led_cyan.tres" id="1_viigs"]
 [ext_resource type="Shape2D" uid="uid://bh3mgmviyge3l" path="res://resources/towers/led/led_place_shape.tres" id="2_rpy71"]
@@ -6,6 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cbmgh6itaf45h" path="res://resources/towers/led/sprite_frames/led_0_2_sprite_frames.tres" id="4_o0m4m"]
 [ext_resource type="Texture2D" uid="uid://ha2pt2uejl2c" path="res://assets/ui/shop_icons/attack_speed_increase_1_icon.png" id="4_y0elg"]
 [ext_resource type="Resource" uid="uid://c23qd3lcanqaf" path="res://resources/towers/led/led_1_2.tres" id="6_7s7go"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="7_18mfu"]
 
 [resource]
 script = ExtResource("3_xtmye")
@@ -32,6 +33,7 @@ upgrade_path_1_price_easy = 85
 upgrade_path_1_price_medium = 100
 upgrade_path_1_price_hard = 110
 upgrade_path_1_tower_resource = ExtResource("6_7s7go")
+upgrade_path_2_icon = ExtResource("7_18mfu")
 upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0

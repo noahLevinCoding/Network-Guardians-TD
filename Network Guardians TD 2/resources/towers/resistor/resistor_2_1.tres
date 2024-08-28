@@ -1,34 +1,43 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=5 format=3 uid="uid://lxragsf1ajnp"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://lxragsf1ajnp"]
 
 [ext_resource type="Resource" uid="uid://rvblie6efnal" path="res://resources/towers/resistor/bullets/bullet_resistor.tres" id="1_mbkyj"]
 [ext_resource type="Shape2D" uid="uid://dvp6hnl4byvb7" path="res://resources/towers/resistor/resistor_place_shape.tres" id="2_2hjcq"]
+[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="2_cnfnp"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_jaff7"]
 [ext_resource type="SpriteFrames" uid="uid://bqn2wk2pxhmxo" path="res://resources/towers/resistor/sprite frames/resistor_2_1_sprite_frames.tres" id="4_0r5al"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="6_bhhpl"]
+
+[sub_resource type="Resource" id="Resource_s735x"]
+script = ExtResource("2_cnfnp")
+slow_multiplier = 0.2
+duration = 3.0
 
 [resource]
 script = ExtResource("3_jaff7")
 name = "Resistor  2 | 1"
 damage_type = 2
-attack_damage = 2.0
-attack_speed = 0.5
-attack_range = 50.0
-pierce = 1
-number_of_targets = 10
-power = 4
-temperature_increase = 4.0
+attack_damage = 1.0
+attack_speed = 1.26
+attack_range = 110.0
+pierce = 40
+number_of_targets = 42
+power = 8
+temperature_increase = 8.0
 bullet_speed = 1000.0
-effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_s735x")])
 ignores_damage_type_immunity = false
 can_see_camo = false
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("4_0r5al")
 place_col_shape = ExtResource("2_2hjcq")
 bullet_visual_resource = ExtResource("1_mbkyj")
-upgrade_path_1_description = ""
+upgrade_path_1_icon = ExtResource("6_bhhpl")
+upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
-upgrade_path_2_description = ""
+upgrade_path_2_icon = ExtResource("6_bhhpl")
+upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0

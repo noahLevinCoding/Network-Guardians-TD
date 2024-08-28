@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://03eo4is5i7be"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=10 format=3 uid="uid://03eo4is5i7be"]
 
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_ht4ip"]
 [ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_kpi1r"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_lf7v1"]
 [ext_resource type="SpriteFrames" uid="uid://x57b78q2r2gk" path="res://resources/towers/neopixel/sprite_frames/neopixel_2_0_sprite_frames.tres" id="5_ejocn"]
 [ext_resource type="Texture2D" uid="uid://so74okkyusp2" path="res://assets/ui/shop_icons/pierce_increase_icon.png" id="6_3bvso"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="6_aitc0"]
 [ext_resource type="Resource" uid="uid://caj1pemh574yo" path="res://resources/towers/neopixel/neopixel_2_1.tres" id="6_t3o4f"]
 
 [sub_resource type="Resource" id="Resource_vknus"]
@@ -32,6 +33,7 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_ejocn")
 place_col_shape = ExtResource("3_lf7v1")
 bullet_visual_resource = ExtResource("1_kpi1r")
+upgrade_path_1_icon = ExtResource("6_aitc0")
 upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0

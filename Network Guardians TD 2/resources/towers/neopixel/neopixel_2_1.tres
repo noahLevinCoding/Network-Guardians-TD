@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://caj1pemh574yo"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://caj1pemh574yo"]
 
 [ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_kimwi"]
 [ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_o238m"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_77cg8"]
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_bs4lk"]
 [ext_resource type="SpriteFrames" uid="uid://b1742etv0jfv" path="res://resources/towers/neopixel/sprite_frames/neopixel_2_1_sprite_frames.tres" id="5_vfl62"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="6_07qgi"]
 
 [sub_resource type="Resource" id="Resource_vknus"]
 script = ExtResource("1_o238m")
@@ -30,10 +31,12 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_vfl62")
 place_col_shape = ExtResource("3_bs4lk")
 bullet_visual_resource = ExtResource("1_kimwi")
+upgrade_path_1_icon = ExtResource("6_07qgi")
 upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0
 upgrade_path_1_price_medium = 0
 upgrade_path_1_price_hard = 0
+upgrade_path_2_icon = ExtResource("6_07qgi")
 upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
