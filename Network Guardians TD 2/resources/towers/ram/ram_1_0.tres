@@ -42,3 +42,4 @@ upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0
 upgrade_path_2_tower_resource = ExtResource("6_8tp1h")
+wiki_index = 5

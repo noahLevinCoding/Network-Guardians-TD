@@ -40,8 +40,6 @@ func select(index : int):
 	SignalManager.on_select_shop.emit()
 	
 	selected_item = items[index]
-	#TODO: change custom cursor to sprite
-	#Input.set_custom_mouse_cursor(selected_item.icon, Input.CURSOR_ARROW, selected_item.icon.get_size() / 2)	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	tower_place_sprite.texture = selected_item.mouse_cursor_texture
 	tower_place_sprite.visible = true
@@ -53,25 +51,25 @@ func select(index : int):
 	tower_power_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
 	tower_power_text_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
 	
-	if not selected_item.tower_resource is ResourceTowerResource:
+	var radius = 0
+	if selected_item.tower_resource is ResourceTowerResource:
+		radius = 4000
 	
-		var radius = 0
-	
-		if selected_item.tower_resource is AttackTowerResource:
-			radius = selected_item.tower_resource.attack_range
+	if selected_item.tower_resource is AttackTowerResource:
+		radius = selected_item.tower_resource.attack_range
 			
-		if selected_item.tower_resource is SupportTowerResource:
-			radius = selected_item.tower_resource.support_range
+	if selected_item.tower_resource is SupportTowerResource:
+		radius = selected_item.tower_resource.support_range
 		
-		var segments = 64
-		var points = []
+	var segments = 64
+	var points = []
 		
-		for i in range(segments):
-			var angle = 2 * PI * i / segments
-			points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
+	for i in range(segments):
+		var angle = 2 * PI * i / segments
+		points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
 			
-		tower_range_polygon.polygon = points
-		tower_range_polygon.visible = true
+	tower_range_polygon.polygon = points
+	tower_range_polygon.visible = true
 	
 	tower_place_col.shape = selected_item.tower_resource.place_col_shape
 	
@@ -176,4 +174,8 @@ func _on_placable_area_mouse_exited():
 	mouse_in_placable_area = false
 
 func _on_wiki_button_up():
+	SignalManager.wiki_shop_button.emit()
+
+
+func _on_wiki_shop_button_up():
 	SignalManager.wiki_shop_button.emit()

@@ -46,3 +46,4 @@ upgrade_path_2_price_easy = 1315
 upgrade_path_2_price_medium = 1550
 upgrade_path_2_price_hard = 1675
 upgrade_path_2_tower_resource = ExtResource("7_3h1nt")
+wiki_index = 1

@@ -91,4 +91,3 @@ func _on_wave_index_changed(wave_index):
 	wave_index = max(wave_index + 1, 0)
 	wave_index_value_label.text = str(wave_index)
 
-

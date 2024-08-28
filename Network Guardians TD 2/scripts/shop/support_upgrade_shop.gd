@@ -83,7 +83,7 @@ func _on_select_tower(tower : Tower):
 		
 		
 		upgrade_2_icon.texture = tower.tower_resource.upgrade_path_2_icon
-		var description = tower.tower_resource.upgrade_path_1_description
+		var description = tower.tower_resource.upgrade_path_2_description
 		
 		var temp_increase = tower.tower_resource.upgrade_path_2_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
 		var power_increase = tower.tower_resource.upgrade_path_2_tower_resource.power - tower.tower_resource.power
@@ -133,5 +133,21 @@ func _input(event):
 	if event.is_action_pressed("right_mouse_button"):
 		_on_deselect_tower()
 
+func _on_wiki_tower_button_up():
+	SignalManager.wiki_tower_button.emit(selected_tower.tower_resource.wiki_index)
 
 
+func _on_upper_upgrade_button_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_lower_upgrade_button_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_sell_button_2_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_deselect_button_2_mouse_entered():
+	SignalManager.on_shop_hover.emit()

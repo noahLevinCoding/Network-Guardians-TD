@@ -40,3 +40,4 @@ upgrade_path_2_price_easy = 295
 upgrade_path_2_price_medium = 350
 upgrade_path_2_price_hard = 380
 upgrade_path_2_tower_resource = ExtResource("6_scthi")
+wiki_index = 1

@@ -9,6 +9,7 @@ extends AudioStreamPlayer
 @export var open_prio_type_sound : AudioStream
 @export var select_prio_type_sound : AudioStream
 @export var volume_slider_sound : AudioStream
+@export var shop_hover_sound : AudioStream
 
 func _ready():
 	SignalManager.on_button_click.connect(_on_button_click)
@@ -19,9 +20,16 @@ func _ready():
 	SignalManager.on_deselect_shop.connect(_on_deselect_shop)
 	SignalManager.on_open_prio_type.connect(_on_open_prio_type)
 	SignalManager.on_select_prio_type.connect(_on_select_prio_type)
+	SignalManager.on_shop_hover.connect(_on_shop_hover)
 
 	SignalManager.on_volume_slider_changed.connect(_on_volume_slider_changed)
 	
+
+func _on_shop_hover():
+	reset_db()
+	stream = shop_hover_sound
+	volume_db = -25
+	play()
 
 func _on_volume_slider_changed():
 	reset_db()

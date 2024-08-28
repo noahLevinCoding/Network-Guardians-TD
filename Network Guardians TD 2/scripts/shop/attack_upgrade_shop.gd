@@ -76,6 +76,7 @@ func _on_select_tower(tower : Tower):
 	else:
 		upgrade_1_price.text = "MAX"
 		upgrade_1.tooltip_text = "Path maxed"
+		upgrade_1_icon.texture = tower.tower_resource.upgrade_path_1_icon
 		upgrade_1_button.disabled = true
 		
 		
@@ -86,7 +87,7 @@ func _on_select_tower(tower : Tower):
 		
 		
 		upgrade_2_icon.texture = tower.tower_resource.upgrade_path_2_icon
-		var description = tower.tower_resource.upgrade_path_1_description
+		var description = tower.tower_resource.upgrade_path_2_description
 		
 		var temp_increase = tower.tower_resource.upgrade_path_2_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
 		var power_increase = tower.tower_resource.upgrade_path_2_tower_resource.power - tower.tower_resource.power
@@ -100,6 +101,7 @@ func _on_select_tower(tower : Tower):
 	else:
 		upgrade_2_price.text = "MAX"
 		upgrade_2.tooltip_text = "Path maxed"
+		upgrade_2_icon.texture = tower.tower_resource.upgrade_path_2_icon
 		upgrade_2_button.disabled = true
 	
 
@@ -146,3 +148,27 @@ func _input(event):
 
 func _on_prioritization_dropdown_button_down():
 	SignalManager.on_open_prio_type.emit()
+
+
+func _on_wiki_tower_button_up():
+	SignalManager.wiki_tower_button.emit(selected_tower.tower_resource.wiki_index)
+
+
+func _on_prioritization_dropdown_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_upper_upgrade_button_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_lower_upgrade_button_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_sell_button_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_deselect_button_mouse_entered():
+	SignalManager.on_shop_hover.emit()

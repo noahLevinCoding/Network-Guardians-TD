@@ -18,23 +18,33 @@ extends Node2D
 
 var save_folder_path : String = "res://saves/volume"
 
+var wiki_scene_instance = null
+
 signal back
 	
 func _on_enter_wiki():
 	_on_wiki_button_up()
+	wiki_scene_instance.wiki_entered_directly = true
 
 func _on_credit_button_up():
 	pass
 
 
 func _on_wiki_button_up():
-	var wiki_scene_instance = wiki_scene.instantiate()
+	wiki_scene_instance = wiki_scene.instantiate()
 	add_child(wiki_scene_instance)
 	wiki_scene_instance.back.connect(_on_wiki_back)
+	wiki_scene_instance.back_to_game.connect(_on_wiki_back_to_game)
 	set_visibility(false)
 
 func _on_wiki_back():
 	set_visibility(true)
+	wiki_scene_instance = null
+
+func _on_wiki_back_to_game():
+	_on_wiki_back()
+	_on_back_button_up()
+	
 
 func _on_back_button_up():
 	back.emit()

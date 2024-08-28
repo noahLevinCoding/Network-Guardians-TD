@@ -39,9 +39,16 @@ signal on_open_prio_type
 signal on_upgrade_button_click
 signal on_tower_sell
 signal on_volume_slider_changed
+signal on_shop_hover
 
 signal request_wave_is_active
 signal response_wave_is_active(wave_is_active : bool)
 
 signal wiki_shop_button
+signal wiki_tower_button(wiki_tower_index : int)
+signal wiki_mechanics_button() 
+
 signal enter_wiki
+signal enter_wiki_tower(wiki_tower_index : int)
+signal enter_wiki_mechanics
+

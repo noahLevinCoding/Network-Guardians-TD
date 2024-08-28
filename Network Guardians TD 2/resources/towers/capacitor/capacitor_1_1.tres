@@ -36,3 +36,4 @@ upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0
 upgrade_path_2_tower_resource = ExtResource("7_kdlnq")
+wiki_index = 4

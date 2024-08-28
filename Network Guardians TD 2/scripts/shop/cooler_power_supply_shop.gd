@@ -106,3 +106,23 @@ func _input(event):
 		_on_deselect()
 
 
+
+
+func _on_wiki_cooler_button_up():
+	SignalManager.wiki_mechanics_button.emit()
+
+
+func _on_wiki_power_supply_button_up():
+	SignalManager.wiki_mechanics_button.emit()
+
+
+func _on_upgrade_btn_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_upgrade_btn_2_mouse_entered():
+	SignalManager.on_shop_hover.emit()
+
+
+func _on_deselect_button_mouse_entered():
+	SignalManager.on_shop_hover.emit()

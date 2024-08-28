@@ -140,6 +140,7 @@ deselect_shop_sound = ExtResource("25_sqr65")
 open_prio_type_sound = ExtResource("25_n5ikq")
 select_prio_type_sound = ExtResource("25_sqr65")
 volume_slider_sound = ExtResource("30_txvme")
+shop_hover_sound = ExtResource("23_w8vsj")
 
 [node name="AudioStreamPlayerSFX" type="AudioStreamPlayer" parent="Audio"]
 volume_db = -30.0

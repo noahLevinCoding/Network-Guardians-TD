@@ -8,10 +8,22 @@ func _ready():
 	playing_ui_node.start_next_wave.connect(_on_start_next_wave)
 	SignalManager.defeat.connect(_on_defeat)
 	SignalManager.wiki_shop_button.connect(_on_wiki_shop_button)
+	SignalManager.wiki_tower_button.connect(_on_wiki_tower_button)
+	SignalManager.wiki_mechanics_button.connect(_on_wiki_mechanics_button)
+	
+func _on_wiki_mechanics_button():
+	state_transition.emit(self, "Options")
+	SignalManager.enter_wiki.emit()
+	SignalManager.enter_wiki_mechanics.emit()
 	
 func _on_wiki_shop_button():
 	state_transition.emit(self, "Options")
 	SignalManager.enter_wiki.emit()
+	
+func _on_wiki_tower_button(wiki_tower_index : int):
+	state_transition.emit(self, "Options")
+	SignalManager.enter_wiki.emit()
+	SignalManager.enter_wiki_tower.emit(wiki_tower_index)
 	
 func _on_reset():
 	playing_ui_node.deselect()
