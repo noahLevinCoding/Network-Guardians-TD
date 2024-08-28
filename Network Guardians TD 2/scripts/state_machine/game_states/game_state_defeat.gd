@@ -2,6 +2,7 @@ extends State
 class_name GameStateDefeat
 
 @export var defeat_node : Defeat = null
+@export var playing_node : Playing = null
 
 func _ready():
 	defeat_node.back_to_titlescreen.connect(_on_back_to_titlescreen)
@@ -9,6 +10,8 @@ func _ready():
 
 func enter():
 	print("Enter GameState Defeat")
+	playing_node.visible = true
+	playing_node.pause_button.visible = false
 	defeat_node.visible = true
 	GameManager.is_paused = true
 	GameManager.delete_save_file()
@@ -22,5 +25,6 @@ func _on_restart():
 func exit():
 	print("Enter GameState Defeat")
 	defeat_node.visible = false
-	
+	playing_node.visible = false
+	playing_node.pause_button.visible = true
 	

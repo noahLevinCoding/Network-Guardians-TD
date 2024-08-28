@@ -116,9 +116,10 @@ script = ExtResource("7_vrprp")
 pause_node = NodePath("../../Menu/Pause")
 infinite_video = NodePath("../../Menu/InfiniteVideo")
 
-[node name="Defeat" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("defeat_node")]
+[node name="Defeat" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("defeat_node", "playing_node")]
 script = ExtResource("9_d2ejd")
 defeat_node = NodePath("../../Menu/Defeat")
+playing_node = NodePath("../../Menu/Playing")
 
 [node name="Options" type="Node" parent="GameStateMachine" node_paths=PackedStringArray("options_node", "infinite_video")]
 script = ExtResource("10_1tdil")
@@ -149,3 +150,4 @@ script = ExtResource("25_3gwqs")
 death_sound = ExtResource("24_y0470")
 upgrade_click_sound = ExtResource("27_4sval")
 tower_sell_sound = ExtResource("28_afyax")
+wave_finished_sound = ExtResource("27_4sval")

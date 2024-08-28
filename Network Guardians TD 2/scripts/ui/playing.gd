@@ -19,6 +19,8 @@ signal start_next_wave
 
 @export var wave_index_value_label : Label
 
+@export var pause_button : TextureButton
+
 var auto_start_enabled : bool = false :
 	set(value):
 		auto_start_enabled = value

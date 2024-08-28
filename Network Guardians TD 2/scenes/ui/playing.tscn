@@ -57,7 +57,7 @@ size = Vector2(352, 196)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l1cx"]
 size = Vector2(1504, 1023)
 
-[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "auto_start_label", "speed_label", "wave_status_label", "auto_start_check_button", "speed_check_button", "wave_index_value_label")]
+[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "auto_start_label", "speed_label", "wave_status_label", "auto_start_check_button", "speed_check_button", "wave_index_value_label", "pause_button")]
 z_index = 6
 script = ExtResource("1_ot4ts")
 health_label = NodePath("ScreenBox/RightSide/Stats/Health/HealthValue")
@@ -70,6 +70,7 @@ wave_status_label = NodePath("ScreenBox/RightSide/Wave/StartNextWave/Label")
 auto_start_check_button = NodePath("Buttons/AutoStartCheckButton")
 speed_check_button = NodePath("Buttons/GameSpeedCheckButton")
 wave_index_value_label = NodePath("ScreenBox/RightSide/Wave/WaveIndex/WaveIndexValue")
+pause_button = NodePath("Buttons/PauseButton")
 
 [node name="MenuBackground" type="Sprite2D" parent="."]
 texture = ExtResource("2_hs5d4")
