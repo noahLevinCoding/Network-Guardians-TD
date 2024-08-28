@@ -7,8 +7,6 @@ extends State
 
 func _ready():
 	options_node.back.connect(_on_back)
-	options_node.wiki.connect(_on_wiki)
-	options_node.credits.connect(_on_credits)
 	
 func enter():
 	print("Enter GameStateOption")
@@ -26,8 +24,3 @@ func exit():
 func _on_back():
 	back_transition.emit(self)
 	
-func _on_wiki():
-	pass
-	
-func _on_credits():
-	pass

@@ -42,3 +42,6 @@ signal on_volume_slider_changed
 
 signal request_wave_is_active
 signal response_wave_is_active(wave_is_active : bool)
+
+signal wiki_shop_button
+signal enter_wiki

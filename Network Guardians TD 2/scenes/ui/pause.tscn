@@ -1,18 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyjglrb3udyb2"]
+[gd_scene load_steps=19 format=3 uid="uid://cyjglrb3udyb2"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause.gd" id="1_u6d3p"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_2ojuk"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_vocin"]
-[ext_resource type="Texture2D" uid="uid://2074rvqke8iq" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy.png" id="4_j83xp"]
-[ext_resource type="Texture2D" uid="uid://djixq45m4hjvw" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On.png" id="5_b3mxb"]
-[ext_resource type="Texture2D" uid="uid://b8667gkp8ehn" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_2.png" id="5_dv568"]
-[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="6_4pctp"]
+[ext_resource type="Texture2D" uid="uid://c8tgvv5ved5fl" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 7.png" id="4_yjvu8"]
+[ext_resource type="Texture2D" uid="uid://bhxrn8w3toc18" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_1.png" id="5_x6hrk"]
+[ext_resource type="Texture2D" uid="uid://vrceor73ayvj" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 8.png" id="6_u3hvv"]
 [ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="7_g7kyc"]
-[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="7_q5dvk"]
-[ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="8_fifqh"]
-[ext_resource type="Texture2D" uid="uid://cbl724ghoogx7" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 4.png" id="8_gscpt"]
-[ext_resource type="Texture2D" uid="uid://wmyqa3akkhso" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 4.png" id="9_fc0ji"]
-[ext_resource type="Texture2D" uid="uid://d22uypqdgy5p7" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_8.png" id="11_jbmmr"]
+[ext_resource type="Texture2D" uid="uid://clleldvhc4q5b" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 2.png" id="8_t7oyn"]
+[ext_resource type="Texture2D" uid="uid://cc413b636ineu" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_3.png" id="9_axkiq"]
+[ext_resource type="Texture2D" uid="uid://crpp2wrvv02qt" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 2.png" id="10_u83qq"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="11_2j7r2"]
+[ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="12_pqqfd"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="13_t8jmc"]
+[ext_resource type="Texture2D" uid="uid://chn1p5guprgfn" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 8.png" id="14_4vq6m"]
+[ext_resource type="Texture2D" uid="uid://ben8li41s72hf" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_9.png" id="15_alksa"]
+[ext_resource type="Texture2D" uid="uid://c2ucxonfceqjf" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 7.png" id="16_sd4ya"]
 
 [sub_resource type="Theme" id="Theme_ptpy0"]
 default_font = ExtResource("2_2ojuk")
@@ -46,29 +49,34 @@ grow_horizontal = 2
 theme = SubResource("Theme_2apop")
 text = "Pause"
 
-[node name="ResumeButton" type="TextureButton" parent="Control"]
+[node name="GridContainer" type="GridContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = -190.0
-offset_right = 232.0
-offset_bottom = 52.0
+offset_left = -370.0
+offset_top = -110.0
+offset_right = 696.0
+offset_bottom = 454.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(232, 121)
+scale = Vector2(0.7, 0.7)
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 80
+columns = 2
+
+[node name="ResumeButton" type="TextureButton" parent="Control/GridContainer"]
+layout_mode = 2
 keep_pressed_outside = true
-texture_normal = ExtResource("4_j83xp")
-texture_pressed = ExtResource("5_dv568")
-texture_hover = ExtResource("5_b3mxb")
+texture_normal = ExtResource("4_yjvu8")
+texture_pressed = ExtResource("5_x6hrk")
+texture_hover = ExtResource("6_u3hvv")
 stretch_mode = 3
 script = ExtResource("7_g7kyc")
 
-[node name="Label" type="Label" parent="Control/ResumeButton"]
+[node name="Label" type="Label" parent="Control/GridContainer/ResumeButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,29 +92,16 @@ grow_vertical = 2
 text = "Resume
 "
 
-[node name="RestartButton" type="TextureButton" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = -40.0
-offset_right = 232.0
-offset_bottom = 188.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(232, 121)
+[node name="RestartButton" type="TextureButton" parent="Control/GridContainer"]
+layout_mode = 2
 keep_pressed_outside = true
-texture_normal = ExtResource("6_4pctp")
-texture_pressed = ExtResource("8_fifqh")
-texture_hover = ExtResource("7_q5dvk")
+texture_normal = ExtResource("8_t7oyn")
+texture_pressed = ExtResource("9_axkiq")
+texture_hover = ExtResource("10_u83qq")
 stretch_mode = 3
 script = ExtResource("7_g7kyc")
 
-[node name="Label" type="Label" parent="Control/RestartButton"]
+[node name="Label" type="Label" parent="Control/GridContainer/RestartButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,29 +116,16 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
 
-[node name="Options" type="TextureButton" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = 110.0
-offset_right = 232.0
-offset_bottom = 338.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(232, 121)
+[node name="Options" type="TextureButton" parent="Control/GridContainer"]
+layout_mode = 2
 keep_pressed_outside = true
-texture_normal = ExtResource("6_4pctp")
-texture_pressed = ExtResource("8_fifqh")
-texture_hover = ExtResource("7_q5dvk")
+texture_normal = ExtResource("11_2j7r2")
+texture_pressed = ExtResource("12_pqqfd")
+texture_hover = ExtResource("13_t8jmc")
 stretch_mode = 3
 script = ExtResource("7_g7kyc")
 
-[node name="Label" type="Label" parent="Control/Options"]
+[node name="Label" type="Label" parent="Control/GridContainer/Options"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -158,29 +140,16 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Options"
 
-[node name="BackToTitlescreenButton" type="TextureButton" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = 260.0
-offset_right = 232.0
-offset_bottom = 502.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(232, 121)
+[node name="BackToTitlescreenButton" type="TextureButton" parent="Control/GridContainer"]
+layout_mode = 2
 keep_pressed_outside = true
-texture_normal = ExtResource("8_gscpt")
-texture_pressed = ExtResource("11_jbmmr")
-texture_hover = ExtResource("9_fc0ji")
+texture_normal = ExtResource("14_4vq6m")
+texture_pressed = ExtResource("15_alksa")
+texture_hover = ExtResource("16_sd4ya")
 stretch_mode = 3
 script = ExtResource("7_g7kyc")
 
-[node name="Label" type="Label" parent="Control/BackToTitlescreenButton"]
+[node name="Label" type="Label" parent="Control/GridContainer/BackToTitlescreenButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -195,7 +164,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Titlescreen"
 
-[connection signal="button_up" from="Control/ResumeButton" to="." method="_on_resume_button_up"]
-[connection signal="button_up" from="Control/RestartButton" to="." method="_on_restart_button_up"]
-[connection signal="button_up" from="Control/Options" to="." method="_on_options_up"]
-[connection signal="button_up" from="Control/BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]
+[connection signal="button_up" from="Control/GridContainer/ResumeButton" to="." method="_on_resume_button_up"]
+[connection signal="button_up" from="Control/GridContainer/RestartButton" to="." method="_on_restart_button_up"]
+[connection signal="button_up" from="Control/GridContainer/Options" to="." method="_on_options_up"]
+[connection signal="button_up" from="Control/GridContainer/BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]

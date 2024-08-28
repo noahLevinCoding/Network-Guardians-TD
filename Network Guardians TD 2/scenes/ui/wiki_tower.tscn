@@ -1,0 +1,176 @@
+[gd_scene load_steps=15 format=3 uid="uid://b6ewpi5so8r6n"]
+
+[ext_resource type="Script" path="res://scripts/ui/wiki_tower.gd" id="1_jbex2"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_ov1pb"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_75lss"]
+[ext_resource type="Texture2D" uid="uid://bdg4r4da4x8ls" path="res://assets/wiki/Neo.png" id="3_cavg3"]
+[ext_resource type="Texture2D" uid="uid://dfmwl6ed35gsv" path="res://assets/wiki/Led.png" id="4_av5g0"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="5_hktqf"]
+[ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="6_1k17k"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="7_v8pf3"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="8_7pxql"]
+[ext_resource type="Texture2D" uid="uid://chn1p5guprgfn" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 8.png" id="10_0hbcr"]
+[ext_resource type="Texture2D" uid="uid://ben8li41s72hf" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_9.png" id="11_m1av6"]
+[ext_resource type="Texture2D" uid="uid://c2ucxonfceqjf" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 7.png" id="12_1kg8r"]
+
+[sub_resource type="Theme" id="Theme_21672"]
+default_font = ExtResource("2_ov1pb")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_tcmq7"]
+default_font = ExtResource("3_75lss")
+default_font_size = 100
+
+[node name="WikiTower" type="Node2D" node_paths=PackedStringArray("texture_rect")]
+z_index = 7
+script = ExtResource("1_jbex2")
+texture_rect = NodePath("Control/ScrollContainer/TextureRect")
+tower_entries = Array[Texture2D]([ExtResource("4_av5g0"), ExtResource("3_cavg3")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_21672")
+
+[node name="Heading" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 133.0
+offset_right = 97.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme = SubResource("Theme_tcmq7")
+text = "Wiki: Enemy"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -803.5
+offset_top = 100.0
+offset_right = 803.5
+offset_bottom = 900.0
+grow_horizontal = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -190.0
+offset_right = 373.0
+offset_bottom = 52.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("5_hktqf")
+texture_pressed = ExtResource("6_1k17k")
+texture_hover = ExtResource("7_v8pf3")
+stretch_mode = 3
+script = ExtResource("8_7pxql")
+
+[node name="Label" type="Label" parent="Control/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[node name="PreviousButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -396.5
+offset_top = -190.0
+offset_right = 96.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("5_hktqf")
+texture_pressed = ExtResource("6_1k17k")
+texture_hover = ExtResource("7_v8pf3")
+stretch_mode = 3
+script = ExtResource("8_7pxql")
+
+[node name="Label" type="Label" parent="Control/PreviousButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Previous"
+
+[node name="NextButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0001
+offset_top = -190.0
+offset_right = 397.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("10_0hbcr")
+texture_pressed = ExtResource("11_m1av6")
+texture_hover = ExtResource("12_1kg8r")
+stretch_mode = 3
+script = ExtResource("8_7pxql")
+
+[node name="Label" type="Label" parent="Control/NextButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next"
+
+[connection signal="button_up" from="Control/BackButton" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="Control/PreviousButton" to="." method="_on_previous_button_up"]
+[connection signal="button_up" from="Control/NextButton" to="." method="_on_next_button_up"]

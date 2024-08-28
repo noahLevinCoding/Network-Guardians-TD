@@ -175,4 +175,5 @@ func _on_placable_area_mouse_entered():
 func _on_placable_area_mouse_exited():
 	mouse_in_placable_area = false
 
-
+func _on_wiki_button_up():
+	SignalManager.wiki_shop_button.emit()

@@ -1,6 +1,11 @@
 class_name Options
 extends Node2D
 
+@export var wiki_scene : PackedScene
+
+
+@export var visible_node : Node
+
 @onready var MASTER_BUS_ID = AudioServer.get_bus_index("Master")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
@@ -13,22 +18,30 @@ extends Node2D
 
 var save_folder_path : String = "res://saves/volume"
 
-signal credits
-signal wiki
 signal back
+	
+func _on_enter_wiki():
+	_on_wiki_button_up()
 
 func _on_credit_button_up():
-	credits.emit()
+	pass
 
 
 func _on_wiki_button_up():
-	wiki.emit()
+	var wiki_scene_instance = wiki_scene.instantiate()
+	add_child(wiki_scene_instance)
+	wiki_scene_instance.back.connect(_on_wiki_back)
+	set_visibility(false)
 
+func _on_wiki_back():
+	set_visibility(true)
 
 func _on_back_button_up():
 	back.emit()
 	save_volume()
 
+func set_visibility(is_visible : bool):
+	visible_node.visible = is_visible
 
 func _on_master_slider_value_changed(value):
 	SignalManager.on_volume_slider_changed.emit()
@@ -55,6 +68,9 @@ func _on_ui_slider_value_changed(value):
 	
 	
 func _ready():
+	
+	SignalManager.enter_wiki.connect(_on_enter_wiki)
+	
 	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(MASTER_BUS_ID))
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(MUSIC_BUS_ID))
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(SFX_BUS_ID))

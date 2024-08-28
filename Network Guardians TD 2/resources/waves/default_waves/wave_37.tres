@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Wave" load_steps=10 format=3 uid="uid://cqhcqgf4ds5d0"]
+[gd_resource type="Resource" script_class="Wave" load_steps=10 format=3 uid="uid://dxbt2aw86f5sw"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_22ak2"]
 [ext_resource type="Resource" uid="uid://bc2r2f3klqexf" path="res://resources/enemies/normal/virus_5_pink.tres" id="2_cxg3b"]

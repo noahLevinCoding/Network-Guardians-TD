@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2svdjyat016"]
+[gd_scene load_steps=16 format=3 uid="uid://b2svdjyat016"]
 
 [ext_resource type="Script" path="res://scripts/ui/options.gd" id="1_ee6lg"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="1_qcb4s"]
+[ext_resource type="PackedScene" uid="uid://dhx5sd6isc5nr" path="res://scenes/ui/wiki.tscn" id="2_e04a5"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="2_u11ny"]
 [ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="4_h8oey"]
 [ext_resource type="Texture2D" uid="uid://d22uypqdgy5p7" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_8.png" id="4_wnp3t"]
@@ -23,9 +24,11 @@ default_font_size = 100
 [sub_resource type="Theme" id="Theme_le8oo"]
 default_font_size = 30
 
-[node name="Options" type="Node2D" node_paths=PackedStringArray("master_slider", "music_slider", "ui_slider", "sfx_slider")]
+[node name="Options" type="Node2D" node_paths=PackedStringArray("visible_node", "master_slider", "music_slider", "ui_slider", "sfx_slider")]
 z_index = 6
 script = ExtResource("1_ee6lg")
+wiki_scene = ExtResource("2_e04a5")
+visible_node = NodePath("Control")
 master_slider = NodePath("Control/VBoxContainer/GridContainer/MasterSlider")
 music_slider = NodePath("Control/VBoxContainer/GridContainer/MusicSlider")
 ui_slider = NodePath("Control/VBoxContainer/GridContainer/UISlider")

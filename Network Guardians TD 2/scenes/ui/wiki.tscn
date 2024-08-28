@@ -1,0 +1,194 @@
+[gd_scene load_steps=22 format=3 uid="uid://dhx5sd6isc5nr"]
+
+[ext_resource type="Script" path="res://scripts/ui/wiki.gd" id="1_atp0v"]
+[ext_resource type="PackedScene" uid="uid://wbwprlc5mm6l" path="res://scenes/ui/wiki_enemy.tscn" id="2_otw5o"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_u1lhu"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_anou2"]
+[ext_resource type="PackedScene" uid="uid://b6ewpi5so8r6n" path="res://scenes/ui/wiki_tower.tscn" id="3_tj0r8"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="4_7tcpu"]
+[ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 6.png" id="4_d1rao"]
+[ext_resource type="PackedScene" uid="uid://sm15xyh3lyso" path="res://scenes/ui/wiki_mechanics.tscn" id="4_t5dco"]
+[ext_resource type="Texture2D" uid="uid://c7ujwxf5n13cc" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_4.png" id="5_h5syx"]
+[ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 5.png" id="6_el4u7"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="8_wmvuk"]
+[ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="8_xm3kl"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="9_qpogw"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="9_xxuf4"]
+[ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="10_8xxkb"]
+[ext_resource type="Texture2D" uid="uid://d0yvvo8ggm0d4" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 3.png" id="10_kl0m7"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="11_cxgn0"]
+[ext_resource type="Texture2D" uid="uid://ddqhyad85sx64" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_6.png" id="11_i43u8"]
+[ext_resource type="Texture2D" uid="uid://dm1afjlptkexq" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 3.png" id="12_burhb"]
+
+[sub_resource type="Theme" id="Theme_21672"]
+default_font = ExtResource("2_u1lhu")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_tcmq7"]
+default_font = ExtResource("3_anou2")
+default_font_size = 100
+
+[node name="Wiki" type="Node2D" node_paths=PackedStringArray("visible_node")]
+z_index = 7
+script = ExtResource("1_atp0v")
+visible_node = NodePath("Control")
+wiki_enemy_scene = ExtResource("2_otw5o")
+wiki_tower_scene = ExtResource("3_tj0r8")
+wiki_mechanics_scene = ExtResource("4_t5dco")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_21672")
+
+[node name="Heading" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 133.0
+offset_right = 97.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme = SubResource("Theme_tcmq7")
+text = "Wiki"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -746.0
+offset_top = -49.0
+offset_right = 1120.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Enemy" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("4_d1rao")
+texture_pressed = ExtResource("5_h5syx")
+texture_hover = ExtResource("6_el4u7")
+stretch_mode = 3
+script = ExtResource("8_wmvuk")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/Enemy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -33.0
+offset_right = 20.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enemies"
+
+[node name="Tower" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("4_7tcpu")
+texture_pressed = ExtResource("8_xm3kl")
+texture_hover = ExtResource("9_qpogw")
+stretch_mode = 3
+script = ExtResource("8_wmvuk")
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer/Tower"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.5
+offset_top = -33.0
+offset_right = 116.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tower"
+
+[node name="Mechanics" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture_normal = ExtResource("10_kl0m7")
+texture_pressed = ExtResource("11_i43u8")
+texture_hover = ExtResource("12_burhb")
+stretch_mode = 3
+script = ExtResource("8_wmvuk")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/Mechanics"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -33.0
+offset_right = 187.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mechanics"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -190.0
+offset_right = 373.0
+offset_bottom = 52.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("9_xxuf4")
+texture_pressed = ExtResource("10_8xxkb")
+texture_hover = ExtResource("11_cxgn0")
+stretch_mode = 3
+script = ExtResource("8_wmvuk")
+
+[node name="Label" type="Label" parent="Control/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[connection signal="button_up" from="Control/HBoxContainer/Enemy" to="." method="_on_enemy_button_up"]
+[connection signal="button_up" from="Control/HBoxContainer/Tower" to="." method="_on_tower_button_up"]
+[connection signal="button_up" from="Control/HBoxContainer/Mechanics" to="." method="_on_mechanics_button_up"]
+[connection signal="button_up" from="Control/BackButton" to="." method="_on_back_button_up"]

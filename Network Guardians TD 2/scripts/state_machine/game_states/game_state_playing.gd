@@ -7,6 +7,11 @@ func _ready():
 	playing_ui_node.pause.connect(_on_pause)
 	playing_ui_node.start_next_wave.connect(_on_start_next_wave)
 	SignalManager.defeat.connect(_on_defeat)
+	SignalManager.wiki_shop_button.connect(_on_wiki_shop_button)
+	
+func _on_wiki_shop_button():
+	state_transition.emit(self, "Options")
+	SignalManager.enter_wiki.emit()
 	
 func _on_reset():
 	playing_ui_node.deselect()

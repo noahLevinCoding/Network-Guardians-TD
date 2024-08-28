@@ -3,18 +3,18 @@
 [ext_resource type="Script" path="res://scripts/ui/map_selection.gd" id="1_dy4tp"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="3_xstd2"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="4_kwx0j"]
-[ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 6.png" id="4_ocnxw"]
-[ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 5.png" id="5_4j31n"]
-[ext_resource type="Texture2D" uid="uid://c7ujwxf5n13cc" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_4.png" id="5_judbg"]
-[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="6_ch0o5"]
+[ext_resource type="Texture2D" uid="uid://bkcfxeqqfcwf7" path="res://assets/ui/buttons/map_buttons/normal/Map1_normal.png" id="4_wkq8r"]
+[ext_resource type="Texture2D" uid="uid://c6vxl0tj3wsre" path="res://assets/ui/buttons/map_buttons/pressed/Map1_pressed.png" id="5_x8b1f"]
+[ext_resource type="Texture2D" uid="uid://dtjgq74qkch5" path="res://assets/ui/buttons/map_buttons/hovered/Map1_hovered.png" id="6_ngnci"]
 [ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="7_g0gsu"]
-[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="7_i2khu"]
-[ext_resource type="Texture2D" uid="uid://d0yvvo8ggm0d4" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 3.png" id="8_ocm2y"]
-[ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="8_r3emf"]
-[ext_resource type="Texture2D" uid="uid://dm1afjlptkexq" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 3.png" id="9_hktef"]
+[ext_resource type="Texture2D" uid="uid://j5pdjct4p1qu" path="res://assets/ui/buttons/map_buttons/normal/Map2_normal.png" id="8_ux2bf"]
+[ext_resource type="Texture2D" uid="uid://iegwkdottskq" path="res://assets/ui/buttons/map_buttons/pressed/Map2_pressed.png" id="9_uu4wo"]
 [ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="10_5svsm"]
+[ext_resource type="Texture2D" uid="uid://cyf1lblv3gmv4" path="res://assets/ui/buttons/map_buttons/hovered/Map2_hovered.png" id="10_ypxiw"]
+[ext_resource type="Texture2D" uid="uid://csxsh56un5ckx" path="res://assets/ui/buttons/map_buttons/normal/Map3_normal.png" id="11_1rf7j"]
 [ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="11_blqfp"]
-[ext_resource type="Texture2D" uid="uid://ddqhyad85sx64" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_6.png" id="11_nwjy4"]
+[ext_resource type="Texture2D" uid="uid://b1v6i2uecj4sv" path="res://assets/ui/buttons/map_buttons/pressed/Map3_pressed.png" id="12_45vvu"]
+[ext_resource type="Texture2D" uid="uid://c00kw8jbqa88" path="res://assets/ui/buttons/map_buttons/hovered/Map3_hovered.png" id="13_cwmp0"]
 [ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="14_aoare"]
 
 [sub_resource type="Theme" id="Theme_ky1tb"]
@@ -61,29 +61,11 @@ grow_vertical = 2
 scale = Vector2(1, 2)
 pivot_offset = Vector2(232, 121)
 keep_pressed_outside = true
-texture_normal = ExtResource("4_ocnxw")
-texture_pressed = ExtResource("5_judbg")
-texture_hover = ExtResource("5_4j31n")
+texture_normal = ExtResource("4_wkq8r")
+texture_pressed = ExtResource("5_x8b1f")
+texture_hover = ExtResource("6_ngnci")
 stretch_mode = 3
 script = ExtResource("7_g0gsu")
-
-[node name="Label" type="Label" parent="Control/Map1Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -106.5
-offset_top = -19.0
-offset_right = 85.5
-offset_bottom = 47.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 0.5)
-text = "Map 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Map2Button" type="TextureButton" parent="Control"]
 layout_mode = 1
@@ -101,29 +83,11 @@ grow_vertical = 2
 scale = Vector2(1, 2)
 pivot_offset = Vector2(232, 121)
 keep_pressed_outside = true
-texture_normal = ExtResource("6_ch0o5")
-texture_pressed = ExtResource("8_r3emf")
-texture_hover = ExtResource("7_i2khu")
+texture_normal = ExtResource("8_ux2bf")
+texture_pressed = ExtResource("9_uu4wo")
+texture_hover = ExtResource("10_ypxiw")
 stretch_mode = 3
 script = ExtResource("7_g0gsu")
-
-[node name="Label" type="Label" parent="Control/Map2Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -106.0
-offset_top = -16.5
-offset_right = 112.0
-offset_bottom = 49.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 0.5)
-text = "Map 2"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Map3Button" type="TextureButton" parent="Control"]
 layout_mode = 1
@@ -141,29 +105,11 @@ grow_vertical = 2
 scale = Vector2(1, 2)
 pivot_offset = Vector2(232, 121)
 keep_pressed_outside = true
-texture_normal = ExtResource("8_ocm2y")
-texture_pressed = ExtResource("11_nwjy4")
-texture_hover = ExtResource("9_hktef")
+texture_normal = ExtResource("11_1rf7j")
+texture_pressed = ExtResource("12_45vvu")
+texture_hover = ExtResource("13_cwmp0")
 stretch_mode = 3
 script = ExtResource("7_g0gsu")
-
-[node name="Label" type="Label" parent="Control/Map3Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.5
-offset_top = -20.5
-offset_right = 133.5
-offset_bottom = 45.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 0.5)
-text = "Map 3"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="Control"]
 layout_mode = 1
