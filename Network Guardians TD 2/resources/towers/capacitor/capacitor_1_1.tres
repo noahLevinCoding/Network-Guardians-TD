@@ -1,24 +1,32 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=7 format=3 uid="uid://f3lniwffu7bs"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://f3lniwffu7bs"]
 
 [ext_resource type="Resource" uid="uid://dqjpl8v647djn" path="res://resources/towers/capacitor/bullets/bullet_capacitor_4.tres" id="1_02or5"]
+[ext_resource type="Script" path="res://scripts/effects/bullet_effects/explosion_bullet_effect_resource.gd" id="1_im5cy"]
 [ext_resource type="Shape2D" uid="uid://ecwtu2x7uf45" path="res://resources/towers/capacitor/capacitor_place_shape.tres" id="2_5xbh8"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_7nrpw"]
 [ext_resource type="SpriteFrames" uid="uid://ca046gctklphf" path="res://resources/towers/capacitor/sprite frames/capacitor_1_1_sprite_frames.tres" id="5_rmv3o"]
+[ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="6_1ujpt"]
 [ext_resource type="Resource" uid="uid://dqto4xdufpi15" path="res://resources/towers/capacitor/capacitor_2_1.tres" id="6_uls1y"]
 [ext_resource type="Resource" uid="uid://dmmlmyf0vkhjp" path="res://resources/towers/capacitor/capacitor_1_2.tres" id="7_kdlnq"]
+[ext_resource type="Texture2D" uid="uid://c4jwpsib5juwb" path="res://assets/ui/shop_icons/camo_reveal_icon.png" id="8_h5qoq"]
+
+[sub_resource type="Resource" id="Resource_po15t"]
+script = ExtResource("1_im5cy")
+radius = 75.0
 
 [resource]
 script = ExtResource("3_7nrpw")
 name = "Capacitor  1 | 1"
 damage_type = 2
-attack_damage = 5.0
-attack_speed = 0.2
+attack_damage = 4.0
+attack_speed = 0.6
 attack_range = 200.0
-pierce = 2
-number_of_targets = 1
-power = 5
-temperature_increase = 2.0
+pierce = 14
+number_of_targets = 2
+power = 8
+temperature_increase = 8.0
 bullet_speed = 1000.0
+bullet_effect = SubResource("Resource_po15t")
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = false
@@ -26,14 +34,15 @@ extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_rmv3o")
 place_col_shape = ExtResource("2_5xbh8")
 bullet_visual_resource = ExtResource("1_02or5")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_1ujpt")
+upgrade_path_1_description = "Increases explosion radius and attack damage"
+upgrade_path_1_price_easy = 1035
+upgrade_path_1_price_medium = 1200
+upgrade_path_1_price_hard = 1290
 upgrade_path_1_tower_resource = ExtResource("6_uls1y")
-upgrade_path_2_description = ""
-upgrade_path_2_price_easy = 0
-upgrade_path_2_price_medium = 0
-upgrade_path_2_price_hard = 0
+upgrade_path_2_icon = ExtResource("8_h5qoq")
+upgrade_path_2_description = "Increases attack speed, range and targets. Gives camo vision"
+upgrade_path_2_price_easy = 780
+upgrade_path_2_price_medium = 900
+upgrade_path_2_price_hard = 965
 upgrade_path_2_tower_resource = ExtResource("7_kdlnq")
-wiki_index = 4

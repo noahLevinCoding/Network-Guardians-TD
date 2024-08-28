@@ -1,37 +1,46 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=6 format=3 uid="uid://bd5w462iklkuu"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=10 format=3 uid="uid://bd5w462iklkuu"]
 
 [ext_resource type="Resource" uid="uid://cjf2c6gatt1m5" path="res://resources/towers/capacitor/bullets/bullet_capacitor_5.tres" id="1_o75ia"]
+[ext_resource type="Script" path="res://scripts/effects/bullet_effects/explosion_bullet_effect_resource.gd" id="1_rx6i6"]
 [ext_resource type="Shape2D" uid="uid://ecwtu2x7uf45" path="res://resources/towers/capacitor/capacitor_place_shape.tres" id="2_um8cx"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="3_qs5b5"]
 [ext_resource type="SpriteFrames" uid="uid://dydr53tyi5q8e" path="res://resources/towers/capacitor/sprite frames/capacitor_0_2_sprite_frames.tres" id="5_dcn7h"]
+[ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="6_bqdmv"]
 [ext_resource type="Resource" uid="uid://dmmlmyf0vkhjp" path="res://resources/towers/capacitor/capacitor_1_2.tres" id="6_oqlgk"]
+[ext_resource type="Texture2D" uid="uid://tkhnmxvedtg7" path="res://assets/ui/shop_icons/max_upgrade_shop_icon.png" id="8_70q6v"]
+
+[sub_resource type="Resource" id="Resource_cpth1"]
+script = ExtResource("1_rx6i6")
+radius = 50.0
 
 [resource]
 script = ExtResource("3_qs5b5")
 name = "Capacitor  0 | 2"
 damage_type = 2
-attack_damage = 5.0
-attack_speed = 0.2
-attack_range = 200.0
-pierce = 2
-number_of_targets = 1
-power = 5
-temperature_increase = 2.0
+attack_damage = 2.0
+attack_speed = 0.9
+attack_range = 250.0
+pierce = 14
+number_of_targets = 3
+power = 8
+temperature_increase = 8.0
 bullet_speed = 1000.0
+bullet_effect = SubResource("Resource_cpth1")
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
-can_see_camo = false
+can_see_camo = true
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_dcn7h")
 place_col_shape = ExtResource("2_um8cx")
 bullet_visual_resource = ExtResource("1_o75ia")
-upgrade_path_1_description = ""
-upgrade_path_1_price_easy = 0
-upgrade_path_1_price_medium = 0
-upgrade_path_1_price_hard = 0
+upgrade_path_1_icon = ExtResource("6_bqdmv")
+upgrade_path_1_description = "Increases attack damage and explosion radius"
+upgrade_path_1_price_easy = 550
+upgrade_path_1_price_medium = 650
+upgrade_path_1_price_hard = 700
 upgrade_path_1_tower_resource = ExtResource("6_oqlgk")
+upgrade_path_2_icon = ExtResource("8_70q6v")
 upgrade_path_2_description = "Max"
 upgrade_path_2_price_easy = 0
 upgrade_path_2_price_medium = 0
 upgrade_path_2_price_hard = 0
-wiki_index = 4
