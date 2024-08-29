@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c344pnvxy0q6o"]
+[gd_scene load_steps=11 format=3 uid="uid://wbwprlc5mm6l"]
 
 [ext_resource type="Script" path="res://scripts/ui/wiki_enemy.gd" id="1_sx14x"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_hw50g"]

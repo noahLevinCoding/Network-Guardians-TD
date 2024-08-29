@@ -24,7 +24,7 @@ layer_2/tile_data = PackedInt32Array(1966079, 65537, 1, 1900544, 65537, 1, 19005
 curve = SubResource("Curve2D_w584v")
 
 [node name="powerSupply" parent="." index="4"]
-position = Vector2(236, 432)
+position = Vector2(236, 503)
 
 [node name="Cooler" parent="." index="5"]
 position = Vector2(1192, 731)

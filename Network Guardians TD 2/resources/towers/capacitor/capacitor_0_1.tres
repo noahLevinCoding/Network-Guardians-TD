@@ -46,4 +46,4 @@ upgrade_path_2_price_easy = 780
 upgrade_path_2_price_medium = 900
 upgrade_path_2_price_hard = 965
 upgrade_path_2_tower_resource = ExtResource("7_a3fwa")
-wiki_index = 0
+wiki_index = 4

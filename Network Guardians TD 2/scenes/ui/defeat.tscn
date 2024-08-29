@@ -30,6 +30,7 @@ offset_bottom = 1080.0
 theme = SubResource("Theme_ctlg0")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.666667)

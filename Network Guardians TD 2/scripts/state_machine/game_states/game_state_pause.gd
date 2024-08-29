@@ -21,6 +21,8 @@ func enter():
 	infinite_video.video_stream_player.paused = false
 	infinite_video.visible = true
 	
+	pause_node.set_highscore(GameManager.highscore)
+	
 	
 func exit():
 	print("Exit GameState Pause")

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PowerSupplyResource" load_steps=4 format=3 uid="uid://dpd2ecwq82rx1"]
+[gd_resource type="Resource" script_class="PowerSupplyResource" load_steps=5 format=3 uid="uid://dpd2ecwq82rx1"]
 
 [ext_resource type="Script" path="res://scripts/power_supply/power_supply_resource.gd" id="1_xiss7"]
+[ext_resource type="Shape2D" uid="uid://c5sti0tp0vx04" path="res://resources/power_supply/place_shape.tres" id="1_xm7c7"]
 [ext_resource type="Texture2D" uid="uid://dvmfl2mc3v7i1" path="res://assets/power_supply/psu_3.png" id="2_1x3ct"]
 [ext_resource type="Resource" uid="uid://bu1qrx87ym5x7" path="res://resources/power_supply/power_supply_4.tres" id="3_qgxpn"]
 
@@ -9,6 +10,7 @@ script = ExtResource("1_xiss7")
 name = ""
 shop_icon = ExtResource("2_1x3ct")
 texture = ExtResource("2_1x3ct")
+col_shape = ExtResource("1_xm7c7")
 max_power = 150
 upgrade_power_supply_resource = ExtResource("3_qgxpn")
 upgrade_price_easy = 2210

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyjglrb3udyb2"]
+[gd_scene load_steps=20 format=3 uid="uid://cyjglrb3udyb2"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause.gd" id="1_u6d3p"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_2ojuk"]
@@ -25,8 +25,12 @@ default_font_size = 70
 default_font = ExtResource("3_vocin")
 default_font_size = 100
 
-[node name="Pause" type="Node2D"]
+[sub_resource type="Theme" id="Theme_s3ajt"]
+default_font_size = 40
+
+[node name="Pause" type="Node2D" node_paths=PackedStringArray("highscore_label")]
 script = ExtResource("1_u6d3p")
+highscore_label = NodePath("Control/Highscore")
 
 [node name="Control" type="Control" parent="."]
 z_index = 10
@@ -49,6 +53,23 @@ grow_horizontal = 2
 theme = SubResource("Theme_2apop")
 text = "Pause"
 
+[node name="Highscore" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -225.0
+offset_right = 222.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_s3ajt")
+text = "HIGHSCORE: 0"
+horizontal_alignment = 1
+
 [node name="GridContainer" type="GridContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -56,10 +77,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -370.0
-offset_top = -110.0
-offset_right = 696.0
-offset_bottom = 454.0
+offset_left = -380.0
+offset_top = -90.0
+offset_right = 706.0
+offset_bottom = 474.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)

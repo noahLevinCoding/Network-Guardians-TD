@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PowerSupplyResource" load_steps=5 format=3 uid="uid://cmpreo3cvu01f"]
 
-[ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/shapes/virus_shape.tres" id="1_fnu3x"]
+[ext_resource type="Shape2D" uid="uid://c5sti0tp0vx04" path="res://resources/power_supply/place_shape.tres" id="1_cctun"]
 [ext_resource type="Script" path="res://scripts/power_supply/power_supply_resource.gd" id="2_c1a57"]
 [ext_resource type="Texture2D" uid="uid://dyoocmw6i4sm1" path="res://assets/power_supply/psu_2.png" id="3_vm4nk"]
 [ext_resource type="Resource" uid="uid://dpd2ecwq82rx1" path="res://resources/power_supply/power_supply_3.tres" id="4_8dvt3"]
@@ -10,7 +10,7 @@ script = ExtResource("2_c1a57")
 name = ""
 shop_icon = ExtResource("3_vm4nk")
 texture = ExtResource("3_vm4nk")
-col_shape = ExtResource("1_fnu3x")
+col_shape = ExtResource("1_cctun")
 max_power = 80
 upgrade_power_supply_resource = ExtResource("4_8dvt3")
 upgrade_price_easy = 765
