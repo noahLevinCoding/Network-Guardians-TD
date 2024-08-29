@@ -16,6 +16,14 @@ func enter():
 	GameManager.is_paused = true
 	GameManager.delete_save_file()
 	
+	if GameManager.wave_index > GameManager.highscore:
+		GameManager.save_highscore()
+		
+	
+	defeat_node.set_score(GameManager.wave_index)
+	defeat_node.set_highscore(GameManager.highscore)
+
+	
 func _on_back_to_titlescreen():
 	state_transition.emit(self, "Titlescreen")
 	

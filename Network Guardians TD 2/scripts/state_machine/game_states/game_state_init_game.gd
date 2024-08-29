@@ -11,6 +11,7 @@ func enter():
 	SignalManager.init_game.emit()
 	
 	GameManager.load_game()
+	GameManager.load_highscore()
 	
 	
 	state_transition.emit(self, "Playing")

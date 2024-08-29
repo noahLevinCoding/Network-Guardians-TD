@@ -1,37 +1,141 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc5c306uo8oa0"]
+[gd_scene load_steps=10 format=3 uid="uid://bc5c306uo8oa0"]
 
 [ext_resource type="Script" path="res://scripts/ui/defeat.gd" id="1_ysp4r"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_jctbu"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_xrbib"]
+[ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="4_t1plo"]
+[ext_resource type="Texture2D" uid="uid://hqxffkgnt4ar" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_5.png" id="5_58q25"]
+[ext_resource type="Texture2D" uid="uid://cc2b7qd4rwuiu" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy.png" id="6_lgteq"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="7_jnn85"]
 
-[node name="Defeat" type="Node2D"]
+[sub_resource type="Theme" id="Theme_ctlg0"]
+default_font = ExtResource("2_jctbu")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_ve2rn"]
+default_font = ExtResource("3_xrbib")
+default_font_size = 100
+
+[node name="Defeat" type="Node2D" node_paths=PackedStringArray("score_label", "highscore_label")]
 visible = false
 script = ExtResource("1_ysp4r")
+score_label = NodePath("Control/ScoreLabel")
+highscore_label = NodePath("Control/HighscoreLabel")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(1, 1, 1, 0.0784314)
+theme = SubResource("Theme_ctlg0")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 741.0
-offset_top = 213.0
-offset_right = 1003.0
-offset_bottom = 321.0
-theme_override_font_sizes/font_size = 70
+[node name="ColorRect" type="ColorRect" parent="Control"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Heading" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 133.0
+offset_right = 180.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme = SubResource("Theme_ve2rn")
 text = "DEFEAT"
 
-[node name="RestartButton" type="Button" parent="."]
-offset_left = 772.0
-offset_top = 400.0
-offset_right = 973.0
-offset_bottom = 502.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -365.0
+offset_top = -350.0
+offset_right = 663.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+theme_override_constants/separation = 100
+
+[node name="RestartButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_t1plo")
+texture_pressed = ExtResource("5_58q25")
+texture_hover = ExtResource("6_lgteq")
+script = ExtResource("7_jnn85")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/RestartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -33.0
+offset_right = 150.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Restart"
 
-[node name="BackToTitlescreenButton" type="Button" parent="."]
-offset_left = 708.0
-offset_top = 544.0
-offset_right = 1026.0
-offset_bottom = 643.0
-text = "Back to titlescreen"
+[node name="BackToTitlescreenButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_t1plo")
+texture_pressed = ExtResource("5_58q25")
+texture_hover = ExtResource("6_lgteq")
+script = ExtResource("7_jnn85")
 
-[connection signal="button_up" from="RestartButton" to="." method="_on_restart_button_up"]
-[connection signal="button_up" from="BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]
+[node name="Label" type="Label" parent="Control/HBoxContainer/BackToTitlescreenButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -33.0
+offset_right = 212.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Titlescreen"
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -120.0
+offset_right = 147.5
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 0"
+
+[node name="HighscoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -33.0
+offset_right = 222.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HIGHSCORE: 0"
+
+[connection signal="button_up" from="Control/HBoxContainer/RestartButton" to="." method="_on_restart_button_up"]
+[connection signal="button_up" from="Control/HBoxContainer/BackToTitlescreenButton" to="." method="_on_back_to_titlescreen_button_up"]
