@@ -1,3 +1,4 @@
 class_name Wave
+extends Resource
 
-var wave_groups : Array = []
+@export var wave_groups : Array[WaveGroup] = []

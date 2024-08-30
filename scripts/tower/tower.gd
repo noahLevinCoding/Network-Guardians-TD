@@ -1,70 +1,74 @@
 class_name Tower
 extends Node2D
 
-const ENEMY_LAYER = 1
-const TOWER_LAYER = 2
+var tower_resource : TowerResource	
+var select_shader_color : Color = Color(1,1,1,1)
 
-var towers = []
-var enemies = []
+var sell_value : int
 
-var current_enemy_target = null
-var current_enemy_target_progress_ratio := 0.0
+var buffs : Array[TowerEffect]
 
-@onready var shoot_timer = %ShootTimer
-@onready var animated_sprite_2d = %AnimatedSprite2D
+var has_camo_vision_effect : bool = false
 
-
-@export_file("*.tscn") var bullet_scene_path : String = ""
-@onready var bullet_scene : PackedScene = load(bullet_scene_path)
-
-var is_idle = true
-
-func _on_area_2d_area_entered(area):
-	
-	if(area.collision_layer == ENEMY_LAYER):
-		enemies.append(area.owner)
-		
-		if is_idle:
-			shoot()
-			shoot_timer.start()
-			animated_sprite_2d.play("shooting")
-			is_idle = false
-		
-	elif(area.collision_layer == TOWER_LAYER):
-		towers.append(area.owner)
-
-
-func _on_area_2d_area_exited(area):
-	if(area.collision_layer == ENEMY_LAYER):
-		enemies.erase(area.owner)
-		if area.owner == current_enemy_target:
-			current_enemy_target = null
-	elif(area.collision_layer == TOWER_LAYER):
-		towers.erase(area.owner)
-		
-		
-func select_target():
-	if current_enemy_target == null:
-		current_enemy_target_progress_ratio = -1.0
-	
-	for enemy in enemies:
-		if enemy.progress_ratio >= current_enemy_target_progress_ratio:
-			current_enemy_target = enemy
-			current_enemy_target_progress_ratio = enemy.progress_ratio
+var attack_damage_additive : float = 0
+var attack_damage_multiplicative : float = 1.0
+var attack_speed_additive : float = 0 :
+	set(value):
+		if attack_speed_additive != value:
+			attack_speed_additive = value
+			init_attack_speed()
 			
+var attack_speed_multiplicative : float = 1.0 :
+	set(value):
+		if attack_speed_multiplicative != value:
+			attack_speed_multiplicative = value
+			init_attack_speed()
+var attack_range_additive : float = 0 : 
+	set(value):
+		if attack_range_additive != value:
+			attack_range_additive = value
+			init_attack_range()
+var attack_range_multiplicative : float = 1.0 :
+	set(value):
+		if attack_range_multiplicative != value:
+			attack_range_multiplicative = value
+			init_attack_range()
+var pierce_additive : float = 0 
+var pierce_multiplicative : float = 1.0
 
-func shoot():
-	select_target()
-	if current_enemy_target != null:
-		var bullet_instance = bullet_scene.instantiate()
-		bullet_instance.target = current_enemy_target
-		add_child(bullet_instance)
-	elif enemies.size() == 0:
-		is_idle = true
-		animated_sprite_2d.play("idle")
-		shoot_timer.stop()
+func upgrade(path : int, price : int):
+	if path == 1:
+		tower_resource = tower_resource.upgrade_path_1_tower_resource
+		init_resource()
+	elif path == 2:
+		tower_resource = tower_resource.upgrade_path_2_tower_resource
+		init_resource()
 		
-	
+	sell_value += int(price / 2.0)
+		
+func init_resource():
+	print("test")
+	pass
 
-func _on_shoot_timer_timeout():
-	shoot()
+func reset_buff_parameters():
+	has_camo_vision_effect = false
+	
+	attack_damage_additive = 0
+	attack_damage_multiplicative = 1.0
+	attack_speed_additive = 0
+	attack_speed_multiplicative = 1.0
+	attack_range_additive = 0
+	attack_range_multiplicative = 1.0
+	pierce_additive = 0
+	pierce_multiplicative = 1.0
+
+func apply_buff_parameters():
+	for buff in buffs:
+		buff.apply_effect(self)
+
+
+func init_attack_speed():
+	pass
+	
+func init_attack_range():
+	pass
