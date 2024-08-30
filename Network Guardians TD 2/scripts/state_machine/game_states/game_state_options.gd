@@ -15,6 +15,8 @@ func enter():
 	infinite_video.video_stream_player.paused = false
 	infinite_video.visible = true
 	
+	SignalManager.pause_game.emit()
+	
 func exit():
 	print("Exit GameStateOption")
 	options_node.visible = false
