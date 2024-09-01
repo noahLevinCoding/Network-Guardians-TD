@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://mkq35rnq6n3x"]
+[gd_scene load_steps=34 format=3 uid="uid://mkq35rnq6n3x"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
@@ -25,13 +25,14 @@
 [ext_resource type="AudioStream" uid="uid://dy3lhb3ii4fd2" path="res://assets/sfx/button_sfx/button_19.mp3" id="22_41jje"]
 [ext_resource type="AudioStream" uid="uid://pa765rcpv4f5" path="res://assets/sfx/button_sfx/button_30.mp3" id="22_fs4c3"]
 [ext_resource type="AudioStream" uid="uid://db27lhmk6yoi2" path="res://assets/sfx/button_sfx/button_15.mp3" id="23_w8vsj"]
-[ext_resource type="AudioStream" uid="uid://dwbwcrtfowbp5" path="res://assets/sfx/button_sfx/button_13.mp3" id="24_y0470"]
 [ext_resource type="Script" path="res://scripts/audio/audio_stream_player_enemy_death.gd" id="25_3gwqs"]
 [ext_resource type="AudioStream" uid="uid://dwetla32ffxe5" path="res://assets/sfx/button_sfx/button_11_1.mp3" id="25_n5ikq"]
 [ext_resource type="AudioStream" uid="uid://mi8t1pfjkir6" path="res://assets/sfx/button_sfx/button_11_2.mp3" id="25_sqr65"]
 [ext_resource type="AudioStream" uid="uid://cdmesoh325gco" path="res://assets/sfx/button_sfx/money_1.mp3" id="27_4sval"]
 [ext_resource type="AudioStream" uid="uid://b10ceyyhkllb3" path="res://assets/sfx/button_sfx/money_2.mp3" id="28_afyax"]
+[ext_resource type="AudioStream" uid="uid://d3efu14br3i3r" path="res://assets/sfx/enemy_die.mp3" id="30_bqi3j"]
 [ext_resource type="AudioStream" uid="uid://cpexqrw427xny" path="res://assets/sfx/button_sfx/button_26.mp3" id="30_txvme"]
+[ext_resource type="AudioStream" uid="uid://d0xabonpa6yas" path="res://assets/sfx/wave_over.mp3" id="33_cht7g"]
 
 [node name="Main" type="Node2D"]
 
@@ -147,7 +148,7 @@ shop_hover_sound = ExtResource("23_w8vsj")
 volume_db = -30.0
 bus = &"SFX"
 script = ExtResource("25_3gwqs")
-death_sound = ExtResource("24_y0470")
+death_sound = ExtResource("30_bqi3j")
 upgrade_click_sound = ExtResource("27_4sval")
 tower_sell_sound = ExtResource("28_afyax")
-wave_finished_sound = ExtResource("27_4sval")
+wave_finished_sound = ExtResource("33_cht7g")

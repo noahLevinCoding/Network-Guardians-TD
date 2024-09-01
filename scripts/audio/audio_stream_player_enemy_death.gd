@@ -13,8 +13,9 @@ func _ready():
 
 	
 func _on_enemy_death():
-	stream = death_sound
-	play()
+	if not self.is_playing():
+		stream = death_sound
+		play()
 	
 func _on_wave_finished():
 	reset_db()
