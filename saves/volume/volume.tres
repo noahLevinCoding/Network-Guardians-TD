@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ju544")
-master_value = 0.65
-music_value = 0.2
+master_value = 0.6
+music_value = 0.6
 sfx_value = 1.0
 ui_value = 1.0

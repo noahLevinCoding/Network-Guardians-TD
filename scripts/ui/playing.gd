@@ -80,6 +80,8 @@ func _on_wave_finished():
 	wave_status_label.text = "Start next wave"
 
 	if auto_start_enabled:
+		#prevent the start signal being received before the finished signal
+		await get_tree().create_timer(0.5).timeout
 		start_next_wave.emit()
 
 func _on_game_speed_toggle(toggled_on):
