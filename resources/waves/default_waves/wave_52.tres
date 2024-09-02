@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=10 format=3 uid="uid://t1kf6f5njqrs"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_h4kli"]
+[ext_resource type="Resource" uid="uid://bfih8ffsca7je" path="res://resources/enemies/normal/virus_11_rainbow.tres" id="2_bc2ik"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_y4o2k"]
+[ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="4_t13c7"]
+[ext_resource type="Resource" uid="uid://yll6f0d6jyog" path="res://resources/enemies/normal/virus_12_ceramic.tres" id="5_wnmtc"]
+
+[sub_resource type="Resource" id="Resource_jq2fy"]
+script = ExtResource("3_y4o2k")
+enemy_resource = ExtResource("2_bc2ik")
+enemy_count = 25
+time_between_enemies = 0.5
+time_after_wave_group = 1.0
+
+[sub_resource type="Resource" id="Resource_ff5wf"]
+script = ExtResource("3_y4o2k")
+enemy_resource = ExtResource("4_t13c7")
+enemy_count = 1
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_l717f"]
+script = ExtResource("3_y4o2k")
+enemy_resource = ExtResource("5_wnmtc")
+enemy_count = 10
+time_between_enemies = 0.6
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_hlggr"]
+script = ExtResource("3_y4o2k")
+enemy_resource = ExtResource("4_t13c7")
+enemy_count = 1
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_h4kli")
+wave_groups = Array[ExtResource("3_y4o2k")]([SubResource("Resource_jq2fy"), SubResource("Resource_ff5wf"), SubResource("Resource_l717f"), SubResource("Resource_hlggr")])

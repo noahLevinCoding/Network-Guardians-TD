@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=12 format=3 uid="uid://d4mc3u24mtm7o"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_kwyvp"]
+[ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="2_xad6s"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_dm8w4"]
+[ext_resource type="Resource" uid="uid://brybscoositae" path="res://resources/enemies/fortified/virus_9_light_F.tres" id="4_8ehie"]
+[ext_resource type="Resource" uid="uid://cuunjbmjo28do" path="res://resources/enemies/normal/virus_1_orange.tres" id="5_c3y5v"]
+[ext_resource type="Resource" uid="uid://yll6f0d6jyog" path="res://resources/enemies/normal/virus_12_ceramic.tres" id="5_sfvj0"]
+
+[sub_resource type="Resource" id="Resource_jq2fy"]
+script = ExtResource("3_dm8w4")
+enemy_resource = ExtResource("2_xad6s")
+enemy_count = 1
+time_between_enemies = 0.0
+time_after_wave_group = 3.0
+
+[sub_resource type="Resource" id="Resource_wrjp3"]
+script = ExtResource("3_dm8w4")
+enemy_resource = ExtResource("4_8ehie")
+enemy_count = 8
+time_between_enemies = 0.8
+time_after_wave_group = 2.0
+
+[sub_resource type="Resource" id="Resource_sstof"]
+script = ExtResource("3_dm8w4")
+enemy_resource = ExtResource("5_c3y5v")
+enemy_count = 20
+time_between_enemies = 0.1
+time_after_wave_group = 2.0
+
+[sub_resource type="Resource" id="Resource_cg86g"]
+script = ExtResource("3_dm8w4")
+enemy_resource = ExtResource("5_sfvj0")
+enemy_count = 20
+time_between_enemies = 0.5
+time_after_wave_group = 2.0
+
+[sub_resource type="Resource" id="Resource_giddn"]
+script = ExtResource("3_dm8w4")
+enemy_resource = ExtResource("2_xad6s")
+enemy_count = 1
+time_between_enemies = 0.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_kwyvp")
+wave_groups = Array[ExtResource("3_dm8w4")]([SubResource("Resource_jq2fy"), SubResource("Resource_wrjp3"), SubResource("Resource_sstof"), SubResource("Resource_cg86g"), SubResource("Resource_giddn")])

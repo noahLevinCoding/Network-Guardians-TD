@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=13 format=3 uid="uid://blqecw2t2bdda"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_4ubdh"]
+[ext_resource type="Resource" uid="uid://dllletlqjc145" path="res://resources/enemies/normal/virus_10_zebra.tres" id="2_6wgdr"]
+[ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="2_ojjh0"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_8gw1y"]
+[ext_resource type="Resource" uid="uid://bfih8ffsca7je" path="res://resources/enemies/normal/virus_11_rainbow.tres" id="4_2rpmd"]
+[ext_resource type="Resource" uid="uid://yll6f0d6jyog" path="res://resources/enemies/normal/virus_12_ceramic.tres" id="5_q4xfy"]
+[ext_resource type="Resource" uid="uid://bsbld377t2loa" path="res://resources/enemies/normal/trojan_2_red.tres" id="7_85s85"]
+
+[sub_resource type="Resource" id="Resource_mali3"]
+script = ExtResource("3_8gw1y")
+enemy_resource = ExtResource("2_6wgdr")
+enemy_count = 100
+time_between_enemies = 0.4
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_b4syq"]
+script = ExtResource("3_8gw1y")
+enemy_resource = ExtResource("4_2rpmd")
+enemy_count = 70
+time_between_enemies = 0.3
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_863c6"]
+script = ExtResource("3_8gw1y")
+enemy_resource = ExtResource("5_q4xfy")
+enemy_count = 50
+time_between_enemies = 0.3
+time_after_wave_group = 2.0
+
+[sub_resource type="Resource" id="Resource_0qppy"]
+script = ExtResource("3_8gw1y")
+enemy_resource = ExtResource("2_ojjh0")
+enemy_count = 3
+time_between_enemies = 1.0
+time_after_wave_group = 15.0
+
+[sub_resource type="Resource" id="Resource_83dmr"]
+script = ExtResource("3_8gw1y")
+enemy_resource = ExtResource("7_85s85")
+enemy_count = 2
+time_between_enemies = 2.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_4ubdh")
+wave_groups = Array[ExtResource("3_8gw1y")]([SubResource("Resource_mali3"), SubResource("Resource_b4syq"), SubResource("Resource_863c6"), SubResource("Resource_0qppy"), SubResource("Resource_83dmr")])

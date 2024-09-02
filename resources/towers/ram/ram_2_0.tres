@@ -52,4 +52,4 @@ upgrade_path_2_price_easy = 425
 upgrade_path_2_price_medium = 500
 upgrade_path_2_price_hard = 540
 upgrade_path_2_tower_resource = ExtResource("6_15t5e")
-wiki_index = 5
+wiki_index = 6

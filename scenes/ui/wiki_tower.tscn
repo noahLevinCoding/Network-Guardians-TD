@@ -31,7 +31,7 @@ default_font_size = 100
 z_index = 7
 script = ExtResource("1_jbex2")
 texture_rect = NodePath("Control/ScrollContainer/TextureRect")
-tower_entries = Array[Texture2D]([ExtResource("4_av5g0"), ExtResource("3_cavg3"), ExtResource("4_1fool"), ExtResource("5_a0poa"), ExtResource("6_slb08"), ExtResource("7_y2uf6"), ExtResource("8_d7fmn"), ExtResource("9_leh88")])
+tower_entries = Array[Texture2D]([ExtResource("4_av5g0"), ExtResource("3_cavg3"), ExtResource("5_a0poa"), ExtResource("6_slb08"), ExtResource("4_1fool"), ExtResource("8_d7fmn"), ExtResource("7_y2uf6"), ExtResource("9_leh88")])
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

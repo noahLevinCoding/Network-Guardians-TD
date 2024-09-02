@@ -46,4 +46,4 @@ upgrade_path_2_price_easy = 1700
 upgrade_path_2_price_medium = 2000
 upgrade_path_2_price_hard = 2160
 upgrade_path_2_tower_resource = ExtResource("6_s7pvr")
-wiki_index = 5
+wiki_index = 6
