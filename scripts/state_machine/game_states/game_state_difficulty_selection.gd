@@ -28,3 +28,7 @@ func _on_set_difficulty(difficulty : int):
 func _on_back():
 	state_transition.emit(self, "MapSelection")
 	
+func on_escape():
+	SignalManager.on_button_click.emit()
+	_on_back()
+

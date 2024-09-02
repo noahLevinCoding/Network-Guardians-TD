@@ -26,3 +26,6 @@ func exit():
 func _on_back():
 	back_transition.emit(self)
 	
+func on_escape():
+	options_node.on_escape()
+

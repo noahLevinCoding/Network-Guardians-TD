@@ -28,9 +28,11 @@ func _on_wiki_tower_button(wiki_tower_index : int):
 func _on_reset():
 	playing_ui_node.deselect()
 	
-func update(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		_on_pause()
+		
+func on_escape():
+	SignalManager.on_button_click.emit()
+	_on_pause()
+
 
 func enter():
 	print("Enter GameState Playing")
@@ -52,3 +54,5 @@ func _on_start_next_wave():
 	
 func _on_defeat():
 	state_transition.emit(self, "Defeat")
+
+

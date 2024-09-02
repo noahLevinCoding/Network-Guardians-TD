@@ -19,6 +19,7 @@ extends Node2D
 var save_folder_path : String = "res://saves/volume"
 
 var wiki_scene_instance = null
+var credit_scene_instance = null
 
 signal back
 	
@@ -109,3 +110,14 @@ func load_volume():
 	music_slider.value = volume_resource.music_value
 	sfx_slider.value = volume_resource.sfx_value
 	ui_slider.value = volume_resource.ui_value
+
+
+func on_escape():
+	if wiki_scene_instance == null and credit_scene_instance == null:
+		SignalManager.on_button_click.emit()
+		_on_back_button_up()
+	elif wiki_scene_instance != null:
+		wiki_scene_instance.on_escape()
+	else:
+		pass
+		#credit_scene_instance.on_escape()

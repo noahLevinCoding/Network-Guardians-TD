@@ -90,3 +90,6 @@ func _physics_process(delta):
 		current_state.physics_update(delta)
 		
 
+func _input(event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		current_state.on_escape()

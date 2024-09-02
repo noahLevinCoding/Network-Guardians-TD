@@ -21,3 +21,4 @@ func _on_map_3_button_up():
 
 func _on_back_button_up():
 	back.emit()
+	

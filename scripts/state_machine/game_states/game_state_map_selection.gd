@@ -23,3 +23,6 @@ func _on_set_map(map_scene_path : String, map_id : int):
 func _on_back():
 	state_transition.emit(self, "Titlescreen")
 	
+func on_escape():
+	SignalManager.on_button_click.emit()
+	_on_back()

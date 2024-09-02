@@ -12,6 +12,9 @@ func update(_delta):
 	
 func physics_update(_delta):
 	pass
+	
+func on_escape():
+	pass
 
 func exit():
 	pass

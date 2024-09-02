@@ -13,6 +13,7 @@ signal start_next_wave
 @export var speed_label : Label
 
 @export var wave_status_label : Label
+var wave_is_active : bool = false
 
 @export var auto_start_check_button : TextureCheckButton
 @export var speed_check_button : TextureCheckButton
@@ -53,6 +54,17 @@ func connect_signals():
 	
 func _on_pause_button_up():
 	pause.emit()
+	
+func _input(event):
+	if not GameManager.is_paused:
+		if Input.is_action_just_pressed("ui_accept"):
+			if wave_is_active:
+				speed_check_button.button_up.emit()
+			else:
+				start_next_wave.emit()
+				
+		elif Input.is_action_just_pressed("key_a"):
+			auto_start_check_button.button_up.emit()
 
 func _on_start_next_wave_button_up():
 	start_next_wave.emit()
@@ -74,10 +86,12 @@ func _on_max_power_changed(max_power : int):
 
 func _on_start_next_wave():
 	wave_status_label.text = "Wave is active"
+	wave_is_active = true
 
 func _on_wave_finished():
 	
 	wave_status_label.text = "Start next wave"
+	wave_is_active = false
 
 	if auto_start_enabled:
 		#prevent the start signal being received before the finished signal

@@ -32,3 +32,7 @@ func _on_new_game():
 	
 func _on_load_game():
 	state_transition.emit(self, "ResetGame")
+
+func on_escape():
+	SignalManager.on_button_click.emit()
+	_on_back()

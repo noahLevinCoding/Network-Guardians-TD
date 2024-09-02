@@ -12,7 +12,8 @@ func enter():
 	infinite_video.video_stream_player.paused = true
 	infinite_video.audio_stream_player_titlescreen.stop()
 	
-	infinite_video.audio_stream_player_game.play()
+	if not infinite_video.audio_stream_player_game.playing:
+		infinite_video.audio_stream_player_game.play()
 	
 	for child in game_node.get_children():
 		for node in child.get_children():

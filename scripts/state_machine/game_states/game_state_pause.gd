@@ -10,9 +10,10 @@ func _ready():
 	pause_node.resume.connect(_on_resume)
 	pause_node.options.connect(_on_options)
 
-func update(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		_on_resume()
+func on_escape():
+	SignalManager.on_button_click.emit()
+	_on_resume()
+
 
 func enter():
 	print("Enter GameState Pause")

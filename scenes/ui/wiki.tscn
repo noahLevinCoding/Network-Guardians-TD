@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6ewpi5so8r6n" path="res://scenes/ui/wiki_tower.tscn" id="3_tj0r8"]
 [ext_resource type="Texture2D" uid="uid://ba1syoi25nndy" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss.png" id="4_7tcpu"]
 [ext_resource type="Texture2D" uid="uid://d0177ophihhb0" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 6.png" id="4_d1rao"]
-[ext_resource type="PackedScene" path="res://scenes/ui/wiki_mechanics.tscn" id="4_t5dco"]
+[ext_resource type="PackedScene" uid="uid://sm15xyh3lyso" path="res://scenes/ui/wiki_mechanics.tscn" id="4_t5dco"]
 [ext_resource type="Texture2D" uid="uid://c7ujwxf5n13cc" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_4.png" id="5_h5syx"]
 [ext_resource type="Texture2D" uid="uid://g630kbxtmt1p" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 5.png" id="6_el4u7"]
 [ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="8_wmvuk"]

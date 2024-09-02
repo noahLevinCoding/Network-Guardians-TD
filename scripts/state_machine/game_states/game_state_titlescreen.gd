@@ -39,3 +39,5 @@ func _on_exit():
 
 func _on_options():
 	state_transition.emit(self, "Options")
+	
+
