@@ -162,6 +162,7 @@ custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 
 [node name="Shop" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("item_list", "tower_name_label", "tower_power_label", "tower_power_text_label", "tower_temperature_label", "tower_range_polygon", "tower_range_area", "tower_place_col", "tower_place_area", "tower_place_sprite")]
+visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -242,7 +243,6 @@ icon_mode = 0
 icon_scale = 2.4
 
 [node name="Attack_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "resource_upgrade_node", "support_upgrade_node", "tower_name_label", "prio_option_button", "damage_dealt_label", "upgrade_1_price", "upgrade_2_price", "upgrade_1_icon", "upgrade_2_icon", "upgrade_1_button", "upgrade_2_button", "upgrade_1", "upgrade_2", "sell_button", "selected_temperature_label", "selected_power_label")]
-visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -810,6 +810,7 @@ mouse_filter = 1
 text = "Back to shop"
 
 [node name="Cooler_PowerSupply_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "attack_upgrade_node", "support_upgrade_node", "resource_upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "price_temp_text", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "price_power_text", "upgrade_power_supply_button")]
+visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1158,12 +1159,13 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 collision_layer = 0
 collision_mask = 16
 monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerRangeArea"]
 shape = SubResource("CircleShape2D_m0jvv")
 
-[node name="MarginToOtherTowerArea" type="Area2D" parent="."]
-collision_layer = 0
+[node name="MarginToOtherTowerArea" type="Area2D" parent="." groups=["BuyTower"]]
+collision_layer = 65536
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MarginToOtherTowerArea"]

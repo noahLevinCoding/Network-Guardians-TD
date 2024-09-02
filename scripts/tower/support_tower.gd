@@ -53,6 +53,9 @@ func _on_support_area_entered(area):
 			area.owner.buffs.append(TowerEffect.new(effect, self))
 			area.owner.reset_buff_parameters()
 			area.owner.apply_buff_parameters()
+			
+	elif area.is_in_group("BuyTower"):
+		is_in_buff_range = true
 	
 
 func _on_support_area_exited(area):
@@ -65,6 +68,9 @@ func _on_support_area_exited(area):
 				area.owner.buffs.erase(effect)
 				area.owner.reset_buff_parameters()
 				area.owner.apply_buff_parameters()
+				
+	elif area.is_in_group("BuyTower"):
+		is_in_buff_range = false
 			
 		
 func _on_place_area_input_event(_viewport, _event, _shape_idx):

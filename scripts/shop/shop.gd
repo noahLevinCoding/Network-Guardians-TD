@@ -63,11 +63,12 @@ func select(index : int):
 	
 	if selected_item.tower_resource is AttackTowerResource:
 		radius = selected_item.tower_resource.attack_range
+		tower_range_area.get_child(0).shape.radius = radius
+		tower_range_area.monitorable = true
 			
 	if selected_item.tower_resource is SupportTowerResource:
 		radius = selected_item.tower_resource.support_range
 		tower_range_area.get_child(0).shape.radius = radius
-		tower_range_area.monitoring = true
 		
 	var segments = 64
 	var points = []
@@ -79,9 +80,10 @@ func select(index : int):
 	tower_range_polygon.polygon = points
 	tower_range_polygon.visible = true
 	
+	tower_place_col.position = get_global_mouse_position()
+	tower_place_col.get_parent().monitorable = true
 	tower_place_col.shape = selected_item.tower_resource.place_col_shape
 	
-	#TODO cursor shape
 
 func deselect():
 	if selected_item != null:
@@ -104,9 +106,11 @@ func deselect():
 	
 	tower_range_polygon.visible = false
 	tower_range_area.monitoring = false
+	tower_range_area.monitorable = false
 	tower_range_area.get_child(0).shape.radius = 0
 
 	tower_place_col.shape = null
+	tower_place_col.get_parent().monitorable = false
 	
 	#TODO cursor shape
 	
