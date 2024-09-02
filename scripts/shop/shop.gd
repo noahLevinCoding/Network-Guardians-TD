@@ -64,11 +64,12 @@ func select(index : int):
 	if selected_item.tower_resource is AttackTowerResource:
 		radius = selected_item.tower_resource.attack_range
 		tower_range_area.get_child(0).shape.radius = radius
-		tower_range_area.monitorable = true
+		
 			
 	if selected_item.tower_resource is SupportTowerResource:
 		radius = selected_item.tower_resource.support_range
 		tower_range_area.get_child(0).shape.radius = radius
+		tower_range_area.monitoring = true
 		
 	var segments = 64
 	var points = []
@@ -106,8 +107,8 @@ func deselect():
 	
 	tower_range_polygon.visible = false
 	tower_range_area.monitoring = false
-	tower_range_area.monitorable = false
 	tower_range_area.get_child(0).shape.radius = 0
+	tower_range_area.position = Vector2(-1000,-1000)
 
 	tower_place_col.shape = null
 	tower_place_col.get_parent().monitorable = false

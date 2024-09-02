@@ -243,6 +243,7 @@ icon_mode = 0
 icon_scale = 2.4
 
 [node name="Attack_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "cooler_power_supply_upgrade_node", "resource_upgrade_node", "support_upgrade_node", "tower_name_label", "prio_option_button", "damage_dealt_label", "upgrade_1_price", "upgrade_2_price", "upgrade_1_icon", "upgrade_2_icon", "upgrade_1_button", "upgrade_2_button", "upgrade_1", "upgrade_2", "sell_button", "selected_temperature_label", "selected_power_label")]
+visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -302,30 +303,8 @@ size_flags_horizontal = 10
 text = "2 W"
 horizontal_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
-custom_minimum_size = Vector2(0, 28)
-layout_mode = 2
-
-[node name="PrioritizationLabel" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade"]
-layout_mode = 2
-text = "Prioritization"
-
-[node name="PrioritizationDropdown" type="OptionButton" parent="ScreenBox/RightSide/Attack_Upgrade"]
-layout_mode = 2
-item_count = 5
-popup/item_0/text = "First"
-popup/item_0/id = 0
-popup/item_1/text = "Last"
-popup/item_1/id = 1
-popup/item_2/text = "Camo"
-popup/item_2/id = 2
-popup/item_3/text = "Fortified"
-popup/item_3/id = 3
-popup/item_4/text = "Healthiest"
-popup/item_4/id = 4
-
 [node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
-custom_minimum_size = Vector2(0, 18)
+custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
@@ -428,7 +407,29 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="MarginContainer6" type="MarginContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
-custom_minimum_size = Vector2(0, 35)
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="PrioritizationLabel" type="Label" parent="ScreenBox/RightSide/Attack_Upgrade"]
+layout_mode = 2
+text = "Prioritization"
+
+[node name="PrioritizationDropdown" type="OptionButton" parent="ScreenBox/RightSide/Attack_Upgrade"]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "First"
+popup/item_0/id = 0
+popup/item_1/text = "Last"
+popup/item_1/id = 1
+popup/item_2/text = "Camo"
+popup/item_2/id = 2
+popup/item_3/text = "Fortified"
+popup/item_3/id = 3
+popup/item_4/text = "Healthiest"
+popup/item_4/id = 4
+
+[node name="MarginContainer7" type="MarginContainer" parent="ScreenBox/RightSide/Attack_Upgrade"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="SellButton" type="Button" parent="ScreenBox/RightSide/Attack_Upgrade"]
@@ -502,12 +503,8 @@ size_flags_horizontal = 10
 text = "2 W"
 horizontal_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
-custom_minimum_size = Vector2(0, 84)
-layout_mode = 2
-
 [node name="MarginContainer2" type="MarginContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
-custom_minimum_size = Vector2(0, 18)
+custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
@@ -610,7 +607,7 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="MarginContainer7" type="MarginContainer" parent="ScreenBox/RightSide/Resource_Upgrade"]
-custom_minimum_size = Vector2(0, 35)
+custom_minimum_size = Vector2(0, 115)
 layout_mode = 2
 
 [node name="SellButton" type="Button" parent="ScreenBox/RightSide/Resource_Upgrade"]
@@ -684,12 +681,8 @@ size_flags_horizontal = 10
 text = "2 W"
 horizontal_alignment = 2
 
-[node name="MarginContainer6" type="MarginContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
-custom_minimum_size = Vector2(0, 84)
-layout_mode = 2
-
 [node name="MarginContainer8" type="MarginContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
-custom_minimum_size = Vector2(0, 18)
+custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
@@ -792,7 +785,7 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="MarginContainer12" type="MarginContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
-custom_minimum_size = Vector2(0, 35)
+custom_minimum_size = Vector2(0, 115)
 layout_mode = 2
 
 [node name="SellButton2" type="Button" parent="ScreenBox/RightSide/Support_Upgrade"]
@@ -1180,13 +1173,13 @@ scale = Vector2(1.5, 1.5)
 [connection signal="item_selected" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_item_list_item_selected"]
 [connection signal="mouse_exited" from="ScreenBox/RightSide/Shop/ShopItemList" to="ScreenBox/RightSide/Shop" method="_on_shop_item_list_mouse_exited"]
 [connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer4/WikiTowerButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_wiki_tower_button_up"]
-[connection signal="button_down" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_button_down"]
-[connection signal="item_selected" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_item_selected"]
-[connection signal="mouse_entered" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_mouse_entered"]
 [connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer3/VBoxContainer/UpperUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_upper_upgrade_button_button_up"]
 [connection signal="mouse_entered" from="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer3/VBoxContainer/UpperUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_upper_upgrade_button_mouse_entered"]
 [connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer5/VBoxContainer/LowerUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_lower_upgrade_button_up"]
 [connection signal="mouse_entered" from="ScreenBox/RightSide/Attack_Upgrade/HBoxContainer5/VBoxContainer/LowerUpgradeButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_lower_upgrade_button_mouse_entered"]
+[connection signal="button_down" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_button_down"]
+[connection signal="item_selected" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_item_selected"]
+[connection signal="mouse_entered" from="ScreenBox/RightSide/Attack_Upgrade/PrioritizationDropdown" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_prioritization_dropdown_mouse_entered"]
 [connection signal="button_down" from="ScreenBox/RightSide/Attack_Upgrade/SellButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_sell_button_down"]
 [connection signal="mouse_entered" from="ScreenBox/RightSide/Attack_Upgrade/SellButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_sell_button_mouse_entered"]
 [connection signal="button_up" from="ScreenBox/RightSide/Attack_Upgrade/DeselectButton" to="ScreenBox/RightSide/Attack_Upgrade" method="_on_deselect_button_up"]
