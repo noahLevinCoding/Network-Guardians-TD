@@ -14,11 +14,14 @@ func _ready():
 	
 func _on_enemy_death():
 	if not self.is_playing():
+		reset_db()
+		volume_db = -25
 		stream = death_sound
 		play()
 	
 func _on_wave_finished():
 	reset_db()
+	volume_db = -5
 	stream = wave_finished_sound
 	play()
 	
