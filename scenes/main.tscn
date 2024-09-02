@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://mkq35rnq6n3x"]
+[gd_scene load_steps=35 format=3 uid="uid://mkq35rnq6n3x"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://c1s01mct2mn52" path="res://assets/sfx/enemy_die_2.mp3" id="30_8kibn"]
 [ext_resource type="AudioStream" uid="uid://cpexqrw427xny" path="res://assets/sfx/button_sfx/button_26.mp3" id="30_txvme"]
 [ext_resource type="AudioStream" uid="uid://d0xabonpa6yas" path="res://assets/sfx/wave_over.mp3" id="33_cht7g"]
+[ext_resource type="AudioStream" uid="uid://cfwmqj8k2yqmp" path="res://assets/sfx/game_over.mp3" id="34_g8qjc"]
 
 [node name="Main" type="Node2D"]
 
@@ -152,3 +153,4 @@ death_sound = ExtResource("30_8kibn")
 upgrade_click_sound = ExtResource("27_4sval")
 tower_sell_sound = ExtResource("28_afyax")
 wave_finished_sound = ExtResource("33_cht7g")
+game_over_sound = ExtResource("34_g8qjc")

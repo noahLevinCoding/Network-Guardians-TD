@@ -55,7 +55,7 @@ func connect_signals():
 func _on_pause_button_up():
 	pause.emit()
 	
-func _input(event):
+func _input(_event):
 	if not GameManager.is_paused:
 		if Input.is_action_just_pressed("ui_accept"):
 			if wave_is_active:
@@ -108,4 +108,6 @@ func _on_autostart_check_button_toggled(toggled_on):
 func _on_wave_index_changed(wave_index):
 	wave_index = max(wave_index + 1, 0)
 	wave_index_value_label.text = str(wave_index)
+
+
 

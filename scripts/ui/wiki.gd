@@ -74,8 +74,8 @@ func _on_wiki_mechanics_back():
 	if wiki_mechanics_entered_directly:
 		_on_back_button_up()
 
-func set_visibility(is_visible : bool):
-	visible_node.visible = is_visible
+func set_visibility(_is_visible : bool):
+	visible_node.visible = _is_visible
 
 func on_escape():
 	if wiki_tower_scene_instance == null and wiki_enemy_scene_instance == null and wiki_mechanics_scene_instance == null:

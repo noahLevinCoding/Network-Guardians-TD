@@ -51,8 +51,8 @@ func _on_back_button_up():
 	back.emit()
 	save_volume()
 
-func set_visibility(is_visible : bool):
-	visible_node.visible = is_visible
+func set_visibility(_is_visible : bool):
+	visible_node.visible = _is_visible
 
 func _on_master_slider_value_changed(value):
 	SignalManager.on_volume_slider_changed.emit()

@@ -17,6 +17,7 @@ var red_color : Color = Color(1.0, 0.46, 0.2, 1.0)
 var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 
 @export var tower_range_polygon : Polygon2D
+@export var tower_range_area : Area2D
 @export var tower_place_col : CollisionShape2D
 @export var tower_place_area : Area2D
 @export var tower_place_sprite : Sprite2D
@@ -31,6 +32,7 @@ func _process(_delta):
 		tower_range_polygon.global_position = get_global_mouse_position()
 		tower_place_col.global_position = get_global_mouse_position()
 		tower_place_sprite.global_position = get_global_mouse_position()
+		tower_range_area.global_position = get_global_mouse_position()
 		
 		var has_not_enough_power = GameManager.max_power < GameManager.power + selected_item.tower_resource.power
 		
@@ -64,6 +66,8 @@ func select(index : int):
 			
 	if selected_item.tower_resource is SupportTowerResource:
 		radius = selected_item.tower_resource.support_range
+		tower_range_area.get_child(0).shape.radius = radius
+		tower_range_area.monitoring = true
 		
 	var segments = 64
 	var points = []
@@ -99,6 +103,8 @@ func deselect():
 	tower_power_text_label.set_modulate(white_color)
 	
 	tower_range_polygon.visible = false
+	tower_range_area.monitoring = false
+	tower_range_area.get_child(0).shape.radius = 0
 
 	tower_place_col.shape = null
 	
@@ -226,3 +232,13 @@ func _on_item_hovered(index : int):
 	
 	tower_power_label.set_modulate(red_color if GameManager.max_power < GameManager.power + items[index].tower_resource.power else white_color)
 	tower_power_text_label.set_modulate(red_color if GameManager.max_power < GameManager.power + items[index].tower_resource.power else white_color)
+
+
+func _on_tower_range_area_entered(area):
+	if area.owner is Tower:
+		area.owner.is_in_buff_range = true
+
+
+func _on_tower_range_area_exited(area):
+	if area.owner is Tower:
+		area.owner.is_in_buff_range = false

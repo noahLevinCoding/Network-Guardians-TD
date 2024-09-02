@@ -16,6 +16,12 @@ var is_selected : bool = false :
 		is_selected = value
 		animated_sprite.material.set_shader_parameter("line_color", select_shader_color if is_selected else Color(0,0,0,0))
 		
+var is_in_buff_range : bool = false:
+	set(value):
+		is_in_buff_range = value
+		animated_sprite.material.set_shader_parameter("line_color", buff_shader_color if is_in_buff_range else Color(0,0,0,0))
+		
+		
 
 func _on_place_area_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_just_pressed('left_mouse_button'):

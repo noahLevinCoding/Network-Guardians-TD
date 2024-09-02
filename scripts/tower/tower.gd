@@ -3,6 +3,7 @@ extends Node2D
 
 var tower_resource : TowerResource	
 var select_shader_color : Color = Color(1,1,1,1)
+var buff_shader_color : Color = Color(0,1,0,1)
 
 var sell_value : int
 

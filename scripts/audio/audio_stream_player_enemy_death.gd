@@ -4,12 +4,20 @@ extends AudioStreamPlayer
 @export var upgrade_click_sound : AudioStream
 @export var tower_sell_sound : AudioStream
 @export var wave_finished_sound : AudioStream
+@export var game_over_sound : AudioStream
 
 func _ready():
 	SignalManager.on_enemy_death.connect(_on_enemy_death)
 	SignalManager.on_upgrade_button_click.connect(_on_upgrade_button_click)
 	SignalManager.on_tower_sell.connect(_on_tower_sell)
 	SignalManager.on_wave_finished.connect(_on_wave_finished)
+	SignalManager.defeat.connect(_on_game_over)
+
+func _on_game_over():
+	reset_db()
+	volume_db = -10
+	stream = game_over_sound
+	play()
 
 	
 func _on_enemy_death():

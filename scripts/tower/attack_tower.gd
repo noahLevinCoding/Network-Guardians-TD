@@ -28,6 +28,10 @@ var is_selected : bool = false :
 		range_indicator.visible = is_selected
 		animated_sprite.material.set_shader_parameter("line_color", select_shader_color if is_selected else Color(0,0,0,0))
 		
+var is_in_buff_range : bool = false:
+	set(value):
+		is_in_buff_range = value
+		animated_sprite.material.set_shader_parameter("line_color", buff_shader_color if is_in_buff_range else Color(0,0,0,0))
 
 var damage_dealt : float = 0.0
 
