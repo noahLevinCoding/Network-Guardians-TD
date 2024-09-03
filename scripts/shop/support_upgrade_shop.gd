@@ -17,6 +17,10 @@ extends VBoxContainer
 @export var sell_button : Button
 @export var selected_temperature_label : Label
 @export var selected_power_label : Label
+@export var buff_1_label : Label
+@export var buff_2_label : Label
+@export var buff_3_label : Label
+@export var buff_4_label : Label
 
 var selected_tower : Tower
 
@@ -53,6 +57,11 @@ func _on_select_tower(tower : Tower):
 	sell_button.text = "Sell: " + str(selected_tower.sell_value)
 	selected_power_label.text = str(selected_tower.tower_resource.power) + " W"
 	selected_temperature_label.text = "+ " + str(selected_tower.tower_resource.temperature_increase) + " °C"
+	
+	buff_1_label.text = selected_tower.tower_resource.buff_1_text
+	buff_2_label.text = selected_tower.tower_resource.buff_2_text
+	buff_3_label.text = selected_tower.tower_resource.buff_3_text
+	buff_4_label.text = selected_tower.tower_resource.buff_4_text
 	
 	if selected_tower.tower_resource.upgrade_path_1_tower_resource != null:
 		var price = GameManager.get_upgrade_tower_price(selected_tower.tower_resource, 1)

@@ -624,8 +624,7 @@ focus_mode = 0
 mouse_filter = 1
 text = "Back to shop"
 
-[node name="Support_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "resource_upgrade_node", "cooler_power_supply_upgrade_node", "attack_upgrade_node", "tower_name_label", "towers_buffed_label", "upgrade_1_price", "upgrade_2_price", "upgrade_1_icon", "upgrade_2_icon", "upgrade_1_button", "upgrade_2_button", "upgrade_1", "upgrade_2", "sell_button", "selected_temperature_label", "selected_power_label")]
-visible = false
+[node name="Support_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "resource_upgrade_node", "cooler_power_supply_upgrade_node", "attack_upgrade_node", "tower_name_label", "towers_buffed_label", "upgrade_1_price", "upgrade_2_price", "upgrade_1_icon", "upgrade_2_icon", "upgrade_1_button", "upgrade_2_button", "upgrade_1", "upgrade_2", "sell_button", "selected_temperature_label", "selected_power_label", "buff_1_label", "buff_2_label", "buff_3_label", "buff_4_label")]
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -648,6 +647,10 @@ upgrade_2 = NodePath("HBoxContainer7")
 sell_button = NodePath("SellButton2")
 selected_temperature_label = NodePath("HBoxContainer/SelectedTemperatureLabel")
 selected_power_label = NodePath("HBoxContainer/SelectedPowerLabel")
+buff_1_label = NodePath("GridContainer/Label")
+buff_2_label = NodePath("GridContainer/Label2")
+buff_3_label = NodePath("GridContainer/Label3")
+buff_4_label = NodePath("GridContainer/Label4")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
 layout_mode = 2
@@ -784,8 +787,38 @@ text = "1000$"
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="MarginContainer12" type="MarginContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
-custom_minimum_size = Vector2(0, 115)
+[node name="MarginContainer13" type="MarginContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
+layout_mode = 2
+theme_override_constants/v_separation = 7
+columns = 2
+
+[node name="Label" type="Label" parent="ScreenBox/RightSide/Support_Upgrade/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Range x1.2
+"
+
+[node name="Label2" type="Label" parent="ScreenBox/RightSide/Support_Upgrade/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Speed x2.0"
+
+[node name="Label3" type="Label" parent="ScreenBox/RightSide/Support_Upgrade/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Damage +3"
+
+[node name="Label4" type="Label" parent="ScreenBox/RightSide/Support_Upgrade/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Pierce +1"
+
+[node name="MarginContainer14" type="MarginContainer" parent="ScreenBox/RightSide/Support_Upgrade"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="SellButton2" type="Button" parent="ScreenBox/RightSide/Support_Upgrade"]

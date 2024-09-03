@@ -10,6 +10,10 @@ extends TowerResource
 
 @export_group("Tower Effects")
 @export var effects : Array[TowerEffectResource]
+@export var buff_1_text : String
+@export var buff_2_text : String
+@export var buff_3_text : String
+@export var buff_4_text : String
 
 
 @export_group("Visuals")

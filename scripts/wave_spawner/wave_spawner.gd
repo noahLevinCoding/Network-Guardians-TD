@@ -49,6 +49,15 @@ func start_next_wave():
 			SignalManager.on_start_next_wave.emit()
 			current_wave = waves[current_wave_index]
 			start_next_wave_group()
+		#If there is no wave left, dobule the last wave
+		else: 
+			current_wave_index += 1
+			current_wave_group_index = -1
+			is_wave_active = true
+			SignalManager.on_start_next_wave.emit()
+			for wave_group in current_wave.wave_groups:
+				wave_group.enemy_count *= 2
+			start_next_wave_group()
 			
 func start_next_wave_group():
 	current_wave_group_index += 1
@@ -81,7 +90,6 @@ func _on_is_wave_active_timer_timeout():
 	else:
 		is_wave_active_timer.start()
 	
-	#emit signal
 
 
 func _on_spawn_wave_group_timer_timeout():

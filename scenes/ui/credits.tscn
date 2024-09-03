@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcpbrbsvc32ne"]
+[gd_scene load_steps=11 format=3 uid="uid://bcpbrbsvc32ne"]
 
 [ext_resource type="Script" path="res://scripts/ui/credits.gd" id="1_s2pth"]
+[ext_resource type="Texture2D" uid="uid://l1tfp6cmg3aq" path="res://assets/credits/credits.png" id="4_xarn1"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="5_xjcdr"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="6_yyxk5"]
 [ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="10_veti2"]
@@ -39,6 +40,23 @@ offset_bottom = 257.0
 grow_horizontal = 2
 theme = SubResource("Theme_tcmq7")
 text = "CREDITS"
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -240.0
+offset_right = 437.0
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xarn1")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="BackButton" type="TextureButton" parent="Control"]
 layout_mode = 1
