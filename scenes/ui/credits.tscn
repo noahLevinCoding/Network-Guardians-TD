@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://bcpbrbsvc32ne"]
+
+[ext_resource type="Script" path="res://scripts/ui/credits.gd" id="1_s2pth"]
+[ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="5_xjcdr"]
+[ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="6_yyxk5"]
+[ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="10_veti2"]
+[ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="17_bn1v2"]
+[ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="18_yur84"]
+[ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="19_g1j1k"]
+
+[sub_resource type="Theme" id="Theme_21672"]
+default_font = ExtResource("5_xjcdr")
+default_font_size = 70
+
+[sub_resource type="Theme" id="Theme_tcmq7"]
+default_font = ExtResource("6_yyxk5")
+default_font_size = 100
+
+[node name="Credits" type="Node2D"]
+z_index = 7
+script = ExtResource("1_s2pth")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_21672")
+
+[node name="Heading" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 133.0
+offset_right = 97.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme = SubResource("Theme_tcmq7")
+text = "CREDITS"
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -190.0
+offset_right = 373.0
+offset_bottom = 52.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(232, 121)
+keep_pressed_outside = true
+texture_normal = ExtResource("17_bn1v2")
+texture_pressed = ExtResource("18_yur84")
+texture_hover = ExtResource("19_g1j1k")
+stretch_mode = 3
+script = ExtResource("10_veti2")
+
+[node name="Label" type="Label" parent="Control/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.0
+offset_right = 87.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[connection signal="button_up" from="Control/BackButton" to="." method="_on_back_button_up"]

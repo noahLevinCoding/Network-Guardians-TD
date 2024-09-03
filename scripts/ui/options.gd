@@ -2,6 +2,7 @@ class_name Options
 extends Node2D
 
 @export var wiki_scene : PackedScene
+@export var credits_scene : PackedScene
 
 
 @export var visible_node : Node
@@ -19,7 +20,7 @@ extends Node2D
 var save_folder_path : String = "res://saves/volume"
 
 var wiki_scene_instance = null
-var credit_scene_instance = null
+var credits_scene_instance = null
 
 signal back
 	
@@ -28,7 +29,10 @@ func _on_enter_wiki():
 	wiki_scene_instance.wiki_entered_directly = true
 
 func _on_credit_button_up():
-	pass
+	credits_scene_instance = credits_scene.instantiate()
+	add_child(credits_scene_instance)
+	credits_scene_instance.back.connect(_on_credit_back)
+	set_visibility(false)
 
 
 func _on_wiki_button_up():
@@ -41,6 +45,10 @@ func _on_wiki_button_up():
 func _on_wiki_back():
 	set_visibility(true)
 	wiki_scene_instance = null
+	
+func _on_credit_back():
+	set_visibility(true)
+	credits_scene_instance = null
 
 func _on_wiki_back_to_game():
 	_on_wiki_back()
@@ -113,11 +121,11 @@ func load_volume():
 
 
 func on_escape():
-	if wiki_scene_instance == null and credit_scene_instance == null:
+	if wiki_scene_instance == null and credits_scene_instance == null:
 		SignalManager.on_button_click.emit()
 		_on_back_button_up()
 	elif wiki_scene_instance != null:
 		wiki_scene_instance.on_escape()
 	else:
 		pass
-		#credit_scene_instance.on_escape()
+		credits_scene_instance.on_escape()
