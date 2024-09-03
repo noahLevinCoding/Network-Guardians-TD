@@ -1,46 +1,74 @@
-[gd_resource type="Resource" script_class="Wave" load_steps=11 format=3 uid="uid://dx1hupr162ofd"]
+[gd_resource type="Resource" script_class="Wave" load_steps=15 format=3 uid="uid://dx1hupr162ofd"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_u8eh6"]
-[ext_resource type="Resource" uid="uid://brybscoositae" path="res://resources/enemies/fortified/virus_9_light_F.tres" id="2_s43bq"]
+[ext_resource type="Resource" uid="uid://dltuniftqlmw7" path="res://resources/enemies/camo regrow/virus_8_white_C_R.tres" id="2_xacy7"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_ut5ts"]
-[ext_resource type="Resource" uid="uid://caa1daiwffqf2" path="res://resources/enemies/regrow/virus_6_black_R.tres" id="4_kmmdh"]
-[ext_resource type="Resource" uid="uid://yll6f0d6jyog" path="res://resources/enemies/normal/virus_12_ceramic.tres" id="5_lq632"]
+[ext_resource type="Resource" uid="uid://bfih8ffsca7je" path="res://resources/enemies/normal/virus_11_rainbow.tres" id="4_jdi6a"]
+[ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="5_2rn6a"]
 
 [sub_resource type="Resource" id="Resource_mali3"]
 script = ExtResource("3_ut5ts")
-enemy_resource = ExtResource("2_s43bq")
-enemy_count = 20
+enemy_resource = ExtResource("2_xacy7")
+enemy_count = 30
 time_between_enemies = 0.8
 time_after_wave_group = 0.0
 
-[sub_resource type="Resource" id="Resource_4hii6"]
+[sub_resource type="Resource" id="Resource_5f2jb"]
 script = ExtResource("3_ut5ts")
-enemy_resource = ExtResource("4_kmmdh")
-enemy_count = 20
-time_between_enemies = 0.8
-time_after_wave_group = 0.0
-
-[sub_resource type="Resource" id="Resource_bqs77"]
-script = ExtResource("3_ut5ts")
-enemy_resource = ExtResource("2_s43bq")
-enemy_count = 20
-time_between_enemies = 0.8
-time_after_wave_group = 0.0
-
-[sub_resource type="Resource" id="Resource_q3mvh"]
-script = ExtResource("3_ut5ts")
-enemy_resource = ExtResource("4_kmmdh")
-enemy_count = 20
-time_between_enemies = 0.8
-time_after_wave_group = 0.0
-
-[sub_resource type="Resource" id="Resource_kr1nr"]
-script = ExtResource("3_ut5ts")
-enemy_resource = ExtResource("5_lq632")
+enemy_resource = ExtResource("4_jdi6a")
 enemy_count = 50
 time_between_enemies = 0.8
 time_after_wave_group = 0.0
 
+[sub_resource type="Resource" id="Resource_gyust"]
+script = ExtResource("3_ut5ts")
+enemy_resource = ExtResource("2_xacy7")
+enemy_count = 30
+time_between_enemies = 0.8
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_d8kwi"]
+script = ExtResource("3_ut5ts")
+enemy_resource = ExtResource("4_jdi6a")
+enemy_count = 50
+time_between_enemies = 0.8
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_dxglo"]
+script = ExtResource("3_ut5ts")
+enemy_resource = ExtResource("2_xacy7")
+enemy_count = 30
+time_between_enemies = 0.8
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_aigwo"]
+script = ExtResource("3_ut5ts")
+enemy_resource = ExtResource("4_jdi6a")
+enemy_count = 50
+time_between_enemies = 0.8
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_vkcjs"]
+script = ExtResource("3_ut5ts")
+enemy_resource = ExtResource("2_xacy7")
+enemy_count = 30
+time_between_enemies = 0.8
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_t7y6u"]
+script = ExtResource("3_ut5ts")
+enemy_resource = ExtResource("4_jdi6a")
+enemy_count = 50
+time_between_enemies = 0.8
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_7rkp1"]
+script = ExtResource("3_ut5ts")
+enemy_resource = ExtResource("5_2rn6a")
+enemy_count = 4
+time_between_enemies = 0.5
+time_after_wave_group = 0.0
+
 [resource]
 script = ExtResource("1_u8eh6")
-wave_groups = Array[ExtResource("3_ut5ts")]([SubResource("Resource_mali3"), SubResource("Resource_4hii6"), SubResource("Resource_bqs77"), SubResource("Resource_q3mvh"), SubResource("Resource_kr1nr")])
+wave_groups = Array[ExtResource("3_ut5ts")]([SubResource("Resource_mali3"), SubResource("Resource_5f2jb"), SubResource("Resource_gyust"), SubResource("Resource_d8kwi"), SubResource("Resource_dxglo"), SubResource("Resource_aigwo"), SubResource("Resource_vkcjs"), SubResource("Resource_t7y6u"), SubResource("Resource_7rkp1")])

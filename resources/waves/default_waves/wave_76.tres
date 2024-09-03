@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=5 format=3 uid="uid://c50n8r2nibxn5"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_g54mu"]
+[ext_resource type="Resource" uid="uid://r0i3lnkkq758" path="res://resources/enemies/regrow/virus_12_ceramic_R.tres" id="2_6g46a"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_wgyvl"]
+
+[sub_resource type="Resource" id="Resource_mali3"]
+script = ExtResource("3_wgyvl")
+enemy_resource = ExtResource("2_6g46a")
+enemy_count = 60
+time_between_enemies = 0.04
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_g54mu")
+wave_groups = Array[ExtResource("3_wgyvl")]([SubResource("Resource_mali3")])
