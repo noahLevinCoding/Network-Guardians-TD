@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://mkq35rnq6n3x"]
+[gd_scene load_steps=35 format=3 uid="uid://mkq35rnq6n3x"]
 
 [ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_4tggm"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_titlescreen.gd" id="2_crxfe"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_defeat.gd" id="9_d2ejd"]
 [ext_resource type="Script" path="res://scripts/state_machine/game_states/game_state_options.gd" id="10_1tdil"]
 [ext_resource type="PackedScene" uid="uid://ws6g7erknixl" path="res://scenes/ui/infinite_video.tscn" id="10_gehr5"]
-[ext_resource type="PackedScene" uid="uid://bcpbrbsvc32ne" path="res://scenes/ui/credits.tscn" id="10_ukj8m"]
 [ext_resource type="PackedScene" uid="uid://btctdg43tdyxp" path="res://scenes/ui/playing.tscn" id="11_pecm4"]
 [ext_resource type="PackedScene" uid="uid://cyjglrb3udyb2" path="res://scenes/ui/pause.tscn" id="12_esqsx"]
 [ext_resource type="PackedScene" uid="uid://bc5c306uo8oa0" path="res://scenes/ui/defeat.tscn" id="15_411v1"]
@@ -77,7 +76,6 @@ z_index = 6
 
 [node name="Options" parent="Menu" instance=ExtResource("20_cmujq")]
 visible = false
-credits_scene = ExtResource("10_ukj8m")
 
 [node name="GameStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_4tggm")
