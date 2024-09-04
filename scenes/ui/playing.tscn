@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://btctdg43tdyxp"]
+[gd_scene load_steps=45 format=3 uid="uid://btctdg43tdyxp"]
 
 [ext_resource type="Script" path="res://scripts/ui/playing.gd" id="1_ot4ts"]
 [ext_resource type="Texture2D" uid="uid://bpvs851dv68ol" path="res://assets/ui/playing/lcd_blue.png" id="2_hs5d4"]
@@ -29,7 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="14_l43vr"]
 [ext_resource type="Texture2D" uid="uid://bkytmqh4vxuy5" path="res://assets/ui/buttons/wiki_button_hovered.png" id="14_pab03"]
 [ext_resource type="Script" path="res://scripts/button/button_upgrade_sound.gd" id="15_4xhpx"]
+[ext_resource type="Texture2D" uid="uid://sif87q1774qe" path="res://assets/ui/shop_icons/temp_decrease_shop_icon.png" id="22_b4nbb"]
 [ext_resource type="Script" path="res://scripts/button/texture_button_ingame_sound.gd" id="23_670b6"]
+[ext_resource type="Texture2D" uid="uid://bj3t3ixy4wwm" path="res://assets/ui/shop_icons/power_increase_shop_icon.png" id="23_yjudo"]
 [ext_resource type="Script" path="res://scripts/button/texture_button_sound.gd" id="26_emgh4"]
 [ext_resource type="Shader" path="res://shader/tower_selection_shader.gdshader" id="32_jbfg0"]
 
@@ -66,7 +68,7 @@ shader = ExtResource("32_jbfg0")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 
-[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "auto_start_label", "speed_label", "wave_status_label", "auto_start_check_button", "speed_check_button", "wave_index_value_label", "pause_button")]
+[node name="Playing" type="Node2D" node_paths=PackedStringArray("health_label", "money_label", "temperature_label", "power_label", "auto_start_label", "speed_label", "wave_status_label", "auto_start_check_button", "speed_check_button", "start_wave_button", "wave_index_value_label", "pause_button")]
 z_index = 6
 script = ExtResource("1_ot4ts")
 health_label = NodePath("ScreenBox/RightSide/Stats/Health/HealthValue")
@@ -78,6 +80,7 @@ speed_label = NodePath("ScreenBox/RightSide/Wave/Speed/SpeedValue")
 wave_status_label = NodePath("ScreenBox/RightSide/Wave/StartNextWave/Label")
 auto_start_check_button = NodePath("Buttons/AutoStartCheckButton")
 speed_check_button = NodePath("Buttons/GameSpeedCheckButton")
+start_wave_button = NodePath("Buttons/StartNextWaveButton")
 wave_index_value_label = NodePath("ScreenBox/RightSide/Wave/WaveIndex/WaveIndexValue")
 pause_button = NodePath("Buttons/PauseButton")
 
@@ -625,6 +628,7 @@ mouse_filter = 1
 text = "Back to shop"
 
 [node name="Support_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "resource_upgrade_node", "cooler_power_supply_upgrade_node", "attack_upgrade_node", "tower_name_label", "towers_buffed_label", "upgrade_1_price", "upgrade_2_price", "upgrade_1_icon", "upgrade_2_icon", "upgrade_1_button", "upgrade_2_button", "upgrade_1", "upgrade_2", "sell_button", "selected_temperature_label", "selected_power_label", "buff_1_label", "buff_2_label", "buff_3_label", "buff_4_label")]
+visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -836,7 +840,6 @@ mouse_filter = 1
 text = "Back to shop"
 
 [node name="Cooler_PowerSupply_Upgrade" type="VBoxContainer" parent="ScreenBox/RightSide" node_paths=PackedStringArray("shop_node", "attack_upgrade_node", "support_upgrade_node", "resource_upgrade_node", "currently_temp", "upgrade_temp", "price_temp", "price_temp_text", "upgrade_cooler_button", "currently_power", "upgrade_power", "price_power", "price_power_text", "upgrade_power_supply_button")]
-visible = false
 custom_minimum_size = Vector2(246, 615)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -850,12 +853,12 @@ currently_temp = NodePath("Currently/Value")
 upgrade_temp = NodePath("Upgrade/Value")
 price_temp = NodePath("Price/Value")
 price_temp_text = NodePath("Price/Text")
-upgrade_cooler_button = NodePath("UpgradeBtn")
+upgrade_cooler_button = NodePath("HBoxContainer/UpgradeBtn")
 currently_power = NodePath("Currently2/Value")
 upgrade_power = NodePath("Upgrade2/Value")
 price_power = NodePath("Price2/Value")
 price_power_text = NodePath("Price2/Text")
-upgrade_power_supply_button = NodePath("UpgradeBtn2")
+upgrade_power_supply_button = NodePath("HBoxContainer2/UpgradeBtn2")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
 layout_mode = 2
@@ -924,9 +927,21 @@ size_flags_horizontal = 10
 text = "100 $"
 horizontal_alignment = 2
 
-[node name="UpgradeBtn" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("22_b4nbb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="UpgradeBtn" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_horizontal = 10
 focus_mode = 0
 text = "Buy Upgrade"
 script = ExtResource("15_4xhpx")
@@ -1008,9 +1023,21 @@ size_flags_horizontal = 10
 text = "200 $"
 horizontal_alignment = 2
 
-[node name="UpgradeBtn2" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("23_yjudo")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="UpgradeBtn2" type="Button" parent="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer2"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_horizontal = 10
 focus_mode = 0
 text = "Buy Upgrade"
 script = ExtResource("15_4xhpx")
@@ -1097,6 +1124,7 @@ offset_left = 1849.0
 offset_top = 915.0
 offset_right = 1913.0
 offset_bottom = 947.0
+focus_mode = 0
 texture_normal = ExtResource("8_cq58l")
 script = ExtResource("10_x8fto")
 texture_unchecked = ExtResource("8_cq58l")
@@ -1108,6 +1136,7 @@ offset_left = 1849.0
 offset_top = 948.0
 offset_right = 1909.0
 offset_bottom = 980.0
+focus_mode = 0
 texture_normal = ExtResource("8_cq58l")
 script = ExtResource("10_x8fto")
 texture_unchecked = ExtResource("8_cq58l")
@@ -1122,6 +1151,7 @@ offset_right = 1910.0
 offset_bottom = 1045.0
 size_flags_horizontal = 10
 size_flags_vertical = 4
+focus_mode = 0
 mouse_filter = 1
 texture_normal = ExtResource("6_xqh4e")
 texture_pressed = ExtResource("7_rsj37")
@@ -1236,11 +1266,11 @@ scale = Vector2(1.5, 1.5)
 [connection signal="button_up" from="ScreenBox/RightSide/Support_Upgrade/DeselectButton2" to="ScreenBox/RightSide/Support_Upgrade" method="_on_deselect_button_up"]
 [connection signal="mouse_entered" from="ScreenBox/RightSide/Support_Upgrade/DeselectButton2" to="ScreenBox/RightSide/Support_Upgrade" method="_on_deselect_button_2_mouse_entered"]
 [connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer4/WikiCoolerButton" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_wiki_cooler_button_up"]
-[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/UpgradeBtn" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_cooler"]
-[connection signal="mouse_entered" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/UpgradeBtn" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_btn_mouse_entered"]
+[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer/UpgradeBtn" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_cooler"]
+[connection signal="mouse_entered" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer/UpgradeBtn" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_btn_mouse_entered"]
 [connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer5/WikiPowerSupplyButton" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_wiki_power_supply_button_up"]
-[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/UpgradeBtn2" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_power_supply"]
-[connection signal="mouse_entered" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/UpgradeBtn2" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_btn_2_mouse_entered"]
+[connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer2/UpgradeBtn2" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_power_supply"]
+[connection signal="mouse_entered" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/HBoxContainer2/UpgradeBtn2" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_upgrade_btn_2_mouse_entered"]
 [connection signal="button_up" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/DeselectButton" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_deselect"]
 [connection signal="mouse_entered" from="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade/DeselectButton" to="ScreenBox/RightSide/Cooler_PowerSupply_Upgrade" method="_on_deselect_button_mouse_entered"]
 [connection signal="button_up" from="Buttons/StartNextWaveButton" to="." method="_on_start_next_wave_button_up"]
