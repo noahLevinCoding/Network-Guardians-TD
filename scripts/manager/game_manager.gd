@@ -16,7 +16,7 @@ const initial_health_hard : int = 100
 const initial_max_power : int = 0
 const initial_power : int = 0
 const initial_money : int = 2700
-const initial_tempearture : float = 50.0
+const initial_tempearture : float = 70.0
 
 var map_id : int = 0
 var map_scene_path : String = ""
