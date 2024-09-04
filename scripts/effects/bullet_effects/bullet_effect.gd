@@ -38,10 +38,11 @@ func end_chaining_effect(_bullet : Bullet):
 	bullet_effect_resource.line_6.queue_free()
 	
 func end_explosion_effect(_bullet : Bullet):
-	pass
+	bullet_effect_resource.polygon.queue_free()
 
 func init_explosion_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
+	bullet_effect_resource.polygon = Polygon2D.new()
 
 func init_chaining_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
@@ -83,7 +84,7 @@ func init_chaining_effect(bullet : Bullet):
 	
 
 func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
-	var polygon = Polygon2D.new()
+	var polygon = bullet_effect_resource.polygon
 	
 	var radius = bullet_effect_resource.radius
 	var segments = 64
