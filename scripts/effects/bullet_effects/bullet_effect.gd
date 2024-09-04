@@ -34,6 +34,8 @@ func end_chaining_effect(_bullet : Bullet):
 	bullet_effect_resource.line_2.queue_free()
 	bullet_effect_resource.line_3.queue_free()
 	bullet_effect_resource.line_4.queue_free()
+	bullet_effect_resource.line_5.queue_free()
+	bullet_effect_resource.line_6.queue_free()
 	
 func end_explosion_effect(_bullet : Bullet):
 	pass
@@ -44,28 +46,40 @@ func init_explosion_effect(bullet : Bullet):
 func init_chaining_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
 	bullet_effect_resource.line_1 = Line2D.new()
-	bullet_effect_resource.line_1.width = 8
+	bullet_effect_resource.line_1.width = 6
 	bullet_effect_resource.line_1.default_color = Color(57.0/256, 170.0/256, 225.0/256, 1)
 	bullet_effect_resource.line_1.z_index = 3
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_1)
 	
 	bullet_effect_resource.line_2 = Line2D.new()
-	bullet_effect_resource.line_2.width = 3
+	bullet_effect_resource.line_2.width = 2
 	bullet_effect_resource.line_2.default_color = Color(1,1,1,1)
 	bullet_effect_resource.line_2.z_index = 4
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_2)
 	
 	bullet_effect_resource.line_3 = Line2D.new()
-	bullet_effect_resource.line_3.width = 8
+	bullet_effect_resource.line_3.width = 6
 	bullet_effect_resource.line_3.default_color = Color(32.0/256, 74.0/256, 153.0/256, 1)
 	bullet_effect_resource.line_3.z_index = 3
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_3)
 	
 	bullet_effect_resource.line_4 = Line2D.new()
-	bullet_effect_resource.line_4.width = 3
+	bullet_effect_resource.line_4.width = 2
 	bullet_effect_resource.line_4.default_color = Color(1,1,1,1)
 	bullet_effect_resource.line_4.z_index = 4
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_4)
+	
+	bullet_effect_resource.line_5 = Line2D.new()
+	bullet_effect_resource.line_5.width = 6
+	bullet_effect_resource.line_5.default_color = Color(0,0,0,1)
+	bullet_effect_resource.line_5.z_index = 3
+	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_5)
+	
+	bullet_effect_resource.line_6 = Line2D.new()
+	bullet_effect_resource.line_6.width = 2
+	bullet_effect_resource.line_6.default_color = Color(1,1,1,1)
+	bullet_effect_resource.line_6.z_index = 4
+	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_6)
 	
 
 func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
@@ -118,15 +132,63 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 	
 	#first target without lightning offset
 	if bullet_effect_resource.enemies_visited.size() == 1:
-		offset = Vector2(4,4)
+		offset = vec_randf_range(-2, 2)
 	
-	bullet_effect_resource.line_1.add_point(enemy.global_position + offset)
-	bullet_effect_resource.line_2.add_point(enemy.global_position + offset)
+		bullet_effect_resource.line_1.add_point(enemy.global_position + offset)
+		bullet_effect_resource.line_2.add_point(enemy.global_position + offset)
+		
+	else:
+		var last_position : Vector2  = bullet_effect_resource.line_1.get_point_position(bullet_effect_resource.line_1.get_point_count()-1)
+		var new_position : Vector2 = enemy.global_position
+		
+		var middle_position = last_position.lerp(new_position, 0.5)
+		
+		bullet_effect_resource.line_1.add_point(middle_position + offset)
+		bullet_effect_resource.line_2.add_point(middle_position + offset)
+		
+		bullet_effect_resource.line_1.add_point(new_position)
+		bullet_effect_resource.line_2.add_point(new_position)
 	
-	#offset = vec_randf_range(-30, 30)
 	
-	bullet_effect_resource.line_3.add_point(enemy.global_position - offset)
-	bullet_effect_resource.line_4.add_point(enemy.global_position - offset)
+	offset = vec_randf_range(-30, 30)
+	
+	if bullet_effect_resource.enemies_visited.size() == 1:
+		offset = vec_randf_range(-2, 2)
+	
+		bullet_effect_resource.line_3.add_point(enemy.global_position + offset)
+		bullet_effect_resource.line_4.add_point(enemy.global_position + offset)
+		
+	else:
+		var last_position : Vector2  = bullet_effect_resource.line_3.get_point_position(bullet_effect_resource.line_3.get_point_count()-1)
+		var new_position : Vector2 = enemy.global_position
+		
+		var middle_position = last_position.lerp(new_position, 0.5)
+		
+		bullet_effect_resource.line_3.add_point(middle_position + offset)
+		bullet_effect_resource.line_4.add_point(middle_position + offset)
+		
+		bullet_effect_resource.line_3.add_point(new_position)
+		bullet_effect_resource.line_4.add_point(new_position)
+	
+	offset = vec_randf_range(-30, 30)
+	
+	if bullet_effect_resource.enemies_visited.size() == 1:
+		offset = vec_randf_range(-2, 2)
+	
+		bullet_effect_resource.line_5.add_point(enemy.global_position + offset)
+		bullet_effect_resource.line_6.add_point(enemy.global_position + offset)
+		
+	else:
+		var last_position : Vector2  = bullet_effect_resource.line_5.get_point_position(bullet_effect_resource.line_5.get_point_count()-1)
+		var new_position : Vector2 = enemy.global_position
+		
+		var middle_position = last_position.lerp(new_position, 0.5)
+		
+		bullet_effect_resource.line_5.add_point(middle_position + offset)
+		bullet_effect_resource.line_6.add_point(middle_position + offset)
+		
+		bullet_effect_resource.line_5.add_point(new_position)
+		bullet_effect_resource.line_6.add_point(new_position)
 	
 	#when max targets reached
 	if bullet_effect_resource.enemies_visited.size() >= bullet_effect_resource.number_of_targets:
@@ -135,6 +197,8 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 		bullet_effect_resource.line_2.queue_free()
 		bullet_effect_resource.line_3.queue_free()
 		bullet_effect_resource.line_4.queue_free()
+		bullet_effect_resource.line_5.queue_free()
+		bullet_effect_resource.line_6.queue_free()
 		
 		return
 	
@@ -157,11 +221,13 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 		bullet.bullet_resource.target = closest_enemy	
 		
 	else:
-		#await enemy.get_tree().create_timer(0.1).timeout
+		await enemy.get_tree().create_timer(0.05).timeout
 		bullet_effect_resource.line_1.queue_free()
 		bullet_effect_resource.line_2.queue_free()
 		bullet_effect_resource.line_3.queue_free()
 		bullet_effect_resource.line_4.queue_free()
+		bullet_effect_resource.line_5.queue_free()
+		bullet_effect_resource.line_6.queue_free()
 
 func vec_randf_range(min_val: float, max_val: float) -> Vector2:
 	
