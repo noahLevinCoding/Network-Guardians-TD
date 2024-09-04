@@ -46,7 +46,8 @@ func _physics_process(delta):
 			var angle = atan2(direction.y, direction.x)
 			rotation = angle + PI / 2
 	else:
-		bullet_resource.bullet_effect.end_effect(self)
+		if bullet_resource.bullet_effect != null:
+			bullet_resource.bullet_effect.end_effect(self)
 		queue_free()
 
 func _on_area_2d_area_entered(area):
