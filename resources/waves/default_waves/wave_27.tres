@@ -1,24 +1,40 @@
-[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://gvracargsu0e"]
+[gd_resource type="Resource" script_class="Wave" load_steps=11 format=3 uid="uid://gvracargsu0e"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_043wg"]
-[ext_resource type="Resource" uid="uid://dxy6ltq0lj0c7" path="res://resources/enemies/regrow/virus_4_yellow_R.tres" id="2_be6x0"]
+[ext_resource type="Resource" uid="uid://cuunjbmjo28do" path="res://resources/enemies/normal/virus_1_orange.tres" id="2_lhjc6"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_03yg7"]
-[ext_resource type="Resource" uid="uid://blgxivxrn8mxg" path="res://resources/enemies/normal/virus_7_purple.tres" id="4_58bnm"]
+[ext_resource type="Resource" uid="uid://dinkspn3ffi13" path="res://resources/enemies/normal/virus_2_blue.tres" id="4_do314"]
+[ext_resource type="Resource" uid="uid://cn63l5kp62ncv" path="res://resources/enemies/normal/virus_3_green.tres" id="5_ag8jq"]
+[ext_resource type="Resource" uid="uid://cx3ba4samiva7" path="res://resources/enemies/normal/virus_4_yellow.tres" id="6_281hk"]
 
 [sub_resource type="Resource" id="Resource_wiok6"]
 script = ExtResource("3_03yg7")
-enemy_resource = ExtResource("2_be6x0")
-enemy_count = 25
+enemy_resource = ExtResource("2_lhjc6")
+enemy_count = 100
 time_between_enemies = 1.0
-time_after_wave_group = 2.0
+time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_4jv1a"]
 script = ExtResource("3_03yg7")
-enemy_resource = ExtResource("4_58bnm")
-enemy_count = 10
+enemy_resource = ExtResource("4_do314")
+enemy_count = 60
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_s4opi"]
+script = ExtResource("3_03yg7")
+enemy_resource = ExtResource("5_ag8jq")
+enemy_count = 45
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_57qgg"]
+script = ExtResource("3_03yg7")
+enemy_resource = ExtResource("6_281hk")
+enemy_count = 45
 time_between_enemies = 1.0
 time_after_wave_group = 0.0
 
 [resource]
 script = ExtResource("1_043wg")
-wave_groups = Array[ExtResource("3_03yg7")]([SubResource("Resource_wiok6"), SubResource("Resource_4jv1a")])
+wave_groups = Array[ExtResource("3_03yg7")]([SubResource("Resource_wiok6"), SubResource("Resource_4jv1a"), SubResource("Resource_s4opi"), SubResource("Resource_57qgg")])
