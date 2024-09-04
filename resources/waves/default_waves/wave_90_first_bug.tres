@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://cixkb5ygyfbhd"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_rkiqx"]
+[ext_resource type="Resource" uid="uid://b7p17pbo3miga" path="res://resources/enemies/camo regrow fortified/virus_9_light_C_R_F.tres" id="2_r2cp8"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_n8pmv"]
+[ext_resource type="Resource" uid="uid://b55bsm0g5t8oo" path="res://resources/enemies/normal/bug_1_red.tres" id="4_xs1o8"]
+
+[sub_resource type="Resource" id="Resource_b8aat"]
+script = ExtResource("3_n8pmv")
+enemy_resource = ExtResource("2_r2cp8")
+enemy_count = 50
+time_between_enemies = 0.3
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_7lc8t"]
+script = ExtResource("3_n8pmv")
+enemy_resource = ExtResource("4_xs1o8")
+enemy_count = 3
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_rkiqx")
+wave_groups = Array[ExtResource("3_n8pmv")]([SubResource("Resource_b8aat"), SubResource("Resource_7lc8t")])

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://pbrvuxfyh8h4"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_hhc34"]
+[ext_resource type="Resource" uid="uid://bsbld377t2loa" path="res://resources/enemies/normal/trojan_2_red.tres" id="2_b8ia8"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_lkpue"]
+[ext_resource type="Resource" uid="uid://36vj2fjweq4k" path="res://resources/enemies/fortified/trojan_2_red_F.tres" id="4_7g04q"]
+
+[sub_resource type="Resource" id="Resource_gxq5j"]
+script = ExtResource("3_lkpue")
+enemy_resource = ExtResource("2_b8ia8")
+enemy_count = 10
+time_between_enemies = 1.5
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_airt4"]
+script = ExtResource("3_lkpue")
+enemy_resource = ExtResource("4_7g04q")
+enemy_count = 5
+time_between_enemies = 1.5
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_hhc34")
+wave_groups = Array[ExtResource("3_lkpue")]([SubResource("Resource_gxq5j"), SubResource("Resource_airt4")])

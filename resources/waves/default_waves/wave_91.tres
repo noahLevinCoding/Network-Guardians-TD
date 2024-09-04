@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://bjvpfnshdpw0w"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_oyl80"]
+[ext_resource type="Resource" uid="uid://cplbj0asqa4je" path="res://resources/enemies/fortified/virus_12_ceramic_F.tres" id="2_mbey8"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_1ossh"]
+[ext_resource type="Resource" uid="uid://bsbld377t2loa" path="res://resources/enemies/normal/trojan_2_red.tres" id="4_hwpcb"]
+
+[sub_resource type="Resource" id="Resource_b8aat"]
+script = ExtResource("3_1ossh")
+enemy_resource = ExtResource("2_mbey8")
+enemy_count = 100
+time_between_enemies = 0.4
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_7lc8t"]
+script = ExtResource("3_1ossh")
+enemy_resource = ExtResource("4_hwpcb")
+enemy_count = 20
+time_between_enemies = 2.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_oyl80")
+wave_groups = Array[ExtResource("3_1ossh")]([SubResource("Resource_b8aat"), SubResource("Resource_7lc8t")])

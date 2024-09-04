@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=12 format=3 uid="uid://dftb4qa4btwuw"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_8onx0"]
+[ext_resource type="Resource" uid="uid://kaxtbeu180yr" path="res://resources/enemies/camo regrow/virus_7_purple_C_R.tres" id="2_d3e26"]
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_fe2ir"]
+[ext_resource type="Resource" uid="uid://b7p17pbo3miga" path="res://resources/enemies/camo regrow fortified/virus_9_light_C_R_F.tres" id="4_iklqt"]
+[ext_resource type="Resource" uid="uid://mwujkc70qa7u" path="res://resources/enemies/fortified/trojan_1_blue_F.tres" id="5_xijov"]
+[ext_resource type="Resource" uid="uid://b55bsm0g5t8oo" path="res://resources/enemies/normal/bug_1_red.tres" id="6_tr1j0"]
+
+[sub_resource type="Resource" id="Resource_vr6lu"]
+script = ExtResource("3_fe2ir")
+enemy_resource = ExtResource("2_d3e26")
+enemy_count = 250
+time_between_enemies = 0.4
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_7lc8t"]
+script = ExtResource("3_fe2ir")
+enemy_resource = ExtResource("4_iklqt")
+enemy_count = 250
+time_between_enemies = 0.4
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_b8aat"]
+script = ExtResource("3_fe2ir")
+enemy_resource = ExtResource("2_d3e26")
+enemy_count = 250
+time_between_enemies = 0.4
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_p3ejv"]
+script = ExtResource("3_fe2ir")
+enemy_resource = ExtResource("5_xijov")
+enemy_count = 50
+time_between_enemies = 1.5
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_dpywy"]
+script = ExtResource("3_fe2ir")
+enemy_resource = ExtResource("6_tr1j0")
+enemy_count = 30
+time_between_enemies = 1.0
+time_after_wave_group = 0.0
+
+[resource]
+script = ExtResource("1_8onx0")
+wave_groups = Array[ExtResource("3_fe2ir")]([SubResource("Resource_vr6lu"), SubResource("Resource_7lc8t"), SubResource("Resource_b8aat"), SubResource("Resource_p3ejv"), SubResource("Resource_dpywy")])
