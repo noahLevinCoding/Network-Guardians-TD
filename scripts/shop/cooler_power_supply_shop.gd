@@ -20,11 +20,25 @@ extends VBoxContainer
 var red_color : Color = Color(1.0, 0.46, 0.2, 1.0)
 var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 
+
 func _ready():
+	SignalManager.money_changed.connect(_on_money_changed)
 	SignalManager.select_cooler.connect(_on_select)
 	SignalManager.select_power_supply.connect(_on_select)
 	SignalManager.reset_game.connect(_on_reset_game)
 	
+func _on_money_changed(_money):
+	if GameManager.cooler != null:
+		if GameManager.cooler.cooler_resource.upgrade_cooler_resource != null:
+			var price = GameManager.get_upgrade_cooler_price(GameManager.cooler.cooler_resource.upgrade_cooler_resource)
+			upgrade_cooler_button.disabled = GameManager.money < price
+		
+	if GameManager.power_supply != null:
+		if GameManager.power_supply.power_supply_resource.upgrade_power_supply_resource != null:
+			var price = GameManager.get_upgrade_power_supply_price(GameManager.power_supply.power_supply_resource.upgrade_power_supply_resource)
+			upgrade_power_supply_button.disabled = GameManager.money < price
+
+
 func _on_select():
 	attack_upgrade_node.visible = false
 	attack_upgrade_node._on_deselect_tower()
@@ -51,7 +65,6 @@ func _on_select():
 		price_temp.set_modulate(red_color if GameManager.money < price else white_color)
 		price_temp_text.set_modulate(red_color if GameManager.money < price else white_color)
 		
-		upgrade_cooler_button.disabled = price > GameManager.money
 	else:
 		upgrade_temp.text = "MAX"
 		price_temp.text = "-"

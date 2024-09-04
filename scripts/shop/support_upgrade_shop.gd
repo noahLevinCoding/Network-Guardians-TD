@@ -23,12 +23,31 @@ extends VBoxContainer
 @export var buff_4_label : Label
 
 var selected_tower : Tower
+var upper_upgrade_price : int
+var upper_power_increase : int
+var lower_upgrade_price : int
+var lower_power_increase : int
 
 func _ready():
+	SignalManager.money_changed.connect(_on_money_changed)
 	SignalManager.select_support_tower_on_board.connect(_on_select_tower)
 	SignalManager.deselect_tower_on_board.connect(_on_deselect_tower)
 	SignalManager.reset_game.connect(_on_reset_game)
 
+
+func _on_money_changed(_money):
+	if selected_tower != null:
+		if selected_tower.tower_resource.upgrade_path_1_tower_resource != null:
+			var has_enough_money = upper_upgrade_price <= GameManager.money 
+			var has_enough_power = upper_power_increase + GameManager.power <= GameManager.max_power
+			
+			upgrade_1_button.disabled = not (has_enough_money and has_enough_power)
+			
+		if selected_tower.tower_resource.upgrade_path_2_tower_resource != null:
+			var has_enough_money = lower_upgrade_price <= GameManager.money 
+			var has_enough_power = lower_power_increase + GameManager.power <= GameManager.max_power
+			
+			upgrade_2_button.disabled = not (has_enough_money and has_enough_power)
 	
 func _on_reset_game():
 	_on_deselect_tower()	
@@ -65,6 +84,7 @@ func _on_select_tower(tower : Tower):
 	
 	if selected_tower.tower_resource.upgrade_path_1_tower_resource != null:
 		var price = GameManager.get_upgrade_tower_price(selected_tower.tower_resource, 1)
+		upper_upgrade_price = price
 		
 		upgrade_1_price.text = str(price) + " $"
 		upgrade_1_icon.texture = tower.tower_resource.upgrade_path_1_icon
@@ -72,7 +92,9 @@ func _on_select_tower(tower : Tower):
 		var description = tower.tower_resource.upgrade_path_1_description
 		var temp_increase = tower.tower_resource.upgrade_path_1_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
 		var power_increase = tower.tower_resource.upgrade_path_1_tower_resource.power - tower.tower_resource.power
-		 
+		upper_power_increase = power_increase 
+		
+		
 		upgrade_1.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
 	
 		var has_enough_money = price <= GameManager.money 
@@ -87,6 +109,7 @@ func _on_select_tower(tower : Tower):
 		
 	if selected_tower.tower_resource.upgrade_path_2_tower_resource != null:
 		var price = GameManager.get_upgrade_tower_price(selected_tower.tower_resource, 2)
+		lower_upgrade_price = price
 		
 		upgrade_2_price.text = str(price) + " $"
 		
@@ -96,6 +119,7 @@ func _on_select_tower(tower : Tower):
 		
 		var temp_increase = tower.tower_resource.upgrade_path_2_tower_resource.temperature_increase - tower.tower_resource.temperature_increase
 		var power_increase = tower.tower_resource.upgrade_path_2_tower_resource.power - tower.tower_resource.power
+		lower_power_increase = power_increase
 		 
 		upgrade_2.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
 	
