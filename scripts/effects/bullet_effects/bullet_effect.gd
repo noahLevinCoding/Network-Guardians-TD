@@ -22,6 +22,21 @@ func init_effect(bullet : Bullet):
 		EFFECT_TYPE.EXPLOSION:
 			init_explosion_effect(bullet)
 		
+func end_effect(bullet : Bullet):
+	match bullet_effect_resource.effect_type:
+		EFFECT_TYPE.CHAINING:
+			end_chaining_effect(bullet)
+		EFFECT_TYPE.EXPLOSION:
+			end_explosion_effect(bullet)
+
+func end_chaining_effect(_bullet : Bullet):
+	bullet_effect_resource.line_1.queue_free()
+	bullet_effect_resource.line_2.queue_free()
+	bullet_effect_resource.line_3.queue_free()
+	bullet_effect_resource.line_4.queue_free()
+	
+func end_explosion_effect(_bullet : Bullet):
+	pass
 
 func init_explosion_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
@@ -80,7 +95,10 @@ func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
 	
 	polygon.queue_free()
 		
+		
+#Godot 4.2.1 still has bugs at duplicating nested resources
 func duplicate_bullet_resource(bullet_resource : BulletResource):
+	
 	var new_bullet_resource = BulletResource.new()
 	
 	new_bullet_resource.attack_damage = bullet_resource.attack_damage
@@ -97,16 +115,22 @@ func duplicate_bullet_resource(bullet_resource : BulletResource):
 func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 	bullet_effect_resource.enemies_visited.append(enemy)
 	var offset = vec_randf_range(-30, 30)
+	
+	#first target without lightning offset
+	if bullet_effect_resource.enemies_visited.size() == 1:
+		offset = Vector2(4,4)
+	
 	bullet_effect_resource.line_1.add_point(enemy.global_position + offset)
 	bullet_effect_resource.line_2.add_point(enemy.global_position + offset)
 	
-	offset = vec_randf_range(-30, 30)
+	#offset = vec_randf_range(-30, 30)
 	
-	bullet_effect_resource.line_3.add_point(enemy.global_position + offset)
-	bullet_effect_resource.line_4.add_point(enemy.global_position + offset)
+	bullet_effect_resource.line_3.add_point(enemy.global_position - offset)
+	bullet_effect_resource.line_4.add_point(enemy.global_position - offset)
 	
+	#when max targets reached
 	if bullet_effect_resource.enemies_visited.size() >= bullet_effect_resource.number_of_targets:
-		#await enemy.get_tree().create_timer(0.05).timeout
+		await enemy.get_tree().create_timer(0.05).timeout
 		bullet_effect_resource.line_1.queue_free()
 		bullet_effect_resource.line_2.queue_free()
 		bullet_effect_resource.line_3.queue_free()
@@ -118,6 +142,7 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 	var closest_enemy = null
 	var closest_enemy_distance : float = bullet_effect_resource.radius + 1
 	
+	#just jump to enemies, which are behind and have not been visited yet
 	for area_in_range in bullet.effect_area.get_overlapping_areas():
 		if area_in_range.owner is Enemy and not area_in_range.owner in bullet_effect_resource.enemies_visited:
 			var distance_to_enemy = enemy.progress  - area_in_range.owner.progress

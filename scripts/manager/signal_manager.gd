@@ -1,5 +1,6 @@
 extends Node
 
+#Game
 signal start_next_wave
 signal on_start_next_wave
 signal on_wave_finished
@@ -15,6 +16,10 @@ signal deselect_tower_on_board
 signal select_cooler
 signal select_power_supply
 
+signal request_wave_is_active
+signal response_wave_is_active(wave_is_active : bool)
+
+#UI
 signal health_changed(health : int)
 signal money_changed(money : int)
 signal temperature_changed(temperature : float)
@@ -22,8 +27,18 @@ signal power_changed(power : int)
 signal max_power_changed(max_power : int)
 signal selected_tower_damage_dealt_changed
 signal selected_tower_money_generated_changed
-
 signal wave_index_changed(wave_index : int)
+
+signal wiki_shop_button
+signal wiki_tower_button(wiki_tower_index : int)
+signal wiki_mechanics_button() 
+
+signal enter_wiki
+signal enter_wiki_tower(wiki_tower_index : int)
+signal enter_wiki_mechanics
+
+
+#Save and load
 signal load_wave_index(wave_index : int)
 
 #Audio
@@ -41,14 +56,10 @@ signal on_tower_sell
 signal on_volume_slider_changed
 signal on_shop_hover
 
-signal request_wave_is_active
-signal response_wave_is_active(wave_is_active : bool)
 
-signal wiki_shop_button
-signal wiki_tower_button(wiki_tower_index : int)
-signal wiki_mechanics_button() 
 
-signal enter_wiki
-signal enter_wiki_tower(wiki_tower_index : int)
-signal enter_wiki_mechanics
+
+
+
+
 

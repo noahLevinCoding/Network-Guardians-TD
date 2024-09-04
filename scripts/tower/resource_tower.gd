@@ -54,7 +54,7 @@ func on_start_next_wave():
 	drop_timer.start()
 	animated_sprite.play("mining")
 	wave_is_active = true
-	print("start")
+
 	
 func on_wave_finished():
 	drop_timer.stop()
@@ -63,7 +63,7 @@ func on_wave_finished():
 	money_generated += remaining_drop
 	animated_sprite.play("idle")
 	wave_is_active = false
-	print("finished")
+	
 
 func _on_drop_timer_timeout():
 	

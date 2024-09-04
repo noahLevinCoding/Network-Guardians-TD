@@ -49,6 +49,7 @@ var temperature : float :
 	set(value):
 		temperature = value
 		temperature_clamped = temperature
+#temperatures min: 0
 var temperature_clamped : float :
 	set(value):
 		temperature_clamped = max(0.0, value)
@@ -310,7 +311,7 @@ func save_highscore():
 		highscore = wave_index
 	
 	var highscore_resource = HighscoreResource.new()
-	highscore_resource.highscore = wave_index
+	highscore_resource.highscore = highscore
 	ResourceSaver.save(highscore_resource, save_folder_path + "/highscores" + str(map_id) + "_" + str(difficulty) + ".tres")
 	
 func load_highscore():

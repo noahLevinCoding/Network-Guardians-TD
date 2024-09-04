@@ -16,10 +16,10 @@ var mouse_in_placable_area : bool = false
 var red_color : Color = Color(1.0, 0.46, 0.2, 1.0)
 var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
 
-@export var tower_range_polygon : Polygon2D
-@export var tower_range_area : Area2D
-@export var tower_place_col : CollisionShape2D
-@export var tower_place_area : Area2D
+@export var tower_range_polygon : Polygon2D #shows the tower range when placing
+@export var tower_range_area : Area2D	#used for shader highlighting 
+@export var tower_place_col : CollisionShape2D #used for spacing around towers
+@export var tower_place_area : Area2D #used for spacing around towers
 @export var tower_place_sprite : Sprite2D
 
 var hovered_item := -1
@@ -54,6 +54,7 @@ func select(index : int):
 	tower_power_label.text = str(selected_item.tower_resource.power) + " W"
 	tower_temperature_label.text = "+" + str(selected_item.tower_resource.temperature_increase) + " °C"
 	
+	#color label red if not enough power
 	tower_power_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
 	tower_power_text_label.set_modulate(red_color if GameManager.max_power < GameManager.power + selected_item.tower_resource.power else white_color)
 	
@@ -108,6 +109,7 @@ func deselect():
 	tower_range_polygon.visible = false
 	tower_range_area.monitoring = false
 	tower_range_area.get_child(0).shape.radius = 0
+	#place out of screen, to prevent visual bug at next selection (because it needs the time to the next physics update to set the new position)
 	tower_range_area.position = Vector2(-1000,-1000)
 
 	tower_place_col.shape = null

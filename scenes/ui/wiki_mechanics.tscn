@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/ui/wiki_mechanics.gd" id="1_sb6nh"]
 [ext_resource type="FontFile" uid="uid://qsj5efyy2fb7" path="res://assets/ui/fonts/BarcadeNoBar-mzD9.otf" id="2_hy0ii"]
 [ext_resource type="FontFile" uid="uid://cvw83mci4whso" path="res://assets/ui/fonts/Barcade-R4LM.otf" id="3_x8ovc"]
-[ext_resource type="Texture2D" uid="uid://dmj7xrvaylqw7" path="res://assets/wiki/wiki_enemy.png" id="4_puh7x"]
+[ext_resource type="Texture2D" uid="uid://cufn7njxioy4x" path="res://assets/wiki/game_mechanics.png" id="4_8103t"]
 [ext_resource type="Texture2D" uid="uid://cmyogaurry63" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 5.png" id="5_jue05"]
 [ext_resource type="Texture2D" uid="uid://cpu5l3gg70keb" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_7.png" id="6_w1sa5"]
 [ext_resource type="Texture2D" uid="uid://c3e2xegruigho" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 6.png" id="7_xdxdl"]
@@ -43,20 +43,23 @@ text = "Wiki: Enemy"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -615.0
-offset_top = 100.0
-offset_right = 609.0
-offset_bottom = 980.0
+anchor_bottom = 0.5
+offset_left = -532.5
+offset_top = -440.0
+offset_right = 532.5
+offset_bottom = 440.0
 grow_horizontal = 2
+grow_vertical = 2
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer"]
 layout_mode = 2
-texture = ExtResource("4_puh7x")
+texture = ExtResource("4_8103t")
 
 [node name="BackButton" type="TextureButton" parent="Control"]
 layout_mode = 1

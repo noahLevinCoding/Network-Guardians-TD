@@ -21,7 +21,7 @@ var current_enemy_targets = []
 var is_idle = true	
 
 
-var is_selectable : bool = false
+var is_selectable : bool = false #used for first selection not directly after buying tower
 var is_selected : bool = false :
 	set(value):
 		is_selected = value

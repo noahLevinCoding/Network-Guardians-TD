@@ -54,6 +54,7 @@ func _on_support_area_entered(area):
 			area.owner.reset_buff_parameters()
 			area.owner.apply_buff_parameters()
 			
+	#Apply shader when buying a new tower in buff range
 	elif area.is_in_group("BuyTower"):
 		is_in_buff_range = true
 	
@@ -68,7 +69,8 @@ func _on_support_area_exited(area):
 				area.owner.buffs.erase(effect)
 				area.owner.reset_buff_parameters()
 				area.owner.apply_buff_parameters()
-				
+		
+	#Disable shader when buying a new tower in buff range		
 	elif area.is_in_group("BuyTower"):
 		is_in_buff_range = false
 			

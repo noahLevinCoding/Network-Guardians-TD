@@ -3,6 +3,8 @@ extends Node2D
 
 @export var sprite : Sprite2D
 @export var col_shape : CollisionShape2D
+
+#for effects like explosion and lightning
 @export var effect_col_shape : CollisionShape2D
 @export var effect_area : Area2D
 
@@ -18,6 +20,12 @@ func init():
 	
 	if bullet_resource.bullet_effect != null:
 		bullet_resource.bullet_effect.init_effect(self)
+		
+	if bullet_resource.target != null:
+		var direction = (bullet_resource.target.global_position - global_position).normalized()
+		if direction.length() > 0:
+			var angle = atan2(direction.y, direction.x)
+			rotation = angle + PI / 2
 	
 func _physics_process(delta):
 	if bullet_resource.target != null:
@@ -29,7 +37,7 @@ func _physics_process(delta):
 		else:
 			global_position += step
 			
-		#calculate one step ahead
+		#calculate one step ahead, otherwise the bullet is not centered when hitting
 		if step.length() > bullet_resource.target.global_position.distance_to(global_position):
 			global_position = bullet_resource.target.global_position	
 		
@@ -38,6 +46,7 @@ func _physics_process(delta):
 			var angle = atan2(direction.y, direction.x)
 			rotation = angle + PI / 2
 	else:
+		bullet_resource.bullet_effect.end_effect(self)
 		queue_free()
 
 func _on_area_2d_area_entered(area):
@@ -45,7 +54,9 @@ func _on_area_2d_area_entered(area):
 		if bullet_resource.bullet_effect != null:
 			bullet_resource.bullet_effect.apply_effect(self, area.owner)
 		
-		area.owner.take_damage(bullet_resource) 
+		area.owner.take_damage(bullet_resource)
+	
+		#bullet effects can change their target
 		if area.owner == bullet_resource.target:
 			queue_free()
 

@@ -65,7 +65,8 @@ func check_if_end():
 		GameManager.deal_damage_to_player(damage_to_player)
 		
 		queue_free()
-		
+	
+#recursively calculating the count of enemies / damage to player 	
 func calc_damage_to_player(child_enemy_resource : EnemyResource):
 	if child_enemy_resource.child_quantities.size() == 0:
 		return 1
@@ -90,9 +91,8 @@ func take_damage(bullet_resource : BulletResource):
 	
 	if enemy_resource.enemy_type == enemy_resource.ENEMY_TYPES.TROJAN and bullet_resource.extra_damage_to_trojan:
 		bullet_resource.attack_damage *= 2
-		print("test")
 	
-	#Apply pierce
+	#Apply pierce 
 	while bullet_resource.attack_damage > current_health and enemy_resource.child_quantities.size() == 1 and enemy_resource.child_quantities[0] == 1 and  bullet_resource.pierce > 1 and not enemy_resource.is_immune_to_pierce:
 		bullet_resource.attack_damage -= current_health
 		bullet_resource.pierce -= 1
@@ -118,7 +118,7 @@ func take_damage(bullet_resource : BulletResource):
 		if enemy_resource.can_regrow and regrow_parent_resources.size() > 0:
 			regrow_timer.start()
 	
-
+#Godot 4.2.1 has still bugs duplicating nested resources
 func duplicate_bullet_resource(bullet_resource : BulletResource):
 	var new_bullet_resource = BulletResource.new()
 	
@@ -190,7 +190,6 @@ func init_resource():
 	if enemy_resource.is_fortified:
 		current_health *= 2
 	
-	#TODO: Adjust when adding effects
 	camo_sprite.visible = enemy_resource.is_camo
 	fortified_sprite.visible = enemy_resource.is_fortified
 	regrow_sprite.visible = enemy_resource.can_regrow
@@ -205,6 +204,7 @@ func init_resource():
 func deferred_init_resource():
 	col_shape.shape = enemy_resource.col_shape
 
+#heal up to the original layer if not taking damage
 func _on_regrow_timer_timeout():
 	var parent_resource = regrow_parent_resources.pop_back()
 	if parent_resource != null:

@@ -49,7 +49,7 @@ func start_next_wave():
 			SignalManager.on_start_next_wave.emit()
 			current_wave = waves[current_wave_index]
 			start_next_wave_group()
-		#If there is no wave left, dobule the last wave
+		#If there is no wave left, dobule the last wave, and so on...
 		else: 
 			current_wave_index += 1
 			current_wave_group_index = -1
