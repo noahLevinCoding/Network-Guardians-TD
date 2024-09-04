@@ -11,7 +11,7 @@
 [resource]
 script = ExtResource("2_625ox")
 name = "GPU  0 | 1"
-drop_time = 0.2
+drop_time = 5.0
 drop_amount = 30
 max_drop_amount = 120
 power = 6
