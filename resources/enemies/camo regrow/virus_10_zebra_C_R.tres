@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://cusdla71eqbt8"]
 
-[ext_resource type="SpriteFrames" uid="uid://drj5bd8obv8y7" path="res://resources/enemies/sprite_frames/virus_10_zebra_sprite_frames.tres" id="1_mk1mo"]
+[ext_resource type="SpriteFrames" path="res://resources/enemies/sprite_frames/virus_10_zebra_sprite_frames.tres" id="1_mk1mo"]
 [ext_resource type="Texture2D" uid="uid://dw06uq7mn1qmt" path="res://assets/enemy/Addon_textures/camo.png" id="2_0op5x"]
 [ext_resource type="Resource" uid="uid://mq3f665c6nni" path="res://resources/enemies/camo regrow/virus_6_black_C_R.tres" id="3_bwy0e"]
 [ext_resource type="Resource" uid="uid://dltuniftqlmw7" path="res://resources/enemies/camo regrow/virus_8_white_C_R.tres" id="4_ax5lv"]
@@ -19,6 +19,7 @@ regrow_texture = ExtResource("7_v2tpo")
 col_shape = ExtResource("5_vpx7o")
 base_speed = 1.8
 base_health = 1.0
+total_health = 23.0
 is_immune_to_light = false
 is_immune_to_electricity = true
 is_immune_to_magnetism = false

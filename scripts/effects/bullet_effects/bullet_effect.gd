@@ -103,7 +103,7 @@ func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
 	polygon.visible = true
 		
 	for area_in_range in bullet.effect_area.get_overlapping_areas():
-		if area_in_range.owner is Enemy:
+		if area_in_range.owner is Enemy and area_in_range.owner != enemy:
 			area_in_range.owner.take_damage(duplicate_bullet_resource(bullet.bullet_resource))
 		
 	await enemy.get_tree().create_timer(0.05).timeout

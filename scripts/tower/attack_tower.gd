@@ -180,15 +180,21 @@ func select_fortified_target():
 				current_enemy_target_progress_ratio = enemy.progress_ratio
 				
 func select_healthiest_target():
-	var current_enemy_target_health := 0.0
+	var current_enemy_target_total_health := 0.0
+	var current_enemy_target_progress_ratio = -1.0
 	
 	for enemy in enemies:
 		if can_see_enemy(enemy) and not current_enemy_targets.has(enemy):
-			if enemy.current_health >= current_enemy_target_health:
+			if enemy.enemy_resource.total_health > current_enemy_target_total_health:
 				current_enemy_target = enemy
-				current_enemy_target_health = enemy.current_health
+				current_enemy_target_total_health = enemy.enemy_resource.total_health
+				current_enemy_target_progress_ratio = enemy.progress_ratio
+			elif enemy.enemy_resource.total_health == current_enemy_target_total_health and enemy.progress_ratio >= current_enemy_target_progress_ratio:
+				current_enemy_target = enemy
+				current_enemy_target_total_health = enemy.enemy_resource.total_health
+				current_enemy_target_progress_ratio = enemy.progress_ratio
 
-#Adjust when adding effects
+
 func can_see_enemy(enemy : Enemy):
 	if tower_resource.can_see_camo or has_camo_vision_effect: 
 		return true

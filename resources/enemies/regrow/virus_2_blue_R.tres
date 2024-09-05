@@ -18,6 +18,7 @@ regrow_texture = ExtResource("5_pr0pe")
 col_shape = ExtResource("4_d87ex")
 base_speed = 1.4
 base_health = 1.0
+total_health = 2.0
 is_immune_to_light = false
 is_immune_to_electricity = false
 is_immune_to_magnetism = false

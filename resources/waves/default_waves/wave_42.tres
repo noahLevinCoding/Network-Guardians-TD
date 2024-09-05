@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://cvdfgmvxpehdl"]
+[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://djbcsyoyrclt3"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_cjb1u"]
 [ext_resource type="Resource" uid="uid://dsb5nksnab6qg" path="res://resources/enemies/regrow/virus_11_rainbow_R.tres" id="2_eqi4n"]

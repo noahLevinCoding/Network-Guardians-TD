@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Wave" load_steps=9 format=3 uid="uid://cqnckyrsel8t4"]
+[gd_resource type="Resource" script_class="Wave" load_steps=9 format=3 uid="uid://b5imjlf1bkbhw"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_klj1b"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_gfwa4"]

@@ -16,6 +16,9 @@ enum ENEMY_TYPES {NONE, VIRUS, TROJAN}
 @export_group("Stats")
 @export var base_speed : float 
 @export var base_health : float
+#just used for prio type healthiest
+#is hard coded due to performance (not worth to calculate every enemy instance the total health recursively)
+@export var total_health : float
 
 @export_group("Visibility and vulnerability")
 @export var is_immune_to_light : bool = false

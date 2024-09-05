@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://bwfbeh2pn7nsu"]
+[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://bdkvfpewiq1mk"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_h7nkg"]
 [ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="2_yxdb7"]
