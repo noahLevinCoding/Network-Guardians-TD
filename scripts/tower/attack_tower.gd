@@ -19,6 +19,7 @@ var current_enemy_targets = []
 
 #used for direct shooting if idle
 var is_idle = true	
+var shows_range : bool = false
 
 
 var is_selectable : bool = false #used for first selection not directly after buying tower
@@ -229,3 +230,31 @@ func add_damage_dealt(damage : float):
 	if is_selected:
 		SignalManager.selected_tower_damage_dealt_changed.emit()
 		
+
+func show_range(time : float, color : Color):
+	if shows_range: 
+		return
+	
+	shows_range = true
+	
+	var polygon = Polygon2D.new()
+	var radius = tower_resource.attack_range
+	var segments = 64
+	var points = []
+		
+	for i in range(segments):
+		var angle = 2 * PI * i / segments
+		points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
+			
+	polygon.polygon = points
+	polygon.color = color
+	
+	add_child(polygon)
+	polygon.global_position = global_position
+	polygon.visible = true
+	
+	await get_tree().create_timer(time).timeout
+	
+	polygon.queue_free()
+	
+	shows_range = false

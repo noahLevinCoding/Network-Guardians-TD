@@ -84,7 +84,7 @@ func take_damage(bullet_resource : BulletResource):
 	bullet_resource = duplicate_bullet_resource(bullet_resource)
 
 	for effect_resource in bullet_resource.effects:
-		effects.append(EnemyEffect.new(effect_resource))
+		effects.append(EnemyEffect.new(effect_resource, bullet_resource.source_tower))
 	
 	if is_immune(bullet_resource):
 		return
