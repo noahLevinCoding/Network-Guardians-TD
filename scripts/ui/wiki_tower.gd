@@ -10,6 +10,7 @@ signal back
 func _ready():
 	if tower_entries.size() > 0:
 		texture_rect.texture = tower_entries[tower_entries.size()-1]
+		tower_index = tower_entries.size()-1
 
 func select_tower(wiki_tower_index : int):
 	if 0 <= wiki_tower_index and wiki_tower_index < tower_entries.size():

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/save_and_load/game_progress.gd" id="1_l4oo4"]
+
+[resource]
+script = ExtResource("1_l4oo4")
+map_scene_path = "res://scenes/maps/map_1.tscn"
+difficulty = 0
+money = 813
+health = 200
+power = 5
+max_power = 20
+temperature = 55.0
+wave_index = 9
+tower_resource_paths = Array[String](["res://resources/towers/led/led_0_0.tres", "res://resources/towers/transistor/transistor_0_0.tres", "res://resources/towers/led/led_0_0.tres"])
+tower_positions = Array[Vector2]([Vector2(346.722, 880.631), Vector2(249.52, 690.278), Vector2(1346.81, 881.633)])
+tower_damage_dealt = Array[float]([495.0, 317.0, 29.0])
+tower_money_generated = Array[int]([0, 0, 0])
+tower_sell_values = Array[int]([85, 170, 85])
+cooler_resource_path = "res://resources/cooler/cooler_1.tres"
+power_supply_resource_path = "res://resources/power_supply/power_supply_1.tres"
