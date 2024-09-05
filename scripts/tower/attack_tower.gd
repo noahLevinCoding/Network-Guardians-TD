@@ -1,7 +1,7 @@
 class_name AttackTower
 extends Tower
 
-enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, FORTIFIED, HEALTHIEST}
+enum TARGET_PRIO_TYPES {FIRST, LAST, CAMO, FORTIFIED, HEALTHIEST, REGROW}
 
 @export var animated_sprite : AnimatedSprite2D
 @export var attack_col_shape : CollisionShape2D
@@ -135,6 +135,8 @@ func select_target():
 			select_fortified_target()
 		TARGET_PRIO_TYPES.HEALTHIEST:
 			select_healthiest_target()
+		TARGET_PRIO_TYPES.REGROW:
+			select_regrow_target()
 	
 	if current_enemy_target == null:
 		select_first_target()
@@ -175,6 +177,15 @@ func select_fortified_target():
 	
 	for enemy in enemies:
 		if can_see_enemy(enemy) and enemy.enemy_resource.is_fortified and not current_enemy_targets.has(enemy):
+			if enemy.progress_ratio >= current_enemy_target_progress_ratio:
+				current_enemy_target = enemy
+				current_enemy_target_progress_ratio = enemy.progress_ratio
+				
+func select_regrow_target():
+	var current_enemy_target_progress_ratio = -1.0
+	
+	for enemy in enemies:
+		if can_see_enemy(enemy) and enemy.enemy_resource.can_regrow and not current_enemy_targets.has(enemy):
 			if enemy.progress_ratio >= current_enemy_target_progress_ratio:
 				current_enemy_target = enemy
 				current_enemy_target_progress_ratio = enemy.progress_ratio
