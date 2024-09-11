@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=11 format=3 uid="uid://dwo05d8hj1ybi"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://dwo05d8hj1ybi"]
 
 [ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_2qx4f"]
-[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_s51tv"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_7uqr3"]
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_6kd62"]
 [ext_resource type="SpriteFrames" uid="uid://rndcve0gasae" path="res://resources/towers/neopixel/sprite_frames/neopixel_1_0_sprite_frames.tres" id="5_vw6oh"]
@@ -9,11 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cbns7ynga6uvm" path="res://assets/ui/shop_icons/attack_speed_increase_3_icon.png" id="6_82fv3"]
 [ext_resource type="Resource" uid="uid://c4clta5wq8bj6" path="res://resources/towers/neopixel/neopixel_1_1.tres" id="7_pue7k"]
 [ext_resource type="Texture2D" uid="uid://so74okkyusp2" path="res://assets/ui/shop_icons/pierce_increase_icon.png" id="8_c2dmm"]
-
-[sub_resource type="Resource" id="Resource_vknus"]
-script = ExtResource("1_s51tv")
-slow_multiplier = 0.0
-duration = 0.0
 
 [resource]
 script = ExtResource("2_7uqr3")
@@ -27,7 +21,7 @@ number_of_targets = 1
 power = 2
 temperature_increase = 2.0
 bullet_speed = 10000.0
-effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_vknus")])
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = false
 extra_damage_to_trojan = false
