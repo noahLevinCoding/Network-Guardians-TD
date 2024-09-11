@@ -170,17 +170,16 @@ func update_shop_availability():
 		var has_not_enough_money = GameManager.money < items[i].price
 		var has_not_enough_power = GameManager.max_power < GameManager.power + items[i].tower_resource.power
 		
-		var tooltip = ""
+		var tooltip = items[i].tooltip + "\n\n"
 		if has_not_enough_power:
 			tooltip += "Not enough power:\nUpgrade your power supply or sell other towers.\n\n"
 			
 		if has_not_enough_money:
-			tooltip += "Not enought money:\nDefeat enemies or use GPUs to earn money."
+			tooltip += "Not enough money:\nDefeat enemies or use GPUs to earn money."
 		
 		var can_not_buy = has_not_enough_money or has_not_enough_power
 		
 		item_list.set_item_disabled(i, can_not_buy)
-		item_list.set_item_tooltip_enabled(i, can_not_buy)
 		item_list.set_item_tooltip(i, tooltip)
 		
 
@@ -240,6 +239,8 @@ func _on_item_hovered(index : int):
 	tower_power_label.set_modulate(red_color if GameManager.max_power < GameManager.power + items[index].tower_resource.power else white_color)
 	tower_power_text_label.set_modulate(red_color if GameManager.max_power < GameManager.power + items[index].tower_resource.power else white_color)
 
+	item_list.set_item_tooltip_enabled(index, true)
+	update_shop_availability()
 
 func _on_tower_range_area_entered(area):
 	if area.owner is Tower:

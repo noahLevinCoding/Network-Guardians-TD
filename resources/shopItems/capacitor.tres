@@ -13,3 +13,4 @@ price_easy = 320
 price_medium = 375
 price_hard = 405
 tower_resource = ExtResource("3_5pmvm")
+tooltip = "Slow but high area damage"

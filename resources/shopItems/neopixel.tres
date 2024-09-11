@@ -13,3 +13,4 @@ price_easy = 300
 price_medium = 350
 price_hard = 380
 tower_resource = ExtResource("3_h8cho")
+tooltip = "Global range sniper"

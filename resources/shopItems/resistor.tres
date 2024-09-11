@@ -13,3 +13,4 @@ price_easy = 425
 price_medium = 500
 price_hard = 540
 tower_resource = ExtResource("3_xexyv")
+tooltip = "Slows enemies in a radius"

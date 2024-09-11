@@ -8,6 +8,7 @@ extends Resource
 @export var price_medium : int
 @export var price_hard : int
 @export var tower_resource : TowerResource
+@export var tooltip : String
 
 
 var price : int

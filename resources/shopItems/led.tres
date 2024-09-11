@@ -13,3 +13,4 @@ price_easy = 170
 price_medium = 200
 price_hard = 215
 tower_resource = ExtResource("3_ospbi")
+tooltip = "Single target light medium range damage"

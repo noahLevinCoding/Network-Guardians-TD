@@ -14,3 +14,4 @@ price_easy = 340
 price_medium = 400
 price_hard = 430
 tower_resource = ExtResource("3_3b6he")
+tooltip = "Uses magnetism to push back enemies"

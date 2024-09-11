@@ -14,3 +14,4 @@ price_easy = 1060
 price_medium = 1250
 price_hard = 1350
 tower_resource = ExtResource("3_gjqna")
+tooltip = "Generates money"
