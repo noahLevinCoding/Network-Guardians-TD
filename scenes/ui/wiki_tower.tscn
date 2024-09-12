@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://2wpwljud2ogj" path="res://assets/wiki/Inductor.png" id="8_d7fmn"]
 [ext_resource type="Texture2D" uid="uid://btk5kckk7mahe" path="res://assets/wiki/Gpu.png" id="9_leh88"]
 [ext_resource type="Texture2D" uid="uid://chn1p5guprgfn" path="res://assets/ui/buttons/menu_buttons/normal/buttonsssss copy 8.png" id="10_0hbcr"]
-[ext_resource type="Texture2D" uid="uid://b4m4ne53lo6il" path="res://assets/wiki/towers.png" id="10_5vphk"]
+[ext_resource type="Texture2D" uid="uid://bu58bhwr1nrdi" path="res://assets/wiki/towers.png" id="10_5vphk"]
 [ext_resource type="Texture2D" uid="uid://ben8li41s72hf" path="res://assets/ui/buttons/menu_buttons/pressed/button_on_pressed_9.png" id="11_m1av6"]
 [ext_resource type="Texture2D" uid="uid://c2ucxonfceqjf" path="res://assets/ui/buttons/menu_buttons/hovered/buttonsssss_On copy 7.png" id="12_1kg8r"]
 

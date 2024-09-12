@@ -43,21 +43,17 @@ func _physics_process(delta):
 func check_if_rotation():
 	var diff = global_position - last_position
 	
-	print(diff)
 	
 	if diff.x > -0.2 and diff.x < 0.2:
-		print("Zero")
 		return
 	
 	elif diff.x < 0:
-		print("< 0")
 		base_animated_sprite.flip_h = true
 		fortified_sprite.flip_h = true
 		camo_sprite.flip_h = true
 		regrow_sprite.flip_h = true
 		
 	elif diff.x > 0:
-		print("> 0")
 		base_animated_sprite.flip_h = false
 		fortified_sprite.flip_h = false
 		camo_sprite.flip_h = false

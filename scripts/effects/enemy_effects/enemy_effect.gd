@@ -14,7 +14,7 @@ func _init(_effect_resource : EnemyEffectResource, source_tower : Tower):
 			init_knockback_effect()
 	
 func init_slow_effect(source_tower : Tower):
-	source_tower.show_range(0.15, Color(0,0,1,0.2))
+	source_tower.show_range(0.25, Color(0,0,1,0.2))
 	
 func init_knockback_effect():
 	pass
