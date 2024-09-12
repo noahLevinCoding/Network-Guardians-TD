@@ -5,6 +5,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_gmisu"]
 
 [node name="Enemy" type="PathFollow2D" node_paths=PackedStringArray("base_animated_sprite", "camo_sprite", "fortified_sprite", "regrow_sprite", "col_shape", "regrow_timer")]
+rotates = false
 loop = false
 script = ExtResource("1_fdsxu")
 base_animated_sprite = NodePath("BaseAnimatedSprite")
