@@ -239,7 +239,11 @@ func _on_item_hovered(index : int):
 	tower_power_label.set_modulate(red_color if GameManager.max_power < GameManager.power + items[index].tower_resource.power else white_color)
 	tower_power_text_label.set_modulate(red_color if GameManager.max_power < GameManager.power + items[index].tower_resource.power else white_color)
 
-	item_list.set_item_tooltip_enabled(index, true)
+	# Tooltips are out of screen on the web version when using strech mode to viewport
+	if OS.get_name() == "Web":
+		item_list.set_item_tooltip_enabled(index, false)
+	else:
+		item_list.set_item_tooltip_enabled(index, true)
 	update_shop_availability()
 
 func _on_tower_range_area_entered(area):
