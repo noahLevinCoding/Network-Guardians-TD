@@ -12,12 +12,12 @@ void fragment() {
 	uv.y -= position.y;
 	
     float dist = length(uv);
-	float col = 0.0;
-	float alpha = 1.0;
+	float alpha_inv = 1.0;
+	vec3 color = vec3(0.0);
 	
-	if (dist > radius) alpha = 0.0;
-	if (dist <= radius) alpha = smoothstep(1.0, 0.4, dist / radius);
-	if (dist <= radius) col = smoothstep(0.0, 1.8, dist / radius);
-	
-	COLOR = vec4(vec3(col),alpha);
+	if (dist > radius) alpha_inv = 1.0;
+	if (dist <= radius) alpha_inv = mix(0.0, 1.0, dist/radius);
+	if (dist <= radius) alpha_inv *= alpha_inv;
+
+	COLOR = vec4(color,1.0-alpha_inv);
 }

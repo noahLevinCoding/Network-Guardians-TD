@@ -237,24 +237,44 @@ func show_range(time : float, color : Color):
 	
 	shows_range = true
 	
-	var polygon = Polygon2D.new()
+	#var polygon = Polygon2D.new()
+	#var radius = tower_resource.attack_range
+	#var segments = 64
+	#var points = []
+		#
+	#for i in range(segments):
+		#var angle = 2 * PI * i / segments
+		#points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
+			#
+	#polygon.polygon = points
+	#polygon.color = color
+	#
+	#add_child(polygon)
+	#polygon.global_position = global_position
+	#polygon.visible = true
+	#
+	#await get_tree().create_timer(time).timeout
+	#
+	#polygon.queue_free()
+	
+	
 	var radius = tower_resource.attack_range
-	var segments = 64
-	var points = []
+	var color_rect = ColorRect.new()
+	
+	color_rect.material = ShaderMaterial.new()
+	color_rect.material.shader = preload("res://shader/slow.gdshader")
+	color_rect.material.set_shader_parameter("radius", radius)
+	color_rect.material.set_shader_parameter("position", global_position)
+	color_rect.material.set_shader_parameter("color", color)
+	
+	get_parent().add_child(color_rect)
+	color_rect.size = Vector2(1920, 1080)
+	color_rect.global_position = Vector2(0,0)
+	color_rect.visible = true
+	
 		
-	for i in range(segments):
-		var angle = 2 * PI * i / segments
-		points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
-			
-	polygon.polygon = points
-	polygon.color = color
-	
-	add_child(polygon)
-	polygon.global_position = global_position
-	polygon.visible = true
-	
 	await get_tree().create_timer(time).timeout
 	
-	polygon.queue_free()
+	color_rect.queue_free()
 	
 	shows_range = false

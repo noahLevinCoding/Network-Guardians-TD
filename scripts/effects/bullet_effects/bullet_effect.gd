@@ -38,12 +38,10 @@ func end_chaining_effect(_bullet : Bullet):
 	bullet_effect_resource.line_6.queue_free()
 	
 func end_explosion_effect(_bullet : Bullet):
-	bullet_effect_resource.polygon.queue_free()
 	bullet_effect_resource.color_rect.queue_free()
 
 func init_explosion_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
-	bullet_effect_resource.polygon = Polygon2D.new()
 	bullet_effect_resource.color_rect = ColorRect.new()
 
 func init_chaining_effect(bullet : Bullet):
@@ -86,52 +84,10 @@ func init_chaining_effect(bullet : Bullet):
 	
 
 func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
-	var polygon = bullet_effect_resource.polygon
 	
 	var radius = bullet_effect_resource.radius
-	var segments = 64
-	var points : Array = []
-	var polygons : Array = []
-	var uv : Array = []
-	var vertex_colors : PackedColorArray = PackedColorArray()
-	#var colors : PackedColorArray = PackedColorArray()
-		
-	#points.append(Vector2(-100, -50))
-	#points.append(Vector2(100, -50))
-	#points.append(Vector2(100, 50))
-	#points.append(Vector2(-100, 50))
-	#
-	#polygons.append([])
-	#polygons.back().append(0)
-	#polygons.back().append(1)
-	#polygons.back().append(2)
-	#
-	#polygons.append([])
-	#polygons.back().append(0)
-	#polygons.back().append(2)
-	#polygons.back().append(3)
-	#
-	#uv.append(Vector2(0,0))
-	#uv.append(Vector2(1,0))
-	#uv.append(Vector2(1,1))
-	#uv.append(Vector2(0,1))
-		
-	#points.append(Vector2(0.0,0.0))
-	#uv.append(Vector2(0.5,0.5))
-	#vertex_colors.append(Color(0.0, 0.0, 0.0, 1.0))
-	#polygon.color = Color(1.0, 1.0, 1.0, 1.0)
-	
-		
-	#uzh  
-
-			
-	#polygon.material = ShaderMaterial.new()
-	#polygon.material.shader = preload("res://shader/bullet_explosion.gdshader")
-	
-	#polygon.texture = preload("res://assets/shader/circle.png")
-	#polygon.texture_repeat = 2
-	#polygon.texture_scale = Vector2(radius/100.0, radius/100.0)
 	var color_rect = bullet_effect_resource.color_rect	
+	
 	color_rect.material = ShaderMaterial.new()
 	color_rect.material.shader = preload("res://shader/bullet_explosion.gdshader")
 	color_rect.material.set_shader_parameter("radius", bullet_effect_resource.radius)
@@ -142,10 +98,6 @@ func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
 	color_rect.global_position = Vector2(0,0)
 	color_rect.visible = true
 	
-	
-	enemy.get_parent().add_child(polygon)
-	polygon.global_position = bullet.global_position
-	polygon.visible = true
 		
 	for area_in_range in bullet.effect_area.get_overlapping_areas():
 		if area_in_range.owner is Enemy and area_in_range.owner != enemy:
@@ -153,7 +105,6 @@ func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
 		
 	await enemy.get_tree().create_timer(0.2).timeout
 	
-	polygon.queue_free()
 	color_rect.queue_free()
 		
 #Godot 4.2.1 still has bugs at duplicating nested resources
