@@ -237,27 +237,6 @@ func show_range(time : float, color : Color):
 	
 	shows_range = true
 	
-	#var polygon = Polygon2D.new()
-	#var radius = tower_resource.attack_range
-	#var segments = 64
-	#var points = []
-		#
-	#for i in range(segments):
-		#var angle = 2 * PI * i / segments
-		#points.append(Vector2(cos(angle) * radius, sin(angle) * radius))
-			#
-	#polygon.polygon = points
-	#polygon.color = color
-	#
-	#add_child(polygon)
-	#polygon.global_position = global_position
-	#polygon.visible = true
-	#
-	#await get_tree().create_timer(time).timeout
-	#
-	#polygon.queue_free()
-	
-	
 	var radius = tower_resource.attack_range
 	var color_rect = ColorRect.new()
 	
@@ -267,14 +246,17 @@ func show_range(time : float, color : Color):
 	color_rect.material.set_shader_parameter("position", global_position)
 	color_rect.material.set_shader_parameter("color", color)
 	
-	get_parent().add_child(color_rect)
+	var auto_destroy_script = preload("res://scripts/effects/auto_destroy.gd")
+	color_rect.set_script(auto_destroy_script)	
+	color_rect.time_to_destroy = time
+	color_rect.is_active = true
+	color_rect.z_index = 2
+	color_rect.on_destroy.connect(_on_destroy_visible_range)
+	
+	add_child(color_rect)
 	color_rect.size = Vector2(1920, 1080)
 	color_rect.global_position = Vector2(0,0)
 	color_rect.visible = true
 	
-		
-	await get_tree().create_timer(time).timeout
-	
-	color_rect.queue_free()
-	
+func _on_destroy_visible_range():
 	shows_range = false

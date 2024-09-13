@@ -30,56 +30,72 @@ func end_effect(bullet : Bullet):
 			end_explosion_effect(bullet)
 
 func end_chaining_effect(_bullet : Bullet):
-	bullet_effect_resource.line_1.queue_free()
-	bullet_effect_resource.line_2.queue_free()
-	bullet_effect_resource.line_3.queue_free()
-	bullet_effect_resource.line_4.queue_free()
-	bullet_effect_resource.line_5.queue_free()
-	bullet_effect_resource.line_6.queue_free()
+	pass
+	#bullet_effect_resource.line_1.queue_free()
+	#bullet_effect_resource.line_2.queue_free()
+	#bullet_effect_resource.line_3.queue_free()
+	#bullet_effect_resource.line_4.queue_free()
+	#bullet_effect_resource.line_5.queue_free()
+	#bullet_effect_resource.line_6.queue_free()
 	
 func end_explosion_effect(_bullet : Bullet):
-	bullet_effect_resource.color_rect.queue_free()
+	pass
+	#bullet_effect_resource.color_rect.queue_free()
 
 func init_explosion_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
 	bullet_effect_resource.color_rect = ColorRect.new()
 
 func init_chaining_effect(bullet : Bullet):
+	var auto_destroy_script = preload("res://scripts/effects/auto_destroy.gd")
+	
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
 	bullet_effect_resource.line_1 = Line2D.new()
 	bullet_effect_resource.line_1.width = 6
 	bullet_effect_resource.line_1.default_color = Color(57.0/256, 170.0/256, 225.0/256, 1)
 	bullet_effect_resource.line_1.z_index = 3
+	bullet_effect_resource.line_1.set_script(auto_destroy_script)	
+	bullet_effect_resource.line_1.time_to_destroy = 0.05
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_1)
 	
 	bullet_effect_resource.line_2 = Line2D.new()
 	bullet_effect_resource.line_2.width = 2
 	bullet_effect_resource.line_2.default_color = Color(1,1,1,1)
 	bullet_effect_resource.line_2.z_index = 4
+	bullet_effect_resource.line_2.set_script(auto_destroy_script)	
+	bullet_effect_resource.line_2.time_to_destroy = 0.05
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_2)
 	
 	bullet_effect_resource.line_3 = Line2D.new()
 	bullet_effect_resource.line_3.width = 6
 	bullet_effect_resource.line_3.default_color = Color(32.0/256, 74.0/256, 153.0/256, 1)
 	bullet_effect_resource.line_3.z_index = 3
+	bullet_effect_resource.line_3.set_script(auto_destroy_script)	
+	bullet_effect_resource.line_3.time_to_destroy = 0.05
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_3)
 	
 	bullet_effect_resource.line_4 = Line2D.new()
 	bullet_effect_resource.line_4.width = 2
 	bullet_effect_resource.line_4.default_color = Color(1,1,1,1)
 	bullet_effect_resource.line_4.z_index = 4
+	bullet_effect_resource.line_4.set_script(auto_destroy_script)	
+	bullet_effect_resource.line_4.time_to_destroy = 0.05
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_4)
 	
 	bullet_effect_resource.line_5 = Line2D.new()
 	bullet_effect_resource.line_5.width = 6
 	bullet_effect_resource.line_5.default_color = Color(0,0,0,1)
 	bullet_effect_resource.line_5.z_index = 3
+	bullet_effect_resource.line_5.set_script(auto_destroy_script)	
+	bullet_effect_resource.line_5.time_to_destroy = 0.05
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_5)
 	
 	bullet_effect_resource.line_6 = Line2D.new()
 	bullet_effect_resource.line_6.width = 2
 	bullet_effect_resource.line_6.default_color = Color(1,1,1,1)
 	bullet_effect_resource.line_6.z_index = 4
+	bullet_effect_resource.line_6.set_script(auto_destroy_script)	
+	bullet_effect_resource.line_6.time_to_destroy = 0.05
 	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_6)
 	
 
@@ -93,19 +109,21 @@ func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
 	color_rect.material.set_shader_parameter("radius", bullet_effect_resource.radius)
 	color_rect.material.set_shader_parameter("position", bullet.global_position)
 	
+	var auto_destroy_script = preload("res://scripts/effects/auto_destroy.gd")
+	color_rect.set_script(auto_destroy_script)	
+	color_rect.time_to_destroy = 0.2
+	color_rect.is_active = true
+	
 	enemy.get_parent().add_child(color_rect)
 	color_rect.size = Vector2(1920, 1080)
 	color_rect.global_position = Vector2(0,0)
 	color_rect.visible = true
+	color_rect.z_index = 2
 	
 		
 	for area_in_range in bullet.effect_area.get_overlapping_areas():
 		if area_in_range.owner is Enemy and area_in_range.owner != enemy:
 			area_in_range.owner.take_damage(duplicate_bullet_resource(bullet.bullet_resource))
-		
-	await enemy.get_tree().create_timer(0.2).timeout
-	
-	color_rect.queue_free()
 		
 #Godot 4.2.1 still has bugs at duplicating nested resources
 func duplicate_bullet_resource(bullet_resource : BulletResource):
@@ -189,13 +207,12 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 	
 	#when max targets reached
 	if bullet_effect_resource.enemies_visited.size() >= bullet_effect_resource.number_of_targets:
-		await enemy.get_tree().create_timer(0.05).timeout
-		bullet_effect_resource.line_1.queue_free()
-		bullet_effect_resource.line_2.queue_free()
-		bullet_effect_resource.line_3.queue_free()
-		bullet_effect_resource.line_4.queue_free()
-		bullet_effect_resource.line_5.queue_free()
-		bullet_effect_resource.line_6.queue_free()
+		bullet_effect_resource.line_1.is_active = true
+		bullet_effect_resource.line_2.is_active = true
+		bullet_effect_resource.line_3.is_active = true
+		bullet_effect_resource.line_4.is_active = true
+		bullet_effect_resource.line_5.is_active = true
+		bullet_effect_resource.line_6.is_active = true
 		
 		return
 	
@@ -218,13 +235,12 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 		bullet.bullet_resource.target = closest_enemy	
 		
 	else:
-		await enemy.get_tree().create_timer(0.05).timeout
-		bullet_effect_resource.line_1.queue_free()
-		bullet_effect_resource.line_2.queue_free()
-		bullet_effect_resource.line_3.queue_free()
-		bullet_effect_resource.line_4.queue_free()
-		bullet_effect_resource.line_5.queue_free()
-		bullet_effect_resource.line_6.queue_free()
+		bullet_effect_resource.line_1.is_active = true
+		bullet_effect_resource.line_2.is_active = true
+		bullet_effect_resource.line_3.is_active = true
+		bullet_effect_resource.line_4.is_active = true
+		bullet_effect_resource.line_5.is_active = true
+		bullet_effect_resource.line_6.is_active = true
 
 func vec_randf_range(min_val: float, max_val: float) -> Vector2:
 	
