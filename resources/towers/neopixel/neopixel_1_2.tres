@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AttackTowerResource" load_steps=6 format=3 uid="uid://cy4btjx4dqoay"]
 
-[ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_qs8ap"]
+[ext_resource type="Resource" uid="uid://74pf4qvvk2et" path="res://resources/towers/led/bullets/bullet_led_white.tres" id="1_tkf0s"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_wve68"]
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_3qxly"]
 [ext_resource type="SpriteFrames" uid="uid://clu07rrhlrvy" path="res://resources/towers/neopixel/sprite_frames/neopixel_1_2_sprite_frames.tres" id="5_uusai"]
@@ -24,7 +24,7 @@ can_see_camo = true
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_uusai")
 place_col_shape = ExtResource("3_3qxly")
-bullet_visual_resource = ExtResource("1_qs8ap")
+bullet_visual_resource = ExtResource("1_tkf0s")
 upgrade_path_1_icon = ExtResource("6_lyw3q")
 upgrade_path_1_description = "Max"
 upgrade_path_1_price_easy = 0

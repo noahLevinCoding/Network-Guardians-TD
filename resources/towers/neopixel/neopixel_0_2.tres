@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://cv66jpkastb5o"]
 
-[ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_hhock"]
+[ext_resource type="Resource" uid="uid://ck3508cimmib6" path="res://resources/towers/led/bullets/bullet_led_cyan.tres" id="1_mo7oo"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_yvy6m"]
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_cgs4o"]
 [ext_resource type="SpriteFrames" uid="uid://cjnt6ok5ypucb" path="res://resources/towers/neopixel/sprite_frames/neopixel_0_2_sprite_frames.tres" id="5_24usr"]
@@ -19,14 +19,14 @@ pierce = 6
 number_of_targets = 1
 power = 3
 temperature_increase = 3.0
-bullet_speed = 10000.0
+bullet_speed = 4000.0
 effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = true
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_24usr")
 place_col_shape = ExtResource("3_cgs4o")
-bullet_visual_resource = ExtResource("1_hhock")
+bullet_visual_resource = ExtResource("1_mo7oo")
 upgrade_path_1_icon = ExtResource("6_62y6a")
 upgrade_path_1_description = "Increases attack speed"
 upgrade_path_1_price_easy = 380

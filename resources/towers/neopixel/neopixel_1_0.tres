@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://dwo05d8hj1ybi"]
 
-[ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_2qx4f"]
+[ext_resource type="Resource" uid="uid://c34ujdjhsemtl" path="res://resources/towers/led/bullets/bullet_led_orange.tres" id="1_vy5rq"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_7uqr3"]
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_6kd62"]
 [ext_resource type="SpriteFrames" uid="uid://rndcve0gasae" path="res://resources/towers/neopixel/sprite_frames/neopixel_1_0_sprite_frames.tres" id="5_vw6oh"]
@@ -27,7 +27,7 @@ can_see_camo = false
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_vw6oh")
 place_col_shape = ExtResource("3_6kd62")
-bullet_visual_resource = ExtResource("1_2qx4f")
+bullet_visual_resource = ExtResource("1_vy5rq")
 upgrade_path_1_icon = ExtResource("6_82fv3")
 upgrade_path_1_description = "Increases attack speed, led can kill enemies immune to light"
 upgrade_path_1_price_easy = 760

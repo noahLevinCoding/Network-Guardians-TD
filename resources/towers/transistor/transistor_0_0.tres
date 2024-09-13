@@ -12,7 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_6sx11"]
 script = ExtResource("1_bobco")
-radius = 100.0
+radius = 110.0
 number_of_targets = 2
 
 [resource]

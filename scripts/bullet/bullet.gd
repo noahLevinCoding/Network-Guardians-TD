@@ -37,9 +37,6 @@ func _physics_process(delta):
 		else:
 			global_position += step
 			
-		#calculate one step ahead, otherwise the bullet is not centered when hitting
-		if step.length() > bullet_resource.target.global_position.distance_to(global_position):
-			global_position = bullet_resource.target.global_position	
 		
 	
 		if direction.length() > 0:
@@ -52,6 +49,8 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.owner == bullet_resource.target:
+		global_position = bullet_resource.target.global_position
+		
 		if bullet_resource.bullet_effect != null:
 			bullet_resource.bullet_effect.apply_effect(self, area.owner)
 		

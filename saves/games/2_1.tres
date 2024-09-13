@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/save_and_load/game_progress.gd" id="1_qi2dk"]
+
+[resource]
+script = ExtResource("1_qi2dk")
+map_scene_path = "res://scenes/maps/map_2.tscn"
+difficulty = 1
+money = 436
+health = 150
+power = 13
+max_power = 25
+temperature = 53.0
+wave_index = 8
+tower_resource_paths = Array[String](["res://resources/towers/led/led_1_1.tres", "res://resources/towers/transistor/transistor_0_0.tres", "res://resources/towers/capacitor/capacitor_0_0.tres", "res://resources/towers/inductor/inductor_0_0.tres", "res://resources/towers/neopixel/neopixel_0_0.tres"])
+tower_positions = Array[Vector2]([Vector2(658.372, 785.455), Vector2(690.438, 787.458), Vector2(593.236, 780.445), Vector2(538.121, 719.332), Vector2(491.023, 656.215)])
+tower_damage_dealt = Array[float]([288.0, 29.0, 132.0, 217.0, 97.0])
+tower_money_generated = Array[int]([0, 0, 0, 0, 0])
+tower_sell_values = Array[int]([195, 200, 187, 200, 175])
+cooler_resource_path = "res://resources/cooler/cooler_1.tres"
+power_supply_resource_path = "res://resources/power_supply/power_supply_1.tres"

@@ -12,7 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_yaqn0"]
 script = ExtResource("1_c8dfk")
-radius = 100.0
+radius = 110.0
 number_of_targets = 4
 
 [resource]

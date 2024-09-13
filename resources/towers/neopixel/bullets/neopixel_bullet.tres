@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="BulletVisualResource" load_steps=3 format=3 uid="uid://bu62gnnf382tr"]
+[gd_resource type="Resource" script_class="BulletVisualResource" load_steps=4 format=3 uid="uid://bu62gnnf382tr"]
 
 [ext_resource type="Shape2D" uid="uid://dbvvsrg7mq3ir" path="res://resources/towers/neopixel/bullets/bullee_shape.tres" id="1_7ak0q"]
 [ext_resource type="Script" path="res://scripts/bullet/bullet_visual_resource.gd" id="1_b0ayc"]
+[ext_resource type="Texture2D" uid="uid://dc43djvjq1sds" path="res://assets/bullets/led/led_bullet_red.png" id="3_sppfw"]
 
 [resource]
 script = ExtResource("1_b0ayc")
+texture = ExtResource("3_sppfw")
 col_shape = ExtResource("1_7ak0q")

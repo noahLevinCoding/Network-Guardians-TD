@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AttackTowerResource" load_steps=9 format=3 uid="uid://c4clta5wq8bj6"]
 
-[ext_resource type="Resource" uid="uid://bu62gnnf382tr" path="res://resources/towers/neopixel/bullets/neopixel_bullet.tres" id="1_xua7d"]
+[ext_resource type="Resource" uid="uid://b33sdwfdjmgkq" path="res://resources/towers/led/bullets/bullet_led_green.tres" id="1_xulko"]
 [ext_resource type="Script" path="res://scripts/tower/attack_tower_resource.gd" id="2_7q6c6"]
 [ext_resource type="Shape2D" uid="uid://1h3q088wyhlt" path="res://resources/towers/neopixel/place_shape.tres" id="3_vlmeg"]
 [ext_resource type="SpriteFrames" uid="uid://gin1h3ejwg6o" path="res://resources/towers/neopixel/sprite_frames/neopixel_1_1_sprite_frames.tres" id="5_irndi"]
@@ -27,7 +27,7 @@ can_see_camo = false
 extra_damage_to_trojan = false
 sprite_frames = ExtResource("5_irndi")
 place_col_shape = ExtResource("3_vlmeg")
-bullet_visual_resource = ExtResource("1_xua7d")
+bullet_visual_resource = ExtResource("1_xulko")
 upgrade_path_1_icon = ExtResource("6_jvtp7")
 upgrade_path_1_description = "Increases attack speed, led can kill enemies immune to light"
 upgrade_path_1_price_easy = 760
