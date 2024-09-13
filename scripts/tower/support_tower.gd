@@ -43,16 +43,30 @@ func init_resource():
 		
 	range_indicator.polygon = points
 	
+	for tower in towers:
+		remove_buff(tower)
+		add_buff(tower)
+	
+	
+func add_buff(tower):
+	for effect in tower_resource.effects:
+			tower.buffs.append(TowerEffect.new(effect, self))
+			tower.reset_buff_parameters()
+			tower.apply_buff_parameters()
+	
+func remove_buff(tower):
+	for effect in tower.buffs:
+			if effect.source == self:
+				tower.buffs.erase(effect)
+				tower.reset_buff_parameters()
+				tower.apply_buff_parameters()
 	
 func _on_support_area_entered(area):
 	if area.owner is Tower and area.owner != self and not area.owner is SupportTower:
 		towers.append(area.owner)
 		towers_buffed = towers.size()
 		
-		for effect in tower_resource.effects:
-			area.owner.buffs.append(TowerEffect.new(effect, self))
-			area.owner.reset_buff_parameters()
-			area.owner.apply_buff_parameters()
+		add_buff(area.owner)
 			
 	#Apply shader when buying a new tower in buff range
 	elif area.is_in_group("BuyTower"):
@@ -64,11 +78,7 @@ func _on_support_area_exited(area):
 		towers.erase(area.owner)
 		towers_buffed = towers.size()
 		
-		for effect in area.owner.buffs:
-			if effect.source == self:
-				area.owner.buffs.erase(effect)
-				area.owner.reset_buff_parameters()
-				area.owner.apply_buff_parameters()
+		remove_buff(area.owner)
 		
 	#Disable shader when buying a new tower in buff range		
 	elif area.is_in_group("BuyTower"):
