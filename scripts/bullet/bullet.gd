@@ -10,6 +10,7 @@ extends Node2D
 
 var bullet_resource : BulletResource 
 
+
 func _ready():
 	call_deferred("init")
 
@@ -26,9 +27,14 @@ func init():
 		if direction.length() > 0:
 			var angle = atan2(direction.y, direction.x)
 			rotation = angle + PI / 2
+	else:
+		if bullet_resource.bullet_effect != null:
+			bullet_resource.bullet_effect.end_effect(self)
+		queue_free()
 	
 func _physics_process(delta):
 	if bullet_resource.target != null:
+		
 		var direction = (bullet_resource.target.global_position - global_position).normalized()
 		var step = direction * bullet_resource.speed * delta
 		
@@ -37,8 +43,6 @@ func _physics_process(delta):
 		else:
 			global_position += step
 			
-		
-	
 		if direction.length() > 0:
 			var angle = atan2(direction.y, direction.x)
 			rotation = angle + PI / 2
@@ -46,6 +50,7 @@ func _physics_process(delta):
 		if bullet_resource.bullet_effect != null:
 			bullet_resource.bullet_effect.end_effect(self)
 		queue_free()
+
 
 func _on_area_2d_area_entered(area):
 	if area.owner == bullet_resource.target:

@@ -195,7 +195,7 @@ func spawn_children(bullet_resource : BulletResource):
 	
 func die():
 	drop_loot()
-	SignalManager.on_enemy_death.emit()
+	SignalManager.on_enemy_death.emit()	#Sound
 	queue_free()
 	
 func drop_loot():

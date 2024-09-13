@@ -285,6 +285,7 @@ func load_game():
 		var tower_scene = get_tower_scene(tower_resource)
 		var tower_instance = tower_scene.instantiate()
 		tower_instance.tower_resource = tower_resource
+		tower_instance.is_selectable = true
 		tower_node.add_child(tower_instance)
 		tower_instance.position = game_progress_resource.tower_positions[tower_index]
 		tower_instance.sell_value = game_progress_resource.tower_sell_values[tower_index]

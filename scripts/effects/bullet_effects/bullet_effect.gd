@@ -30,21 +30,23 @@ func end_effect(bullet : Bullet):
 			end_explosion_effect(bullet)
 
 func end_chaining_effect(_bullet : Bullet):
-	pass
-	#bullet_effect_resource.line_1.queue_free()
-	#bullet_effect_resource.line_2.queue_free()
-	#bullet_effect_resource.line_3.queue_free()
-	#bullet_effect_resource.line_4.queue_free()
-	#bullet_effect_resource.line_5.queue_free()
-	#bullet_effect_resource.line_6.queue_free()
-	
+	bullet_effect_resource.line_1.queue_free()
+	bullet_effect_resource.line_2.queue_free()
+	bullet_effect_resource.line_3.queue_free()
+	bullet_effect_resource.line_4.queue_free()
+	bullet_effect_resource.line_5.queue_free()
+	bullet_effect_resource.line_6.queue_free()	
+		
 func end_explosion_effect(_bullet : Bullet):
-	pass
-	#bullet_effect_resource.color_rect.queue_free()
+	bullet_effect_resource.color_rect.is_active = true
 
 func init_explosion_effect(bullet : Bullet):
 	bullet.effect_col_shape.shape.radius = bullet_effect_resource.radius
 	bullet_effect_resource.color_rect = ColorRect.new()
+	
+	var auto_destroy_script = preload("res://scripts/effects/auto_destroy.gd")
+	bullet_effect_resource.color_rect.set_script(auto_destroy_script)	
+	bullet_effect_resource.color_rect.time_to_destroy = 0.2
 
 func init_chaining_effect(bullet : Bullet):
 	var auto_destroy_script = preload("res://scripts/effects/auto_destroy.gd")
@@ -109,9 +111,7 @@ func apply_explosion_effect(bullet : Bullet, enemy : Enemy):
 	color_rect.material.set_shader_parameter("radius", bullet_effect_resource.radius)
 	color_rect.material.set_shader_parameter("position", bullet.global_position)
 	
-	var auto_destroy_script = preload("res://scripts/effects/auto_destroy.gd")
-	color_rect.set_script(auto_destroy_script)	
-	color_rect.time_to_destroy = 0.2
+	
 	color_rect.is_active = true
 	
 	enemy.get_parent().add_child(color_rect)
@@ -142,6 +142,7 @@ func duplicate_bullet_resource(bullet_resource : BulletResource):
 
 
 func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
+	
 	bullet_effect_resource.enemies_visited.append(enemy)
 	var offset = vec_randf_range(-30, 30)
 	
