@@ -32,12 +32,15 @@ func _on_money_changed(_money):
 		if GameManager.cooler.cooler_resource.upgrade_cooler_resource != null:
 			var price = GameManager.get_upgrade_cooler_price(GameManager.cooler.cooler_resource.upgrade_cooler_resource)
 			upgrade_cooler_button.disabled = GameManager.money < price
+			price_temp.set_modulate(red_color if GameManager.money < price else white_color)
+			price_temp_text.set_modulate(red_color if GameManager.money < price else white_color)
 		
 	if GameManager.power_supply != null:
 		if GameManager.power_supply.power_supply_resource.upgrade_power_supply_resource != null:
 			var price = GameManager.get_upgrade_power_supply_price(GameManager.power_supply.power_supply_resource.upgrade_power_supply_resource)
 			upgrade_power_supply_button.disabled = GameManager.money < price
-
+			price_power.set_modulate(red_color if GameManager.money < price else white_color)
+			price_power_text.set_modulate(red_color if GameManager.money < price else white_color)
 
 func _on_select():
 	attack_upgrade_node.visible = false

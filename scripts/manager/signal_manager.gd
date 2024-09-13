@@ -46,7 +46,7 @@ signal on_button_hover
 signal on_button_click
 signal on_button_dip_click
 signal on_button_wave_start_click
-signal on_enemy_death
+signal on_enemy_take_damage
 signal on_select_shop
 signal on_deselect_shop
 signal on_select_prio_type

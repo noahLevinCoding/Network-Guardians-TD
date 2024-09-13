@@ -110,8 +110,11 @@ func take_damage(bullet_resource : BulletResource):
 	for effect_resource in bullet_resource.effects:
 		effects.append(EnemyEffect.new(effect_resource, bullet_resource.source_tower))
 	
+	
 	if is_immune(bullet_resource):
 		return
+	
+	SignalManager.on_enemy_take_damage.emit()	#Sound
 	
 	if enemy_resource.enemy_type == enemy_resource.ENEMY_TYPES.TROJAN and bullet_resource.extra_damage_to_trojan:
 		bullet_resource.attack_damage *= 2
@@ -195,7 +198,6 @@ func spawn_children(bullet_resource : BulletResource):
 	
 func die():
 	drop_loot()
-	SignalManager.on_enemy_death.emit()	#Sound
 	queue_free()
 	
 func drop_loot():
