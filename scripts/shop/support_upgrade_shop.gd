@@ -28,6 +28,9 @@ var upper_power_increase : int
 var lower_upgrade_price : int
 var lower_power_increase : int
 
+var red_color : Color = Color(1.0, 0.46, 0.2, 1.0)
+var white_color : Color = Color(1.0, 1.0, 1.0, 1.0)
+
 func _ready():
 	SignalManager.money_changed.connect(_on_money_changed)
 	SignalManager.select_support_tower_on_board.connect(_on_select_tower)
