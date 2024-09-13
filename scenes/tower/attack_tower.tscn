@@ -82,6 +82,7 @@ collision_mask = 0
 
 [node name="RangeIndicator" type="Polygon2D" parent="."]
 visible = false
+z_index = 1
 
 [connection signal="area_entered" from="AttackArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="AttackArea" to="." method="_on_area_2d_area_exited"]
