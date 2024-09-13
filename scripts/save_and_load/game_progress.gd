@@ -16,6 +16,7 @@ extends Resource
 @export var tower_damage_dealt : Array[float]
 @export var tower_money_generated : Array[int]
 @export var tower_sell_values : Array[int]
+@export var tower_prioritization : Array[AttackTower.TARGET_PRIO_TYPES]
 
 @export var cooler_resource_path : String
 @export var power_supply_resource_path : String

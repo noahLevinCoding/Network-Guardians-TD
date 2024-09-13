@@ -254,12 +254,15 @@ func save_game():
 		if tower is AttackTower:
 			game_progress_resource.tower_damage_dealt.append(tower.damage_dealt)
 			game_progress_resource.tower_money_generated.append(0)
+			game_progress_resource.tower_prioritization.append(tower.target_prio_type)
 		elif tower is ResourceTower:
 			game_progress_resource.tower_damage_dealt.append(0)
 			game_progress_resource.tower_money_generated.append(tower.money_generated)
+			game_progress_resource.tower_prioritization.append(0)
 		else:
 			game_progress_resource.tower_damage_dealt.append(0)
 			game_progress_resource.tower_money_generated.append(0)
+			game_progress_resource.tower_prioritization.append(0)
 		
 	ResourceSaver.save(game_progress_resource, save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".tres")
 
@@ -288,6 +291,7 @@ func load_game():
 		
 		if tower_instance is AttackTower:
 			tower_instance.damage_dealt = game_progress_resource.tower_damage_dealt[tower_index]
+			tower_instance.target_prio_type = game_progress_resource.tower_prioritization[tower_index]
 		elif tower_instance is ResourceTower:
 			tower_instance.money_generated = game_progress_resource.tower_money_generated[tower_index]
 	
