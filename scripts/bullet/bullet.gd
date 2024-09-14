@@ -7,8 +7,15 @@ extends Node2D
 #for effects like explosion and lightning
 @export var effect_col_shape : CollisionShape2D
 @export var effect_area : Area2D
+@export var hit_area : Area2D
 
 var bullet_resource : BulletResource 
+
+var area_entered_already_called : bool = false
+var last_target = null :
+	set(value):
+		last_target = value
+		area_entered_already_called = false
 
 
 func _ready():
@@ -33,7 +40,17 @@ func init():
 		queue_free()
 	
 func _physics_process(delta):
+	if bullet_resource.target != last_target:
+		last_target = bullet_resource.target
+	
 	if bullet_resource.target != null:
+		
+		for area in hit_area.get_overlapping_areas():
+			if area.owner == bullet_resource.target:
+				#if bullet_resource.bullet_effect != null:
+					#bullet_resource.bullet_effect.apply_effect(self, area.owner)
+				_on_area_2d_area_entered(area)
+				return
 		
 		var direction = (bullet_resource.target.global_position - global_position).normalized()
 		var step = direction * bullet_resource.speed * delta
@@ -53,16 +70,21 @@ func _physics_process(delta):
 
 
 func _on_area_2d_area_entered(area):
-	if area.owner == bullet_resource.target:
+	
+	if area.owner == bullet_resource.target and not area_entered_already_called:
+		area_entered_already_called = true
+		
 		global_position = bullet_resource.target.global_position
 		
 		if bullet_resource.bullet_effect != null:
 			bullet_resource.bullet_effect.apply_effect(self, area.owner)
 		
+		var is_still_target = area.owner == bullet_resource.target
+		
 		area.owner.take_damage(bullet_resource)
 	
 		#bullet effects can change their target
-		if area.owner == bullet_resource.target:
+		if is_still_target or bullet_resource.target == null:
 			queue_free()
 
 

@@ -5,12 +5,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2m7u"]
 radius = 0.01
 
-[node name="Bullet" type="Node2D" node_paths=PackedStringArray("sprite", "col_shape", "effect_col_shape", "effect_area")]
+[node name="Bullet" type="Node2D" node_paths=PackedStringArray("sprite", "col_shape", "effect_col_shape", "effect_area", "hit_area")]
 script = ExtResource("1_6qadl")
 sprite = NodePath("Sprite2D")
 col_shape = NodePath("HitArea/CollisionShape2D")
 effect_col_shape = NodePath("EffectArea/CollisionShape2D")
 effect_area = NodePath("EffectArea")
+hit_area = NodePath("HitArea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

@@ -236,6 +236,7 @@ func apply_chaining_effect(bullet : Bullet, enemy : Enemy):
 		bullet.bullet_resource.target = closest_enemy	
 		
 	else:
+		bullet.bullet_resource.target = null
 		bullet_effect_resource.line_1.is_active = true
 		bullet_effect_resource.line_2.is_active = true
 		bullet_effect_resource.line_3.is_active = true
