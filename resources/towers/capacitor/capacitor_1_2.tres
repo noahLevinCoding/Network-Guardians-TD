@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=10 format=3 uid="uid://dmmlmyf0vkhjp"]
+[gd_resource type="Resource" script_class="AttackTowerResource" load_steps=8 format=3 uid="uid://dmmlmyf0vkhjp"]
 
-[ext_resource type="Script" path="res://scripts/effects/enemy_effects/slow_effect_resource.gd" id="1_ar0wi"]
 [ext_resource type="Resource" uid="uid://c7jbcpsaj3f88" path="res://resources/towers/capacitor/bullets/bullet_capacitor_7.tres" id="1_nvyc7"]
 [ext_resource type="Script" path="res://scripts/effects/bullet_effects/explosion_bullet_effect_resource.gd" id="1_ymx6h"]
 [ext_resource type="Shape2D" uid="uid://ecwtu2x7uf45" path="res://resources/towers/capacitor/capacitor_place_shape.tres" id="2_wae0e"]
@@ -11,11 +10,6 @@
 [sub_resource type="Resource" id="Resource_3t8p6"]
 script = ExtResource("1_ymx6h")
 radius = 75.0
-
-[sub_resource type="Resource" id="Resource_1t2mk"]
-script = ExtResource("1_ar0wi")
-slow_multiplier = 0.0
-duration = 0.0
 
 [resource]
 script = ExtResource("3_fq5xo")
@@ -30,7 +24,7 @@ power = 10
 temperature_increase = 10.0
 bullet_speed = 1000.0
 bullet_effect = SubResource("Resource_3t8p6")
-effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([SubResource("Resource_1t2mk")])
+effects = Array[Resource("res://scripts/effects/enemy_effects/enemy_effect_resource.gd")]([])
 ignores_damage_type_immunity = false
 can_see_camo = true
 extra_damage_to_trojan = false
