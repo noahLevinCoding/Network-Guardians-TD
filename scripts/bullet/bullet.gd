@@ -10,6 +10,7 @@ extends Node2D
 @export var hit_area : Area2D
 
 var bullet_resource : BulletResource 
+var target_progress = 0
 
 var area_entered_already_called : bool = false
 var last_target = null :
@@ -44,6 +45,7 @@ func _physics_process(delta):
 		last_target = bullet_resource.target
 	
 	if bullet_resource.target != null:
+		target_progress = bullet_resource.target.progress
 		
 		for area in hit_area.get_overlapping_areas():
 			if area.owner == bullet_resource.target:
@@ -65,8 +67,11 @@ func _physics_process(delta):
 			rotation = angle + PI / 2
 	else:
 		if bullet_resource.bullet_effect != null:
-			bullet_resource.bullet_effect.end_effect(self)
-		queue_free()
+			if bullet_resource.bullet_effect.can_terminate_effect(self):
+				bullet_resource.bullet_effect.end_effect(self)
+				queue_free()
+		else:
+			queue_free()
 
 
 func _on_area_2d_area_entered(area):

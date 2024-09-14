@@ -29,6 +29,13 @@ func end_effect(bullet : Bullet):
 		EFFECT_TYPE.EXPLOSION:
 			end_explosion_effect(bullet)
 
+func can_terminate_effect(bullet : Bullet):
+	match bullet_effect_resource.effect_type:
+		EFFECT_TYPE.CHAINING:
+			return can_terminate_chaining_effect(bullet)
+		EFFECT_TYPE.EXPLOSION:
+			return can_terminate_explosion_effect(bullet)
+
 func end_chaining_effect(_bullet : Bullet):
 	bullet_effect_resource.line_1.queue_free()
 	bullet_effect_resource.line_2.queue_free()
@@ -36,6 +43,33 @@ func end_chaining_effect(_bullet : Bullet):
 	bullet_effect_resource.line_4.queue_free()
 	bullet_effect_resource.line_5.queue_free()
 	bullet_effect_resource.line_6.queue_free()	
+	
+func can_terminate_chaining_effect(bullet):
+	if bullet_effect_resource.enemies_visited.size() >= bullet_effect_resource.number_of_targets:
+		return true
+	else:
+		var closest_enemy = null
+		var closest_enemy_distance : float = bullet_effect_resource.radius + 1
+		
+		#just jump to enemies, which are behind and have not been visited yet
+		for area_in_range in bullet.effect_area.get_overlapping_areas():
+			if area_in_range.owner is Enemy and not area_in_range.owner in bullet_effect_resource.enemies_visited:
+				var distance_to_enemy = bullet.target_progress  - area_in_range.owner.progress
+				if distance_to_enemy < closest_enemy_distance:
+					closest_enemy_distance = distance_to_enemy
+					closest_enemy = area_in_range.owner
+		
+		if closest_enemy != null:
+			
+			bullet.bullet_resource.target = closest_enemy	
+			return false
+			
+		else:
+			bullet.bullet_resource.target = null
+			return true
+	
+func can_terminate_explosion_effect(_bullet):
+	return true
 		
 func end_explosion_effect(_bullet : Bullet):
 	bullet_effect_resource.color_rect.is_active = true
