@@ -26,7 +26,7 @@ enum ENEMY_TYPES {NONE, VIRUS, TROJAN}
 @export var is_immune_to_magnetism : bool = false
 
 @export var is_immune_to_pierce : bool = false
-@export var is_immunte_to_slow : bool = false
+@export var is_immune_to_slow : bool = false
 
 @export var is_camo : bool = false
 @export var is_fortified : bool = false

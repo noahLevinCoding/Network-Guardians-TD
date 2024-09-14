@@ -77,7 +77,7 @@ func calc_current_speed():
 		current_speed = -knockback_speed * base_speed_multiplier
 	else:
 		current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier  * base_speed_multiplier
-		if not enemy_resource.is_immunte_to_slow:
+		if not enemy_resource.is_immune_to_slow:
 			current_speed *= slow_multiplier
 	
 func move(delta : float):
@@ -170,7 +170,7 @@ func is_immune(bullet_resource : BulletResource):
 	var is_immune_final = is_immune_due_to_damage_type and not bullet_resource.ignores_damage_type_immunity
 	
 	for enemy_effect in bullet_resource.effects:
-		if enemy_effect is SlowEffectResource and enemy_resource.is_immunte_to_slow:
+		if enemy_effect is SlowEffectResource and enemy_resource.is_immune_to_slow:
 			is_immune_final = true
 			
 	return is_immune_final
