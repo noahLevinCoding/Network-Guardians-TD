@@ -45,12 +45,14 @@ func _on_money_changed(_money):
 			var has_enough_power = upper_power_increase + GameManager.power <= GameManager.max_power
 			
 			upgrade_1_button.disabled = not (has_enough_money and has_enough_power)
+			upgrade_1_price.set_modulate(red_color if not has_enough_money else white_color)
 			
 		if selected_tower.tower_resource.upgrade_path_2_tower_resource != null:
 			var has_enough_money = lower_upgrade_price <= GameManager.money 
 			var has_enough_power = lower_power_increase + GameManager.power <= GameManager.max_power
 			
 			upgrade_2_button.disabled = not (has_enough_money and has_enough_power)
+			upgrade_2_price.set_modulate(red_color if not has_enough_money else white_color)
 	
 func _on_reset_game():
 	_on_deselect_tower()	
