@@ -20,6 +20,7 @@ var current_enemy_targets = []
 #used for direct shooting if idle
 var is_idle = true	
 var shows_range : bool = false
+var attack_range_final : float = 0
 
 
 var is_selectable : bool = false #used for first selection not directly after buying tower
@@ -44,6 +45,7 @@ func init_attack_range():
 	
 	var radius  = (tower_resource.attack_range * attack_range_multiplicative) + attack_range_additive
 	attack_col_shape.shape.radius = radius
+	attack_range_final = radius
 
 	var segments = 64
 	var points = []
@@ -237,7 +239,7 @@ func show_range(time : float, color : Color):
 	
 	shows_range = true
 	
-	var radius = tower_resource.attack_range
+	var radius = attack_range_final
 	var color_rect = ColorRect.new()
 	
 	color_rect.material = ShaderMaterial.new()
