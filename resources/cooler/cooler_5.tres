@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CoolerResource" load_steps=6 format=3 uid="uid://xaylow5isn56"]
+
+[ext_resource type="Shape2D" uid="uid://dfvtx51yq2r1q" path="res://resources/cooler/cooler_col_shape.tres" id="1_8otex"]
+[ext_resource type="Script" path="res://scripts/cooler/cooler_resource.gd" id="2_y4u2a"]
+[ext_resource type="Texture2D" uid="uid://b0ipbcx2bcuw3" path="res://assets/fans/fan_4/fan_4_0.png" id="3_ei1xd"]
+[ext_resource type="SpriteFrames" uid="uid://btpnsh3t4y5gt" path="res://resources/cooler/sprite_frames/cooler_4_sprite_frames.tres" id="4_05kvd"]
+[ext_resource type="Resource" uid="uid://feib0qkqc0m1" path="res://resources/cooler/cooler_6.tres" id="5_tumb5"]
+
+[resource]
+script = ExtResource("2_y4u2a")
+name = "Cooler 5"
+shop_icon = ExtResource("3_ei1xd")
+sprite_frames = ExtResource("4_05kvd")
+col_shape = ExtResource("1_8otex")
+temperature_decrease = 170.0
+upgrade_cooler_resource = ExtResource("5_tumb5")
+upgrade_price_easy = 4904
+upgrade_price_medium = 6139
+upgrade_price_hard = 6743

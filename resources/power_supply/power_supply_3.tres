@@ -7,12 +7,12 @@
 
 [resource]
 script = ExtResource("1_xiss7")
-name = ""
+name = "Power supply 3"
 shop_icon = ExtResource("2_1x3ct")
 texture = ExtResource("2_1x3ct")
 col_shape = ExtResource("1_xm7c7")
-max_power = 115
+max_power = 105
 upgrade_power_supply_resource = ExtResource("3_qgxpn")
-upgrade_price_easy = 900
-upgrade_price_medium = 965
-upgrade_price_hard = 1010
+upgrade_price_easy = 980
+upgrade_price_medium = 1225
+upgrade_price_hard = 1348
