@@ -1,22 +1,22 @@
-[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3 uid="uid://1wnrx2cv8dbi"]
+[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scripts/save_and_load/game_progress.gd" id="1_eten7"]
+[ext_resource type="Script" path="res://scripts/save_and_load/game_progress.gd" id="1_a7yat"]
 
 [resource]
-script = ExtResource("1_eten7")
+script = ExtResource("1_a7yat")
 map_scene_path = "res://scenes/maps/map_1.tscn"
 difficulty = 0
-money = 986591
-health = 105
-power = 32
-max_power = 115
-temperature = 72.0
-wave_index = 19
-tower_resource_paths = Array[String](["res://resources/towers/resistor/resistor_1_2.tres", "res://resources/towers/resistor/resistor_1_2.tres", "res://resources/towers/resistor/resistor_1_2.tres", "res://resources/towers/resistor/resistor_2_1.tres"])
-tower_positions = Array[Vector2]([Vector2(240.501, 845.566), Vector2(239.499, 916.698), Vector2(124.259, 900.668), Vector2(132.276, 846.568)])
-tower_damage_dealt = Array[float]([642.0, 65.0, 77.0, 36.0])
-tower_money_generated = Array[int]([0, 0, 0, 0])
-tower_sell_values = Array[int]([1662, 1662, 1662, 1344])
-tower_prioritization = Array[int]([0, 0, 0, 0])
-cooler_resource_path = "res://resources/cooler/cooler_1.tres"
-power_supply_resource_path = "res://resources/power_supply/power_supply_3.tres"
+money = 75108
+health = 200
+power = 106
+max_power = 375
+temperature = -7.0
+wave_index = 67
+tower_resource_paths = Array[String](["res://resources/towers/resistor/resistor_0_1.tres", "res://resources/towers/led/led_2_1.tres", "res://resources/towers/transistor/transistor_1_2.tres", "res://resources/towers/transistor/transistor_1_2.tres", "res://resources/towers/capacitor/capacitor_2_1.tres", "res://resources/towers/inductor/inductor_2_1.tres", "res://resources/towers/ram/ram_1_2.tres", "res://resources/towers/neopixel/neopixel_2_1.tres", "res://resources/towers/inductor/inductor_2_1.tres", "res://resources/towers/resistor/resistor_2_1.tres", "res://resources/towers/neopixel/neopixel_2_1.tres", "res://resources/towers/inductor/inductor_2_1.tres", "res://resources/towers/gpu/gpu_2_1.tres", "res://resources/towers/gpu/gpu_1_2.tres"])
+tower_positions = Array[Vector2]([Vector2(240.501, 840.557), Vector2(345.72, 820.52), Vector2(345.72, 766.419), Vector2(345.72, 871.614), Vector2(438.914, 814.508), Vector2(656.367, 773.432), Vector2(453.946, 868.609), Vector2(423.883, 654.212), Vector2(654.363, 861.596), Vector2(653.361, 585.084), Vector2(62.1294, 172.319), Vector2(653.361, 682.263), Vector2(787.641, 39.0724), Vector2(893.862, 40.0742)])
+tower_damage_dealt = Array[float]([8695.0, 11470.0, 32379.0, 36125.0, 26613.0, 5469.0, 0.0, 26821.0, 4500.0, 956.0, 3343.0, 0.0, 0.0, 0.0])
+tower_money_generated = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 540])
+tower_sell_values = Array[int]([497, 334, 1230, 1230, 1122, 1080, 1742, 867, 1080, 1344, 867, 1080, 2612, 1813])
+tower_prioritization = Array[int]([0, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+cooler_resource_path = "res://resources/cooler/cooler_5.tres"
+power_supply_resource_path = "res://resources/power_supply/power_supply_6.tres"
