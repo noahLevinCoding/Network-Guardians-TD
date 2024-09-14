@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3 uid="uid://bowiwhm2ij7i1"]
+
+[ext_resource type="Script" path="res://scripts/save_and_load/game_progress.gd" id="1_srh04"]
+
+[resource]
+script = ExtResource("1_srh04")
+map_scene_path = "res://scenes/maps/map_3.tscn"
+difficulty = 1
+money = 766
+health = 150
+power = 25
+max_power = 55
+temperature = 40.0
+wave_index = 25
+tower_resource_paths = Array[String](["res://resources/towers/led/led_2_0.tres", "res://resources/towers/transistor/transistor_0_1.tres", "res://resources/towers/ram/ram_1_1.tres", "res://resources/towers/capacitor/capacitor_0_0.tres", "res://resources/towers/led/led_1_2.tres"])
+tower_positions = Array[Vector2]([Vector2(151.315, 846.568), Vector2(1165.43, 381.707), Vector2(1009.1, 545.009), Vector2(1018.12, 670.241), Vector2(1191.48, 429.796)])
+tower_damage_dealt = Array[float]([2769.0, 625.0, 0.0, 25.0, 169.0])
+tower_money_generated = Array[int]([0, 0, 0, 0, 0])
+tower_sell_values = Array[int]([350, 500, 1050, 187, 295])
+tower_prioritization = Array[int]([4, 0, 0, 0, 0])
+cooler_resource_path = "res://resources/cooler/cooler_2.tres"
+power_supply_resource_path = "res://resources/power_supply/power_supply_2.tres"

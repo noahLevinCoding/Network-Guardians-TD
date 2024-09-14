@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_khbfn")
-name = "Ram"
+name = "RAM"
 icon = ExtResource("1_0b6es")
 mouse_cursor_texture = ExtResource("2_mtodr")
 price_easy = 1020
