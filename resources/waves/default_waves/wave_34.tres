@@ -9,21 +9,21 @@
 script = ExtResource("3_tyhw2")
 enemy_resource = ExtResource("2_wxij8")
 enemy_count = 80
-time_between_enemies = 1.0
+time_between_enemies = 0.25
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_dhrym"]
 script = ExtResource("3_tyhw2")
 enemy_resource = ExtResource("4_ir35b")
 enemy_count = 8
-time_between_enemies = 1.0
+time_between_enemies = 0.7
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_qfssl"]
 script = ExtResource("3_tyhw2")
 enemy_resource = ExtResource("2_wxij8")
 enemy_count = 80
-time_between_enemies = 1.0
+time_between_enemies = 0.15
 time_after_wave_group = 0.0
 
 [resource]
