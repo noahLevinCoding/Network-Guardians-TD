@@ -17,7 +17,7 @@ extends Node2D
 @export var ui_slider: HSlider
 @export var sfx_slider: HSlider
 
-var save_folder_path : String = "res://saves/volume"
+var save_folder_path : String = "saves/volume"
 
 var wiki_scene_instance = null
 var credits_scene_instance = null
@@ -106,14 +106,14 @@ func save_volume():
 	volume_resource.sfx_value = sfx_slider.value
 	volume_resource.ui_value = ui_slider.value
 		
-	ResourceSaver.save(volume_resource, save_folder_path + "/volume.tres")
+	ResourceSaver.save(volume_resource, save_folder_path + "/volume.res")
 
 func load_volume():
 	
-	if not ResourceLoader.exists(save_folder_path + "/volume.tres"):
+	if not ResourceLoader.exists(save_folder_path + "/volume.res"):
 		return
 		
-	var volume_resource = ResourceLoader.load(save_folder_path + "/volume.tres")
+	var volume_resource = ResourceLoader.load(save_folder_path + "/volume.res")
 	master_slider.value = volume_resource.master_value
 	music_slider.value = volume_resource.music_value
 	sfx_slider.value = volume_resource.sfx_value

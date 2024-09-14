@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="HighscoreResource" load_steps=2 format=3]
-
-[ext_resource type="Script" path="res://scripts/save_and_load/highscore_resource.gd" id="1_ijt6m"]
-
-[resource]
-script = ExtResource("1_ijt6m")
-highscore = 80

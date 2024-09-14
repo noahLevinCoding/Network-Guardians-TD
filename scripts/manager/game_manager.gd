@@ -6,7 +6,7 @@ var attack_tower_scene : PackedScene = preload("res://scenes/tower/attack_tower.
 var resource_tower_scene : PackedScene = preload("res://scenes/tower/resource_tower.tscn")
 var support_tower_scene : PackedScene = preload("res://scenes/tower/support_tower.tscn")
 
-var save_folder_path : String = "res://saves"
+var save_folder_path : String = "saves"
 
 enum DIFFICULTY {EASY, MEDIUM, HARD}
 
@@ -284,14 +284,16 @@ func save_game():
 			game_progress_resource.tower_money_generated.append(0)
 			game_progress_resource.tower_prioritization.append(0)
 		
-	ResourceSaver.save(game_progress_resource, save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".tres")
+	
+	ResourceSaver.save(game_progress_resource, save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".res")
+
 
 func load_game():
 	
-	if not ResourceLoader.exists(save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".tres"):
+	if not ResourceLoader.exists(save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".res"):
 		return
 		
-	var game_progress_resource = ResourceLoader.load(save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".tres")
+	var game_progress_resource = ResourceLoader.load(save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".res")
 	
 	cooler.cooler_resource = ResourceLoader.load(game_progress_resource.cooler_resource_path)
 	cooler.init_resource()
@@ -326,10 +328,12 @@ func load_game():
 	SignalManager.load_wave_index.emit(game_progress_resource.wave_index)
 
 func delete_save_file():
-	DirAccess.remove_absolute(save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".tres")
+	var dir = DirAccess.open(save_folder_path)
+	dir.remove("./games/" + str(map_id) + "_" + str(difficulty) + ".res")
+
 
 func has_save_files():
-	return ResourceLoader.exists(save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".tres")
+	return ResourceLoader.exists(save_folder_path + "/games/" + str(map_id) + "_" + str(difficulty) + ".res")
 
 func save_highscore():
 	if highscore < wave_index:
@@ -337,12 +341,12 @@ func save_highscore():
 	
 	var highscore_resource = HighscoreResource.new()
 	highscore_resource.highscore = highscore
-	ResourceSaver.save(highscore_resource, save_folder_path + "/highscores/" + str(map_id) + "_" + str(difficulty) + ".tres")
+	ResourceSaver.save(highscore_resource, save_folder_path + "/highscores/" + str(map_id) + "_" + str(difficulty) + ".res")
 	
 func load_highscore():
-	if not ResourceLoader.exists(save_folder_path + "/highscores/" + str(map_id) + "_" + str(difficulty) + ".tres"):
+	if not ResourceLoader.exists(save_folder_path + "/highscores/" + str(map_id) + "_" + str(difficulty) + ".res"):
 		highscore = 0
 		return
 		
-	var highscore_resource = ResourceLoader.load(save_folder_path + "/highscores/" + str(map_id) + "_" + str(difficulty) + ".tres")
+	var highscore_resource = ResourceLoader.load(save_folder_path + "/highscores/" + str(map_id) + "_" + str(difficulty) + ".res")
 	highscore = highscore_resource.highscore
