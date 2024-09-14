@@ -169,6 +169,10 @@ func is_immune(bullet_resource : BulletResource):
 	var is_immune_due_to_damage_type = is_immune_due_to_light or is_immune_due_to_electricity or is_immune_due_to_magnetism
 	var is_immune_final = is_immune_due_to_damage_type and not bullet_resource.ignores_damage_type_immunity
 	
+	for enemy_effect in bullet_resource.effects:
+		if enemy_effect is SlowEffectResource and enemy_resource.is_immunte_to_slow:
+			is_immune_final = true
+			
 	return is_immune_final
 	
 func spawn_children(bullet_resource : BulletResource):

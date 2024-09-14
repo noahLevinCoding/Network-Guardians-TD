@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3 uid="uid://1wnrx2cv8dbi"]
+[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://scripts/save_and_load/game_progress.gd" id="1_eten7"]
 
@@ -6,17 +6,17 @@
 script = ExtResource("1_eten7")
 map_scene_path = "res://scenes/maps/map_1.tscn"
 difficulty = 0
-money = 993861
+money = 986591
 health = 105
-power = 29
+power = 32
 max_power = 115
-temperature = 69.0
-wave_index = 35
-tower_resource_paths = Array[String](["res://resources/towers/transistor/transistor_0_2.tres", "res://resources/towers/capacitor/capacitor_0_2.tres", "res://resources/towers/resistor/resistor_1_2.tres", "res://resources/towers/led/led_1_2.tres"])
-tower_positions = Array[Vector2]([Vector2(349.729, 891.651), Vector2(439.917, 829.536), Vector2(240.501, 845.566), Vector2(365.762, 742.375)])
-tower_damage_dealt = Array[float]([292.0, 807.0, 590.0, 183.0])
+temperature = 72.0
+wave_index = 19
+tower_resource_paths = Array[String](["res://resources/towers/resistor/resistor_1_2.tres", "res://resources/towers/resistor/resistor_1_2.tres", "res://resources/towers/resistor/resistor_1_2.tres", "res://resources/towers/resistor/resistor_2_1.tres"])
+tower_positions = Array[Vector2]([Vector2(240.501, 845.566), Vector2(239.499, 916.698), Vector2(124.259, 900.668), Vector2(132.276, 846.568)])
+tower_damage_dealt = Array[float]([642.0, 65.0, 77.0, 36.0])
 tower_money_generated = Array[int]([0, 0, 0, 0])
-tower_sell_values = Array[int]([870, 720, 1662, 249])
+tower_sell_values = Array[int]([1662, 1662, 1662, 1344])
 tower_prioritization = Array[int]([0, 0, 0, 0])
 cooler_resource_path = "res://resources/cooler/cooler_1.tres"
 power_supply_resource_path = "res://resources/power_supply/power_supply_3.tres"
