@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dlmeu6536b7js" path="res://assets/ui/shop_icons/attack_speed_increase_2_icon.png" id="6_1y02a"]
 [ext_resource type="Resource" uid="uid://cqlbj336o124j" path="res://resources/towers/inductor/inductor_1_1.tres" id="6_rb4qc"]
 [ext_resource type="Resource" uid="uid://dhjgoa2s6ws4t" path="res://resources/towers/inductor/inductor_0_2.tres" id="7_uw06r"]
-[ext_resource type="Texture2D" uid="uid://c4jwpsib5juwb" path="res://assets/ui/shop_icons/camo_reveal_icon.png" id="8_cm33v"]
+[ext_resource type="Texture2D" uid="uid://ocs61easowsx" path="res://assets/ui/shop_icons/range_increase_icon.png" id="8_wkb82"]
 
 [sub_resource type="Resource" id="Resource_bkjo6"]
 script = ExtResource("2_k1154")
@@ -40,8 +40,8 @@ upgrade_path_1_price_easy = 590
 upgrade_path_1_price_medium = 700
 upgrade_path_1_price_hard = 760
 upgrade_path_1_tower_resource = ExtResource("6_rb4qc")
-upgrade_path_2_icon = ExtResource("8_cm33v")
-upgrade_path_2_description = "Enemies are pushed back further. Increases attack range. Gives camo vision."
+upgrade_path_2_icon = ExtResource("8_wkb82")
+upgrade_path_2_description = "Enemies are pushed back further. Increases attack range. "
 upgrade_path_2_price_easy = 765
 upgrade_path_2_price_medium = 900
 upgrade_path_2_price_hard = 970
