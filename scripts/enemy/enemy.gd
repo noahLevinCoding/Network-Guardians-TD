@@ -77,7 +77,7 @@ func calc_current_speed():
 		current_speed = -knockback_speed * base_speed_multiplier
 	else:
 		current_speed = enemy_resource.base_speed * GameManager.temperature_speed_modifier  * base_speed_multiplier
-		if not enemy_resource.is_immune_to_slow:
+		if not enemy_resource.is_immune_to_slow and not enemy_resource.enemy_type == enemy_resource.ENEMY_TYPES.TROJAN:
 			current_speed *= slow_multiplier
 	
 func move(delta : float):

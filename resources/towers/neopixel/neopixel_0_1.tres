@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ha2pt2uejl2c" path="res://assets/ui/shop_icons/attack_speed_increase_1_icon.png" id="6_quufc"]
 [ext_resource type="Resource" uid="uid://c4clta5wq8bj6" path="res://resources/towers/neopixel/neopixel_1_1.tres" id="6_s5764"]
 [ext_resource type="Resource" uid="uid://cv66jpkastb5o" path="res://resources/towers/neopixel/neopixel_0_2.tres" id="7_3h1nt"]
-[ext_resource type="Texture2D" uid="uid://c4jwpsib5juwb" path="res://assets/ui/shop_icons/camo_reveal_icon.png" id="8_4hfk3"]
+[ext_resource type="Texture2D" uid="uid://cj0v22jwy7l7u" path="res://assets/ui/shop_icons/attack_damage_increase_shop_incon.png" id="7_375m3"]
 
 [resource]
 script = ExtResource("2_q8l3l")
@@ -34,8 +34,8 @@ upgrade_path_1_price_easy = 380
 upgrade_path_1_price_medium = 450
 upgrade_path_1_price_hard = 485
 upgrade_path_1_tower_resource = ExtResource("6_s5764")
-upgrade_path_2_icon = ExtResource("8_4hfk3")
-upgrade_path_2_description = "Gives camo vision, increases damage and pierce"
+upgrade_path_2_icon = ExtResource("7_375m3")
+upgrade_path_2_description = "Increases damage and pierce, deals extra damage to trojans"
 upgrade_path_2_price_easy = 1315
 upgrade_path_2_price_medium = 1550
 upgrade_path_2_price_hard = 1675
