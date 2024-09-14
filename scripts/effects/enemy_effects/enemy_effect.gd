@@ -31,7 +31,7 @@ func apply_effect(enemy, delta):
 		
 
 func apply_slow_effect(enemy, delta):
-	enemy.slow_multiplier = max(enemy.slow_multiplier, effect_resource.slow_multiplier)	
+	enemy.slow_multiplier = min(enemy.slow_multiplier, effect_resource.slow_multiplier)	
 		
 	decrease_duration(enemy, delta)
 
