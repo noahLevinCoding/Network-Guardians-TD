@@ -89,16 +89,22 @@ func _on_select_tower(tower : Tower):
 		upper_power_increase = power_increase 
 		
 		
-		upgrade_1.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
+		upgrade_1.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W\n\n"
 	
 		var has_enough_money = price <= GameManager.money 
 		var has_enough_power = power_increase + GameManager.power <= GameManager.max_power
 		
+		if not has_enough_power:
+			upgrade_1.tooltip_text += "Not enough power:\nUpgrade your power supply or sell other towers.\n\n"
+		
 		upgrade_1_button.disabled = not (has_enough_money and has_enough_power)
+		upgrade_1_price.set_modulate(red_color if GameManager.money < price else white_color)
 	else:
 		upgrade_1_price.text = "MAX"
 		upgrade_1.tooltip_text = "Path maxed"
+		upgrade_1_icon.texture = tower.tower_resource.upgrade_path_1_icon
 		upgrade_1_button.disabled = true
+		upgrade_1_price.set_modulate(white_color)
 		
 		
 	if selected_tower.tower_resource.upgrade_path_2_tower_resource != null:
@@ -115,16 +121,22 @@ func _on_select_tower(tower : Tower):
 		var power_increase = tower.tower_resource.upgrade_path_2_tower_resource.power - tower.tower_resource.power
 		lower_power_increase = power_increase 
 		
-		upgrade_2.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W"
+		upgrade_2.tooltip_text =  description + "\n\nTemp: + " + str(temp_increase) + " °C\nPower: + " + str(power_increase) + " W\n\n"
 	
 		var has_enough_money = price <= GameManager.money 
 		var has_enough_power = power_increase + GameManager.power <= GameManager.max_power
 		
+		if not has_enough_power:
+			upgrade_2.tooltip_text += "Not enough power:\nUpgrade your power supply or sell other towers.\n\n"
+		
 		upgrade_2_button.disabled = not (has_enough_money and has_enough_power)
+		upgrade_2_price.set_modulate(red_color if GameManager.money < price else white_color)
 	else:
 		upgrade_2_price.text = "MAX"
 		upgrade_2.tooltip_text = "Path maxed"
+		upgrade_2_icon.texture = tower.tower_resource.upgrade_path_2_icon
 		upgrade_2_button.disabled = true
+		upgrade_2_price.set_modulate(white_color)
 
 func _on_deselect_tower():
 	visible = false
