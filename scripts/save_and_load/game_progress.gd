@@ -4,7 +4,7 @@ extends Resource
 @export var map_scene_path : String
 @export var difficulty : int
 
-@export var money : int
+@export var money : float
 @export var health : int
 @export var power : int
 @export var max_power : int

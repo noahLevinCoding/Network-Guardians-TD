@@ -21,7 +21,7 @@ signal response_wave_is_active(wave_is_active : bool)
 
 #UI
 signal health_changed(health : int)
-signal money_changed(money : int)
+signal money_changed(money : float)
 signal temperature_changed(temperature : float)
 signal power_changed(power : int)
 signal max_power_changed(max_power : int)

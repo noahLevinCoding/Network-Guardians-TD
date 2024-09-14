@@ -15,7 +15,7 @@ const initial_health_medium : int = 150
 const initial_health_hard : int = 100
 const initial_max_power : int = 0
 const initial_power : int = 0
-const initial_money : int = 650
+const initial_money : float = 650.0
 const initial_tempearture : float = 70.0
 
 var map_id : int = 0
@@ -33,7 +33,7 @@ var health : int :
 	set(value):
 		health = value
 		SignalManager.health_changed.emit(health)
-var money : int : 
+var money : float : 
 	set(value):
 		money = value
 		SignalManager.money_changed.emit(money)
@@ -76,6 +76,26 @@ var power_supply : PowerSupply :
 		
 		if value != null:
 			max_power = value.power_supply_resource.max_power
+
+func earn_money():
+	var earning := 0.0
+	
+	if wave_index < 50:
+		earning = 1.0
+	elif wave_index < 60:
+		earning = 0.5
+	elif wave_index < 85:
+		earning = 0.2
+	elif wave_index < 100:
+		earning = 0.1
+	elif wave_index < 120:
+		earning = 0.05
+	else:
+		earning = 0.02
+		
+	money += earning
+		
+		
 
 func reset():
 	is_paused = true

@@ -86,8 +86,8 @@ func spawn_enemy():
 func _on_is_wave_active_timer_timeout():
 	if path.get_child_count() == 0:
 		is_wave_active = false
+		GameManager.money += 100 + current_wave_index + 1
 		SignalManager.on_wave_finished.emit()
-		GameManager.money += 100 + current_wave_index
 	else:
 		is_wave_active_timer.start()
 	

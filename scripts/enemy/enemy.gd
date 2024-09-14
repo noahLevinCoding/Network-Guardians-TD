@@ -205,7 +205,7 @@ func die():
 	queue_free()
 	
 func drop_loot():
-	GameManager.money += enemy_resource.money_on_death
+	GameManager.earn_money()
 	
 func init_resource():
 	base_animated_sprite.sprite_frames = enemy_resource.base_sprite_frames

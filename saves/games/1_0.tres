@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="GameProgressResource" load_steps=2 format=3 uid="uid://1wnrx2cv8dbi"]
 
 [ext_resource type="Script" path="res://scripts/save_and_load/game_progress.gd" id="1_a7yat"]
 
