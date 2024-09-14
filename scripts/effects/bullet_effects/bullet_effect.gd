@@ -92,7 +92,8 @@ func init_chaining_effect(bullet : Bullet):
 	bullet_effect_resource.line_1.z_index = 3
 	bullet_effect_resource.line_1.set_script(auto_destroy_script)	
 	bullet_effect_resource.line_1.time_to_destroy = 0.05
-	bullet.get_tree().get_root().add_child(bullet_effect_resource.line_1)
+	bullet.get_parent().add_child(bullet_effect_resource.line_1)
+	
 	
 	bullet_effect_resource.line_2 = Line2D.new()
 	bullet_effect_resource.line_2.width = 2
