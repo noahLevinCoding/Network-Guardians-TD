@@ -9,7 +9,7 @@
 script = ExtResource("3_plaho")
 enemy_resource = ExtResource("2_mga4k")
 enemy_count = 40
-time_between_enemies = 0.5
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_7k8r0"]
@@ -23,7 +23,7 @@ time_after_wave_group = 0.0
 script = ExtResource("3_plaho")
 enemy_resource = ExtResource("2_mga4k")
 enemy_count = 40
-time_between_enemies = 0.5
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [resource]
