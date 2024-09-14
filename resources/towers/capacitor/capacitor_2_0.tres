@@ -11,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_0osbd"]
 script = ExtResource("1_3e2kv")
-radius = 125.0
+radius = 100.0
 
 [resource]
 script = ExtResource("3_exev1")

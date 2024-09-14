@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_3ror7")
-name = ""
+name = "Power supply 1"
 shop_icon = ExtResource("3_28ada")
 texture = ExtResource("3_28ada")
 col_shape = ExtResource("1_kkx8l")

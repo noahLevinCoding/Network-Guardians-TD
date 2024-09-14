@@ -8,12 +8,12 @@
 
 [resource]
 script = ExtResource("1_u0hf0")
-name = ""
+name = "Cooler 3"
 shop_icon = ExtResource("2_gkyv2")
 sprite_frames = ExtResource("3_e1ls3")
 col_shape = ExtResource("1_enu6o")
-temperature_decrease = 85.0
+temperature_decrease = 80.0
 upgrade_cooler_resource = ExtResource("3_bshov")
-upgrade_price_easy = 1234
-upgrade_price_medium = 1345
-upgrade_price_hard = 1456
+upgrade_price_easy = 1112
+upgrade_price_medium = 1390
+upgrade_price_hard = 1529

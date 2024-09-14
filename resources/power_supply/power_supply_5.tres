@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PowerSupplyResource" load_steps=5 format=3 uid="uid://b1s8kf1y54id7"]
+
+[ext_resource type="Shape2D" uid="uid://c5sti0tp0vx04" path="res://resources/power_supply/place_shape.tres" id="1_g6o5f"]
+[ext_resource type="Script" path="res://scripts/power_supply/power_supply_resource.gd" id="2_aka6q"]
+[ext_resource type="Texture2D" uid="uid://dyil7gl5vewxx" path="res://assets/power_supply/psu_4.png" id="3_p6d75"]
+[ext_resource type="Resource" uid="uid://b3qtooemfo3pv" path="res://resources/power_supply/power_supply_6.tres" id="4_dj5ic"]
+
+[resource]
+script = ExtResource("2_aka6q")
+name = "Power supply 5"
+shop_icon = ExtResource("3_p6d75")
+texture = ExtResource("3_p6d75")
+col_shape = ExtResource("1_g6o5f")
+max_power = 265
+upgrade_power_supply_resource = ExtResource("4_dj5ic")
+upgrade_price_easy = 5645
+upgrade_price_medium = 7056
+upgrade_price_hard = 7762

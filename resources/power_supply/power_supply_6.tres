@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PowerSupplyResource" load_steps=4 format=3 uid="uid://b3qtooemfo3pv"]
+
+[ext_resource type="Shape2D" uid="uid://c5sti0tp0vx04" path="res://resources/power_supply/place_shape.tres" id="1_ps36k"]
+[ext_resource type="Script" path="res://scripts/power_supply/power_supply_resource.gd" id="2_g8gxp"]
+[ext_resource type="Texture2D" uid="uid://dyil7gl5vewxx" path="res://assets/power_supply/psu_4.png" id="3_ovrv2"]
+
+[resource]
+script = ExtResource("2_g8gxp")
+name = "Power supply 5"
+shop_icon = ExtResource("3_ovrv2")
+texture = ExtResource("3_ovrv2")
+col_shape = ExtResource("1_ps36k")
+max_power = 375
+upgrade_price_easy = 13548
+upgrade_price_medium = 16934
+upgrade_price_hard = 18628
