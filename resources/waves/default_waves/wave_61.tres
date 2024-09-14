@@ -1,16 +1,24 @@
-[gd_resource type="Resource" script_class="Wave" load_steps=5 format=3 uid="uid://jpdnbfq8aepm"]
+[gd_resource type="Resource" script_class="Wave" load_steps=7 format=3 uid="uid://jpdnbfq8aepm"]
 
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_a2lli"]
-[ext_resource type="Resource" uid="uid://bsbld377t2loa" path="res://resources/enemies/normal/trojan_2_red.tres" id="2_nrlfb"]
+[ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="2_g4eu8"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_fjhdo"]
+[ext_resource type="Resource" uid="uid://dllletlqjc145" path="res://resources/enemies/normal/virus_10_zebra.tres" id="4_ewurc"]
 
 [sub_resource type="Resource" id="Resource_fplpo"]
 script = ExtResource("3_fjhdo")
-enemy_resource = ExtResource("2_nrlfb")
-enemy_count = 1
-time_between_enemies = 1.0
+enemy_resource = ExtResource("2_g4eu8")
+enemy_count = 5
+time_between_enemies = 2.0
+time_after_wave_group = 0.0
+
+[sub_resource type="Resource" id="Resource_pfqvk"]
+script = ExtResource("3_fjhdo")
+enemy_resource = ExtResource("4_ewurc")
+enemy_count = 150
+time_between_enemies = 0.5
 time_after_wave_group = 0.0
 
 [resource]
 script = ExtResource("1_a2lli")
-wave_groups = Array[ExtResource("3_fjhdo")]([SubResource("Resource_fplpo")])
+wave_groups = Array[ExtResource("3_fjhdo")]([SubResource("Resource_fplpo"), SubResource("Resource_pfqvk")])

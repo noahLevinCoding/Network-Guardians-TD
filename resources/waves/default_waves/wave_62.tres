@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="2_jvx0t"]
 [ext_resource type="Resource" uid="uid://blgxivxrn8mxg" path="res://resources/enemies/normal/virus_7_purple.tres" id="2_syfb1"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_5hg2u"]
-[ext_resource type="Resource" uid="uid://duddrpk36ep1n" path="res://resources/enemies/camo regrow/virus_11_rainbow_C_R.tres" id="5_b7ayc"]
+[ext_resource type="Resource" uid="uid://dh6tbtbx7hi0b" path="res://resources/enemies/camo/virus_11_rainbow_C.tres" id="5_p5cse"]
 [ext_resource type="Resource" uid="uid://mwujkc70qa7u" path="res://resources/enemies/fortified/trojan_1_blue_F.tres" id="6_gdyi3"]
 
 [sub_resource type="Resource" id="Resource_o0s0x"]
@@ -79,7 +79,7 @@ time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_r58v1"]
 script = ExtResource("3_5hg2u")
-enemy_resource = ExtResource("5_b7ayc")
+enemy_resource = ExtResource("5_p5cse")
 enemy_count = 15
 time_between_enemies = 0.4
 time_after_wave_group = 0.0

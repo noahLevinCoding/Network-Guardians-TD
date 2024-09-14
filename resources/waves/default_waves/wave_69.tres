@@ -10,35 +10,35 @@
 script = ExtResource("3_o158k")
 enemy_resource = ExtResource("2_bjbu4")
 enemy_count = 20
-time_between_enemies = 0.8
+time_between_enemies = 0.4
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_4hii6"]
 script = ExtResource("3_o158k")
 enemy_resource = ExtResource("4_ddw2g")
 enemy_count = 20
-time_between_enemies = 0.8
+time_between_enemies = 0.4
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_bqs77"]
 script = ExtResource("3_o158k")
 enemy_resource = ExtResource("2_bjbu4")
 enemy_count = 20
-time_between_enemies = 0.8
+time_between_enemies = 0.4
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_q3mvh"]
 script = ExtResource("3_o158k")
 enemy_resource = ExtResource("4_ddw2g")
 enemy_count = 20
-time_between_enemies = 0.8
+time_between_enemies = 0.4
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_kr1nr"]
 script = ExtResource("3_o158k")
 enemy_resource = ExtResource("5_ufa0v")
 enemy_count = 50
-time_between_enemies = 0.8
+time_between_enemies = 0.4
 time_after_wave_group = 0.0
 
 [resource]

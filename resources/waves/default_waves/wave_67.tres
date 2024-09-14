@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_8t33q"]
 [ext_resource type="Resource" uid="uid://cvwyen04bogi" path="res://resources/enemies/normal/trojan_1_blue.tres" id="2_jc4qy"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_adixe"]
-[ext_resource type="Resource" uid="uid://cx6ecbtxys6de" path="res://resources/enemies/camo regrow fortified/virus_12_ceramic_C_R_F.tres" id="4_eam24"]
+[ext_resource type="Resource" uid="uid://dgixdn7gc3o4y" path="res://resources/enemies/camo fortified/virus_12_ceramic_C_F.tres" id="4_xkqq2"]
 
 [sub_resource type="Resource" id="Resource_mali3"]
 script = ExtResource("3_adixe")
@@ -14,7 +14,7 @@ time_after_wave_group = 6.0
 
 [sub_resource type="Resource" id="Resource_08v8o"]
 script = ExtResource("3_adixe")
-enemy_resource = ExtResource("4_eam24")
+enemy_resource = ExtResource("4_xkqq2")
 enemy_count = 13
 time_between_enemies = 0.8
 time_after_wave_group = 0.0

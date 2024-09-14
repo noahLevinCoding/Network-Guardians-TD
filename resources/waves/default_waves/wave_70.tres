@@ -10,63 +10,63 @@
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("2_xacy7")
 enemy_count = 30
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_5f2jb"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("4_jdi6a")
 enemy_count = 50
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_gyust"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("2_xacy7")
 enemy_count = 30
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_d8kwi"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("4_jdi6a")
 enemy_count = 50
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_dxglo"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("2_xacy7")
 enemy_count = 30
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_aigwo"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("4_jdi6a")
 enemy_count = 50
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_vkcjs"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("2_xacy7")
 enemy_count = 30
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_t7y6u"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("4_jdi6a")
 enemy_count = 50
-time_between_enemies = 0.8
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_7rkp1"]
 script = ExtResource("3_ut5ts")
 enemy_resource = ExtResource("5_2rn6a")
 enemy_count = 4
-time_between_enemies = 0.5
+time_between_enemies = 0.1
 time_after_wave_group = 0.0
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://dllletlqjc145"]
 
-[ext_resource type="SpriteFrames" path="res://resources/enemies/sprite_frames/virus_10_zebra_sprite_frames.tres" id="1_picuy"]
+[ext_resource type="SpriteFrames" uid="uid://drj5bd8obv8y7" path="res://resources/enemies/sprite_frames/virus_10_zebra_sprite_frames.tres" id="1_picuy"]
 [ext_resource type="Texture2D" uid="uid://dw06uq7mn1qmt" path="res://assets/enemy/Addon_textures/camo.png" id="2_rb1v5"]
 [ext_resource type="Resource" uid="uid://b0vwwsh7tin4l" path="res://resources/enemies/normal/virus_6_black.tres" id="3_hpnnm"]
 [ext_resource type="Shape2D" uid="uid://bbjqtwdiomwyh" path="res://resources/enemies/shapes/virus_shape.tres" id="4_jdqh1"]

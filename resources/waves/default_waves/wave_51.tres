@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave.gd" id="1_f5oaf"]
 [ext_resource type="Resource" uid="uid://cf0i287dfun6c" path="res://resources/enemies/camo/virus_12_ceramic_C.tres" id="2_vr8v3"]
 [ext_resource type="Script" path="res://scripts/wave_spawner/wave_group.gd" id="3_vewol"]
-[ext_resource type="Resource" uid="uid://dsb5nksnab6qg" path="res://resources/enemies/regrow/virus_11_rainbow_R.tres" id="4_adj85"]
+[ext_resource type="Resource" uid="uid://bfih8ffsca7je" path="res://resources/enemies/normal/virus_11_rainbow.tres" id="4_osia4"]
 
 [sub_resource type="Resource" id="Resource_fnevf"]
 script = ExtResource("3_vewol")
@@ -14,7 +14,7 @@ time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_jq2fy"]
 script = ExtResource("3_vewol")
-enemy_resource = ExtResource("4_adj85")
+enemy_resource = ExtResource("4_osia4")
 enemy_count = 10
 time_between_enemies = 0.5
 time_after_wave_group = 1.0
