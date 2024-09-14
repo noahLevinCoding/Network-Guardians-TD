@@ -1,7 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dgx6d1ylnqwae"]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dgx6d1ylnqwae"]
 
 [ext_resource type="Texture2D" uid="uid://mie7qnm3a2sr" path="res://assets/tower/resistor/resistor_3/pixil-layer-0.png" id="1_cf4eh"]
-[ext_resource type="Texture2D" uid="uid://t2yqxqo3lvls" path="res://assets/tower/resistor/resistor_2/pixil-layer-0.png" id="1_ctuq7"]
 [ext_resource type="Texture2D" uid="uid://pxxpebut763m" path="res://assets/tower/resistor/resistor_3/pixil-layer-1.png" id="2_1x4t4"]
 [ext_resource type="Texture2D" uid="uid://bipridekjhxgy" path="res://assets/tower/resistor/resistor_3/pixil-layer-2.png" id="3_clgr6"]
 [ext_resource type="Texture2D" uid="uid://bye5f2ptiuvae" path="res://assets/tower/resistor/resistor_3/pixil-layer-3.png" id="4_objx8"]
@@ -14,7 +13,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ctuq7")
+"texture": ExtResource("1_cf4eh")
 }],
 "loop": true,
 "name": &"idle",
