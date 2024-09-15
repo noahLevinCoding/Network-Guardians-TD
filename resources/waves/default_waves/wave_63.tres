@@ -9,14 +9,14 @@
 script = ExtResource("3_c2iae")
 enemy_resource = ExtResource("2_g11gr")
 enemy_count = 75
-time_between_enemies = 0.1
+time_between_enemies = 0.2
 time_after_wave_group = 0.0
 
 [sub_resource type="Resource" id="Resource_b4syq"]
 script = ExtResource("3_c2iae")
 enemy_resource = ExtResource("4_38udv")
 enemy_count = 122
-time_between_enemies = 0.1
+time_between_enemies = 0.3
 time_after_wave_group = 0.0
 
 [resource]
